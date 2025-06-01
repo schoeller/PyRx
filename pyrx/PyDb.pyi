@@ -4797,6 +4797,8 @@ class Core:
     @staticmethod
     def hasGeoData(db: PyDb.Database, /) -> bool: ...
     @staticmethod
+    def icompare(left: str, right: str, /) -> bool: ...
+    @staticmethod
     def inters(
         from1: PyGe.Point3d,
         to1: PyGe.Point3d,
