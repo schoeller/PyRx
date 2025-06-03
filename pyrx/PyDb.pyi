@@ -12884,7 +12884,7 @@ class Extents:
         """
         Expand this box to also enclose the point pt.
         """
-    def contains(self, pt: PyGe.Point3d, /) -> bool: ...
+    def contains(self, val: PyDb.Extents | PyGe.Point3d, /) -> bool: ...
     def coords(self, /) -> tuple[float, ...]: ...
     def expandBy(self, vec: PyGe.Vector3d, /) -> None:
         """
@@ -12903,6 +12903,7 @@ class Extents:
         """
         Return the point of the Extents box that has the largest X, Y, & Z coordinate values.
         """
+    def overlaps(self, val: PyDb.Extents, /) -> bool: ...
     def set(self, min: PyGe.Point3d, max: PyGe.Point3d, /) -> ErrorStatus:
         """
         Set minPoint to min and maxPoint to max if each of the X, Y, and Z values of min are less
@@ -12952,6 +12953,7 @@ class Extents2d:
         """
         Returns the minimum extent point.
         """
+    def overlaps(self, val: PyDb.Extents2d, /) -> bool: ...
     def set(self, min: PyGe.Point2d, max: PyGe.Point2d, /) -> ErrorStatus:
         """
         Sets the minimum extent to min and the maximum extent to max.
