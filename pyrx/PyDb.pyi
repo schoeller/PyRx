@@ -3619,13 +3619,16 @@ class BlockTable(PyDb.SymbolTable):
         """
 
 class BlockTableRecord(PyDb.SymbolTableRecord):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of the AcDbBlockTableRecord class are used as containers for entities within
         drawing file databases. AcDbBlocktableRecord objects (often referred to as BTRs) are owned
@@ -3936,7 +3939,14 @@ class BlockTableRecord(PyDb.SymbolTableRecord):
         """
 
 class Body(PyDb.Entity):
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode = PyDb.OpenMode.kForRead, /) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         The AcDbBody class is used to represent nonmanifold solids and other ShapeManager entities
         that do not fit the characteristics of the AcDb3dSolid or AcDbRegion classes.
@@ -9614,13 +9624,16 @@ class Dictionary(PyDb.DbObject):
         object being opened is not the correct type. The pre-existing getObject() method does not
         do type checking.
         """
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         AcDbDictionary is a database-resident object dictionary, which maintains a map between text
         strings and database objects. An instance of this class represents a single object, such as
@@ -10001,13 +10014,16 @@ class DimStyleTable(PyDb.SymbolTable):
         """
 
 class DimStyleTableRecord(PyDb.SymbolTableRecord):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent the records found in the AcDbDimStyleTable. Each of these
         records contains the information necessary to generate a specific appearance (that is, text
@@ -13892,13 +13908,16 @@ class GeoCoordinateSystemUnit(_BoostPythonEnum):
     kUnitMillisec: ClassVar[Self]  # 1011
 
 class GeoData(PyDb.DbObject):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         This object identifies the geographical space a design is located in. It also provides all
         the information necessary to accurately map a design coordinate system to a location on
@@ -14256,13 +14275,18 @@ class GeoMap(PyDb.RasterImage):
     def width(self, /) -> float: ...
 
 class GeoPositionMarker(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None: ...
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, position: PyGe.Point3d, radius: float, landingGap: float, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None: ...
     def __reduce__(self, /) -> Any: ...
     @staticmethod
     def cast(otherObject: PyRx.RxObject, /) -> GeoPositionMarker: ...
@@ -14690,13 +14714,16 @@ class HardPointerId(PyDb.ObjectId):
     def __reduce__(self, /) -> Any: ...
 
 class Hatch(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         AcDbHatch is a planar entity that can be created and placed in an arbitrary plane in 3D
         space.  The hatch plane can be uniquely defined by a normal vector in WCS (World Coordinate
@@ -15753,13 +15780,16 @@ class JoinStyle(_BoostPythonEnum):
     kJnStylFlat: ClassVar[Self]  # 3
 
 class LayerFilter(PyDb.DbObject):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         This class is a list of layers that need to have their corresponding entity lists traversed
         during filtered block traversal. The newIterator() method does return a pointer to a valid
@@ -16067,13 +16097,16 @@ class LayerTableRecord(PyDb.SymbolTableRecord):
         viewports, then this function returns false. The VPDFLT value is used for the second bit of
         DXF group code 70.
         """
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent records in the AcDbLayerTable. Each of these records
         contains the information (color, on or off, frozen or thawed, etc.) about a layer in the
@@ -16332,13 +16365,16 @@ class LayerTableRecord(PyDb.SymbolTableRecord):
         """
 
 class Layout(PyDb.PlotSettings):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         An AcDbLayout object stores characteristics of each paperspace layout. Layout objects are
         stored in an AcDbDictionary object with an ACAD_LAYOUT key, allowing easy iteration and
@@ -16425,13 +16461,16 @@ class LayoutManager(PyRx.RxObject):
     def setupForLayouts(db: PyDb.Database, /) -> int: ...
 
 class Leader(PyDb.Curve):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         The AcDbLeader class represents the LEADER entity within AutoCAD. Leaders are considered as
         dimensions in AutoCAD, which means they are controlled by dimension variable settings and
@@ -16866,13 +16905,16 @@ class LinetypeTable(PyDb.SymbolTable):
         """
 
 class LinetypeTableRecord(PyDb.SymbolTableRecord):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent records in the AcDbLinetypeTable. Each of these records
         contains the information about a linetype in the drawing database. Within the
@@ -17062,13 +17104,16 @@ class MInsertBlock(PyDb.BlockReference):
 
 class MLeader(PyDb.Entity):
     def MLeaderStyle(self, /) -> ObjectId: ...
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None: ...
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None: ...
     def __reduce__(self, /) -> Any: ...
     def addFirstVertex(self, leaderLineIndex: int, pt: PyGe.Point3d, /) -> None: ...
     def addLastVertex(self, leaderLineIndex: int, pt: PyGe.Point3d, /) -> None: ...
@@ -17347,13 +17392,16 @@ class MLeaderSegmentAngleType(_BoostPythonEnum):
     kHorz: ClassVar[Self]  # 12
 
 class MLeaderStyle(PyDb.DbObject):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None: ...
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None: ...
     def __reduce__(self, /) -> Any: ...
     def alignSpace(self, /) -> float: ...
     def annotative(self, /) -> bool: ...
@@ -17504,13 +17552,16 @@ class MLeaderTextAttachmentType(_BoostPythonEnum):
     kAttachmentLinedCenter: ClassVar[Self]  # 10
 
 class MPolygon(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None: ...
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None: ...
     def __reduce__(self, /) -> Any: ...
     @overload
     def appendLoopFromBoundary(
@@ -17623,13 +17674,16 @@ class MPolygonloopDir(_BoostPythonEnum):
     kAnnotation: ClassVar[Self]  # 2
 
 class MText(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         The AcDbMText class is the representation for the MTEXT (multiline text) entity within
         AutoCAD.
@@ -18143,13 +18197,16 @@ class MergeCellStyleOption(_BoostPythonEnum):
     kMergeCellStyleIgnoreNewStyles: ClassVar[Self]  # 8
 
 class Mline(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         The AcDbMline class represents the AutoCAD MLINE entity. This multi-line entity allows the
         user to create a complex line with multiple parallel line parts, each with its own
@@ -19076,6 +19133,7 @@ class PlotSettingsValidator:
     def getLocaleMediaName(self, *args) -> str: ...
     def plotDeviceList(self, /) -> list[str]: ...
     def plotStyleSheetList(self, /) -> list[str]: ...
+    def refreshLists(self, settings: PyDb.PlotSettings, /) -> None: ...
     def setCanonicalMediaName(self, settings: PyDb.PlotSettings, mediaName: str, /) -> None: ...
     def setClosestMediaName(
         self,
@@ -20744,7 +20802,12 @@ class Polyline3dVertex(PyDb.Vertex):
         """
 
 class Profile3d(PyRx.RxObject):
-    def __init__(self, val: PyDb.Entity, /) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, val: PyDb.Entity, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         This class is used to represent a 3d profile that can be used as input to functions such as
         createExtrudedSurface(), createRevolvedSurface(), and createSweptSurface(). An object of
@@ -21024,9 +21087,16 @@ class RadialDimensionLarge(PyDb.Dimension):
         """
 
 class RasterImage(PyDb.Image):
-    def __init__(
-        self, id: PyDb.ObjectId, mode: PyDb.OpenMode = PyDb.OpenMode.kForRead, /
-    ) -> None: ...
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None: ...
     def __reduce__(self, /) -> Any: ...
     def brightness(self, /) -> int: ...
     @staticmethod
@@ -21089,13 +21159,16 @@ class RasterImage(PyDb.Image):
     def width(self, /) -> float: ...
 
 class RasterImageDef(PyDb.DbObject):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         The AcDbRasterImageDef object (or "image definition object") works with the AcDbRasterImage
         entity (or "image entity") to implement raster images inside AutoCAD. The relationship
@@ -21162,7 +21235,14 @@ class RasterImageDef(PyDb.DbObject):
     def updateEntities(self, /) -> None: ...
 
 class RasterImageDefReactor(PyDb.DbObject):
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode = PyDb.OpenMode.kForRead, /) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         The AcDbRasterImageDefReactor object is used to notify AcDbRasterImage entities of relevant
         modifications to their associated AcDbRasterImageDef object. Specifically, modification of
@@ -21235,13 +21315,16 @@ class RegAppTable(PyDb.SymbolTable):
         """
 
 class RegAppTableRecord(PyDb.SymbolTableRecord):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent records in the AcDbRegAppTable (known as the APPID symbol
         table in AutoCAD and DXF). Each of these records represents an application ID used to
@@ -21270,7 +21353,14 @@ class RegAppTableRecord(PyDb.SymbolTableRecord):
         """
 
 class Region(PyDb.Entity):
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode = PyDb.OpenMode.kForRead, /) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent region entities in AutoCAD. An AcDbRegion entity is a
         container and interface for a ShapeManager object that is the actual geometrical
@@ -22255,13 +22345,16 @@ class Solid(PyDb.Entity):
         """
 
 class Solid3d(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent 3D solids in AutoCAD. An AcDb3dSolid entity is a container
         and interface for a ShapeManager object that is the actual geometrical representation of
@@ -22607,13 +22700,16 @@ class SortentsTable(PyDb.DbObject):
         """
 
 class SpatialFilter(PyDb.DbObject):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         This class defines an extruded volume based on a 2D boundary definition, local coordinate
         system, and the front and back clipping planes.
@@ -23257,13 +23353,16 @@ class StdScaleType(_BoostPythonEnum):
     k1and1_2in_1ft: ClassVar[Self]  # 34
 
 class SubDMesh(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         The AcDbSubDMesh class represents the SubDivision surface entity type within AutoCAD.
         """
@@ -23672,13 +23771,16 @@ class SubentType(_BoostPythonEnum):
     kSilhouetteSubentType: ClassVar[Self]  # 7
 
 class Surface(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Surface entity with methods to create and manipulate ASM surfaces. The following classes
         derive from AcDbSurface:
@@ -24044,7 +24146,14 @@ class SymbolTableRecord(PyDb.DbObject):
         """
 
 class Table(PyDb.BlockReference):
-    def __init__(self, id: ObjectId, mode: PyDb.OpenMode = PyDb.OpenMode.kForRead, /) -> None: ...
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None: ...
     def __reduce__(self, /) -> Any: ...
     @overload
     def alignment(self, rowType: PyDb.RowType, /) -> CellAlignment: ...
@@ -24632,13 +24741,16 @@ class TableIteratorOption(_BoostPythonEnum):
     kTableIteratorSkipMerged: ClassVar[Self]  # 64
 
 class TableStyle(PyDb.DbObject):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         AcDbTableStyle class objects are used to store the table formatting properties (for
         example, grid visibility, lineweight, line color, and cell font, height, color, and
@@ -25289,13 +25401,16 @@ class TextStyleTable(PyDb.SymbolTable):
         """
 
 class TextStyleTableRecord(PyDb.SymbolTableRecord):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent the records that are found in the AcDbTextStyleTable (known
         as the "Style" table in DXF). Each of these records represents a specific set of text
@@ -25780,13 +25895,16 @@ class UCSTable(PyDb.SymbolTable):
         """
 
 class UCSTableRecord(PyDb.SymbolTableRecord):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent records in the AcDbUCSTable. Each of these records contains
         the information about a user coordinate system (UCS) that has been saved in the drawing
@@ -25977,13 +26095,16 @@ class UnderlayLayer:
         """
 
 class UnderlayReference(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Abstract class that represents underlays in the drawing. Underlays are similar to raster
         images, but their content is snappable. An AcDbUnderlayReference object must reference a
@@ -26540,13 +26661,16 @@ class ViewTable(PyDb.AbstractViewTable):
         """
 
 class ViewTableRecord(PyDb.AbstractViewTableRecord):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent stored views within AutoCAD. The AcDbViewTable object
         (referred to in the AutoCAD and DXF documentation as the VIEW table) within each database
@@ -26710,13 +26834,16 @@ class ViewTableRecord(PyDb.AbstractViewTableRecord):
         """
 
 class Viewport(PyDb.Entity):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         The AcDbViewport class represents the VIEWPORT entity within AutoCAD.
         """
@@ -27867,13 +27994,16 @@ class ViewportTable(PyDb.AbstractViewTable):
         """
 
 class ViewportTableRecord(PyDb.AbstractViewTableRecord):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         Objects of this class represent viewport arrangements when TILEMODE == 1 within AutoCAD
         (the ViewportTable and its records are not used when TILEMODE == 0). The AcDbViewportTable
@@ -28305,13 +28435,16 @@ class Wipeout(PyDb.RasterImage):
     def setFrom(self, points: list[PyGe.Point2d], normal: PyGe.Vector3d, /) -> None: ...
 
 class Xrecord(PyDb.DbObject):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         The AcDbXrecord class is a data storage class that was implemented primarily to allow ADSRX
         and AutoLISP programs a means to store data in pieces larger than the xdata's
