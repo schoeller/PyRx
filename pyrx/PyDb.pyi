@@ -9730,13 +9730,16 @@ class DimArrowFlags(_BoostPythonEnum):
     kAerial: ClassVar[Self]  # 1
 
 class DimAssoc(PyDb.DbObject):
-    def __init__(
-        self,
-        id: PyDb.ObjectId,
-        mode: PyDb.OpenMode = PyDb.OpenMode.kForRead,
-        erased: bool = False,
-        /,
-    ) -> None:
+    @overload
+    def __init__(self, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    @overload
+    def __init__(self, *args) -> None:
         """
         This class is the main class used to associate dimensions to geometry.
         """
