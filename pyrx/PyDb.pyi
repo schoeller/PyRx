@@ -12982,12 +12982,12 @@ class Extents2d:
         """
     def contains(self, val: PyDb.Extents2d | PyGe.Point2d, /) -> bool: ...
     def coords(self, /) -> tuple[float, ...]: ...
-    def expandBy(self, vec: PyGe.Vector2d, /) -> None:
+    def expandBy(self, vector: PyGe.Vector2d, /) -> None:
         """
         This method expands the extents by vec. This is essentially like adding vec to copies of
         the min and max extents points and then adding the resulting points to the extents.
         """
-    def intersectsWith(self, ex: PyDb.Extents2d, /) -> bool: ...
+    def intersectsWith(self, ex: PyDb.Extents2d | PyGe.LinearEnt2d, /) -> bool: ...
     def maxPoint(self, /) -> PyGe.Point2d:
         """
         Returns the maximum extent point.
