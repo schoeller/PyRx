@@ -6537,6 +6537,12 @@ class Database(PyRx.RxObject):
         Returns the object context manager.
         """
     @overload
+    def objectIdArray(self, desc: PyRx.RxClass = PyDb.DbObject, /) -> ObjectIdArray: ...
+    @overload
+    def objectIdArray(self, descList: list[PyRx.RxClass], /) -> ObjectIdArray: ...
+    @overload
+    def objectIdArray(self, *args) -> ObjectIdArray: ...
+    @overload
     def objectIds(self, desc: PyRx.RxClass = PyDb.DbObject, /) -> list[PyDb.ObjectId]: ...
     @overload
     def objectIds(self, descList: list[PyRx.RxClass], /) -> list[PyDb.ObjectId]: ...
@@ -12105,6 +12111,18 @@ class Entity(PyDb.DbObject):
         """
         Sets the property indicating whether this entity can receive shadows.
         """
+    def setTransparency(self, transparency: PyDb.Transparency, dosubents: bool = True, /) -> None:
+        """
+        This function sets the transparency value for the entity. If the entity owns subentities
+        and is Adesk::kTrue, the transparency change is applied to the subentities as well. The
+        only built-in entities for which kTrue has an effect are AcDb2dPolyline, AcDb3dPolyline,
+        AcDbPolyFaceMesh, and AcDbPolygonMesh. If this function is overridden and wishes to set the
+        color of the entity, the override must call AcDbEntity::setTransparency(), passing on the
+        trans and doSubents arguments. It is also possible for this function's implementation to
+        deal directly with any subentities and pass a doSubents value of Adesk::kFalse to
+        AcDbEntity::setTransparency(). If the transparency-setting operation is successful, the
+        function returns Acad::eOk. Return values for errors are up to the implementer.
+        """
     def setVisibility(self, val: PyDb.Visibility, dosubents: bool = True, /) -> None:
         """
         This method sets the visibility of an entity to the value specified by newVal. If the
@@ -12137,6 +12155,7 @@ class Entity(PyDb.DbObject):
         that have this restriction, it is recommended that Acad::eCannotScaleNonUniformly be
         returned.
         """
+    def transparency(self, /) -> Transparency: ...
     def visibility(self, /) -> Visibility:
         """
         This method returns the entity's current visibility state, either AcDb::kVisible or
@@ -25871,6 +25890,7 @@ class Transparency:
     def isSolid(self, /) -> bool: ...
     def setAlpha(self, alpha: int, /) -> None: ...
     def setAlphaPercent(self, alphaPercent: float, /) -> None: ...
+    def setMethod(self, method: PyDb.TransparencyMethod, /) -> None: ...
 
 class TransparencyMethod(_BoostPythonEnum):
     kByLayer: ClassVar[Self]  # 0
