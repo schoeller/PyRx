@@ -12937,7 +12937,7 @@ class Extents:
         object's points calling addPoint(), then you would make a single expandBy() call to expand
         that box by the thickness amount.
         """
-    def intersectsWith(self, other: PyDb.Extents, /) -> bool: ...
+    def intersectsWith(self, other: PyDb.Extents | PyGe.LinearEnt3d, /) -> bool: ...
     def maxPoint(self, /) -> PyGe.Point3d:
         """
         Return the point of the Extents box that has the smallest X, Y, & Z coordinate values.
@@ -12947,7 +12947,6 @@ class Extents:
         """
         Return the point of the Extents box that has the largest X, Y, & Z coordinate values.
         """
-    def overlaps(self, val: PyDb.Extents, /) -> bool: ...
     def set(self, min: PyGe.Point3d, max: PyGe.Point3d, /) -> ErrorStatus:
         """
         Set minPoint to min and maxPoint to max if each of the X, Y, and Z values of min are less
@@ -12997,7 +12996,6 @@ class Extents2d:
         """
         Returns the minimum extent point.
         """
-    def overlaps(self, val: PyDb.Extents2d, /) -> bool: ...
     def set(self, min: PyGe.Point2d, max: PyGe.Point2d, /) -> ErrorStatus:
         """
         Sets the minimum extent to min and the maximum extent to max.
