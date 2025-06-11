@@ -13590,6 +13590,7 @@ class Field(PyDb.DbObject):
         Returns the field evaluation result as string after formatting the string using the format
         set in the field. Returns a pointer to a blank string if the field is not yet evaluated.
         """
+    def hasData(self, key: str, /) -> bool: ...
     def isTextField(self, /) -> bool:
         """
         Returns true if this field is a text field, which is text with embedded fields. Otherwise,
