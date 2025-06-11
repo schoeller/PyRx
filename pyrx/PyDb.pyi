@@ -13647,6 +13647,20 @@ class FieldCodeFlag(_BoostPythonEnum):
     kChildObjectReference: ClassVar[Self]  # 2048
     kForExpression: ClassVar[Self]  # 4096
 
+class FieldEngine:
+    def __init__(self) -> None:
+        """
+        Raises an exception.
+        This class cannot be instantiated from Python.
+        """
+    def __reduce__(self, /) -> Any: ...
+    @staticmethod
+    def className() -> str: ...
+    @staticmethod
+    def getEngine() -> object: ...
+    def registerEvaluator(self, evaluator: PyDb.FieldEvaluator, /) -> None: ...
+    def unregisterEvaluator(self, evaluator: PyDb.FieldEvaluator, /) -> None: ...
+
 class FieldEvalContext(_BoostPythonEnum):
     kOpen: ClassVar[Self]  # 1
     kSave: ClassVar[Self]  # 2
@@ -13675,6 +13689,15 @@ class FieldEvalStatus(_BoostPythonEnum):
     kInvalidCode: ClassVar[Self]  # 16
     kInvalidContext: ClassVar[Self]  # 32
     kOtherError: ClassVar[Self]  # 64
+
+class FieldEvaluator:
+    def __init__(self, /) -> None: ...
+    def __reduce__(self, /) -> Any: ...
+    @staticmethod
+    def className() -> str: ...
+    def evaluate(
+        self, field: PyDb.Field, context: int, db: PyDb.Database, result: PyDb.AcValue, /
+    ) -> ErrorStatus: ...
 
 class FieldState(_BoostPythonEnum):
     kInitialized: ClassVar[Self]  # 1
