@@ -13565,7 +13565,14 @@ class Field(PyDb.DbObject):
         null if there is no evaluator set in the field, or if an evaluator could not be found and
         assigned to the field.
         """
-    def getChild(self, index: int, mode: PyDb.OpenMode, /) -> Field: ...
+    def getChild(self, index: int, mode: PyDb.OpenMode, /) -> Field:
+        """
+        Gets the child field.  If this field is a text field, the child fields are the fields
+        embedded in the text. If this field is not a text field, the child fields are the number of
+        nested fields.  The returned field object is opened in the specified mode if this field is
+        database resident. The caller is responsible for closing the field object after using it.
+        Returns Acad::eOk if successful; otherwise, returns an AutoCAD error status.
+        """
     def getData(self, key: str, /) -> AcValue: ...
     @overload
     def getFieldCode(self, nContext: PyDb.FieldCodeFlag, /) -> str: ...
@@ -13700,20 +13707,65 @@ class FieldEvalStatus(_BoostPythonEnum):
 class FieldEvaluator:
     def __init__(self, /) -> None: ...
     def __reduce__(self, /) -> Any: ...
-    def beginEvaluateFields(self, context: int, db: PyDb.Database, /) -> None: ...
+    def beginEvaluateFields(self, context: int, db: PyDb.Database, /) -> None:
+        """
+        This method is called before one or more fields in a database are evaluated. The return
+        value is ignored.
+        """
     @staticmethod
     def className() -> str: ...
     def compile(
         self, field: PyDb.Field, db: PyDb.Database, result: PyDb.AcValue, /
-    ) -> FieldEvalStatus: ...
-    def endEvaluateFields(self, context: int, db: PyDb.Database, /) -> None: ...
+    ) -> FieldEvalStatus:
+        """
+        The field framework calls this method to compile a field when the field code is changed.
+        The evaluator can do any parsing of the field code here and store the parsed data in the
+        field. This method will be called only when the field code is changed, unlike evaluate(),
+        which is called whenever the field needs to be evaluated. Returns Acad::eOk if successful.
+        Otherwise, returns an AutoCAD error status.
+        """
+    def endEvaluateFields(self, context: int, db: PyDb.Database, /) -> None:
+        """
+        This method is called after one or more fields in a database are evaluated. The return
+        value is ignored.
+        """
     def evaluate(
         self, field: PyDb.Field, context: int, db: PyDb.Database, result: PyDb.AcValue, /
-    ) -> FieldEvalStatus: ...
-    def format(self, field: PyDb.Field, /) -> str: ...
+    ) -> FieldEvalStatus:
+        """
+        The field framework calls this method to evaluate a field whenever the field needs to be
+        evaluated. A field will be evaluated only when the evaluation option set in the field
+        matches the context in which the field evaluation is invoked. For example, if a field
+        option is set to evaluate only manually, then it will be evaluated only when the user
+        updates the specific field or all fields in the drawing manually. The evaluator should
+        evaluate the field and set the evaluated value using AcFdFieldResult::setFieldValue() and
+        the error status using AcFdFieldResult::setEvaluationStatus() in the passed result object,
+        which in turn will set them in the field object. The passed database pointer may be null if
+        the field is not database resident and a database could not be obtained in the current
+        context. If the field evaluation requires a database, then this method can set the
+        evaluation error status in the field result object and return an error.  If the evaluation
+        fails for any reason, the previously cached result in the field object can be left intact
+        and used as the field value. Alternatively, the cached result can be deleted and
+        substituted with an error string (for example, "#ERR"), which will be displayed as field
+        value. Returns Acad::eOk if successful. Otherwise, returns an AutoCAD error status.
+        """
+    def format(self, field: PyDb.Field, /) -> str:
+        """
+        The field framework calls this method when a field is queried to get the evaluated field
+        value as a string. The evaluator can implement this method to support custom formatting of
+        field values. If the evaluator does not implement this method, the standard data types will
+        be formatted using default formats.
+        """
     def getEvalName(self, /) -> str: ...
     def getName(self, /) -> str: ...
-    def initialize(self, field: PyDb.Field, /) -> ErrorStatus: ...
+    def initialize(self, field: PyDb.Field, /) -> ErrorStatus:
+        """
+        The field framework calls this method to initialize a new field. This method is called
+        after setting a field code in the field and before compile() is called. The evaluator can
+        change the default options that are set in the field when it is created. This method will
+        be called only once for a field.  Returns Acad::eOk if successful. Otherwise, returns an
+        AutoCAD error status.
+        """
 
 class FieldState(_BoostPythonEnum):
     kInitialized: ClassVar[Self]  # 1
