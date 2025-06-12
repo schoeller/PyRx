@@ -13565,6 +13565,7 @@ class Field(PyDb.DbObject):
         null if there is no evaluator set in the field, or if an evaluator could not be found and
         assigned to the field.
         """
+    def getChild(self, index: int, mode: PyDb.OpenMode, /) -> Field: ...
     def getData(self, key: str, /) -> AcValue: ...
     @overload
     def getFieldCode(self, nContext: PyDb.FieldCodeFlag, /) -> str: ...
@@ -13604,7 +13605,7 @@ class Field(PyDb.DbObject):
         AcDbObject::setField or AcDbField::setInObject. Returns Acad::eOk if successful; otherwise,
         returns an AutoCAD error status.
         """
-    def setData(self, key: str, value: str, bRecursive: bool = False, /) -> None: ...
+    def setData(self, key: str, value: PyDb.AcValue, bRecursive: bool = False, /) -> None: ...
     def setEvaluationOption(self, val: PyDb.FieldEvalOption, /) -> None:
         """
         Sets the evaluation option for the field. The field is evaluated only if the evaluation
