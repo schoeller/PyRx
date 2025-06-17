@@ -2150,13 +2150,23 @@ class AbstractViewTableRecord(PyDb.SymbolTableRecord):
         and group code 17 in AcDbViewportTableRecords.
         """
     @overload
-    def setUcs(
-        self, origin: PyGe.Point3d, xAxis: PyGe.Vector3d, yAxis: PyGe.Vector3d, /
-    ) -> None: ...
+    def setUcs(self, origin: PyGe.Point3d, xAxis: PyGe.Vector3d, yAxis: PyGe.Vector3d, /) -> None:
+        """
+        This function sets the UCS for the view or viewport table record. The new UCS will be
+        unnamed and is defined by origin, xAxis, and yAxis.
+        """
     @overload
-    def setUcs(self, view: PyDb.OrthographicView, /) -> None: ...
+    def setUcs(self, view: PyDb.OrthographicView, /) -> None:
+        """
+        This function sets the UCS for the view or viewport table record. The new UCS will be
+        unnamed and is defined by origin, xAxis, and yAxis.
+        """
     @overload
-    def setUcs(self, ucsId: PyDb.ObjectId, /) -> None: ...
+    def setUcs(self, ucsId: PyDb.ObjectId, /) -> None:
+        """
+        This function sets the UCS for the view or viewport table record. The new UCS will be
+        unnamed and is defined by origin, xAxis, and yAxis.
+        """
     @overload
     def setUcs(self, *args) -> None:
         """
@@ -2168,9 +2178,25 @@ class AbstractViewTableRecord(PyDb.SymbolTableRecord):
         This function sets the UCS for the view or viewport table record to the world UCS.
         """
     @overload
-    def setViewDirection(self, viewDirection: PyGe.Vector3d, /) -> None: ...
+    def setViewDirection(self, viewDirection: PyGe.Vector3d, /) -> None:
+        """
+        This function sets the TableRecord to use viewDirection (in WCS coordinates) as the vector
+        from the view's target to the view's camera. The camera is moved to reflect the new
+        setting. This also represents the point coordinate set by the AutoCAD VPOINT command. See
+        the AutoCAD VPOINT command documentation for more information on view direction. The view
+        direction is used for DXF group code 11 in AcDbViewTableRecords and group code 16 in
+        AcDbViewportTableRecords.
+        """
     @overload
-    def setViewDirection(self, view: PyDb.OrthographicView, /) -> None: ...
+    def setViewDirection(self, view: PyDb.OrthographicView, /) -> None:
+        """
+        This function sets the TableRecord to use viewDirection (in WCS coordinates) as the vector
+        from the view's target to the view's camera. The camera is moved to reflect the new
+        setting. This also represents the point coordinate set by the AutoCAD VPOINT command. See
+        the AutoCAD VPOINT command documentation for more information on view direction. The view
+        direction is used for DXF group code 11 in AcDbViewTableRecords and group code 16 in
+        AcDbViewportTableRecords.
+        """
     @overload
     def setViewDirection(self, *args) -> None:
         """
@@ -2344,11 +2370,23 @@ class AdsName:
 
 class AlignedDimension(PyDb.Dimension):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbAlignedDimension class is used to represent the dimension type that dimensions the
+        distance between two points located anywhere in space. The dimension's normal vector must
+        be perpendicular to the line between the two points. The two selected points are also used
+        as the definition points for the start of the two dimension extension lines.
+        """
     @overload
     def __init__(
         self, xLine1Point: PyGe.Point3d, xLine2Point: PyGe.Point3d, dimLinePoint: PyGe.Point3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbAlignedDimension class is used to represent the dimension type that dimensions the
+        distance between two points located anywhere in space. The dimension's normal vector must
+        be perpendicular to the line between the two points. The two selected points are also used
+        as the definition points for the start of the two dimension extension lines.
+        """
     @overload
     def __init__(
         self,
@@ -2357,7 +2395,13 @@ class AlignedDimension(PyDb.Dimension):
         dimLinePoint: PyGe.Point3d,
         dimText: str,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbAlignedDimension class is used to represent the dimension type that dimensions the
+        distance between two points located anywhere in space. The dimension's normal vector must
+        be perpendicular to the line between the two points. The two selected points are also used
+        as the definition points for the start of the two dimension extension lines.
+        """
     @overload
     def __init__(
         self,
@@ -2367,13 +2411,37 @@ class AlignedDimension(PyDb.Dimension):
         dimText: str,
         id: PyDb.ObjectId,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbAlignedDimension class is used to represent the dimension type that dimensions the
+        distance between two points located anywhere in space. The dimension's normal vector must
+        be perpendicular to the line between the two points. The two selected points are also used
+        as the definition points for the start of the two dimension extension lines.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbAlignedDimension class is used to represent the dimension type that dimensions the
+        distance between two points located anywhere in space. The dimension's normal vector must
+        be perpendicular to the line between the two points. The two selected points are also used
+        as the definition points for the start of the two dimension extension lines.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbAlignedDimension class is used to represent the dimension type that dimensions the
+        distance between two points located anywhere in space. The dimension's normal vector must
+        be perpendicular to the line between the two points. The two selected points are also used
+        as the definition points for the start of the two dimension extension lines.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbAlignedDimension class is used to represent the dimension type that dimensions the
+        distance between two points located anywhere in space. The dimension's normal vector must
+        be perpendicular to the line between the two points. The two selected points are also used
+        as the definition points for the start of the two dimension extension lines.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -2539,11 +2607,17 @@ class AnnotativeStates(_BoostPythonEnum):
 
 class Arc(PyDb.Curve):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbArc class represents the arc entity within AutoCAD.
+        """
     @overload
     def __init__(
         self, center: PyGe.Point3d, radius: float, startAngle: float, endAngle: float, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbArc class represents the arc entity within AutoCAD.
+        """
     @overload
     def __init__(
         self,
@@ -2553,13 +2627,25 @@ class Arc(PyDb.Curve):
         startAngle: float,
         endAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbArc class represents the arc entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbArc class represents the arc entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbArc class represents the arc entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbArc class represents the arc entity within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -2686,7 +2772,10 @@ class Arc(PyDb.Curve):
 
 class ArcDimension(PyDb.Dimension):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class represents an arc length dimension.
+        """
     @overload
     def __init__(
         self,
@@ -2695,7 +2784,10 @@ class ArcDimension(PyDb.Dimension):
         xLine2Point: PyGe.Point3d,
         arcPnt: PyGe.Point3d,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class represents an arc length dimension.
+        """
     @overload
     def __init__(
         self,
@@ -2705,7 +2797,10 @@ class ArcDimension(PyDb.Dimension):
         arcPnt: PyGe.Point3d,
         dimText: str,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class represents an arc length dimension.
+        """
     @overload
     def __init__(
         self,
@@ -2716,13 +2811,25 @@ class ArcDimension(PyDb.Dimension):
         dimText: str,
         id: PyDb.ObjectId,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class represents an arc length dimension.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This class represents an arc length dimension.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        This class represents an arc length dimension.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        This class represents an arc length dimension.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3239,11 +3346,21 @@ class AttributeReference(PyDb.Text):
         in the block.
         """
     @overload
-    def setAttributeFromBlock(self, blkXform: PyGe.Matrix3d, /) -> None: ...
+    def setAttributeFromBlock(self, blkXform: PyGe.Matrix3d, /) -> None:
+        """
+        Applies blkXform to the attribute's geometric data to transform the position, sizing, and
+        obliquing as would be done by the INSERT command. The attribute's textual and entity
+        properties data is left alone. Returns Acad::eOk if successful.
+        """
     @overload
     def setAttributeFromBlock(
         self, pAttdef: PyDb.AttributeDefinition, blkXform: PyGe.Matrix3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        Applies blkXform to the attribute's geometric data to transform the position, sizing, and
+        obliquing as would be done by the INSERT command. The attribute's textual and entity
+        properties data is left alone. Returns Acad::eOk if successful.
+        """
     @overload
     def setAttributeFromBlock(self, *args) -> None:
         """
@@ -3358,15 +3475,110 @@ class BlockEnd(PyDb.Entity):
 
 class BlockReference(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbBlockReference class represents the INSERT entity within AutoCAD. A block reference
+        is used to place, size, and display an instance of the collection of entities within the
+        AcDbBlockTableRecord that it references. In addition, block references can be the owner of
+        AcDbAttribute entities (the list of which is automatically terminated by an AcDbSequenceEnd
+        entity). AcDbBlockReference set functions inherited from AcDbEntity ignore the doSubents
+        argument because these subentities are attributes that are really special text entities and
+        need to have their own individual properties (unlike polyline vertices, which are just data
+        points).  Classes Derived from AcDbBlockReferenceClasses derived from AcDbBlockReference
+        must supermessage the base class's worldDraw() function and allow it to do the work of
+        drawing the entities in the block table record. This allows the osnap code to distinguish
+        the graphics for each entity in the block table record and automatically get each entity's
+        osnap points without having to iterate through the block reference. The derived class can
+        draw any other graphics it wishes to and can add osnap points of its own, but
+        AcDbBlockReference::worldDraw() must draw the block table record's entities. The derived
+        class must override getOsnapPoints() and implement it to explicitly handle the insert osnap
+        mode (because the insert point is the responsibility of the block reference) and do nothing
+        for the other modes, then return Acad::eOk.
+        """
     @overload
-    def __init__(self, position: PyGe.Point3d, blockTableRec: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, position: PyGe.Point3d, blockTableRec: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbBlockReference class represents the INSERT entity within AutoCAD. A block reference
+        is used to place, size, and display an instance of the collection of entities within the
+        AcDbBlockTableRecord that it references. In addition, block references can be the owner of
+        AcDbAttribute entities (the list of which is automatically terminated by an AcDbSequenceEnd
+        entity). AcDbBlockReference set functions inherited from AcDbEntity ignore the doSubents
+        argument because these subentities are attributes that are really special text entities and
+        need to have their own individual properties (unlike polyline vertices, which are just data
+        points).  Classes Derived from AcDbBlockReferenceClasses derived from AcDbBlockReference
+        must supermessage the base class's worldDraw() function and allow it to do the work of
+        drawing the entities in the block table record. This allows the osnap code to distinguish
+        the graphics for each entity in the block table record and automatically get each entity's
+        osnap points without having to iterate through the block reference. The derived class can
+        draw any other graphics it wishes to and can add osnap points of its own, but
+        AcDbBlockReference::worldDraw() must draw the block table record's entities. The derived
+        class must override getOsnapPoints() and implement it to explicitly handle the insert osnap
+        mode (because the insert point is the responsibility of the block reference) and do nothing
+        for the other modes, then return Acad::eOk.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbBlockReference class represents the INSERT entity within AutoCAD. A block reference
+        is used to place, size, and display an instance of the collection of entities within the
+        AcDbBlockTableRecord that it references. In addition, block references can be the owner of
+        AcDbAttribute entities (the list of which is automatically terminated by an AcDbSequenceEnd
+        entity). AcDbBlockReference set functions inherited from AcDbEntity ignore the doSubents
+        argument because these subentities are attributes that are really special text entities and
+        need to have their own individual properties (unlike polyline vertices, which are just data
+        points).  Classes Derived from AcDbBlockReferenceClasses derived from AcDbBlockReference
+        must supermessage the base class's worldDraw() function and allow it to do the work of
+        drawing the entities in the block table record. This allows the osnap code to distinguish
+        the graphics for each entity in the block table record and automatically get each entity's
+        osnap points without having to iterate through the block reference. The derived class can
+        draw any other graphics it wishes to and can add osnap points of its own, but
+        AcDbBlockReference::worldDraw() must draw the block table record's entities. The derived
+        class must override getOsnapPoints() and implement it to explicitly handle the insert osnap
+        mode (because the insert point is the responsibility of the block reference) and do nothing
+        for the other modes, then return Acad::eOk.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbBlockReference class represents the INSERT entity within AutoCAD. A block reference
+        is used to place, size, and display an instance of the collection of entities within the
+        AcDbBlockTableRecord that it references. In addition, block references can be the owner of
+        AcDbAttribute entities (the list of which is automatically terminated by an AcDbSequenceEnd
+        entity). AcDbBlockReference set functions inherited from AcDbEntity ignore the doSubents
+        argument because these subentities are attributes that are really special text entities and
+        need to have their own individual properties (unlike polyline vertices, which are just data
+        points).  Classes Derived from AcDbBlockReferenceClasses derived from AcDbBlockReference
+        must supermessage the base class's worldDraw() function and allow it to do the work of
+        drawing the entities in the block table record. This allows the osnap code to distinguish
+        the graphics for each entity in the block table record and automatically get each entity's
+        osnap points without having to iterate through the block reference. The derived class can
+        draw any other graphics it wishes to and can add osnap points of its own, but
+        AcDbBlockReference::worldDraw() must draw the block table record's entities. The derived
+        class must override getOsnapPoints() and implement it to explicitly handle the insert osnap
+        mode (because the insert point is the responsibility of the block reference) and do nothing
+        for the other modes, then return Acad::eOk.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbBlockReference class represents the INSERT entity within AutoCAD. A block reference
+        is used to place, size, and display an instance of the collection of entities within the
+        AcDbBlockTableRecord that it references. In addition, block references can be the owner of
+        AcDbAttribute entities (the list of which is automatically terminated by an AcDbSequenceEnd
+        entity). AcDbBlockReference set functions inherited from AcDbEntity ignore the doSubents
+        argument because these subentities are attributes that are really special text entities and
+        need to have their own individual properties (unlike polyline vertices, which are just data
+        points).  Classes Derived from AcDbBlockReferenceClasses derived from AcDbBlockReference
+        must supermessage the base class's worldDraw() function and allow it to do the work of
+        drawing the entities in the block table record. This allows the osnap code to distinguish
+        the graphics for each entity in the block table record and automatically get each entity's
+        osnap points without having to iterate through the block reference. The derived class can
+        draw any other graphics it wishes to and can add osnap points of its own, but
+        AcDbBlockReference::worldDraw() must draw the block table record's entities. The derived
+        class must override getOsnapPoints() and implement it to explicitly handle the insert osnap
+        mode (because the insert point is the responsibility of the block reference) and do nothing
+        for the other modes, then return Acad::eOk.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3620,13 +3832,69 @@ class BlockTable(PyDb.SymbolTable):
 
 class BlockTableRecord(PyDb.SymbolTableRecord):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of the AcDbBlockTableRecord class are used as containers for entities within
+        drawing file databases. AcDbBlocktableRecord objects (often referred to as BTRs) are owned
+        by the database's AcDbBlockTable object. The BTRs in turn own the entity objects they
+        contain. There are two special BTRs that are always present in every database. They are
+        *MODEL_SPACE and *PAPER_SPACE. They are the Model and Paper Spaces for the database. Any
+        entity that is created by AutoCAD while in Model Space is owned and contained by the
+        *MODEL_SPACE BTR. Entities created while in Paper Space go into the *PAPER_SPACE BTR. BTRs
+        other than *MODEL_SPACE and *PAPER_SPACE were known in previous versions of AutoCAD as
+        block definitions and are referenced by AcDbBlockReferences (which are often referred to as
+        inserts). The BTR contains a collection of entities that can be referenced by multiple
+        inserts to save space in the drawing, save time in drawing creation, and guarantee that all
+        inserts will appear the same (except possibly in color and linetype).
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of the AcDbBlockTableRecord class are used as containers for entities within
+        drawing file databases. AcDbBlocktableRecord objects (often referred to as BTRs) are owned
+        by the database's AcDbBlockTable object. The BTRs in turn own the entity objects they
+        contain. There are two special BTRs that are always present in every database. They are
+        *MODEL_SPACE and *PAPER_SPACE. They are the Model and Paper Spaces for the database. Any
+        entity that is created by AutoCAD while in Model Space is owned and contained by the
+        *MODEL_SPACE BTR. Entities created while in Paper Space go into the *PAPER_SPACE BTR. BTRs
+        other than *MODEL_SPACE and *PAPER_SPACE were known in previous versions of AutoCAD as
+        block definitions and are referenced by AcDbBlockReferences (which are often referred to as
+        inserts). The BTR contains a collection of entities that can be referenced by multiple
+        inserts to save space in the drawing, save time in drawing creation, and guarantee that all
+        inserts will appear the same (except possibly in color and linetype).
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of the AcDbBlockTableRecord class are used as containers for entities within
+        drawing file databases. AcDbBlocktableRecord objects (often referred to as BTRs) are owned
+        by the database's AcDbBlockTable object. The BTRs in turn own the entity objects they
+        contain. There are two special BTRs that are always present in every database. They are
+        *MODEL_SPACE and *PAPER_SPACE. They are the Model and Paper Spaces for the database. Any
+        entity that is created by AutoCAD while in Model Space is owned and contained by the
+        *MODEL_SPACE BTR. Entities created while in Paper Space go into the *PAPER_SPACE BTR. BTRs
+        other than *MODEL_SPACE and *PAPER_SPACE were known in previous versions of AutoCAD as
+        block definitions and are referenced by AcDbBlockReferences (which are often referred to as
+        inserts). The BTR contains a collection of entities that can be referenced by multiple
+        inserts to save space in the drawing, save time in drawing creation, and guarantee that all
+        inserts will appear the same (except possibly in color and linetype).
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of the AcDbBlockTableRecord class are used as containers for entities within
+        drawing file databases. AcDbBlocktableRecord objects (often referred to as BTRs) are owned
+        by the database's AcDbBlockTable object. The BTRs in turn own the entity objects they
+        contain. There are two special BTRs that are always present in every database. They are
+        *MODEL_SPACE and *PAPER_SPACE. They are the Model and Paper Spaces for the database. Any
+        entity that is created by AutoCAD while in Model Space is owned and contained by the
+        *MODEL_SPACE BTR. Entities created while in Paper Space go into the *PAPER_SPACE BTR. BTRs
+        other than *MODEL_SPACE and *PAPER_SPACE were known in previous versions of AutoCAD as
+        block definitions and are referenced by AcDbBlockReferences (which are often referred to as
+        inserts). The BTR contains a collection of entities that can be referenced by multiple
+        inserts to save space in the drawing, save time in drawing creation, and guarantee that all
+        inserts will appear the same (except possibly in color and linetype).
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3946,11 +4214,23 @@ class BlockTableRecord(PyDb.SymbolTableRecord):
 
 class Body(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbBody class is used to represent nonmanifold solids and other ShapeManager entities
+        that do not fit the characteristics of the AcDb3dSolid or AcDbRegion classes.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbBody class is used to represent nonmanifold solids and other ShapeManager entities
+        that do not fit the characteristics of the AcDb3dSolid or AcDbRegion classes.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbBody class is used to represent nonmanifold solids and other ShapeManager entities
+        that do not fit the characteristics of the AcDb3dSolid or AcDbRegion classes.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -4102,15 +4382,30 @@ class CenterMarkType(_BoostPythonEnum):
 
 class Circle(PyDb.Curve):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbCircle class represents the circle entity within AutoCAD.
+        """
     @overload
-    def __init__(self, center: PyGe.Point3d, normal: PyGe.Vector3d, radius: float, /) -> None: ...
+    def __init__(self, center: PyGe.Point3d, normal: PyGe.Vector3d, radius: float, /) -> None:
+        """
+        The AcDbCircle class represents the circle entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbCircle class represents the circle entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbCircle class represents the circle entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbCircle class represents the circle entity within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -4659,10 +4954,24 @@ class Core:
         """
     @overload
     @staticmethod
-    def evaluateFields() -> ErrorStatus: ...
+    def evaluateFields() -> ErrorStatus:
+        """
+        This function evaluates all the fields in the objects in the database. If objId is not
+        null, it evaluates the fields only in the specified object. Otherwise, it evaluates the
+        fields in the entire database. If the pDb argument is null and the field is database
+        resident, the field's database is used. If it is null and the field is not database
+        resident, evaluation of fields that require a database fails.
+        """
     @overload
     @staticmethod
-    def evaluateFields(ids: list[PyDb.ObjectId], context: int, /) -> ErrorStatus: ...
+    def evaluateFields(ids: list[PyDb.ObjectId], context: int, /) -> ErrorStatus:
+        """
+        This function evaluates all the fields in the objects in the database. If objId is not
+        null, it evaluates the fields only in the specified object. Otherwise, it evaluates the
+        fields in the entire database. If the pDb argument is null and the field is database
+        resident, the field's database is used. If it is null and the field is not database
+        resident, evaluation of fields that require a database fails.
+        """
     @overload
     @staticmethod
     def evaluateFields(*args) -> ErrorStatus:
@@ -5134,7 +5443,27 @@ class Core:
         """
     @overload
     @staticmethod
-    def textFind(db: PyDb.Database, findString: str, /) -> list[PyDb.ObjectId]: ...
+    def textFind(db: PyDb.Database, findString: str, /) -> list[PyDb.ObjectId]:
+        """
+        This function searches the set of entities for text that matches findString. If a match is
+        found, the object ID of the entity is added to the resultSet array. Wildcards are not
+        supported. If selSet is not 0, it is used as the starting set of entities to search.
+        Otherwise, the entities in the database specified by pDatabase are used. The entities in
+        the starting set are filtered based on the criteria specified by the searchOptions flags.
+        If replaceString is NULL, no replacement occurs. searchOptions may be a bitwise combination
+        of any of the following values:  AC_SRCH_BLOCK 0x01 If this bit is set, AcDbAttributes and
+        objects of classes derived from AcDbAttribute are searched. AC_SRCH_DIM_TEXT 0x02 If this
+        bit is set, the text in dimensions, and in objects of classes derived from the dimension
+        classes, are searched. AC_SRCH_TEXT 0x04 If this bit is set, then text, MText, and objects
+        of classes derived from AcDbMText and AcDbText (except AcDbAttribute and
+        AcDbAttributeDefinition and any classes derived from them) are searched. AC_SRCH_LINK_NAME
+        0x08 If this bit is set, hyperlink descriptions are searched. AC_SRCH_LINK_URL 0x10 If this
+        bit is set, hyperlinks are searched, AC_SRCH_MATCH_CASE 0x20 If this bit is set, the search
+        is case sensitive. AC_SRCH_WHOLE_WORD 0x40 If this bit is set, only whole word matches will
+        be found. AC_SRCH_DEFAULT 0x1F This value includes AC_SRCH_BLOCK, AC_SRCH_DIM_TEXT,
+        AC_SRCH_TEXT, AC_SRCH_LINK_NAME, and AC_SRCH_LINK_URL Returns true if no errors occur
+        during execution, regardless of whether matches are found. Otherwise, it returns false
+        """
     @overload
     @staticmethod
     def textFind(
@@ -5144,7 +5473,27 @@ class Core:
         searchOptions: int,
         ids: list[PyDb.ObjectId],
         /,
-    ) -> list[PyDb.ObjectId]: ...
+    ) -> list[PyDb.ObjectId]:
+        """
+        This function searches the set of entities for text that matches findString. If a match is
+        found, the object ID of the entity is added to the resultSet array. Wildcards are not
+        supported. If selSet is not 0, it is used as the starting set of entities to search.
+        Otherwise, the entities in the database specified by pDatabase are used. The entities in
+        the starting set are filtered based on the criteria specified by the searchOptions flags.
+        If replaceString is NULL, no replacement occurs. searchOptions may be a bitwise combination
+        of any of the following values:  AC_SRCH_BLOCK 0x01 If this bit is set, AcDbAttributes and
+        objects of classes derived from AcDbAttribute are searched. AC_SRCH_DIM_TEXT 0x02 If this
+        bit is set, the text in dimensions, and in objects of classes derived from the dimension
+        classes, are searched. AC_SRCH_TEXT 0x04 If this bit is set, then text, MText, and objects
+        of classes derived from AcDbMText and AcDbText (except AcDbAttribute and
+        AcDbAttributeDefinition and any classes derived from them) are searched. AC_SRCH_LINK_NAME
+        0x08 If this bit is set, hyperlink descriptions are searched. AC_SRCH_LINK_URL 0x10 If this
+        bit is set, hyperlinks are searched, AC_SRCH_MATCH_CASE 0x20 If this bit is set, the search
+        is case sensitive. AC_SRCH_WHOLE_WORD 0x40 If this bit is set, only whole word matches will
+        be found. AC_SRCH_DEFAULT 0x1F This value includes AC_SRCH_BLOCK, AC_SRCH_DIM_TEXT,
+        AC_SRCH_TEXT, AC_SRCH_LINK_NAME, and AC_SRCH_LINK_URL Returns true if no errors occur
+        during execution, regardless of whether matches are found. Otherwise, it returns false
+        """
     @overload
     @staticmethod
     def textFind(*args) -> list[PyDb.ObjectId]:
@@ -5277,9 +5626,39 @@ class Curve(PyDb.Entity):
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
     @overload
-    def extend(self, newParam: float, /) -> None: ...
+    def extend(self, newParam: float, /) -> None:
+        """
+        This function extends the beginning or end of the curve to the new point determined by the
+        newParam value. If newParam is less than the curve's start parameter, then the curve is
+        reset to start at newParam. If newParam is greater than the curve's end parameter, then the
+        curve is reset to end at newParam. Returns Acad::eOk if successful. If newParam's first
+        period value is between the curve's start and end, then Acad::eInvalidInput will be
+        returned. The function implementation in derived classes must be able to interpret the
+        newParam value, decide if it is beyond the existing curve end or before the curve
+        beginning, and then extend the curve in the appropriate direction to the newParam value.
+        Return ErrorStatus values are up to the implementer, but to be consistent with built-in
+        classes, the following return values are recommended:  Acad::eOk Function completed
+        successfully. Acad::eInvalidInput The parameter was not acceptable for some reason (for
+        example, if its first period lies within the existing curve so that it would be a trim
+        rather than an extension). The default implementation returns Acad::eNotImplemented.
+        """
     @overload
-    def extend(self, extendStart: bool, toPoint: PyGe.Point3d, /) -> None: ...
+    def extend(self, extendStart: bool, toPoint: PyGe.Point3d, /) -> None:
+        """
+        This function extends the beginning or end of the curve to the new point determined by the
+        newParam value. If newParam is less than the curve's start parameter, then the curve is
+        reset to start at newParam. If newParam is greater than the curve's end parameter, then the
+        curve is reset to end at newParam. Returns Acad::eOk if successful. If newParam's first
+        period value is between the curve's start and end, then Acad::eInvalidInput will be
+        returned. The function implementation in derived classes must be able to interpret the
+        newParam value, decide if it is beyond the existing curve end or before the curve
+        beginning, and then extend the curve in the appropriate direction to the newParam value.
+        Return ErrorStatus values are up to the implementer, but to be consistent with built-in
+        classes, the following return values are recommended:  Acad::eOk Function completed
+        successfully. Acad::eInvalidInput The parameter was not acceptable for some reason (for
+        example, if its first period lies within the existing curve so that it would be a trim
+        rather than an extension). The default implementation returns Acad::eNotImplemented.
+        """
     @overload
     def extend(self, *args) -> None:
         """
@@ -8347,11 +8726,38 @@ class Database(PyRx.RxObject):
         AcDbVisualStyle.
         """
     @overload
-    def wblock(self, /) -> Database: ...
+    def wblock(self, /) -> Database:
+        """
+        Creates a new AcDbDatabase object, sets pOutputDb to point to it, and then uses the
+        wblockClone mechanism to write the array of objects specified by outObjId entities out to
+        the Model Space block table record of the database pointed to by pOutputDb, using basePoint
+        as the base point value for pOutputDb. The calling application is responsible for
+        deallocating (via the C++ delete operator) the AcDbDatabase object that pOutputDb is set to
+        point to. Returns Acad::eOk if operation is successful. See the BASE command documentation
+        in the AutoCAD online help for more information on base point.
+        """
     @overload
-    def wblock(self, blockId: PyDb.ObjectId, /) -> Database: ...
+    def wblock(self, blockId: PyDb.ObjectId, /) -> Database:
+        """
+        Creates a new AcDbDatabase object, sets pOutputDb to point to it, and then uses the
+        wblockClone mechanism to write the array of objects specified by outObjId entities out to
+        the Model Space block table record of the database pointed to by pOutputDb, using basePoint
+        as the base point value for pOutputDb. The calling application is responsible for
+        deallocating (via the C++ delete operator) the AcDbDatabase object that pOutputDb is set to
+        point to. Returns Acad::eOk if operation is successful. See the BASE command documentation
+        in the AutoCAD online help for more information on base point.
+        """
     @overload
-    def wblock(self, blockIds: list[PyDb.ObjectId], basePoint: PyGe.Point3d, /) -> Database: ...
+    def wblock(self, blockIds: list[PyDb.ObjectId], basePoint: PyGe.Point3d, /) -> Database:
+        """
+        Creates a new AcDbDatabase object, sets pOutputDb to point to it, and then uses the
+        wblockClone mechanism to write the array of objects specified by outObjId entities out to
+        the Model Space block table record of the database pointed to by pOutputDb, using basePoint
+        as the base point value for pOutputDb. The calling application is responsible for
+        deallocating (via the C++ delete operator) the AcDbDatabase object that pOutputDb is set to
+        point to. Returns Acad::eOk if operation is successful. See the BASE command documentation
+        in the AutoCAD online help for more information on base point.
+        """
     @overload
     def wblock(self, *args) -> Database:
         """
@@ -9441,11 +9847,27 @@ class DeepCloneType(_BoostPythonEnum):
 
 class DiametricDimension(PyDb.Dimension):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbDiametricDimension class represents the diameter dimension type in AutoCAD. This
+        dimension type requires two points that define a diameter chord on the curve being
+        dimensioned to be able to draw the dimension line from one chord point to the other. In
+        addition, if the text is located outside the curve being dimensioned, then a "leader
+        length" value is used to determine how far the dimension line extends out past the curve
+        before doing a horizontal dogleg (if necessary) to the annotation text.
+        """
     @overload
     def __init__(
         self, chordPoint: PyGe.Point3d, farChordPoint: PyGe.Point3d, leaderLength: float, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbDiametricDimension class represents the diameter dimension type in AutoCAD. This
+        dimension type requires two points that define a diameter chord on the curve being
+        dimensioned to be able to draw the dimension line from one chord point to the other. In
+        addition, if the text is located outside the curve being dimensioned, then a "leader
+        length" value is used to determine how far the dimension line extends out past the curve
+        before doing a horizontal dogleg (if necessary) to the annotation text.
+        """
     @overload
     def __init__(
         self,
@@ -9454,7 +9876,15 @@ class DiametricDimension(PyDb.Dimension):
         leaderLength: float,
         dimText: str,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbDiametricDimension class represents the diameter dimension type in AutoCAD. This
+        dimension type requires two points that define a diameter chord on the curve being
+        dimensioned to be able to draw the dimension line from one chord point to the other. In
+        addition, if the text is located outside the curve being dimensioned, then a "leader
+        length" value is used to determine how far the dimension line extends out past the curve
+        before doing a horizontal dogleg (if necessary) to the annotation text.
+        """
     @overload
     def __init__(
         self,
@@ -9464,13 +9894,45 @@ class DiametricDimension(PyDb.Dimension):
         dimText: str,
         id: PyDb.ObjectId,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbDiametricDimension class represents the diameter dimension type in AutoCAD. This
+        dimension type requires two points that define a diameter chord on the curve being
+        dimensioned to be able to draw the dimension line from one chord point to the other. In
+        addition, if the text is located outside the curve being dimensioned, then a "leader
+        length" value is used to determine how far the dimension line extends out past the curve
+        before doing a horizontal dogleg (if necessary) to the annotation text.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbDiametricDimension class represents the diameter dimension type in AutoCAD. This
+        dimension type requires two points that define a diameter chord on the curve being
+        dimensioned to be able to draw the dimension line from one chord point to the other. In
+        addition, if the text is located outside the curve being dimensioned, then a "leader
+        length" value is used to determine how far the dimension line extends out past the curve
+        before doing a horizontal dogleg (if necessary) to the annotation text.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbDiametricDimension class represents the diameter dimension type in AutoCAD. This
+        dimension type requires two points that define a diameter chord on the curve being
+        dimensioned to be able to draw the dimension line from one chord point to the other. In
+        addition, if the text is located outside the curve being dimensioned, then a "leader
+        length" value is used to determine how far the dimension line extends out past the curve
+        before doing a horizontal dogleg (if necessary) to the annotation text.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbDiametricDimension class represents the diameter dimension type in AutoCAD. This
+        dimension type requires two points that define a diameter chord on the curve being
+        dimensioned to be able to draw the dimension line from one chord point to the other. In
+        addition, if the text is located outside the curve being dimensioned, then a "leader
+        length" value is used to determine how far the dimension line extends out past the curve
+        before doing a horizontal dogleg (if necessary) to the annotation text.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -9637,13 +10099,69 @@ class Dictionary(PyDb.DbObject):
         do type checking.
         """
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        AcDbDictionary is a database-resident object dictionary, which maintains a map between text
+        strings and database objects. An instance of this class represents a single object, such as
+        Drawing Symbol Table, to which objects derived from AcDbObject may be added, accessed, and
+        removed. Entries in an AcDbDictionary must be unique. Entries consist of a unique
+        AcDbObject and string, which comprises the entry's key name. The key may be either an
+        explicit null-terminated text string, or an asterisk (' * ') as the first character in the
+        string to signify an anonymous entry. An anonymous entry's key will be constructed
+        internally by appending an 'A' plus a unique integer value to the asterisk; for example,
+        '*A13'. When an object is placed in a dictionary, the dictionary is established as the
+        object's owner, the lookup key string is associated with the object's object ID, and the
+        dictionary itself is attached to the object as a persistent reactor so that the dictionary
+        is notified when the object is erased.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        AcDbDictionary is a database-resident object dictionary, which maintains a map between text
+        strings and database objects. An instance of this class represents a single object, such as
+        Drawing Symbol Table, to which objects derived from AcDbObject may be added, accessed, and
+        removed. Entries in an AcDbDictionary must be unique. Entries consist of a unique
+        AcDbObject and string, which comprises the entry's key name. The key may be either an
+        explicit null-terminated text string, or an asterisk (' * ') as the first character in the
+        string to signify an anonymous entry. An anonymous entry's key will be constructed
+        internally by appending an 'A' plus a unique integer value to the asterisk; for example,
+        '*A13'. When an object is placed in a dictionary, the dictionary is established as the
+        object's owner, the lookup key string is associated with the object's object ID, and the
+        dictionary itself is attached to the object as a persistent reactor so that the dictionary
+        is notified when the object is erased.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        AcDbDictionary is a database-resident object dictionary, which maintains a map between text
+        strings and database objects. An instance of this class represents a single object, such as
+        Drawing Symbol Table, to which objects derived from AcDbObject may be added, accessed, and
+        removed. Entries in an AcDbDictionary must be unique. Entries consist of a unique
+        AcDbObject and string, which comprises the entry's key name. The key may be either an
+        explicit null-terminated text string, or an asterisk (' * ') as the first character in the
+        string to signify an anonymous entry. An anonymous entry's key will be constructed
+        internally by appending an 'A' plus a unique integer value to the asterisk; for example,
+        '*A13'. When an object is placed in a dictionary, the dictionary is established as the
+        object's owner, the lookup key string is associated with the object's object ID, and the
+        dictionary itself is attached to the object as a persistent reactor so that the dictionary
+        is notified when the object is erased.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        AcDbDictionary is a database-resident object dictionary, which maintains a map between text
+        strings and database objects. An instance of this class represents a single object, such as
+        Drawing Symbol Table, to which objects derived from AcDbObject may be added, accessed, and
+        removed. Entries in an AcDbDictionary must be unique. Entries consist of a unique
+        AcDbObject and string, which comprises the entry's key name. The key may be either an
+        explicit null-terminated text string, or an asterisk (' * ') as the first character in the
+        string to signify an anonymous entry. An anonymous entry's key will be constructed
+        internally by appending an 'A' plus a unique integer value to the asterisk; for example,
+        '*A13'. When an object is placed in a dictionary, the dictionary is established as the
+        object's owner, the lookup key string is associated with the object's object ID, and the
+        dictionary itself is attached to the object as a persistent reactor so that the dictionary
+        is notified when the object is erased.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -9705,11 +10223,41 @@ class Dictionary(PyDb.DbObject):
         This function returns the number of non-deleted entries in the dictionary.
         """
     @overload
-    def remove(self, key: str, /) -> None: ...
+    def remove(self, key: str, /) -> None:
+        """
+        This function removes an entry specified by its 'key' from the dictionary, and also returns
+        the object ID of the entry in returnId. Removal entails removing the key and object's
+        objectId entry from the dictionary and removing the dictionary as a persistent reactor on
+        the object. The removed object is still in the database so you should not deallocate its
+        memory. The caller is responsible for erasing the removed object if that is desired (this
+        is not necessary to prevent it from being saved since it no longer has an owner). Returns
+        Acad::eOk if successful. If key == NULL, then Acad::eInvalidKey is returned. If key is not
+        found in the dictionary then Acad::eKeyNotFound is returned.
+        """
     @overload
-    def remove(self, key: PyDb.ObjectId, /) -> None: ...
+    def remove(self, key: PyDb.ObjectId, /) -> None:
+        """
+        This function removes an entry specified by its 'key' from the dictionary, and also returns
+        the object ID of the entry in returnId. Removal entails removing the key and object's
+        objectId entry from the dictionary and removing the dictionary as a persistent reactor on
+        the object. The removed object is still in the database so you should not deallocate its
+        memory. The caller is responsible for erasing the removed object if that is desired (this
+        is not necessary to prevent it from being saved since it no longer has an owner). Returns
+        Acad::eOk if successful. If key == NULL, then Acad::eInvalidKey is returned. If key is not
+        found in the dictionary then Acad::eKeyNotFound is returned.
+        """
     @overload
-    def remove(self, key: str, returnId: PyDb.ObjectId, /) -> None: ...
+    def remove(self, key: str, returnId: PyDb.ObjectId, /) -> None:
+        """
+        This function removes an entry specified by its 'key' from the dictionary, and also returns
+        the object ID of the entry in returnId. Removal entails removing the key and object's
+        objectId entry from the dictionary and removing the dictionary as a persistent reactor on
+        the object. The removed object is still in the database so you should not deallocate its
+        memory. The caller is responsible for erasing the removed object if that is desired (this
+        is not necessary to prevent it from being saved since it no longer has an owner). Returns
+        Acad::eOk if successful. If key == NULL, then Acad::eInvalidKey is returned. If key is not
+        found in the dictionary then Acad::eKeyNotFound is returned.
+        """
     @overload
     def remove(self, *args) -> None:
         """
@@ -9743,13 +10291,25 @@ class DimArrowFlags(_BoostPythonEnum):
 
 class DimAssoc(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class is the main class used to associate dimensions to geometry.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This class is the main class used to associate dimensions to geometry.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        This class is the main class used to associate dimensions to geometry.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        This class is the main class used to associate dimensions to geometry.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -9769,9 +10329,15 @@ class DimAssoc(PyDb.DbObject):
         use.
         """
     @overload
-    def assocFlag(self, /) -> int: ...
+    def assocFlag(self, /) -> int:
+        """
+        Returns true if the given point reference index is associated.
+        """
     @overload
-    def assocFlag(self, ptType: int, /) -> int: ...
+    def assocFlag(self, ptType: int, /) -> int:
+        """
+        Returns true if the given point reference index is associated.
+        """
     @overload
     def assocFlag(self, *args) -> int:
         """
@@ -9860,9 +10426,19 @@ class DimAssoc(PyDb.DbObject):
         from the RotatedDimType enum.
         """
     @overload
-    def setAssocFlag(self, flag: int, /) -> None: ...
+    def setAssocFlag(self, flag: int, /) -> None:
+        """
+        Sets the index of point reference being used and establishes or clears the association
+        flag. If Acad::eOk is returned the index of the point reference used and the association
+        flag was set properly. Anything else means an error occurred.
+        """
     @overload
-    def setAssocFlag(self, flag: int, val: bool, /) -> None: ...
+    def setAssocFlag(self, flag: int, val: bool, /) -> None:
+        """
+        Sets the index of point reference being used and establishes or clears the association
+        flag. If Acad::eOk is returned the index of the point reference used and the association
+        flag was set properly. Anything else means an error occurred.
+        """
     @overload
     def setAssocFlag(self, *args) -> None:
         """
@@ -10030,13 +10606,37 @@ class DimStyleTable(PyDb.SymbolTable):
 
 class DimStyleTableRecord(PyDb.SymbolTableRecord):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent the records found in the AcDbDimStyleTable. Each of these
+        records contains the information necessary to generate a specific appearance (that is, text
+        above, in, or below the line; arrows, slashes, or dots at the end of the dimension line,
+        and so on) for dimensions that reference it.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent the records found in the AcDbDimStyleTable. Each of these
+        records contains the information necessary to generate a specific appearance (that is, text
+        above, in, or below the line; arrows, slashes, or dots at the end of the dimension line,
+        and so on) for dimensions that reference it.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent the records found in the AcDbDimStyleTable. Each of these
+        records contains the information necessary to generate a specific appearance (that is, text
+        above, in, or below the line; arrows, slashes, or dots at the end of the dimension line,
+        and so on) for dimensions that reference it.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of this class represent the records found in the AcDbDimStyleTable. Each of these
+        records contains the information necessary to generate a specific appearance (that is, text
+        above, in, or below the line; arrows, slashes, or dots at the end of the dimension line,
+        and so on) for dimensions that reference it.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -10381,9 +10981,53 @@ class Dimension(PyDb.Entity):
         pDimMText. Returns Acad::eOk if successful.
         """
     @overload
-    def formatMeasurement(self, measurement: float, /) -> str: ...
+    def formatMeasurement(self, measurement: float, /) -> str:
+        """
+        This method returns a string in the MTextContentBuffer argument that is suitable for
+        passing into setDimensionText(). A typical use would be as follows: AcDbDimension *pDim =
+        ...;// The client allocates the return bufferchar dimTBuf[1000];double userLen = 22/7; //
+        or whatever...pDim->formatMeasurement(dimTBuf, userLen,
+        pDim->dimensionText());pDim->setDimensionText(dimTBuf);This method gives you access to the
+        dimension classes' text assembly and formatting logic. You pass in a double corresponding
+        to the desired measurement and get back a string suitable for building MText objects. That
+        MText content string reflects the dimension's dimstyle settings for prefixes, suffixes,
+        units, precision, alternate units, tolerances, text style, and so on. The dimensionText
+        string can either be a replacement for the dimension measurement, as in
+        setDimensionText("5.000"), or it can be a template that influences the dimension text, as
+        in setDimensionText("{}X[]Ptypical"). This dimension text string gets combined with
+        DIMPOST, DIMAPOST, and the alternate and primary measurements in the final dimension text.
+        Another case would be to format a measurement for use in some other MText object. You
+        create a dummy dimension object, assign whatever dimstyle data needed to that dimension,
+        then use this method to generate other MText notes: AcDbDatabase *pDb =
+        ...;AcDbRotatedDimension *pDim = ...;AcDbDimStyleTableRecord Style, *pStyle =
+        &style;pDb->getDimstyleData(pStyle);pDim->setDimensionstyle(pDb->dimstyle());pDim->setDimstyleData(pStyle);AcDbMText
+        *pMt = ...;char measureBuf[1000];double measureX;pDim->formatMeasurement(measureBuf,
+        measureX, "");pMt->setContents(dimTBuf);
+        """
     @overload
-    def formatMeasurement(self, measurement: float, dimensionText: str, /) -> str: ...
+    def formatMeasurement(self, measurement: float, dimensionText: str, /) -> str:
+        """
+        This method returns a string in the MTextContentBuffer argument that is suitable for
+        passing into setDimensionText(). A typical use would be as follows: AcDbDimension *pDim =
+        ...;// The client allocates the return bufferchar dimTBuf[1000];double userLen = 22/7; //
+        or whatever...pDim->formatMeasurement(dimTBuf, userLen,
+        pDim->dimensionText());pDim->setDimensionText(dimTBuf);This method gives you access to the
+        dimension classes' text assembly and formatting logic. You pass in a double corresponding
+        to the desired measurement and get back a string suitable for building MText objects. That
+        MText content string reflects the dimension's dimstyle settings for prefixes, suffixes,
+        units, precision, alternate units, tolerances, text style, and so on. The dimensionText
+        string can either be a replacement for the dimension measurement, as in
+        setDimensionText("5.000"), or it can be a template that influences the dimension text, as
+        in setDimensionText("{}X[]Ptypical"). This dimension text string gets combined with
+        DIMPOST, DIMAPOST, and the alternate and primary measurements in the final dimension text.
+        Another case would be to format a measurement for use in some other MText object. You
+        create a dummy dimension object, assign whatever dimstyle data needed to that dimension,
+        then use this method to generate other MText notes: AcDbDatabase *pDb =
+        ...;AcDbRotatedDimension *pDim = ...;AcDbDimStyleTableRecord Style, *pStyle =
+        &style;pDb->getDimstyleData(pStyle);pDim->setDimensionstyle(pDb->dimstyle());pDim->setDimstyleData(pStyle);AcDbMText
+        *pMt = ...;char measureBuf[1000];double measureX;pDim->formatMeasurement(measureBuf,
+        measureX, "");pMt->setContents(dimTBuf);
+        """
     @overload
     def formatMeasurement(self, *args) -> str:
         """
@@ -10620,9 +11264,23 @@ class Dimension(PyDb.Entity):
         function returns Acad::eOk.
         """
     @overload
-    def setDimstyleData(self, id: PyDb.ObjectId, /) -> None: ...
+    def setDimstyleData(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This function copies the dimension variable information in the DimStyleTableRecord
+        identified by id into the database on which this method is called, making those dimension
+        variable values current for the database. The DimStyleTableRecord with object ID id does
+        not have to reside in the database on which this method is called. Returns Acad::eOk if
+        operation is successful.
+        """
     @overload
-    def setDimstyleData(self, rec: PyDb.DimStyleTableRecord, /) -> None: ...
+    def setDimstyleData(self, rec: PyDb.DimStyleTableRecord, /) -> None:
+        """
+        This function copies the dimension variable information in the DimStyleTableRecord
+        identified by id into the database on which this method is called, making those dimension
+        variable values current for the database. The DimStyleTableRecord with object ID id does
+        not have to reside in the database on which this method is called. Returns Acad::eOk if
+        operation is successful.
+        """
     @overload
     def setDimstyleData(self, *args) -> None:
         """
@@ -11286,7 +11944,11 @@ class DynUnitsType(_BoostPythonEnum):
 
 class Ellipse(PyDb.Curve):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class represents the ELLIPSE entity in AutoCAD. It contains the methods to create,
+        modify, and obtain properties of the ellipse.
+        """
     @overload
     def __init__(
         self,
@@ -11295,7 +11957,11 @@ class Ellipse(PyDb.Curve):
         majorAxis: PyGe.Vector3d,
         radiusRatio: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class represents the ELLIPSE entity in AutoCAD. It contains the methods to create,
+        modify, and obtain properties of the ellipse.
+        """
     @overload
     def __init__(
         self,
@@ -11306,13 +11972,29 @@ class Ellipse(PyDb.Curve):
         startAngle: float,
         endAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class represents the ELLIPSE entity in AutoCAD. It contains the methods to create,
+        modify, and obtain properties of the ellipse.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This class represents the ELLIPSE entity in AutoCAD. It contains the methods to create,
+        modify, and obtain properties of the ellipse.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        This class represents the ELLIPSE entity in AutoCAD. It contains the methods to create,
+        modify, and obtain properties of the ellipse.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        This class represents the ELLIPSE entity in AutoCAD. It contains the methods to create,
+        modify, and obtain properties of the ellipse.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -11418,7 +12100,18 @@ class Ellipse(PyDb.Curve):
         majorAxis: PyGe.Vector3d,
         radiusRatio: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This function sets the properties of the ellipse to the values specified in the arguments.
+        center, unitNormal, and majorAxis are in WCS coordinates. startAngle and endAngle are in
+        radians, in the range -pi to pi. Positive angles are counter-clockwise when looking down
+        the normal vector (that is, right-hand rule). A closed Ellipse will have a startAngle of 0
+        and an endAngle of 2pi. radiusRatio must be in the range 1E-6 to 1.0. The dot product of
+        normal with itself and majorAxis with itself must be greater than 1E-12. majorAxis must
+        perpendicular to normal within 1E-6. The difference between startAngle and endAngle must be
+        greater than 1E-6. Returns Acad::eOk if successful. If any of the parameters are not
+        acceptable, then this method fails and Acad::eGeneralModelingFailure is returned.
+        """
     @overload
     def set(
         self,
@@ -11429,7 +12122,18 @@ class Ellipse(PyDb.Curve):
         startAngle: float,
         endAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This function sets the properties of the ellipse to the values specified in the arguments.
+        center, unitNormal, and majorAxis are in WCS coordinates. startAngle and endAngle are in
+        radians, in the range -pi to pi. Positive angles are counter-clockwise when looking down
+        the normal vector (that is, right-hand rule). A closed Ellipse will have a startAngle of 0
+        and an endAngle of 2pi. radiusRatio must be in the range 1E-6 to 1.0. The dot product of
+        normal with itself and majorAxis with itself must be greater than 1E-12. majorAxis must
+        perpendicular to normal within 1E-6. The difference between startAngle and endAngle must be
+        greater than 1E-6. Returns Acad::eOk if successful. If any of the parameters are not
+        acceptable, then this method fails and Acad::eGeneralModelingFailure is returned.
+        """
     @overload
     def set(self, *args) -> None:
         """
@@ -11637,11 +12341,39 @@ class Entity(PyDb.DbObject):
         """
     def getGeomExtents2d(self, /) -> Extents2d: ...
     @overload
-    def getGripPoints(self, /) -> tuple[list[PyGe.Point3d], list[int], list[int]]: ...
+    def getGripPoints(self, /) -> tuple[list[PyGe.Point3d], list[int], list[int]]:
+        """
+        Function usageThis function supports "old style" grips, in applications that existed before
+        the enhancement of grip functionality by the addition of the AcDbGripData class. This
+        function is not intended to be called by ObjectARX applications. However, it is possible to
+        do so (for example, as a pass-through from the getStretchPoints() method).Function
+        implementation in derived classesThis function should append to the gripPoints array any
+        points that are to treated as grip points for the entity. The gripPoints array is passed to
+        all entities involved in the grip operation, so the array may already contain grip points
+        for other entities. Therefore, it is very important to append the new points rather than
+        assigning them to any existing elements in the array. When finished appending all desired
+        grip points, return Acad::eOk. If anything other than Acad::eOk is returned, then grips are
+        not activated for this entity. The osnapModes and geomIds arguments are not currently
+        used.Default implementationImmediately returns Adesk::eNotImplemented.
+        """
     @overload
     def getGripPoints(
         self, curViewUnitSize: float, gripSize: int, curViewDir: PyGe.Vector3d, bitflags: int, /
-    ) -> tuple[list[PyGe.Point3d], list[int], list[int]]: ...
+    ) -> tuple[list[PyGe.Point3d], list[int], list[int]]:
+        """
+        Function usageThis function supports "old style" grips, in applications that existed before
+        the enhancement of grip functionality by the addition of the AcDbGripData class. This
+        function is not intended to be called by ObjectARX applications. However, it is possible to
+        do so (for example, as a pass-through from the getStretchPoints() method).Function
+        implementation in derived classesThis function should append to the gripPoints array any
+        points that are to treated as grip points for the entity. The gripPoints array is passed to
+        all entities involved in the grip operation, so the array may already contain grip points
+        for other entities. Therefore, it is very important to append the new points rather than
+        assigning them to any existing elements in the array. When finished appending all desired
+        grip points, return Acad::eOk. If anything other than Acad::eOk is returned, then grips are
+        not activated for this entity. The osnapModes and geomIds arguments are not currently
+        used.Default implementationImmediately returns Adesk::eNotImplemented.
+        """
     @overload
     def getGripPoints(self, *args) -> tuple[list[PyGe.Point3d], list[int], list[int]]:
         """
@@ -11847,9 +12579,54 @@ class Entity(PyDb.DbObject):
         on the getGsMarkersAtSubentPath() or getSubentPathsAtGsMarker() methods.
         """
     @overload
-    def intersectWith(
-        self, entity: PyDb.Entity, intType: PyDb.Intersect, /
-    ) -> list[PyGe.Point3d]: ...
+    def intersectWith(self, entity: PyDb.Entity, intType: PyDb.Intersect, /) -> list[PyGe.Point3d]:
+        """
+        Function usageIt finds the intersections of the entity pointed to by pEnt and all the edges
+        of the bounding box of this entity. The intType is used to determine how to deal with
+        extending the two entities in order to calculate intersections. The possible
+        AcDb::Intersect values are:  AcDb::kOnBothOperands Do not extend either entity. This
+        results in only calculating intersections where the two entitys' geometry actually
+        intersect AcDb::kExtendThis Extend this entity (if necessary) when calculating
+        intersections, but do not extend the pEnt entity. AcDb::kExtendArg Extend the pEnt entity
+        (if necessary) when calculating intersections, but do not extend this entity.
+        AcDb::kExtendBoth Extend both the pEnt entity and this entity (if necessary) when
+        calculating intersections Any intersection points found are appended to the points array.
+        All points are in WCS coordinates. The thisGsMarker and otherGsMarker arguments are
+        intended to provide this function with information to allow it to localize the search for
+        intersections to be between specific subentities. However, this function is not required to
+        make use of either of these arguments (most, if not all, of the AutoCAD built-in entity
+        classes do not). When calling this function, either or both of these arguments may be 0 in
+        order to indicate that they should be ignored. If this function is successful it returns
+        Acad::eOk. Return values for error conditions are dependent on the implementation of this
+        function in the classes involved.  Function implementation in derived classesThis function
+        should do all it can to find all intersection points between the entity it's being called
+        on and the entity pointed to by pEnt. All intersection points found should be appended to
+        the points array. All such points must be in WCS coordinates. When implementing the
+        intersection calculation portion of this function you should take a good look at the AcGe
+        classes to see if they can provide any useful functionality to help in finding
+        intersections with the geometric primitives that make up the entity this function is being
+        called on and the pEnt entity. For example, the AcGeCurve3d class has an isOn() method that
+        will indicate if a supplied point is on the curve and the AcGeCircArc3d class has several
+        intersectWith() methods to find intersections with other AcGe types. If the pEnt entity is
+        a type not recognized by this function, it is quite reasonable to call the pEnt entity's
+        intersectWith() method passing in a pointer to this entity as the "pEnt", and all the other
+        arguments passed into this function (remembering to convert the intType argument If
+        necessary) to see if that entity can determine any intersection points. This is what the
+        AutoCAD built-in classes do. Also, don't forget to take into account the intType value. The
+        intType tells you which, if any, of the two entities should be extended to find "apparent"
+        intersections. It is not required that apparent intersection be supported, but if it is
+        not, then an appropriate ErrorStatus value should be returned to indicate that the call
+        failed. The thisGsMarker and otherGsMarker arguments are provided to allow this function to
+        determine exactly which subentities are involved in the intersection operation (for
+        example, if this function is being called by AutoCAD as part of an intersection Osnap
+        operation these arguments would indicate which subentities are within the osnap pickbox).
+        For these arguments, a value less than or equal to zero indicates that that argument should
+        not be used. If this function completes successfully (even if no intersection points are
+        found), it should return Acad::eOk. Determining what is considered an error and what
+        ErrorStatus return code to use for any such errors are up to the implementer -- there are
+        no conventions in this regard.  Default implementationImmediately returns
+        Acad::eNotImplemented.
+        """
     @overload
     def intersectWith(
         self,
@@ -11858,11 +12635,105 @@ class Entity(PyDb.DbObject):
         thisGsMarker: int,
         otherGsMarker: int,
         /,
-    ) -> list[PyGe.Point3d]: ...
+    ) -> list[PyGe.Point3d]:
+        """
+        Function usageIt finds the intersections of the entity pointed to by pEnt and all the edges
+        of the bounding box of this entity. The intType is used to determine how to deal with
+        extending the two entities in order to calculate intersections. The possible
+        AcDb::Intersect values are:  AcDb::kOnBothOperands Do not extend either entity. This
+        results in only calculating intersections where the two entitys' geometry actually
+        intersect AcDb::kExtendThis Extend this entity (if necessary) when calculating
+        intersections, but do not extend the pEnt entity. AcDb::kExtendArg Extend the pEnt entity
+        (if necessary) when calculating intersections, but do not extend this entity.
+        AcDb::kExtendBoth Extend both the pEnt entity and this entity (if necessary) when
+        calculating intersections Any intersection points found are appended to the points array.
+        All points are in WCS coordinates. The thisGsMarker and otherGsMarker arguments are
+        intended to provide this function with information to allow it to localize the search for
+        intersections to be between specific subentities. However, this function is not required to
+        make use of either of these arguments (most, if not all, of the AutoCAD built-in entity
+        classes do not). When calling this function, either or both of these arguments may be 0 in
+        order to indicate that they should be ignored. If this function is successful it returns
+        Acad::eOk. Return values for error conditions are dependent on the implementation of this
+        function in the classes involved.  Function implementation in derived classesThis function
+        should do all it can to find all intersection points between the entity it's being called
+        on and the entity pointed to by pEnt. All intersection points found should be appended to
+        the points array. All such points must be in WCS coordinates. When implementing the
+        intersection calculation portion of this function you should take a good look at the AcGe
+        classes to see if they can provide any useful functionality to help in finding
+        intersections with the geometric primitives that make up the entity this function is being
+        called on and the pEnt entity. For example, the AcGeCurve3d class has an isOn() method that
+        will indicate if a supplied point is on the curve and the AcGeCircArc3d class has several
+        intersectWith() methods to find intersections with other AcGe types. If the pEnt entity is
+        a type not recognized by this function, it is quite reasonable to call the pEnt entity's
+        intersectWith() method passing in a pointer to this entity as the "pEnt", and all the other
+        arguments passed into this function (remembering to convert the intType argument If
+        necessary) to see if that entity can determine any intersection points. This is what the
+        AutoCAD built-in classes do. Also, don't forget to take into account the intType value. The
+        intType tells you which, if any, of the two entities should be extended to find "apparent"
+        intersections. It is not required that apparent intersection be supported, but if it is
+        not, then an appropriate ErrorStatus value should be returned to indicate that the call
+        failed. The thisGsMarker and otherGsMarker arguments are provided to allow this function to
+        determine exactly which subentities are involved in the intersection operation (for
+        example, if this function is being called by AutoCAD as part of an intersection Osnap
+        operation these arguments would indicate which subentities are within the osnap pickbox).
+        For these arguments, a value less than or equal to zero indicates that that argument should
+        not be used. If this function completes successfully (even if no intersection points are
+        found), it should return Acad::eOk. Determining what is considered an error and what
+        ErrorStatus return code to use for any such errors are up to the implementer -- there are
+        no conventions in this regard.  Default implementationImmediately returns
+        Acad::eNotImplemented.
+        """
     @overload
     def intersectWith(
         self, entity: PyDb.Entity, intType: PyDb.Intersect, plane: PyGe.Plane, /
-    ) -> list[PyGe.Point3d]: ...
+    ) -> list[PyGe.Point3d]:
+        """
+        Function usageIt finds the intersections of the entity pointed to by pEnt and all the edges
+        of the bounding box of this entity. The intType is used to determine how to deal with
+        extending the two entities in order to calculate intersections. The possible
+        AcDb::Intersect values are:  AcDb::kOnBothOperands Do not extend either entity. This
+        results in only calculating intersections where the two entitys' geometry actually
+        intersect AcDb::kExtendThis Extend this entity (if necessary) when calculating
+        intersections, but do not extend the pEnt entity. AcDb::kExtendArg Extend the pEnt entity
+        (if necessary) when calculating intersections, but do not extend this entity.
+        AcDb::kExtendBoth Extend both the pEnt entity and this entity (if necessary) when
+        calculating intersections Any intersection points found are appended to the points array.
+        All points are in WCS coordinates. The thisGsMarker and otherGsMarker arguments are
+        intended to provide this function with information to allow it to localize the search for
+        intersections to be between specific subentities. However, this function is not required to
+        make use of either of these arguments (most, if not all, of the AutoCAD built-in entity
+        classes do not). When calling this function, either or both of these arguments may be 0 in
+        order to indicate that they should be ignored. If this function is successful it returns
+        Acad::eOk. Return values for error conditions are dependent on the implementation of this
+        function in the classes involved.  Function implementation in derived classesThis function
+        should do all it can to find all intersection points between the entity it's being called
+        on and the entity pointed to by pEnt. All intersection points found should be appended to
+        the points array. All such points must be in WCS coordinates. When implementing the
+        intersection calculation portion of this function you should take a good look at the AcGe
+        classes to see if they can provide any useful functionality to help in finding
+        intersections with the geometric primitives that make up the entity this function is being
+        called on and the pEnt entity. For example, the AcGeCurve3d class has an isOn() method that
+        will indicate if a supplied point is on the curve and the AcGeCircArc3d class has several
+        intersectWith() methods to find intersections with other AcGe types. If the pEnt entity is
+        a type not recognized by this function, it is quite reasonable to call the pEnt entity's
+        intersectWith() method passing in a pointer to this entity as the "pEnt", and all the other
+        arguments passed into this function (remembering to convert the intType argument If
+        necessary) to see if that entity can determine any intersection points. This is what the
+        AutoCAD built-in classes do. Also, don't forget to take into account the intType value. The
+        intType tells you which, if any, of the two entities should be extended to find "apparent"
+        intersections. It is not required that apparent intersection be supported, but if it is
+        not, then an appropriate ErrorStatus value should be returned to indicate that the call
+        failed. The thisGsMarker and otherGsMarker arguments are provided to allow this function to
+        determine exactly which subentities are involved in the intersection operation (for
+        example, if this function is being called by AutoCAD as part of an intersection Osnap
+        operation these arguments would indicate which subentities are within the osnap pickbox).
+        For these arguments, a value less than or equal to zero indicates that that argument should
+        not be used. If this function completes successfully (even if no intersection points are
+        found), it should return Acad::eOk. Determining what is considered an error and what
+        ErrorStatus return code to use for any such errors are up to the implementer -- there are
+        no conventions in this regard.  Default implementationImmediately returns
+        Acad::eNotImplemented.
+        """
     @overload
     def intersectWith(
         self,
@@ -11872,7 +12743,54 @@ class Entity(PyDb.DbObject):
         thisGsMarker: int,
         otherGsMarker: int,
         /,
-    ) -> list[PyGe.Point3d]: ...
+    ) -> list[PyGe.Point3d]:
+        """
+        Function usageIt finds the intersections of the entity pointed to by pEnt and all the edges
+        of the bounding box of this entity. The intType is used to determine how to deal with
+        extending the two entities in order to calculate intersections. The possible
+        AcDb::Intersect values are:  AcDb::kOnBothOperands Do not extend either entity. This
+        results in only calculating intersections where the two entitys' geometry actually
+        intersect AcDb::kExtendThis Extend this entity (if necessary) when calculating
+        intersections, but do not extend the pEnt entity. AcDb::kExtendArg Extend the pEnt entity
+        (if necessary) when calculating intersections, but do not extend this entity.
+        AcDb::kExtendBoth Extend both the pEnt entity and this entity (if necessary) when
+        calculating intersections Any intersection points found are appended to the points array.
+        All points are in WCS coordinates. The thisGsMarker and otherGsMarker arguments are
+        intended to provide this function with information to allow it to localize the search for
+        intersections to be between specific subentities. However, this function is not required to
+        make use of either of these arguments (most, if not all, of the AutoCAD built-in entity
+        classes do not). When calling this function, either or both of these arguments may be 0 in
+        order to indicate that they should be ignored. If this function is successful it returns
+        Acad::eOk. Return values for error conditions are dependent on the implementation of this
+        function in the classes involved.  Function implementation in derived classesThis function
+        should do all it can to find all intersection points between the entity it's being called
+        on and the entity pointed to by pEnt. All intersection points found should be appended to
+        the points array. All such points must be in WCS coordinates. When implementing the
+        intersection calculation portion of this function you should take a good look at the AcGe
+        classes to see if they can provide any useful functionality to help in finding
+        intersections with the geometric primitives that make up the entity this function is being
+        called on and the pEnt entity. For example, the AcGeCurve3d class has an isOn() method that
+        will indicate if a supplied point is on the curve and the AcGeCircArc3d class has several
+        intersectWith() methods to find intersections with other AcGe types. If the pEnt entity is
+        a type not recognized by this function, it is quite reasonable to call the pEnt entity's
+        intersectWith() method passing in a pointer to this entity as the "pEnt", and all the other
+        arguments passed into this function (remembering to convert the intType argument If
+        necessary) to see if that entity can determine any intersection points. This is what the
+        AutoCAD built-in classes do. Also, don't forget to take into account the intType value. The
+        intType tells you which, if any, of the two entities should be extended to find "apparent"
+        intersections. It is not required that apparent intersection be supported, but if it is
+        not, then an appropriate ErrorStatus value should be returned to indicate that the call
+        failed. The thisGsMarker and otherGsMarker arguments are provided to allow this function to
+        determine exactly which subentities are involved in the intersection operation (for
+        example, if this function is being called by AutoCAD as part of an intersection Osnap
+        operation these arguments would indicate which subentities are within the osnap pickbox).
+        For these arguments, a value less than or equal to zero indicates that that argument should
+        not be used. If this function completes successfully (even if no intersection points are
+        found), it should return Acad::eOk. Determining what is considered an error and what
+        ErrorStatus return code to use for any such errors are up to the implementer -- there are
+        no conventions in this regard.  Default implementationImmediately returns
+        Acad::eNotImplemented.
+        """
     @overload
     def intersectWith(self, *args) -> list[PyGe.Point3d]:
         """
@@ -12078,13 +12996,52 @@ class Entity(PyDb.DbObject):
         correspond to an existing AcDbMaterial object. Returns Acad::eOk when successful
         """
     @overload
-    def setPlotStyleName(self, /) -> None: ...
+    def setPlotStyleName(self, /) -> None:
+        """
+        This function searches the PlotStyleName dictionary for an entry with the name that matches
+        newName and if found, sets the entity to use that plotStyleName entry. Because a lookup in
+        the PlotStyleName dictionary is required, the entity must be database-resident for this
+        method to succeed. The names ByLayer and ByBlock are allowed as well as user-defined names.
+        If the entity owns subentities and doSubents == Adesk::kTrue, then the change will be
+        applied to the subentities as well. For an AcDbBlockReference entity, this method will also
+        update any associated AcDbSequenceEnd subentity regardless of the doSubents setting.
+        Returns Acad::eOk if successful. If the entity is not database-resident, then
+        Acad::eNoDatabase will be returned. If there is no entry in the PlotStyleName dictionary
+        for newName, then Acad::eKeyNotFound will be returned. The plotStyleName value is used for
+        DXF group code 390.
+        """
     @overload
-    def setPlotStyleName(self, nameType: PyDb.PlotStyleNameType, doSubents: bool, /) -> None: ...
+    def setPlotStyleName(self, nameType: PyDb.PlotStyleNameType, doSubents: bool, /) -> None:
+        """
+        This function searches the PlotStyleName dictionary for an entry with the name that matches
+        newName and if found, sets the entity to use that plotStyleName entry. Because a lookup in
+        the PlotStyleName dictionary is required, the entity must be database-resident for this
+        method to succeed. The names ByLayer and ByBlock are allowed as well as user-defined names.
+        If the entity owns subentities and doSubents == Adesk::kTrue, then the change will be
+        applied to the subentities as well. For an AcDbBlockReference entity, this method will also
+        update any associated AcDbSequenceEnd subentity regardless of the doSubents setting.
+        Returns Acad::eOk if successful. If the entity is not database-resident, then
+        Acad::eNoDatabase will be returned. If there is no entry in the PlotStyleName dictionary
+        for newName, then Acad::eKeyNotFound will be returned. The plotStyleName value is used for
+        DXF group code 390.
+        """
     @overload
     def setPlotStyleName(
         self, nameType: PyDb.PlotStyleNameType, newId: PyDb.ObjectId, doSubents: bool, /
-    ) -> None: ...
+    ) -> None:
+        """
+        This function searches the PlotStyleName dictionary for an entry with the name that matches
+        newName and if found, sets the entity to use that plotStyleName entry. Because a lookup in
+        the PlotStyleName dictionary is required, the entity must be database-resident for this
+        method to succeed. The names ByLayer and ByBlock are allowed as well as user-defined names.
+        If the entity owns subentities and doSubents == Adesk::kTrue, then the change will be
+        applied to the subentities as well. For an AcDbBlockReference entity, this method will also
+        update any associated AcDbSequenceEnd subentity regardless of the doSubents setting.
+        Returns Acad::eOk if successful. If the entity is not database-resident, then
+        Acad::eNoDatabase will be returned. If there is no entry in the PlotStyleName dictionary
+        for newName, then Acad::eKeyNotFound will be returned. The plotStyleName value is used for
+        DXF group code 390.
+        """
     @overload
     def setPlotStyleName(self, *args) -> None:
         """
@@ -12829,23 +13786,95 @@ class EvalVariant(PyRx.RxObject):
     def __ge__(self, /) -> bool: ...
     def __gt__(self, /) -> bool: ...
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class provides a lightweight wrapper for a resbuf structure. It provides typed
+        constructors and overloaded assignment operators to facilitiate assigning values to the
+        underlying data. AcDbEvalExpr objects return instances of this class for the result of the
+        expressions. The class manages the copying of strings by calling acutNewString() to copy
+        strings. Linked lists of resbufs are not directly supported, but if an AcDbEvalVariant
+        contains a linked resbuf chain the destructor frees the entire chain using acutRelRb().
+        """
     @overload
-    def __init__(self, bval: bool, /) -> None: ...
+    def __init__(self, bval: bool, /) -> None:
+        """
+        This class provides a lightweight wrapper for a resbuf structure. It provides typed
+        constructors and overloaded assignment operators to facilitiate assigning values to the
+        underlying data. AcDbEvalExpr objects return instances of this class for the result of the
+        expressions. The class manages the copying of strings by calling acutNewString() to copy
+        strings. Linked lists of resbufs are not directly supported, but if an AcDbEvalVariant
+        contains a linked resbuf chain the destructor frees the entire chain using acutRelRb().
+        """
     @overload
-    def __init__(self, ival: int, /) -> None: ...
+    def __init__(self, ival: int, /) -> None:
+        """
+        This class provides a lightweight wrapper for a resbuf structure. It provides typed
+        constructors and overloaded assignment operators to facilitiate assigning values to the
+        underlying data. AcDbEvalExpr objects return instances of this class for the result of the
+        expressions. The class manages the copying of strings by calling acutNewString() to copy
+        strings. Linked lists of resbufs are not directly supported, but if an AcDbEvalVariant
+        contains a linked resbuf chain the destructor frees the entire chain using acutRelRb().
+        """
     @overload
-    def __init__(self, ival: int, isInt16: bool, /) -> None: ...
+    def __init__(self, ival: int, isInt16: bool, /) -> None:
+        """
+        This class provides a lightweight wrapper for a resbuf structure. It provides typed
+        constructors and overloaded assignment operators to facilitiate assigning values to the
+        underlying data. AcDbEvalExpr objects return instances of this class for the result of the
+        expressions. The class manages the copying of strings by calling acutNewString() to copy
+        strings. Linked lists of resbufs are not directly supported, but if an AcDbEvalVariant
+        contains a linked resbuf chain the destructor frees the entire chain using acutRelRb().
+        """
     @overload
-    def __init__(self, fval: float, /) -> None: ...
+    def __init__(self, fval: float, /) -> None:
+        """
+        This class provides a lightweight wrapper for a resbuf structure. It provides typed
+        constructors and overloaded assignment operators to facilitiate assigning values to the
+        underlying data. AcDbEvalExpr objects return instances of this class for the result of the
+        expressions. The class manages the copying of strings by calling acutNewString() to copy
+        strings. Linked lists of resbufs are not directly supported, but if an AcDbEvalVariant
+        contains a linked resbuf chain the destructor frees the entire chain using acutRelRb().
+        """
     @overload
-    def __init__(self, sval: str, /) -> None: ...
+    def __init__(self, sval: str, /) -> None:
+        """
+        This class provides a lightweight wrapper for a resbuf structure. It provides typed
+        constructors and overloaded assignment operators to facilitiate assigning values to the
+        underlying data. AcDbEvalExpr objects return instances of this class for the result of the
+        expressions. The class manages the copying of strings by calling acutNewString() to copy
+        strings. Linked lists of resbufs are not directly supported, but if an AcDbEvalVariant
+        contains a linked resbuf chain the destructor frees the entire chain using acutRelRb().
+        """
     @overload
-    def __init__(self, idval: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, idval: PyDb.ObjectId, /) -> None:
+        """
+        This class provides a lightweight wrapper for a resbuf structure. It provides typed
+        constructors and overloaded assignment operators to facilitiate assigning values to the
+        underlying data. AcDbEvalExpr objects return instances of this class for the result of the
+        expressions. The class manages the copying of strings by calling acutNewString() to copy
+        strings. Linked lists of resbufs are not directly supported, but if an AcDbEvalVariant
+        contains a linked resbuf chain the destructor frees the entire chain using acutRelRb().
+        """
     @overload
-    def __init__(self, pnt2dval: PyGe.Point2d, /) -> None: ...
+    def __init__(self, pnt2dval: PyGe.Point2d, /) -> None:
+        """
+        This class provides a lightweight wrapper for a resbuf structure. It provides typed
+        constructors and overloaded assignment operators to facilitiate assigning values to the
+        underlying data. AcDbEvalExpr objects return instances of this class for the result of the
+        expressions. The class manages the copying of strings by calling acutNewString() to copy
+        strings. Linked lists of resbufs are not directly supported, but if an AcDbEvalVariant
+        contains a linked resbuf chain the destructor frees the entire chain using acutRelRb().
+        """
     @overload
-    def __init__(self, pnt3dval: PyGe.Point3d, /) -> None: ...
+    def __init__(self, pnt3dval: PyGe.Point3d, /) -> None:
+        """
+        This class provides a lightweight wrapper for a resbuf structure. It provides typed
+        constructors and overloaded assignment operators to facilitiate assigning values to the
+        underlying data. AcDbEvalExpr objects return instances of this class for the result of the
+        expressions. The class manages the copying of strings by calling acutNewString() to copy
+        strings. Linked lists of resbufs are not directly supported, but if an AcDbEvalVariant
+        contains a linked resbuf chain the destructor frees the entire chain using acutRelRb().
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -13038,13 +14067,22 @@ class ExtrudedSurface(PyDb.Surface):
 
 class Face(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbFace class represents the 3dface entity within AutoCAD.
+        """
     @overload
-    def __init__(self, pt0: PyGe.Point3d, pt1: PyGe.Point3d, pt2: PyGe.Point3d, /) -> None: ...
+    def __init__(self, pt0: PyGe.Point3d, pt1: PyGe.Point3d, pt2: PyGe.Point3d, /) -> None:
+        """
+        The AcDbFace class represents the 3dface entity within AutoCAD.
+        """
     @overload
     def __init__(
         self, pt0: PyGe.Point3d, pt1: PyGe.Point3d, pt2: PyGe.Point3d, pt3: PyGe.Point3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbFace class represents the 3dface entity within AutoCAD.
+        """
     @overload
     def __init__(
         self,
@@ -13057,7 +14095,10 @@ class Face(PyDb.Entity):
         e3vis: bool,
         e4vis: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbFace class represents the 3dface entity within AutoCAD.
+        """
     @overload
     def __init__(
         self,
@@ -13071,13 +14112,25 @@ class Face(PyDb.Entity):
         e3vis: bool,
         e4vis: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbFace class represents the 3dface entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbFace class represents the 3dface entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbFace class represents the 3dface entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbFace class represents the 3dface entity within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -13143,15 +14196,45 @@ class Face(PyDb.Entity):
 
 class FaceRecord(PyDb.Vertex):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbFaceRecord class is a special class of vertex that is used by the AcDbPolyFaceMesh
+        class to group together mesh point vertices that represent faces in the mesh. Each
+        AcDbFaceRecord stores the vertex indices of the vertices that are the face's corner points
+        and the visibility information for the edges determined by the vertices.
+        """
     @overload
-    def __init__(self, vtx0: int, vtx1: int, vtx2: int, vtx3: int, /) -> None: ...
+    def __init__(self, vtx0: int, vtx1: int, vtx2: int, vtx3: int, /) -> None:
+        """
+        The AcDbFaceRecord class is a special class of vertex that is used by the AcDbPolyFaceMesh
+        class to group together mesh point vertices that represent faces in the mesh. Each
+        AcDbFaceRecord stores the vertex indices of the vertices that are the face's corner points
+        and the visibility information for the edges determined by the vertices.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbFaceRecord class is a special class of vertex that is used by the AcDbPolyFaceMesh
+        class to group together mesh point vertices that represent faces in the mesh. Each
+        AcDbFaceRecord stores the vertex indices of the vertices that are the face's corner points
+        and the visibility information for the edges determined by the vertices.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbFaceRecord class is a special class of vertex that is used by the AcDbPolyFaceMesh
+        class to group together mesh point vertices that represent faces in the mesh. Each
+        AcDbFaceRecord stores the vertex indices of the vertices that are the face's corner points
+        and the visibility information for the edges determined by the vertices.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbFaceRecord class is a special class of vertex that is used by the AcDbPolyFaceMesh
+        class to group together mesh point vertices that represent faces in the mesh. Each
+        AcDbFaceRecord stores the vertex indices of the vertices that are the face's corner points
+        and the visibility information for the edges determined by the vertices.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -13233,17 +14316,62 @@ class FaceRecord(PyDb.Vertex):
 
 class Fcf(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbFcf class represents Feature Control Frames for Geometric Dimensioning and
+        Tolerancing. It is the entity type created by the TOLERANCE command in the AutoCAD command
+        editor. Tolerances are considered as dimensions in AutoCAD, which means they are controlled
+        by dimension variable settings and dimension styles. Within objects of this class, the text
+        string data member contains symbol and format codes that are used to define the actual
+        graphical representation that will be seen within AutoCAD. For more information on these
+        control codes, see the AcDbFcf::setText() member function description.
+        """
     @overload
     def __init__(
         self, val: str, pnt: PyGe.Point3d, normal: PyGe.Vector3d, direction: PyGe.Vector3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbFcf class represents Feature Control Frames for Geometric Dimensioning and
+        Tolerancing. It is the entity type created by the TOLERANCE command in the AutoCAD command
+        editor. Tolerances are considered as dimensions in AutoCAD, which means they are controlled
+        by dimension variable settings and dimension styles. Within objects of this class, the text
+        string data member contains symbol and format codes that are used to define the actual
+        graphical representation that will be seen within AutoCAD. For more information on these
+        control codes, see the AcDbFcf::setText() member function description.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbFcf class represents Feature Control Frames for Geometric Dimensioning and
+        Tolerancing. It is the entity type created by the TOLERANCE command in the AutoCAD command
+        editor. Tolerances are considered as dimensions in AutoCAD, which means they are controlled
+        by dimension variable settings and dimension styles. Within objects of this class, the text
+        string data member contains symbol and format codes that are used to define the actual
+        graphical representation that will be seen within AutoCAD. For more information on these
+        control codes, see the AcDbFcf::setText() member function description.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbFcf class represents Feature Control Frames for Geometric Dimensioning and
+        Tolerancing. It is the entity type created by the TOLERANCE command in the AutoCAD command
+        editor. Tolerances are considered as dimensions in AutoCAD, which means they are controlled
+        by dimension variable settings and dimension styles. Within objects of this class, the text
+        string data member contains symbol and format codes that are used to define the actual
+        graphical representation that will be seen within AutoCAD. For more information on these
+        control codes, see the AcDbFcf::setText() member function description.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbFcf class represents Feature Control Frames for Geometric Dimensioning and
+        Tolerancing. It is the entity type created by the TOLERANCE command in the AutoCAD command
+        editor. Tolerances are considered as dimensions in AutoCAD, which means they are controlled
+        by dimension variable settings and dimension styles. Within objects of this class, the text
+        string data member contains symbol and format codes that are used to define the actual
+        graphical representation that will be seen within AutoCAD. For more information on these
+        control codes, see the AcDbFcf::setText() member function description.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -13403,9 +14531,35 @@ class Fcf(PyDb.Entity):
         Command Reference manual for information on DIMSCALE.
         """
     @overload
-    def setDimstyleData(self, val: PyDb.DimStyleTableRecord, /) -> None: ...
+    def setDimstyleData(self, val: PyDb.DimStyleTableRecord, /) -> None:
+        """
+        This function compares the DimStyle data in the record identified by newDataId with the
+        data in the record referenced by the feature control frame, and applies any differences as
+        dimension variable overrides on the object. So, when this function is finished, the
+        combination of the referenced DimStyleTableRecord and the newly applied dimension variable
+        overrides will make the dimension display as though it were actually referencing the
+        DimStyleTableRecordnewDataId. The DimStyleTableRecord identified by newDataId can be in any
+        database currently loaded in memory. This function This function returns Acad::eOk if
+        successful. Acad::eInvalidInput will be returned if pRecord is not a valid
+        AcDbDimStyleTableRecord. Acad::eInvalidDimStyle will be returned if the dimension there is
+        an invalid dimension style associated with this dimension. Various open codes can be
+        returned if the associated AcDbDimStyleTableRecord cannot be opened.
+        """
     @overload
-    def setDimstyleData(self, val: PyDb.ObjectId, /) -> None: ...
+    def setDimstyleData(self, val: PyDb.ObjectId, /) -> None:
+        """
+        This function compares the DimStyle data in the record identified by newDataId with the
+        data in the record referenced by the feature control frame, and applies any differences as
+        dimension variable overrides on the object. So, when this function is finished, the
+        combination of the referenced DimStyleTableRecord and the newly applied dimension variable
+        overrides will make the dimension display as though it were actually referencing the
+        DimStyleTableRecordnewDataId. The DimStyleTableRecord identified by newDataId can be in any
+        database currently loaded in memory. This function This function returns Acad::eOk if
+        successful. Acad::eInvalidInput will be returned if pRecord is not a valid
+        AcDbDimStyleTableRecord. Acad::eInvalidDimStyle will be returned if the dimension there is
+        an invalid dimension style associated with this dimension. Various open codes can be
+        returned if the associated AcDbDimStyleTableRecord cannot be opened.
+        """
     @overload
     def setDimstyleData(self, *args) -> None:
         """
@@ -13484,17 +14638,47 @@ class Fcf(PyDb.Entity):
 
 class Field(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class is used to represent a field. The field can evaluate to one of the supported
+        data types. The field object acts as a container to store the field expression, evaluated
+        result, and other data. An evaluator is required for evaluating the field.
+        """
     @overload
-    def __init__(self, pszFieldCode: str, /) -> None: ...
+    def __init__(self, pszFieldCode: str, /) -> None:
+        """
+        This class is used to represent a field. The field can evaluate to one of the supported
+        data types. The field object acts as a container to store the field expression, evaluated
+        result, and other data. An evaluator is required for evaluating the field.
+        """
     @overload
-    def __init__(self, pszFieldCode: str, bTextField: bool, /) -> None: ...
+    def __init__(self, pszFieldCode: str, bTextField: bool, /) -> None:
+        """
+        This class is used to represent a field. The field can evaluate to one of the supported
+        data types. The field object acts as a container to store the field expression, evaluated
+        result, and other data. An evaluator is required for evaluating the field.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This class is used to represent a field. The field can evaluate to one of the supported
+        data types. The field object acts as a container to store the field expression, evaluated
+        result, and other data. An evaluator is required for evaluating the field.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        This class is used to represent a field. The field can evaluate to one of the supported
+        data types. The field object acts as a container to store the field expression, evaluated
+        result, and other data. An evaluator is required for evaluating the field.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        This class is used to represent a field. The field can evaluate to one of the supported
+        data types. The field object acts as a container to store the field expression, evaluated
+        result, and other data. An evaluator is required for evaluating the field.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -13535,11 +14719,32 @@ class Field(PyDb.DbObject):
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
     @overload
-    def evaluate(self, /) -> tuple[int, int]: ...
+    def evaluate(self, /) -> tuple[int, int]:
+        """
+        This method evaluates the field. After creating a field object and setting the field code,
+        call this method to evaluate the field. If pDb is null, the field's database will be used
+        if the field is database resident. If it is null and the field is not database resident,
+        then evaluation will fail if the field requires a database. Returns Acad::eOk if
+        successful. Otherwise, it returns an AutoCAD error status.
+        """
     @overload
-    def evaluate(self, nFlag: PyDb.FieldEvalContext, /) -> tuple[int, int]: ...
+    def evaluate(self, nFlag: PyDb.FieldEvalContext, /) -> tuple[int, int]:
+        """
+        This method evaluates the field. After creating a field object and setting the field code,
+        call this method to evaluate the field. If pDb is null, the field's database will be used
+        if the field is database resident. If it is null and the field is not database resident,
+        then evaluation will fail if the field requires a database. Returns Acad::eOk if
+        successful. Otherwise, it returns an AutoCAD error status.
+        """
     @overload
-    def evaluate(self, nFlag: PyDb.FieldEvalContext, db: PyDb.Database, /) -> tuple[int, int]: ...
+    def evaluate(self, nFlag: PyDb.FieldEvalContext, db: PyDb.Database, /) -> tuple[int, int]:
+        """
+        This method evaluates the field. After creating a field object and setting the field code,
+        call this method to evaluate the field. If pDb is null, the field's database will be used
+        if the field is database resident. If it is null and the field is not database resident,
+        then evaluation will fail if the field requires a database. Returns Acad::eOk if
+        successful. Otherwise, it returns an AutoCAD error status.
+        """
     @overload
     def evaluate(self, *args) -> tuple[int, int]:
         """
@@ -13575,11 +14780,23 @@ class Field(PyDb.DbObject):
         """
     def getData(self, key: str, /) -> AcValue: ...
     @overload
-    def getFieldCode(self, nContext: PyDb.FieldCodeFlag, /) -> str: ...
+    def getFieldCode(self, nContext: PyDb.FieldCodeFlag, /) -> str:
+        """
+        This function can be used to get a field code in various forms. The child field codes in
+        pChildFields are the embedded fields if this is a text field or nested fields if this is
+        not a text field. Returns Acad::eOk if successful; otherwise, returns an AutoCAD error
+        status.
+        """
     @overload
     def getFieldCode(
         self, nContext: PyDb.FieldCodeFlag, children: PyDb.Field, mode: PyDb.OpenMode, /
-    ) -> str: ...
+    ) -> str:
+        """
+        This function can be used to get a field code in various forms. The child field codes in
+        pChildFields are the embedded fields if this is a text field or nested fields if this is
+        not a text field. Returns Acad::eOk if successful; otherwise, returns an AutoCAD error
+        status.
+        """
     @overload
     def getFieldCode(self, *args) -> str:
         """
@@ -14026,13 +15243,81 @@ class GeoCoordinateSystemUnit(_BoostPythonEnum):
 
 class GeoData(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This object identifies the geographical space a design is located in. It also provides all
+        the information necessary to accurately map a design coordinate system to a location on
+        earth (a latitude-longitude based system). Furthermore this object provides a simple
+        transformation to support efforts like Google Earth and geo-tagging and enough information
+        to initialize geo-spatial applications for accurate coordinate system transformation and
+        place a design on the earth, relative to each other. The minimum requirements for a valid
+        object are:Type of design coordinates.Design point.Reference point.A "design coordinate to
+        geodetic coordinate" mesh with at least one point.It is the association of the Design point
+        and the Reference point which provides the minimum level of "georeferencing." Any
+        application, regardless of its access to a coordinate conversion library, may obtain a
+        georefernce for the object by calling one of the transformation functions with, for
+        example, the values specified by the setDesignPoint function. For many applications, this
+        minimum level of georeferencing is adequate. Positioning a house within Google Earth, for
+        example. To the degree that additional information is provided, more precise and
+        comprehensive transformation results become available.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This object identifies the geographical space a design is located in. It also provides all
+        the information necessary to accurately map a design coordinate system to a location on
+        earth (a latitude-longitude based system). Furthermore this object provides a simple
+        transformation to support efforts like Google Earth and geo-tagging and enough information
+        to initialize geo-spatial applications for accurate coordinate system transformation and
+        place a design on the earth, relative to each other. The minimum requirements for a valid
+        object are:Type of design coordinates.Design point.Reference point.A "design coordinate to
+        geodetic coordinate" mesh with at least one point.It is the association of the Design point
+        and the Reference point which provides the minimum level of "georeferencing." Any
+        application, regardless of its access to a coordinate conversion library, may obtain a
+        georefernce for the object by calling one of the transformation functions with, for
+        example, the values specified by the setDesignPoint function. For many applications, this
+        minimum level of georeferencing is adequate. Positioning a house within Google Earth, for
+        example. To the degree that additional information is provided, more precise and
+        comprehensive transformation results become available.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        This object identifies the geographical space a design is located in. It also provides all
+        the information necessary to accurately map a design coordinate system to a location on
+        earth (a latitude-longitude based system). Furthermore this object provides a simple
+        transformation to support efforts like Google Earth and geo-tagging and enough information
+        to initialize geo-spatial applications for accurate coordinate system transformation and
+        place a design on the earth, relative to each other. The minimum requirements for a valid
+        object are:Type of design coordinates.Design point.Reference point.A "design coordinate to
+        geodetic coordinate" mesh with at least one point.It is the association of the Design point
+        and the Reference point which provides the minimum level of "georeferencing." Any
+        application, regardless of its access to a coordinate conversion library, may obtain a
+        georefernce for the object by calling one of the transformation functions with, for
+        example, the values specified by the setDesignPoint function. For many applications, this
+        minimum level of georeferencing is adequate. Positioning a house within Google Earth, for
+        example. To the degree that additional information is provided, more precise and
+        comprehensive transformation results become available.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        This object identifies the geographical space a design is located in. It also provides all
+        the information necessary to accurately map a design coordinate system to a location on
+        earth (a latitude-longitude based system). Furthermore this object provides a simple
+        transformation to support efforts like Google Earth and geo-tagging and enough information
+        to initialize geo-spatial applications for accurate coordinate system transformation and
+        place a design on the earth, relative to each other. The minimum requirements for a valid
+        object are:Type of design coordinates.Design point.Reference point.A "design coordinate to
+        geodetic coordinate" mesh with at least one point.It is the association of the Design point
+        and the Reference point which provides the minimum level of "georeferencing." Any
+        application, regardless of its access to a coordinate conversion library, may obtain a
+        georefernce for the object by calling one of the transformation functions with, for
+        example, the values specified by the setDesignPoint function. For many applications, this
+        minimum level of georeferencing is adequate. Positioning a house within Google Earth, for
+        example. To the degree that additional information is provided, more precise and
+        comprehensive transformation results become available.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -14342,15 +15627,35 @@ class GeoMap(PyDb.RasterImage):
     @overload
     def __init__(
         self, mapType: PyDb.AcGeoMapType, res: PyDb.AcGeoMapResolution, levelOfDetail: int, /
-    ) -> None: ...
+    ) -> None:
+        """
+          The AcDbGeoMap class represents an embedded raster image which is captured from a portion
+        of LiveMap
+        """
     @overload
-    def __init__(self, viewportId: PyDb.ObjectId, isViewportSpecific: bool, /) -> None: ...
+    def __init__(self, viewportId: PyDb.ObjectId, isViewportSpecific: bool, /) -> None:
+        """
+          The AcDbGeoMap class represents an embedded raster image which is captured from a portion
+        of LiveMap
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+          The AcDbGeoMap class represents an embedded raster image which is captured from a portion
+        of LiveMap
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+          The AcDbGeoMap class represents an embedded raster image which is captured from a portion
+        of LiveMap
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+          The AcDbGeoMap class represents an embedded raster image which is captured from a portion
+        of LiveMap
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -14588,17 +15893,59 @@ class GripData:
 
 class Group(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbGroup class represents a collection of entities referred to by a single name. All
+        AcDbGroup objects belong to a dictionary object which can be obtained through the
+        AcDbDatabase::getGroupDictionary() method. Unlike a block, entities within a group can be
+        individually manipulated. This class contains a dynamic array of object IDs that are the
+        objects in the group.
+        """
     @overload
-    def __init__(self, grpDesc: str, /) -> None: ...
+    def __init__(self, grpDesc: str, /) -> None:
+        """
+        The AcDbGroup class represents a collection of entities referred to by a single name. All
+        AcDbGroup objects belong to a dictionary object which can be obtained through the
+        AcDbDatabase::getGroupDictionary() method. Unlike a block, entities within a group can be
+        individually manipulated. This class contains a dynamic array of object IDs that are the
+        objects in the group.
+        """
     @overload
-    def __init__(self, grpDesc: str, selectable: bool, /) -> None: ...
+    def __init__(self, grpDesc: str, selectable: bool, /) -> None:
+        """
+        The AcDbGroup class represents a collection of entities referred to by a single name. All
+        AcDbGroup objects belong to a dictionary object which can be obtained through the
+        AcDbDatabase::getGroupDictionary() method. Unlike a block, entities within a group can be
+        individually manipulated. This class contains a dynamic array of object IDs that are the
+        objects in the group.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbGroup class represents a collection of entities referred to by a single name. All
+        AcDbGroup objects belong to a dictionary object which can be obtained through the
+        AcDbDatabase::getGroupDictionary() method. Unlike a block, entities within a group can be
+        individually manipulated. This class contains a dynamic array of object IDs that are the
+        objects in the group.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbGroup class represents a collection of entities referred to by a single name. All
+        AcDbGroup objects belong to a dictionary object which can be obtained through the
+        AcDbDatabase::getGroupDictionary() method. Unlike a block, entities within a group can be
+        individually manipulated. This class contains a dynamic array of object IDs that are the
+        objects in the group.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbGroup class represents a collection of entities referred to by a single name. All
+        AcDbGroup objects belong to a dictionary object which can be obtained through the
+        AcDbDatabase::getGroupDictionary() method. Unlike a block, entities within a group can be
+        individually manipulated. This class contains a dynamic array of object IDs that are the
+        objects in the group.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -14832,13 +16179,293 @@ class HardPointerId(PyDb.ObjectId):
 
 class Hatch(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        AcDbHatch is a planar entity that can be created and placed in an arbitrary plane in 3D
+        space.  The hatch plane can be uniquely defined by a normal vector in WCS (World Coordinate
+        System) and an elevation indicating the distance from the WCS origin to the hatch plane.
+        The hatch plane adopts a standard AutoCAD object coordinate system (OCS). Its origin
+        coincides with the WCS origin and its X and Y axes are calculated using the arbitrary axis
+        algorithm.  The hatch boundary defines the area to be filled with the specified hatch
+        pattern. The internal representation of the hatch boundary consists of a set of planar
+        loops. Each loop is made of a collection of 2D edges of line, circular arc, elliptic arc
+        and spline. If the hatch boundary contains two or more loops, the areas enclosed by
+        individual loops must be completely disjoint or one will completely enclose the other.  A
+        loop must be simple, closed, and continuous, intersecting itself only at its endpoints.
+        Furthermore, its start point and end point must coincide. When defining the hatch boundary,
+        the application must ensure that the loops and edges are well defined and structured. If
+        the boundary contains two or more loops, they must be organized into a nested structure in
+        which the external loop is constructed first, then followed by all its internal loops in
+        nested order. If there is more than one external loop, repeat the process. AutoCAD provides
+        limited validation of the hatch boundary in order to maintain API efficiency and
+        performance.  The internal representations of hatch boundary edges are GELIB 2D geometry,
+        including AcGeLineSeg2d, AcGeCircArc2d, AcGeEllipArc2d and AcGeNurbCurve2d. If the hatch
+        boundary consists of a polyline, special methods are provided to construct the loop.
+        Associative hatching allows the application to create a hatch entity that is associative to
+        the boundaries of existing AutoCAD database entities, including LINE, ARC, CIRCLE, ELLIPSE,
+        SPLINE, POLYLINE, TEXT, MTEXT, ATTRIBUTE DEFINITION, ATTRIBUTE, SHAPE, SOLID, TRACE,
+        TOLERANCE, REGION, VIEWPORT, 3D FACE, BLOCK INSERT, XREF, LWPOLYLINE, RASTER etc. When you
+        edit the source geometry, the hatch entity will adapt to the changes automatically. When
+        using a custom entity, you must define an explode method in order for the hatching to work.
+        Your explode method should break your entity down into less complicated entities.  When
+        defining a hatch boundary using existing database entities, the application must ensure
+        that the selected objects have a valid hatch boundary and are coplanar with the hatch
+        plane. The selected objects must also form well-defined loops. You also need to set the
+        associativity flag before you set the hatch boundary. insertLoopAt() and appendLoop()
+        methods will extract the geometry from database objects and maintain the database object
+        IDs with the loop structure for associative hatch.  If the hatch boundary contains two or
+        more loops for a solid fill operation, the areas enclosed by the individual loops must be
+        completely disjoint or one will completely enclose the other. Also, each loop must be
+        simple, closed, and continuous, in which it intersects itself only at its endpoints. If the
+        hatch boundary does not meet these requirements, the results may be unpredictable and
+        inconsistent between the regular hatch and the solid fill pattern.  Mlines are complex
+        entities that can produce more than one loop, which means they will be rejected as hatch
+        boundaries. If you use the AcDbHatch API and select an AcDbMline object to be hatched, no
+        hatching will be displayed, and appendloop() will return eInvalidInput. To work around
+        this, you can explode the mline, get the resulting edges, and produce loops from them. If
+        AcDbMline::explode() produces a set of edges that do not form a single closed loop, you can
+        create a region by using the edges to construct an AcDbRegion object. You can then explode
+        the region to get simple closed loops, and pass those loops to the AcDbHatch object.  Your
+        application should check the return status of each API call and delete the hatch entity if
+        the status is eInvalidInput.  Currently, AutoCAD supports three hatch pattern types that
+        are User-defined, Predefined, and Custom. See the HatchPatternType enum for more
+        information.  The following methods enable the application to set and get hatch
+        pattern-related data. If you call AcDbHatch::setPatternScale() (or any of the pattern
+        methods), the scale value changes but the pattern does not change on the display. This is
+        by design. You need to call AcDbHatch::setPattern() after changing the pattern scale,
+        angle, name, etc. One call to this function is sufficient for all combinations of pattern
+        changes.  AutoCAD currently supports three hatch styles, which are Normal, Outer, and
+        Ignore. See the HatchStyle enum for more information.  The following methods provide the
+        application to set and get hatch style. These methods are provided for compatibility
+        purposes; it is recommended to always use Normal style.  AcDbHatch::HatchStyle style()
+        const;Acad::ErrorStatus setStyle(AcDbHatch::HatchStyle hstyle); After defining the hatch
+        boundary and specifying the hatch pattern and style, the application must elaborate the
+        hatch lines or solid fill for display. The AcDbHatch class implementation maintains the
+        computed hatch lines and solid fill to support worldDraw() and viewportDraw() methods for
+        hatch entity display. However, the computed hatch lines and solid fill are not saved with
+        the drawing or DXF files for file size efficiency. Instead, AutoCAD recomputes the hatch
+        lines or solid fill when a DWG or DXF file is opened by AutoCAD.  If the hatch boundary
+        definition loops or edges get changed or removed, the application must re-elaborate the
+        hatch lines or solid fill to update the display. The hatch boundary definition loops and
+        edges are not displayed. This should not present a problem because the hatch entity is
+        always associative with existing geometry in the AutoCAD database in most cases.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        AcDbHatch is a planar entity that can be created and placed in an arbitrary plane in 3D
+        space.  The hatch plane can be uniquely defined by a normal vector in WCS (World Coordinate
+        System) and an elevation indicating the distance from the WCS origin to the hatch plane.
+        The hatch plane adopts a standard AutoCAD object coordinate system (OCS). Its origin
+        coincides with the WCS origin and its X and Y axes are calculated using the arbitrary axis
+        algorithm.  The hatch boundary defines the area to be filled with the specified hatch
+        pattern. The internal representation of the hatch boundary consists of a set of planar
+        loops. Each loop is made of a collection of 2D edges of line, circular arc, elliptic arc
+        and spline. If the hatch boundary contains two or more loops, the areas enclosed by
+        individual loops must be completely disjoint or one will completely enclose the other.  A
+        loop must be simple, closed, and continuous, intersecting itself only at its endpoints.
+        Furthermore, its start point and end point must coincide. When defining the hatch boundary,
+        the application must ensure that the loops and edges are well defined and structured. If
+        the boundary contains two or more loops, they must be organized into a nested structure in
+        which the external loop is constructed first, then followed by all its internal loops in
+        nested order. If there is more than one external loop, repeat the process. AutoCAD provides
+        limited validation of the hatch boundary in order to maintain API efficiency and
+        performance.  The internal representations of hatch boundary edges are GELIB 2D geometry,
+        including AcGeLineSeg2d, AcGeCircArc2d, AcGeEllipArc2d and AcGeNurbCurve2d. If the hatch
+        boundary consists of a polyline, special methods are provided to construct the loop.
+        Associative hatching allows the application to create a hatch entity that is associative to
+        the boundaries of existing AutoCAD database entities, including LINE, ARC, CIRCLE, ELLIPSE,
+        SPLINE, POLYLINE, TEXT, MTEXT, ATTRIBUTE DEFINITION, ATTRIBUTE, SHAPE, SOLID, TRACE,
+        TOLERANCE, REGION, VIEWPORT, 3D FACE, BLOCK INSERT, XREF, LWPOLYLINE, RASTER etc. When you
+        edit the source geometry, the hatch entity will adapt to the changes automatically. When
+        using a custom entity, you must define an explode method in order for the hatching to work.
+        Your explode method should break your entity down into less complicated entities.  When
+        defining a hatch boundary using existing database entities, the application must ensure
+        that the selected objects have a valid hatch boundary and are coplanar with the hatch
+        plane. The selected objects must also form well-defined loops. You also need to set the
+        associativity flag before you set the hatch boundary. insertLoopAt() and appendLoop()
+        methods will extract the geometry from database objects and maintain the database object
+        IDs with the loop structure for associative hatch.  If the hatch boundary contains two or
+        more loops for a solid fill operation, the areas enclosed by the individual loops must be
+        completely disjoint or one will completely enclose the other. Also, each loop must be
+        simple, closed, and continuous, in which it intersects itself only at its endpoints. If the
+        hatch boundary does not meet these requirements, the results may be unpredictable and
+        inconsistent between the regular hatch and the solid fill pattern.  Mlines are complex
+        entities that can produce more than one loop, which means they will be rejected as hatch
+        boundaries. If you use the AcDbHatch API and select an AcDbMline object to be hatched, no
+        hatching will be displayed, and appendloop() will return eInvalidInput. To work around
+        this, you can explode the mline, get the resulting edges, and produce loops from them. If
+        AcDbMline::explode() produces a set of edges that do not form a single closed loop, you can
+        create a region by using the edges to construct an AcDbRegion object. You can then explode
+        the region to get simple closed loops, and pass those loops to the AcDbHatch object.  Your
+        application should check the return status of each API call and delete the hatch entity if
+        the status is eInvalidInput.  Currently, AutoCAD supports three hatch pattern types that
+        are User-defined, Predefined, and Custom. See the HatchPatternType enum for more
+        information.  The following methods enable the application to set and get hatch
+        pattern-related data. If you call AcDbHatch::setPatternScale() (or any of the pattern
+        methods), the scale value changes but the pattern does not change on the display. This is
+        by design. You need to call AcDbHatch::setPattern() after changing the pattern scale,
+        angle, name, etc. One call to this function is sufficient for all combinations of pattern
+        changes.  AutoCAD currently supports three hatch styles, which are Normal, Outer, and
+        Ignore. See the HatchStyle enum for more information.  The following methods provide the
+        application to set and get hatch style. These methods are provided for compatibility
+        purposes; it is recommended to always use Normal style.  AcDbHatch::HatchStyle style()
+        const;Acad::ErrorStatus setStyle(AcDbHatch::HatchStyle hstyle); After defining the hatch
+        boundary and specifying the hatch pattern and style, the application must elaborate the
+        hatch lines or solid fill for display. The AcDbHatch class implementation maintains the
+        computed hatch lines and solid fill to support worldDraw() and viewportDraw() methods for
+        hatch entity display. However, the computed hatch lines and solid fill are not saved with
+        the drawing or DXF files for file size efficiency. Instead, AutoCAD recomputes the hatch
+        lines or solid fill when a DWG or DXF file is opened by AutoCAD.  If the hatch boundary
+        definition loops or edges get changed or removed, the application must re-elaborate the
+        hatch lines or solid fill to update the display. The hatch boundary definition loops and
+        edges are not displayed. This should not present a problem because the hatch entity is
+        always associative with existing geometry in the AutoCAD database in most cases.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        AcDbHatch is a planar entity that can be created and placed in an arbitrary plane in 3D
+        space.  The hatch plane can be uniquely defined by a normal vector in WCS (World Coordinate
+        System) and an elevation indicating the distance from the WCS origin to the hatch plane.
+        The hatch plane adopts a standard AutoCAD object coordinate system (OCS). Its origin
+        coincides with the WCS origin and its X and Y axes are calculated using the arbitrary axis
+        algorithm.  The hatch boundary defines the area to be filled with the specified hatch
+        pattern. The internal representation of the hatch boundary consists of a set of planar
+        loops. Each loop is made of a collection of 2D edges of line, circular arc, elliptic arc
+        and spline. If the hatch boundary contains two or more loops, the areas enclosed by
+        individual loops must be completely disjoint or one will completely enclose the other.  A
+        loop must be simple, closed, and continuous, intersecting itself only at its endpoints.
+        Furthermore, its start point and end point must coincide. When defining the hatch boundary,
+        the application must ensure that the loops and edges are well defined and structured. If
+        the boundary contains two or more loops, they must be organized into a nested structure in
+        which the external loop is constructed first, then followed by all its internal loops in
+        nested order. If there is more than one external loop, repeat the process. AutoCAD provides
+        limited validation of the hatch boundary in order to maintain API efficiency and
+        performance.  The internal representations of hatch boundary edges are GELIB 2D geometry,
+        including AcGeLineSeg2d, AcGeCircArc2d, AcGeEllipArc2d and AcGeNurbCurve2d. If the hatch
+        boundary consists of a polyline, special methods are provided to construct the loop.
+        Associative hatching allows the application to create a hatch entity that is associative to
+        the boundaries of existing AutoCAD database entities, including LINE, ARC, CIRCLE, ELLIPSE,
+        SPLINE, POLYLINE, TEXT, MTEXT, ATTRIBUTE DEFINITION, ATTRIBUTE, SHAPE, SOLID, TRACE,
+        TOLERANCE, REGION, VIEWPORT, 3D FACE, BLOCK INSERT, XREF, LWPOLYLINE, RASTER etc. When you
+        edit the source geometry, the hatch entity will adapt to the changes automatically. When
+        using a custom entity, you must define an explode method in order for the hatching to work.
+        Your explode method should break your entity down into less complicated entities.  When
+        defining a hatch boundary using existing database entities, the application must ensure
+        that the selected objects have a valid hatch boundary and are coplanar with the hatch
+        plane. The selected objects must also form well-defined loops. You also need to set the
+        associativity flag before you set the hatch boundary. insertLoopAt() and appendLoop()
+        methods will extract the geometry from database objects and maintain the database object
+        IDs with the loop structure for associative hatch.  If the hatch boundary contains two or
+        more loops for a solid fill operation, the areas enclosed by the individual loops must be
+        completely disjoint or one will completely enclose the other. Also, each loop must be
+        simple, closed, and continuous, in which it intersects itself only at its endpoints. If the
+        hatch boundary does not meet these requirements, the results may be unpredictable and
+        inconsistent between the regular hatch and the solid fill pattern.  Mlines are complex
+        entities that can produce more than one loop, which means they will be rejected as hatch
+        boundaries. If you use the AcDbHatch API and select an AcDbMline object to be hatched, no
+        hatching will be displayed, and appendloop() will return eInvalidInput. To work around
+        this, you can explode the mline, get the resulting edges, and produce loops from them. If
+        AcDbMline::explode() produces a set of edges that do not form a single closed loop, you can
+        create a region by using the edges to construct an AcDbRegion object. You can then explode
+        the region to get simple closed loops, and pass those loops to the AcDbHatch object.  Your
+        application should check the return status of each API call and delete the hatch entity if
+        the status is eInvalidInput.  Currently, AutoCAD supports three hatch pattern types that
+        are User-defined, Predefined, and Custom. See the HatchPatternType enum for more
+        information.  The following methods enable the application to set and get hatch
+        pattern-related data. If you call AcDbHatch::setPatternScale() (or any of the pattern
+        methods), the scale value changes but the pattern does not change on the display. This is
+        by design. You need to call AcDbHatch::setPattern() after changing the pattern scale,
+        angle, name, etc. One call to this function is sufficient for all combinations of pattern
+        changes.  AutoCAD currently supports three hatch styles, which are Normal, Outer, and
+        Ignore. See the HatchStyle enum for more information.  The following methods provide the
+        application to set and get hatch style. These methods are provided for compatibility
+        purposes; it is recommended to always use Normal style.  AcDbHatch::HatchStyle style()
+        const;Acad::ErrorStatus setStyle(AcDbHatch::HatchStyle hstyle); After defining the hatch
+        boundary and specifying the hatch pattern and style, the application must elaborate the
+        hatch lines or solid fill for display. The AcDbHatch class implementation maintains the
+        computed hatch lines and solid fill to support worldDraw() and viewportDraw() methods for
+        hatch entity display. However, the computed hatch lines and solid fill are not saved with
+        the drawing or DXF files for file size efficiency. Instead, AutoCAD recomputes the hatch
+        lines or solid fill when a DWG or DXF file is opened by AutoCAD.  If the hatch boundary
+        definition loops or edges get changed or removed, the application must re-elaborate the
+        hatch lines or solid fill to update the display. The hatch boundary definition loops and
+        edges are not displayed. This should not present a problem because the hatch entity is
+        always associative with existing geometry in the AutoCAD database in most cases.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        AcDbHatch is a planar entity that can be created and placed in an arbitrary plane in 3D
+        space.  The hatch plane can be uniquely defined by a normal vector in WCS (World Coordinate
+        System) and an elevation indicating the distance from the WCS origin to the hatch plane.
+        The hatch plane adopts a standard AutoCAD object coordinate system (OCS). Its origin
+        coincides with the WCS origin and its X and Y axes are calculated using the arbitrary axis
+        algorithm.  The hatch boundary defines the area to be filled with the specified hatch
+        pattern. The internal representation of the hatch boundary consists of a set of planar
+        loops. Each loop is made of a collection of 2D edges of line, circular arc, elliptic arc
+        and spline. If the hatch boundary contains two or more loops, the areas enclosed by
+        individual loops must be completely disjoint or one will completely enclose the other.  A
+        loop must be simple, closed, and continuous, intersecting itself only at its endpoints.
+        Furthermore, its start point and end point must coincide. When defining the hatch boundary,
+        the application must ensure that the loops and edges are well defined and structured. If
+        the boundary contains two or more loops, they must be organized into a nested structure in
+        which the external loop is constructed first, then followed by all its internal loops in
+        nested order. If there is more than one external loop, repeat the process. AutoCAD provides
+        limited validation of the hatch boundary in order to maintain API efficiency and
+        performance.  The internal representations of hatch boundary edges are GELIB 2D geometry,
+        including AcGeLineSeg2d, AcGeCircArc2d, AcGeEllipArc2d and AcGeNurbCurve2d. If the hatch
+        boundary consists of a polyline, special methods are provided to construct the loop.
+        Associative hatching allows the application to create a hatch entity that is associative to
+        the boundaries of existing AutoCAD database entities, including LINE, ARC, CIRCLE, ELLIPSE,
+        SPLINE, POLYLINE, TEXT, MTEXT, ATTRIBUTE DEFINITION, ATTRIBUTE, SHAPE, SOLID, TRACE,
+        TOLERANCE, REGION, VIEWPORT, 3D FACE, BLOCK INSERT, XREF, LWPOLYLINE, RASTER etc. When you
+        edit the source geometry, the hatch entity will adapt to the changes automatically. When
+        using a custom entity, you must define an explode method in order for the hatching to work.
+        Your explode method should break your entity down into less complicated entities.  When
+        defining a hatch boundary using existing database entities, the application must ensure
+        that the selected objects have a valid hatch boundary and are coplanar with the hatch
+        plane. The selected objects must also form well-defined loops. You also need to set the
+        associativity flag before you set the hatch boundary. insertLoopAt() and appendLoop()
+        methods will extract the geometry from database objects and maintain the database object
+        IDs with the loop structure for associative hatch.  If the hatch boundary contains two or
+        more loops for a solid fill operation, the areas enclosed by the individual loops must be
+        completely disjoint or one will completely enclose the other. Also, each loop must be
+        simple, closed, and continuous, in which it intersects itself only at its endpoints. If the
+        hatch boundary does not meet these requirements, the results may be unpredictable and
+        inconsistent between the regular hatch and the solid fill pattern.  Mlines are complex
+        entities that can produce more than one loop, which means they will be rejected as hatch
+        boundaries. If you use the AcDbHatch API and select an AcDbMline object to be hatched, no
+        hatching will be displayed, and appendloop() will return eInvalidInput. To work around
+        this, you can explode the mline, get the resulting edges, and produce loops from them. If
+        AcDbMline::explode() produces a set of edges that do not form a single closed loop, you can
+        create a region by using the edges to construct an AcDbRegion object. You can then explode
+        the region to get simple closed loops, and pass those loops to the AcDbHatch object.  Your
+        application should check the return status of each API call and delete the hatch entity if
+        the status is eInvalidInput.  Currently, AutoCAD supports three hatch pattern types that
+        are User-defined, Predefined, and Custom. See the HatchPatternType enum for more
+        information.  The following methods enable the application to set and get hatch
+        pattern-related data. If you call AcDbHatch::setPatternScale() (or any of the pattern
+        methods), the scale value changes but the pattern does not change on the display. This is
+        by design. You need to call AcDbHatch::setPattern() after changing the pattern scale,
+        angle, name, etc. One call to this function is sufficient for all combinations of pattern
+        changes.  AutoCAD currently supports three hatch styles, which are Normal, Outer, and
+        Ignore. See the HatchStyle enum for more information.  The following methods provide the
+        application to set and get hatch style. These methods are provided for compatibility
+        purposes; it is recommended to always use Normal style.  AcDbHatch::HatchStyle style()
+        const;Acad::ErrorStatus setStyle(AcDbHatch::HatchStyle hstyle); After defining the hatch
+        boundary and specifying the hatch pattern and style, the application must elaborate the
+        hatch lines or solid fill for display. The AcDbHatch class implementation maintains the
+        computed hatch lines and solid fill to support worldDraw() and viewportDraw() methods for
+        hatch entity display. However, the computed hatch lines and solid fill are not saved with
+        the drawing or DXF files for file size efficiency. Instead, AutoCAD recomputes the hatch
+        lines or solid fill when a DWG or DXF file is opened by AutoCAD.  If the hatch boundary
+        definition loops or edges get changed or removed, the application must re-elaborate the
+        hatch lines or solid fill to update the display. The hatch boundary definition loops and
+        edges are not displayed. This should not present a problem because the hatch entity is
+        always associative with existing geometry in the AutoCAD database in most cases.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -15500,11 +17127,20 @@ class HostApplicationServices:
     @staticmethod
     def createOutputCapture() -> OutputDisplayService: ...
     @overload
-    def findFile(self, fileName: str, /) -> str: ...
+    def findFile(self, fileName: str, /) -> str:
+        """
+        This is findFile, a member of class AcDbHostApplicationServices.
+        """
     @overload
-    def findFile(self, fileName: str, db: PyDb.Database, /) -> str: ...
+    def findFile(self, fileName: str, db: PyDb.Database, /) -> str:
+        """
+        This is findFile, a member of class AcDbHostApplicationServices.
+        """
     @overload
-    def findFile(self, fileName: str, db: PyDb.Database, hint: PyDb.FindFileHint, /) -> str: ...
+    def findFile(self, fileName: str, db: PyDb.Database, hint: PyDb.FindFileHint, /) -> str:
+        """
+        This is findFile, a member of class AcDbHostApplicationServices.
+        """
     @overload
     def findFile(self, *args) -> str:
         """
@@ -15701,11 +17337,26 @@ class IdMapping:
 
 class IdPair:
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        AcDbIdPair is the element class for AcDbIdMapping, which is used in deep clone operations.
+        It holds a pair of AcDbObjectIds. The key is the original object's ID, and the value is the
+        cloned object's ID.
+        """
     @overload
-    def __init__(self, key: PyDb.ObjectId, val: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, key: PyDb.ObjectId, val: PyDb.ObjectId, /) -> None:
+        """
+        AcDbIdPair is the element class for AcDbIdMapping, which is used in deep clone operations.
+        It holds a pair of AcDbObjectIds. The key is the original object's ID, and the value is the
+        cloned object's ID.
+        """
     @overload
-    def __init__(self, key: PyDb.ObjectId, val: PyDb.ObjectId, isCloned: bool, /) -> None: ...
+    def __init__(self, key: PyDb.ObjectId, val: PyDb.ObjectId, isCloned: bool, /) -> None:
+        """
+        AcDbIdPair is the element class for AcDbIdMapping, which is used in deep clone operations.
+        It holds a pair of AcDbObjectIds. The key is the original object's ID, and the value is the
+        cloned object's ID.
+        """
     @overload
     def __init__(
         self,
@@ -15715,7 +17366,12 @@ class IdPair:
         isPrimary: bool,
         isOwnerXlated: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        AcDbIdPair is the element class for AcDbIdMapping, which is used in deep clone operations.
+        It holds a pair of AcDbObjectIds. The key is the original object's ID, and the value is the
+        cloned object's ID.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -15898,13 +17554,37 @@ class JoinStyle(_BoostPythonEnum):
 
 class LayerFilter(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class is a list of layers that need to have their corresponding entity lists traversed
+        during filtered block traversal. The newIterator() method does return a pointer to a valid
+        AcDbFilteredBlockIterator object. These objects are optionally saved in the drawing for
+        purposes of xref demand loading efficiency.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This class is a list of layers that need to have their corresponding entity lists traversed
+        during filtered block traversal. The newIterator() method does return a pointer to a valid
+        AcDbFilteredBlockIterator object. These objects are optionally saved in the drawing for
+        purposes of xref demand loading efficiency.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        This class is a list of layers that need to have their corresponding entity lists traversed
+        during filtered block traversal. The newIterator() method does return a pointer to a valid
+        AcDbFilteredBlockIterator object. These objects are optionally saved in the drawing for
+        purposes of xref demand loading efficiency.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        This class is a list of layers that need to have their corresponding entity lists traversed
+        during filtered block traversal. The newIterator() method does return a pointer to a valid
+        AcDbFilteredBlockIterator object. These objects are optionally saved in the drawing for
+        purposes of xref demand loading efficiency.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -16215,13 +17895,33 @@ class LayerTableRecord(PyDb.SymbolTableRecord):
         DXF group code 70.
         """
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent records in the AcDbLayerTable. Each of these records
+        contains the information (color, on or off, frozen or thawed, etc.) about a layer in the
+        drawing database.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent records in the AcDbLayerTable. Each of these records
+        contains the information (color, on or off, frozen or thawed, etc.) about a layer in the
+        drawing database.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent records in the AcDbLayerTable. Each of these records
+        contains the information (color, on or off, frozen or thawed, etc.) about a layer in the
+        drawing database.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of this class represent records in the AcDbLayerTable. Each of these records
+        contains the information (color, on or off, frozen or thawed, etc.) about a layer in the
+        drawing database.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -16483,13 +18183,33 @@ class LayerTableRecord(PyDb.SymbolTableRecord):
 
 class Layout(PyDb.PlotSettings):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        An AcDbLayout object stores characteristics of each paperspace layout. Layout objects are
+        stored in an AcDbDictionary object with an ACAD_LAYOUT key, allowing easy iteration and
+        indexing.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        An AcDbLayout object stores characteristics of each paperspace layout. Layout objects are
+        stored in an AcDbDictionary object with an ACAD_LAYOUT key, allowing easy iteration and
+        indexing.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        An AcDbLayout object stores characteristics of each paperspace layout. Layout objects are
+        stored in an AcDbDictionary object with an ACAD_LAYOUT key, allowing easy iteration and
+        indexing.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        An AcDbLayout object stores characteristics of each paperspace layout. Layout objects are
+        stored in an AcDbDictionary object with an ACAD_LAYOUT key, allowing easy iteration and
+        indexing.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -16579,13 +18299,81 @@ class LayoutManager(PyRx.RxObject):
 
 class Leader(PyDb.Curve):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbLeader class represents the LEADER entity within AutoCAD. Leaders are considered as
+        dimensions in AutoCAD, which means they are controlled by dimension variable settings and
+        dimension styles. This class contains a dynamic array of points that are the vertices for
+        the leader line. The first point in the array is the start of the leader. If the leader has
+        an arrowhead it is located here. If the length of the first segment of the leader is less
+        than twice the arrowhead size the arrowhead is suppressed. If the leader has an associated
+        annotation object the last point of the leader is placed near it. By default a leader has
+        straight line segments, but it may be set to fit a spline to the vertexes. Associativity
+        between a leader and another object may be controlled by the methods attachAnnotation() and
+        detachAnnotation(). Some editing methods will automatically break associativity, as
+        described below. To update the leader endpoint position relative to its associated
+        annotation use the evaluateLeader() method. The following persistent reactor notification
+        functions are overridden by AcDbLeader to receive notification of changes in the associated
+        annotation object, which has the leader object in its persistent reactor list:
+        AcDbLeader::copied()AcDbLeader::erased()AcDbLeader::goodbye()AcDbLeader::modified()
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbLeader class represents the LEADER entity within AutoCAD. Leaders are considered as
+        dimensions in AutoCAD, which means they are controlled by dimension variable settings and
+        dimension styles. This class contains a dynamic array of points that are the vertices for
+        the leader line. The first point in the array is the start of the leader. If the leader has
+        an arrowhead it is located here. If the length of the first segment of the leader is less
+        than twice the arrowhead size the arrowhead is suppressed. If the leader has an associated
+        annotation object the last point of the leader is placed near it. By default a leader has
+        straight line segments, but it may be set to fit a spline to the vertexes. Associativity
+        between a leader and another object may be controlled by the methods attachAnnotation() and
+        detachAnnotation(). Some editing methods will automatically break associativity, as
+        described below. To update the leader endpoint position relative to its associated
+        annotation use the evaluateLeader() method. The following persistent reactor notification
+        functions are overridden by AcDbLeader to receive notification of changes in the associated
+        annotation object, which has the leader object in its persistent reactor list:
+        AcDbLeader::copied()AcDbLeader::erased()AcDbLeader::goodbye()AcDbLeader::modified()
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbLeader class represents the LEADER entity within AutoCAD. Leaders are considered as
+        dimensions in AutoCAD, which means they are controlled by dimension variable settings and
+        dimension styles. This class contains a dynamic array of points that are the vertices for
+        the leader line. The first point in the array is the start of the leader. If the leader has
+        an arrowhead it is located here. If the length of the first segment of the leader is less
+        than twice the arrowhead size the arrowhead is suppressed. If the leader has an associated
+        annotation object the last point of the leader is placed near it. By default a leader has
+        straight line segments, but it may be set to fit a spline to the vertexes. Associativity
+        between a leader and another object may be controlled by the methods attachAnnotation() and
+        detachAnnotation(). Some editing methods will automatically break associativity, as
+        described below. To update the leader endpoint position relative to its associated
+        annotation use the evaluateLeader() method. The following persistent reactor notification
+        functions are overridden by AcDbLeader to receive notification of changes in the associated
+        annotation object, which has the leader object in its persistent reactor list:
+        AcDbLeader::copied()AcDbLeader::erased()AcDbLeader::goodbye()AcDbLeader::modified()
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbLeader class represents the LEADER entity within AutoCAD. Leaders are considered as
+        dimensions in AutoCAD, which means they are controlled by dimension variable settings and
+        dimension styles. This class contains a dynamic array of points that are the vertices for
+        the leader line. The first point in the array is the start of the leader. If the leader has
+        an arrowhead it is located here. If the length of the first segment of the leader is less
+        than twice the arrowhead size the arrowhead is suppressed. If the leader has an associated
+        annotation object the last point of the leader is placed near it. By default a leader has
+        straight line segments, but it may be set to fit a spline to the vertexes. Associativity
+        between a leader and another object may be controlled by the methods attachAnnotation() and
+        detachAnnotation(). Some editing methods will automatically break associativity, as
+        described below. To update the leader endpoint position relative to its associated
+        annotation use the evaluateLeader() method. The following persistent reactor notification
+        functions are overridden by AcDbLeader to receive notification of changes in the associated
+        annotation object, which has the leader object in its persistent reactor list:
+        AcDbLeader::copied()AcDbLeader::erased()AcDbLeader::goodbye()AcDbLeader::modified()
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -16683,15 +18471,40 @@ class Leader(PyDb.Curve):
 
 class Line(PyDb.Curve):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbLine class represents the line entity in AutoCAD. A line object is a 3D object that
+        is specified by its start point, endpoint, and normal vector. In addition, the line object
+        supports thickness along its normal vector direction (that is, height or "extrusion").
+        """
     @overload
-    def __init__(self, start: PyGe.Point3d, end: PyGe.Point3d, /) -> None: ...
+    def __init__(self, start: PyGe.Point3d, end: PyGe.Point3d, /) -> None:
+        """
+        The AcDbLine class represents the line entity in AutoCAD. A line object is a 3D object that
+        is specified by its start point, endpoint, and normal vector. In addition, the line object
+        supports thickness along its normal vector direction (that is, height or "extrusion").
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbLine class represents the line entity in AutoCAD. A line object is a 3D object that
+        is specified by its start point, endpoint, and normal vector. In addition, the line object
+        supports thickness along its normal vector direction (that is, height or "extrusion").
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbLine class represents the line entity in AutoCAD. A line object is a 3D object that
+        is specified by its start point, endpoint, and normal vector. In addition, the line object
+        supports thickness along its normal vector direction (that is, height or "extrusion").
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbLine class represents the line entity in AutoCAD. A line object is a 3D object that
+        is specified by its start point, endpoint, and normal vector. In addition, the line object
+        supports thickness along its normal vector direction (that is, height or "extrusion").
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -16807,7 +18620,11 @@ class Line(PyDb.Curve):
 
 class LineAngularDimension2(PyDb.Dimension):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDb2LineAngularDimension class represents the angular dimension defined by two lines
+        (as opposed to three points) within AutoCAD.
+        """
     @overload
     def __init__(
         self,
@@ -16817,7 +18634,11 @@ class LineAngularDimension2(PyDb.Dimension):
         xL2End: PyGe.Point3d,
         arcPnt: PyGe.Point3d,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDb2LineAngularDimension class represents the angular dimension defined by two lines
+        (as opposed to three points) within AutoCAD.
+        """
     @overload
     def __init__(
         self,
@@ -16828,7 +18649,11 @@ class LineAngularDimension2(PyDb.Dimension):
         arcPnt: PyGe.Point3d,
         dimText: str,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDb2LineAngularDimension class represents the angular dimension defined by two lines
+        (as opposed to three points) within AutoCAD.
+        """
     @overload
     def __init__(
         self,
@@ -16840,13 +18665,29 @@ class LineAngularDimension2(PyDb.Dimension):
         dimText: str,
         id: PyDb.ObjectId,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDb2LineAngularDimension class represents the angular dimension defined by two lines
+        (as opposed to three points) within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDb2LineAngularDimension class represents the angular dimension defined by two lines
+        (as opposed to three points) within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDb2LineAngularDimension class represents the angular dimension defined by two lines
+        (as opposed to three points) within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDb2LineAngularDimension class represents the angular dimension defined by two lines
+        (as opposed to three points) within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -17023,13 +18864,57 @@ class LinetypeTable(PyDb.SymbolTable):
 
 class LinetypeTableRecord(PyDb.SymbolTableRecord):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent records in the AcDbLinetypeTable. Each of these records
+        contains the information about a linetype in the drawing database. Within the
+        LinetypeTableRecord, the dashes (line segments that make up characteristics of the
+        linetype) are stored in a list with an index that is zero based. If the linetype is
+        complex, then embedded shapes or text strings are stored in the list at the same index as
+        the dash that preceded them in the linetype definition. So there will always be a
+        dashLength for any valid index in the list, even if there is a shape or text string sharing
+        the same index. When the linetype is elaborated, a shape's insertion point will coincide
+        with the end of the dash that it shares an index with.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent records in the AcDbLinetypeTable. Each of these records
+        contains the information about a linetype in the drawing database. Within the
+        LinetypeTableRecord, the dashes (line segments that make up characteristics of the
+        linetype) are stored in a list with an index that is zero based. If the linetype is
+        complex, then embedded shapes or text strings are stored in the list at the same index as
+        the dash that preceded them in the linetype definition. So there will always be a
+        dashLength for any valid index in the list, even if there is a shape or text string sharing
+        the same index. When the linetype is elaborated, a shape's insertion point will coincide
+        with the end of the dash that it shares an index with.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent records in the AcDbLinetypeTable. Each of these records
+        contains the information about a linetype in the drawing database. Within the
+        LinetypeTableRecord, the dashes (line segments that make up characteristics of the
+        linetype) are stored in a list with an index that is zero based. If the linetype is
+        complex, then embedded shapes or text strings are stored in the list at the same index as
+        the dash that preceded them in the linetype definition. So there will always be a
+        dashLength for any valid index in the list, even if there is a shape or text string sharing
+        the same index. When the linetype is elaborated, a shape's insertion point will coincide
+        with the end of the dash that it shares an index with.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of this class represent records in the AcDbLinetypeTable. Each of these records
+        contains the information about a linetype in the drawing database. Within the
+        LinetypeTableRecord, the dashes (line segments that make up characteristics of the
+        linetype) are stored in a list with an index that is zero based. If the linetype is
+        complex, then embedded shapes or text strings are stored in the list at the same index as
+        the dash that preceded them in the linetype definition. So there will always be a
+        dashLength for any valid index in the list, even if there is a shape or text string sharing
+        the same index. When the linetype is elaborated, a shape's insertion point will coincide
+        with the end of the dash that it shares an index with.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -17123,7 +19008,13 @@ class LoftedSurface(PyDb.Surface):
 
 class MInsertBlock(PyDb.BlockReference):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbMInsertBlock class represents a special form of the INSERT entity in which an array
+        of duplicate images of the entities within the referenced AcDbBlockTableRecord is
+        displayed. Creating an AcDbMInsertBlock with a definition of rows = 1 and columns = 1 will
+        create a AcDbBlockReference instead.
+        """
     @overload
     def __init__(
         self,
@@ -17134,13 +19025,37 @@ class MInsertBlock(PyDb.BlockReference):
         colSpacing: float,
         rowSpacing: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbMInsertBlock class represents a special form of the INSERT entity in which an array
+        of duplicate images of the entities within the referenced AcDbBlockTableRecord is
+        displayed. Creating an AcDbMInsertBlock with a definition of rows = 1 and columns = 1 will
+        create a AcDbBlockReference instead.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbMInsertBlock class represents a special form of the INSERT entity in which an array
+        of duplicate images of the entities within the referenced AcDbBlockTableRecord is
+        displayed. Creating an AcDbMInsertBlock with a definition of rows = 1 and columns = 1 will
+        create a AcDbBlockReference instead.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbMInsertBlock class represents a special form of the INSERT entity in which an array
+        of duplicate images of the entities within the referenced AcDbBlockTableRecord is
+        displayed. Creating an AcDbMInsertBlock with a definition of rows = 1 and columns = 1 will
+        create a AcDbBlockReference instead.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbMInsertBlock class represents a special form of the INSERT entity in which an array
+        of duplicate images of the entities within the referenced AcDbBlockTableRecord is
+        displayed. Creating an AcDbMInsertBlock with a definition of rows = 1 and columns = 1 will
+        create a AcDbBlockReference instead.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -17792,13 +19707,29 @@ class MPolygonloopDir(_BoostPythonEnum):
 
 class MText(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbMText class is the representation for the MTEXT (multiline text) entity within
+        AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbMText class is the representation for the MTEXT (multiline text) entity within
+        AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbMText class is the representation for the MTEXT (multiline text) entity within
+        AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbMText class is the representation for the MTEXT (multiline text) entity within
+        AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -18315,13 +20246,33 @@ class MergeCellStyleOption(_BoostPythonEnum):
 
 class Mline(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbMline class represents the AutoCAD MLINE entity. This multi-line entity allows the
+        user to create a complex line with multiple parallel line parts, each with its own
+        linetype. The space between these parallel lines can be filled if desired.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbMline class represents the AutoCAD MLINE entity. This multi-line entity allows the
+        user to create a complex line with multiple parallel line parts, each with its own
+        linetype. The space between these parallel lines can be filled if desired.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbMline class represents the AutoCAD MLINE entity. This multi-line entity allows the
+        user to create a complex line with multiple parallel line parts, each with its own
+        linetype. The space between these parallel lines can be filled if desired.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbMline class represents the AutoCAD MLINE entity. This multi-line entity allows the
+        user to create a complex line with multiple parallel line parts, each with its own
+        linetype. The space between these parallel lines can be filled if desired.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -18760,11 +20711,29 @@ class OpenMode(_BoostPythonEnum):
 
 class OrdinateDimension(PyDb.Dimension):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbOrdinateDimension class represents the ordinate dimension type within AutoCAD.
+        Ordinate dimensions measure the "horizontal" (X axis) or "vertical" (Y axis) distance from
+        a specified origin point to some other specified point. AcDbOrdinateDimensions measure the
+        distance from the their origin point to their definingPoint along the X or Y axis (as
+        specified by the appropriate member function). They display a leader line from the
+        definingPoint to the leaderEndPoint, with the annotation text located appropriately near
+        the end of the leader.
+        """
     @overload
     def __init__(
         self, useXAxis: bool, definingPoint: PyGe.Point3d, leaderEndPoint: PyGe.Point3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbOrdinateDimension class represents the ordinate dimension type within AutoCAD.
+        Ordinate dimensions measure the "horizontal" (X axis) or "vertical" (Y axis) distance from
+        a specified origin point to some other specified point. AcDbOrdinateDimensions measure the
+        distance from the their origin point to their definingPoint along the X or Y axis (as
+        specified by the appropriate member function). They display a leader line from the
+        definingPoint to the leaderEndPoint, with the annotation text located appropriately near
+        the end of the leader.
+        """
     @overload
     def __init__(
         self,
@@ -18773,7 +20742,16 @@ class OrdinateDimension(PyDb.Dimension):
         leaderEndPoint: PyGe.Point3d,
         dimText: str,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbOrdinateDimension class represents the ordinate dimension type within AutoCAD.
+        Ordinate dimensions measure the "horizontal" (X axis) or "vertical" (Y axis) distance from
+        a specified origin point to some other specified point. AcDbOrdinateDimensions measure the
+        distance from the their origin point to their definingPoint along the X or Y axis (as
+        specified by the appropriate member function). They display a leader line from the
+        definingPoint to the leaderEndPoint, with the annotation text located appropriately near
+        the end of the leader.
+        """
     @overload
     def __init__(
         self,
@@ -18783,13 +20761,49 @@ class OrdinateDimension(PyDb.Dimension):
         dimText: str,
         id: PyDb.ObjectId,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbOrdinateDimension class represents the ordinate dimension type within AutoCAD.
+        Ordinate dimensions measure the "horizontal" (X axis) or "vertical" (Y axis) distance from
+        a specified origin point to some other specified point. AcDbOrdinateDimensions measure the
+        distance from the their origin point to their definingPoint along the X or Y axis (as
+        specified by the appropriate member function). They display a leader line from the
+        definingPoint to the leaderEndPoint, with the annotation text located appropriately near
+        the end of the leader.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbOrdinateDimension class represents the ordinate dimension type within AutoCAD.
+        Ordinate dimensions measure the "horizontal" (X axis) or "vertical" (Y axis) distance from
+        a specified origin point to some other specified point. AcDbOrdinateDimensions measure the
+        distance from the their origin point to their definingPoint along the X or Y axis (as
+        specified by the appropriate member function). They display a leader line from the
+        definingPoint to the leaderEndPoint, with the annotation text located appropriately near
+        the end of the leader.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbOrdinateDimension class represents the ordinate dimension type within AutoCAD.
+        Ordinate dimensions measure the "horizontal" (X axis) or "vertical" (Y axis) distance from
+        a specified origin point to some other specified point. AcDbOrdinateDimensions measure the
+        distance from the their origin point to their definingPoint along the X or Y axis (as
+        specified by the appropriate member function). They display a leader line from the
+        definingPoint to the leaderEndPoint, with the annotation text located appropriately near
+        the end of the leader.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbOrdinateDimension class represents the ordinate dimension type within AutoCAD.
+        Ordinate dimensions measure the "horizontal" (X axis) or "vertical" (Y axis) distance from
+        a specified origin point to some other specified point. AcDbOrdinateDimensions measure the
+        distance from the their origin point to their definingPoint along the X or Y axis (as
+        specified by the appropriate member function). They display a leader line from the
+        definingPoint to the leaderEndPoint, with the annotation text located appropriately near
+        the end of the leader.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -19000,9 +21014,17 @@ class OsnapOverrule(PyRx.Overrule):
 
 class OsnapPointRef(PyDb.PointRef):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+          This class is used to capture the Osnap based reference between a dimension and the
+        geometry it is associated with.
+        """
     @overload
-    def __init__(self, refPt: PyGe.Point3d, /) -> None: ...
+    def __init__(self, refPt: PyGe.Point3d, /) -> None:
+        """
+          This class is used to capture the Osnap based reference between a dimension and the
+        geometry it is associated with.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -19161,15 +21183,35 @@ class PlotRotation(_BoostPythonEnum):
 
 class PlotSettings(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbPlotSettings object stores "what-to-plot" settings as a named plot setup
+        description. The plot settings objects are stored in an AcDbPlotSettingsDictionary.
+        """
     @overload
-    def __init__(self, ModelType: bool, /) -> None: ...
+    def __init__(self, ModelType: bool, /) -> None:
+        """
+        The AcDbPlotSettings object stores "what-to-plot" settings as a named plot setup
+        description. The plot settings objects are stored in an AcDbPlotSettingsDictionary.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbPlotSettings object stores "what-to-plot" settings as a named plot setup
+        description. The plot settings objects are stored in an AcDbPlotSettingsDictionary.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbPlotSettings object stores "what-to-plot" settings as a named plot setup
+        description. The plot settings objects are stored in an AcDbPlotSettingsDictionary.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbPlotSettings object stores "what-to-plot" settings as a named plot setup
+        description. The plot settings objects are stored in an AcDbPlotSettingsDictionary.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -19331,15 +21373,55 @@ class PlotType(_BoostPythonEnum):
 
 class Point(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbPoint class represents the point entity within AutoCAD. A point entity has a
+        position value to locate it in space. It also has a normal vector, which is used to
+        determine its extrusion direction and to determine the plane on which to display the
+        point's graphics if they are something other than a "." (the PDMODE system variable
+        controls this display). The point entity has a thickness that is its "length" in the
+        direction of its normal vector (that is, its extrusion length).
+        """
     @overload
-    def __init__(self, pos: PyGe.Point3d, /) -> None: ...
+    def __init__(self, pos: PyGe.Point3d, /) -> None:
+        """
+        The AcDbPoint class represents the point entity within AutoCAD. A point entity has a
+        position value to locate it in space. It also has a normal vector, which is used to
+        determine its extrusion direction and to determine the plane on which to display the
+        point's graphics if they are something other than a "." (the PDMODE system variable
+        controls this display). The point entity has a thickness that is its "length" in the
+        direction of its normal vector (that is, its extrusion length).
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbPoint class represents the point entity within AutoCAD. A point entity has a
+        position value to locate it in space. It also has a normal vector, which is used to
+        determine its extrusion direction and to determine the plane on which to display the
+        point's graphics if they are something other than a "." (the PDMODE system variable
+        controls this display). The point entity has a thickness that is its "length" in the
+        direction of its normal vector (that is, its extrusion length).
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbPoint class represents the point entity within AutoCAD. A point entity has a
+        position value to locate it in space. It also has a normal vector, which is used to
+        determine its extrusion direction and to determine the plane on which to display the
+        point's graphics if they are something other than a "." (the PDMODE system variable
+        controls this display). The point entity has a thickness that is its "length" in the
+        direction of its normal vector (that is, its extrusion length).
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbPoint class represents the point entity within AutoCAD. A point entity has a
+        position value to locate it in space. It also has a normal vector, which is used to
+        determine its extrusion direction and to determine the plane on which to display the
+        point's graphics if they are something other than a "." (the PDMODE system variable
+        controls this display). The point entity has a thickness that is its "length" in the
+        direction of its normal vector (that is, its extrusion length).
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -19428,7 +21510,11 @@ class Point(PyDb.Entity):
 
 class Point3AngularDimension(PyDb.Dimension):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDb3PointAngularDimension class represents the angular dimension defined by three
+        points (as opposed to two lines) within AutoCAD.
+        """
     @overload
     def __init__(
         self,
@@ -19437,7 +21523,11 @@ class Point3AngularDimension(PyDb.Dimension):
         xL1End: PyGe.Point3d,
         arcPnt: PyGe.Point3d,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDb3PointAngularDimension class represents the angular dimension defined by three
+        points (as opposed to two lines) within AutoCAD.
+        """
     @overload
     def __init__(
         self,
@@ -19447,7 +21537,11 @@ class Point3AngularDimension(PyDb.Dimension):
         arcPnt: PyGe.Point3d,
         dimText: str,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDb3PointAngularDimension class represents the angular dimension defined by three
+        points (as opposed to two lines) within AutoCAD.
+        """
     @overload
     def __init__(
         self,
@@ -19458,13 +21552,29 @@ class Point3AngularDimension(PyDb.Dimension):
         dimText: str,
         id: PyDb.ObjectId,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDb3PointAngularDimension class represents the angular dimension defined by three
+        points (as opposed to two lines) within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDb3PointAngularDimension class represents the angular dimension defined by three
+        points (as opposed to two lines) within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDb3PointAngularDimension class represents the angular dimension defined by three
+        points (as opposed to two lines) within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDb3PointAngularDimension class represents the angular dimension defined by three
+        points (as opposed to two lines) within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -19984,15 +22094,35 @@ class Poly3dType(_BoostPythonEnum):
 
 class PolyFaceMeshVertex(PyDb.Vertex):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbPolyFaceMeshVertex class represents the vertices within AcDbPolyFaceMesh entities
+        in AutoCAD drawings.
+        """
     @overload
-    def __init__(self, pos: PyGe.Point3d, /) -> None: ...
+    def __init__(self, pos: PyGe.Point3d, /) -> None:
+        """
+        The AcDbPolyFaceMeshVertex class represents the vertices within AcDbPolyFaceMesh entities
+        in AutoCAD drawings.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbPolyFaceMeshVertex class represents the vertices within AcDbPolyFaceMesh entities
+        in AutoCAD drawings.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbPolyFaceMeshVertex class represents the vertices within AcDbPolyFaceMesh entities
+        in AutoCAD drawings.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbPolyFaceMeshVertex class represents the vertices within AcDbPolyFaceMesh entities
+        in AutoCAD drawings.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -20034,15 +22164,30 @@ class PolyFaceMeshVertex(PyDb.Vertex):
 
 class PolygonMeshVertex(PyDb.Vertex):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbPolygonMeshVertex class represents vertices within polygon meshes in AutoCAD.
+        """
     @overload
-    def __init__(self, pos: PyGe.Point3d, /) -> None: ...
+    def __init__(self, pos: PyGe.Point3d, /) -> None:
+        """
+        The AcDbPolygonMeshVertex class represents vertices within polygon meshes in AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbPolygonMeshVertex class represents vertices within polygon meshes in AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbPolygonMeshVertex class represents vertices within polygon meshes in AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbPolygonMeshVertex class represents vertices within polygon meshes in AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -20092,17 +22237,137 @@ class PolygonMeshVertex(PyDb.Vertex):
 
 class Polyline(PyDb.Curve):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        AcDbPolyline is often called a lightweight polyline because of its efficient use of memory.
+        AcDbPolyline provides greater performance and reduced overhead compared to AcDb2dPolyline.
+        Its database representation is more efficient because it is stored as a single object with
+        a single name, handle, type, space, layer, and width.  A lightweight polyline has:Straight
+        line segmentsBulge (arc segments)Constant and variable widthThickness Functionality and
+        command options not available in a lightweight polyline include:Arc Fit curve dataSpline
+        Fit dataCurve fit tangent direction data The lightweight polyline is created with the PLINE
+        command and edited with the PEDIT command. When creating or editing lightweight polylines,
+        the command options for PLINE and PEDIT remain the same as in previous releases. The PEDIT
+        command edits lightweight polylines in the same manner as AcDb2dPolyline in previous
+        releases. If the Spline or Fit option is entered, then the lightweight polyline is
+        converted to an AcDb2dPolyline for the duration of the edit. The handle is always
+        maintained; it does not change. The handle of the lightweight polyline becomes the handle
+        for the AcDb2dPolyline (the header entity for the old style polyline entity that contains
+        subentities). Grip behavior is identical to that of AcDb2dPolyline. Behavior with all
+        AutoCAD edit commands also remains the same. Lightweight polyline properties include color,
+        layer, linetype, ltype scale, width, and thickness. All properties apply to the entire
+        object and cannot vary between individual segments.
+        """
     @overload
-    def __init__(self, num_verts: int, /) -> None: ...
+    def __init__(self, num_verts: int, /) -> None:
+        """
+        AcDbPolyline is often called a lightweight polyline because of its efficient use of memory.
+        AcDbPolyline provides greater performance and reduced overhead compared to AcDb2dPolyline.
+        Its database representation is more efficient because it is stored as a single object with
+        a single name, handle, type, space, layer, and width.  A lightweight polyline has:Straight
+        line segmentsBulge (arc segments)Constant and variable widthThickness Functionality and
+        command options not available in a lightweight polyline include:Arc Fit curve dataSpline
+        Fit dataCurve fit tangent direction data The lightweight polyline is created with the PLINE
+        command and edited with the PEDIT command. When creating or editing lightweight polylines,
+        the command options for PLINE and PEDIT remain the same as in previous releases. The PEDIT
+        command edits lightweight polylines in the same manner as AcDb2dPolyline in previous
+        releases. If the Spline or Fit option is entered, then the lightweight polyline is
+        converted to an AcDb2dPolyline for the duration of the edit. The handle is always
+        maintained; it does not change. The handle of the lightweight polyline becomes the handle
+        for the AcDb2dPolyline (the header entity for the old style polyline entity that contains
+        subentities). Grip behavior is identical to that of AcDb2dPolyline. Behavior with all
+        AutoCAD edit commands also remains the same. Lightweight polyline properties include color,
+        layer, linetype, ltype scale, width, and thickness. All properties apply to the entire
+        object and cannot vary between individual segments.
+        """
     @overload
-    def __init__(self, pnts: list[PyGe.Point3d], /) -> None: ...
+    def __init__(self, pnts: list[PyGe.Point3d], /) -> None:
+        """
+        AcDbPolyline is often called a lightweight polyline because of its efficient use of memory.
+        AcDbPolyline provides greater performance and reduced overhead compared to AcDb2dPolyline.
+        Its database representation is more efficient because it is stored as a single object with
+        a single name, handle, type, space, layer, and width.  A lightweight polyline has:Straight
+        line segmentsBulge (arc segments)Constant and variable widthThickness Functionality and
+        command options not available in a lightweight polyline include:Arc Fit curve dataSpline
+        Fit dataCurve fit tangent direction data The lightweight polyline is created with the PLINE
+        command and edited with the PEDIT command. When creating or editing lightweight polylines,
+        the command options for PLINE and PEDIT remain the same as in previous releases. The PEDIT
+        command edits lightweight polylines in the same manner as AcDb2dPolyline in previous
+        releases. If the Spline or Fit option is entered, then the lightweight polyline is
+        converted to an AcDb2dPolyline for the duration of the edit. The handle is always
+        maintained; it does not change. The handle of the lightweight polyline becomes the handle
+        for the AcDb2dPolyline (the header entity for the old style polyline entity that contains
+        subentities). Grip behavior is identical to that of AcDb2dPolyline. Behavior with all
+        AutoCAD edit commands also remains the same. Lightweight polyline properties include color,
+        layer, linetype, ltype scale, width, and thickness. All properties apply to the entire
+        object and cannot vary between individual segments.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        AcDbPolyline is often called a lightweight polyline because of its efficient use of memory.
+        AcDbPolyline provides greater performance and reduced overhead compared to AcDb2dPolyline.
+        Its database representation is more efficient because it is stored as a single object with
+        a single name, handle, type, space, layer, and width.  A lightweight polyline has:Straight
+        line segmentsBulge (arc segments)Constant and variable widthThickness Functionality and
+        command options not available in a lightweight polyline include:Arc Fit curve dataSpline
+        Fit dataCurve fit tangent direction data The lightweight polyline is created with the PLINE
+        command and edited with the PEDIT command. When creating or editing lightweight polylines,
+        the command options for PLINE and PEDIT remain the same as in previous releases. The PEDIT
+        command edits lightweight polylines in the same manner as AcDb2dPolyline in previous
+        releases. If the Spline or Fit option is entered, then the lightweight polyline is
+        converted to an AcDb2dPolyline for the duration of the edit. The handle is always
+        maintained; it does not change. The handle of the lightweight polyline becomes the handle
+        for the AcDb2dPolyline (the header entity for the old style polyline entity that contains
+        subentities). Grip behavior is identical to that of AcDb2dPolyline. Behavior with all
+        AutoCAD edit commands also remains the same. Lightweight polyline properties include color,
+        layer, linetype, ltype scale, width, and thickness. All properties apply to the entire
+        object and cannot vary between individual segments.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        AcDbPolyline is often called a lightweight polyline because of its efficient use of memory.
+        AcDbPolyline provides greater performance and reduced overhead compared to AcDb2dPolyline.
+        Its database representation is more efficient because it is stored as a single object with
+        a single name, handle, type, space, layer, and width.  A lightweight polyline has:Straight
+        line segmentsBulge (arc segments)Constant and variable widthThickness Functionality and
+        command options not available in a lightweight polyline include:Arc Fit curve dataSpline
+        Fit dataCurve fit tangent direction data The lightweight polyline is created with the PLINE
+        command and edited with the PEDIT command. When creating or editing lightweight polylines,
+        the command options for PLINE and PEDIT remain the same as in previous releases. The PEDIT
+        command edits lightweight polylines in the same manner as AcDb2dPolyline in previous
+        releases. If the Spline or Fit option is entered, then the lightweight polyline is
+        converted to an AcDb2dPolyline for the duration of the edit. The handle is always
+        maintained; it does not change. The handle of the lightweight polyline becomes the handle
+        for the AcDb2dPolyline (the header entity for the old style polyline entity that contains
+        subentities). Grip behavior is identical to that of AcDb2dPolyline. Behavior with all
+        AutoCAD edit commands also remains the same. Lightweight polyline properties include color,
+        layer, linetype, ltype scale, width, and thickness. All properties apply to the entire
+        object and cannot vary between individual segments.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        AcDbPolyline is often called a lightweight polyline because of its efficient use of memory.
+        AcDbPolyline provides greater performance and reduced overhead compared to AcDb2dPolyline.
+        Its database representation is more efficient because it is stored as a single object with
+        a single name, handle, type, space, layer, and width.  A lightweight polyline has:Straight
+        line segmentsBulge (arc segments)Constant and variable widthThickness Functionality and
+        command options not available in a lightweight polyline include:Arc Fit curve dataSpline
+        Fit dataCurve fit tangent direction data The lightweight polyline is created with the PLINE
+        command and edited with the PEDIT command. When creating or editing lightweight polylines,
+        the command options for PLINE and PEDIT remain the same as in previous releases. The PEDIT
+        command edits lightweight polylines in the same manner as AcDb2dPolyline in previous
+        releases. If the Spline or Fit option is entered, then the lightweight polyline is
+        converted to an AcDb2dPolyline for the duration of the edit. The handle is always
+        maintained; it does not change. The handle of the lightweight polyline becomes the handle
+        for the AcDb2dPolyline (the header entity for the old style polyline entity that contains
+        subentities). Grip behavior is identical to that of AcDb2dPolyline. Behavior with all
+        AutoCAD edit commands also remains the same. Lightweight polyline properties include color,
+        layer, linetype, ltype scale, width, and thickness. All properties apply to the entire
+        object and cannot vary between individual segments.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -20384,17 +22649,32 @@ class Polyline(PyDb.Curve):
 
 class Polyline2d(PyDb.Curve):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDb2dPolyline class represents the 2D polyline entity within AutoCAD.
+        """
     @overload
     def __init__(
         self, ptype: PyDb.Poly2dType, points: list[PyGe.Point3d], closed: bool, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDb2dPolyline class represents the 2D polyline entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDb2dPolyline class represents the 2D polyline entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDb2dPolyline class represents the 2D polyline entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDb2dPolyline class represents the 2D polyline entity within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -20402,9 +22682,25 @@ class Polyline2d(PyDb.Curve):
         """
     def __reduce__(self, /) -> Any: ...
     @overload
-    def appendVertex(self, vertex: PyDb.Vertex2d, /) -> None: ...
+    def appendVertex(self, vertex: PyDb.Vertex2d, /) -> None:
+        """
+        This function appends the AcDb2dVertex object pointed to by pNewVert to the vertex list of
+        the polyline, establishes the polyline as the vertex's owner, and adds the vertex the
+        AcDbDatabase that contains the polyline (the polyline must be database-resident for this
+        function to succeed). The appended vertex must be explicitly closed by the calling
+        application after the appendVertex() call returns. Returns Acad::eOk if successful. If the
+        polyline is not yet database-resident, then Acad::eNoDatabase will be returned.
+        """
     @overload
-    def appendVertex(self, outVertexId: PyDb.ObjectId, vertex: PyDb.Vertex2d, /) -> None: ...
+    def appendVertex(self, outVertexId: PyDb.ObjectId, vertex: PyDb.Vertex2d, /) -> None:
+        """
+        This function appends the AcDb2dVertex object pointed to by pNewVert to the vertex list of
+        the polyline, establishes the polyline as the vertex's owner, and adds the vertex the
+        AcDbDatabase that contains the polyline (the polyline must be database-resident for this
+        function to succeed). The appended vertex must be explicitly closed by the calling
+        application after the appendVertex() call returns. Returns Acad::eOk if successful. If the
+        polyline is not yet database-resident, then Acad::eNoDatabase will be returned.
+        """
     @overload
     def appendVertex(self, *args) -> None:
         """
@@ -20475,11 +22771,31 @@ class Polyline2d(PyDb.Curve):
         code 30 in a DXF file).
         """
     @overload
-    def insertVertexAt(self, indexVt: PyDb.Vertex2d, newVertex: PyDb.Vertex2d, /) -> None: ...
+    def insertVertexAt(self, indexVt: PyDb.Vertex2d, newVertex: PyDb.Vertex2d, /) -> None:
+        """
+        This function inserts the AcDb2dVertex object pointed to by pNewVertex into the vertex list
+        of the polyline just after the AcDb2dVertex object with objectId indexVertId, establishes
+        the polyline as the vertex's owner, and adds the vertex to the AcDbDatabase that contains
+        the polyline (the polyline must be database-resident for this function to succeed). To
+        insert a vertex at the beginning of the polyline, pass in AcDbObjectId::kNull for the
+        indexVertId argument. The inserted vertex must be explicitly closed by the calling
+        application after the insertVertexAt() call returns. Returns Acad::eOk if successful. If
+        the polyline is not yet database-resident, then Acad::eNoDatabase will be returned.
+        """
     @overload
     def insertVertexAt(
         self, outVertexId: PyDb.ObjectId, indexVtId: PyDb.ObjectId, newVertex: PyDb.Vertex2d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        This function inserts the AcDb2dVertex object pointed to by pNewVertex into the vertex list
+        of the polyline just after the AcDb2dVertex object with objectId indexVertId, establishes
+        the polyline as the vertex's owner, and adds the vertex to the AcDbDatabase that contains
+        the polyline (the polyline must be database-resident for this function to succeed). To
+        insert a vertex at the beginning of the polyline, pass in AcDbObjectId::kNull for the
+        indexVertId argument. The inserted vertex must be explicitly closed by the calling
+        application after the insertVertexAt() call returns. Returns Acad::eOk if successful. If
+        the polyline is not yet database-resident, then Acad::eNoDatabase will be returned.
+        """
     @overload
     def insertVertexAt(self, *args) -> None:
         """
@@ -20646,9 +22962,25 @@ class Polyline2d(PyDb.Curve):
         39.
         """
     @overload
-    def splineFit(self, /) -> None: ...
+    def splineFit(self, /) -> None:
+        """
+        This function removes any existing spline or curve-fit vertices, converts all remaining
+        vertices to spline-control vertices, and generates a new set of spline-fit vertices. The
+        resultant polyline is spline fit through the new set of vertices. This operation performs
+        the same modification as the PEDIT command "Spline fit" option except that it uses
+        splineType and splineSegs as control parameters for the splineFit operation rather than the
+        splinetype and splinesegs database/system variables. Returns Acad::eOk if successful.
+        """
     @overload
-    def splineFit(self, splineType: PyDb.Poly2dType, splineSegs: int, /) -> None: ...
+    def splineFit(self, splineType: PyDb.Poly2dType, splineSegs: int, /) -> None:
+        """
+        This function removes any existing spline or curve-fit vertices, converts all remaining
+        vertices to spline-control vertices, and generates a new set of spline-fit vertices. The
+        resultant polyline is spline fit through the new set of vertices. This operation performs
+        the same modification as the PEDIT command "Spline fit" option except that it uses
+        splineType and splineSegs as control parameters for the splineFit operation rather than the
+        splinetype and splinesegs database/system variables. Returns Acad::eOk if successful.
+        """
     @overload
     def splineFit(self, *args) -> None:
         """
@@ -20683,17 +23015,32 @@ class Polyline2d(PyDb.Curve):
 
 class Polyline3d(PyDb.Curve):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDb3dPolyline class represents the 3D polyline entity within AutoCAD.
+        """
     @overload
     def __init__(
         self, ptype: PyDb.Poly3dType, points: list[PyGe.Point3d], closed: bool, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDb3dPolyline class represents the 3D polyline entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDb3dPolyline class represents the 3D polyline entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDb3dPolyline class represents the 3D polyline entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDb3dPolyline class represents the 3D polyline entity within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -20701,11 +23048,25 @@ class Polyline3d(PyDb.Curve):
         """
     def __reduce__(self, /) -> Any: ...
     @overload
-    def appendVertex(self, vertex: PyDb.Polyline3dVertex, /) -> None: ...
+    def appendVertex(self, vertex: PyDb.Polyline3dVertex, /) -> None:
+        """
+        This function appends the AcDb3dPolylineVertex object pointed to by pNewVert to the vertex
+        list of the polyline, establishes the polyline as the vertex's owner, and adds the vertex
+        to the AcDbDatabase that contains the polyline (the polyline must be database-resident for
+        this function to succeed). The appended vertex must be explicitly closed by the calling
+        application after the appendVertex() call returns. Returns Acad::eOk if successful. If the
+        polyline is not yet database-resident, then Acad::eNoDatabase will be returned.
+        """
     @overload
-    def appendVertex(
-        self, outVertexId: PyDb.ObjectId, vertex: PyDb.Polyline3dVertex, /
-    ) -> None: ...
+    def appendVertex(self, outVertexId: PyDb.ObjectId, vertex: PyDb.Polyline3dVertex, /) -> None:
+        """
+        This function appends the AcDb3dPolylineVertex object pointed to by pNewVert to the vertex
+        list of the polyline, establishes the polyline as the vertex's owner, and adds the vertex
+        to the AcDbDatabase that contains the polyline (the polyline must be database-resident for
+        this function to succeed). The appended vertex must be explicitly closed by the calling
+        application after the appendVertex() call returns. Returns Acad::eOk if successful. If the
+        polyline is not yet database-resident, then Acad::eNoDatabase will be returned.
+        """
     @overload
     def appendVertex(self, *args) -> None:
         """
@@ -20754,7 +23115,18 @@ class Polyline3d(PyDb.Curve):
     @overload
     def insertVertexAt(
         self, indexVt: PyDb.Polyline3dVertex, newVertex: PyDb.Polyline3dVertex, /
-    ) -> None: ...
+    ) -> None:
+        """
+        This function inserts the AcDb3dPolylineVertex object pointed to by pNewVertex into the
+        vertex list of the polyline just after the AcDb3dPolylineVertex object with objectId
+        indexVertId, establishes the polyline as the vertex's owner, and adds the vertex to the
+        AcDbDatabase that contains the polyline (the polyline must be database-resident for this
+        function to succeed). To insert a vertex at the beginning of the polyline, pass in
+        AcDbObjectId::kNull for the indexVertId argument. The inserted vertex must be explicitly
+        closed by the calling application after the insertVertexAt() call returns. Returns
+        Acad::eOk if successful. If the polyline is not yet database-resident, then
+        Acad::eNoDatabase will be returned.
+        """
     @overload
     def insertVertexAt(
         self,
@@ -20762,7 +23134,18 @@ class Polyline3d(PyDb.Curve):
         indexVtId: PyDb.ObjectId,
         newVertex: PyDb.Polyline3dVertex,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This function inserts the AcDb3dPolylineVertex object pointed to by pNewVertex into the
+        vertex list of the polyline just after the AcDb3dPolylineVertex object with objectId
+        indexVertId, establishes the polyline as the vertex's owner, and adds the vertex to the
+        AcDbDatabase that contains the polyline (the polyline must be database-resident for this
+        function to succeed). To insert a vertex at the beginning of the polyline, pass in
+        AcDbObjectId::kNull for the indexVertId argument. The inserted vertex must be explicitly
+        closed by the calling application after the insertVertexAt() call returns. Returns
+        Acad::eOk if successful. If the polyline is not yet database-resident, then
+        Acad::eNoDatabase will be returned.
+        """
     @overload
     def insertVertexAt(self, *args) -> None:
         """
@@ -20851,9 +23234,25 @@ class Polyline3d(PyDb.Curve):
         DXF group code 75 is set to 6. Returns Acad::eOk.
         """
     @overload
-    def splineFit(self, /) -> None: ...
+    def splineFit(self, /) -> None:
+        """
+        This function removes any existing spline or curve-fit vertices, converts all remaining
+        vertices to spline-control vertices, and generates a new set of spline-fit vertices. The
+        resultant polyline is spline fit through the new set of vertices. This operation performs
+        the same modification as the PEDIT command "Spline fit" option except that it uses
+        splineType and splineSegs as control parameters for the splineFit operation rather than the
+        SPLINETYPE and SPLINESEGS database/system variables. Returns Acad::eOk if successful.
+        """
     @overload
-    def splineFit(self, splineType: PyDb.Poly3dType, splineSegs: int, /) -> None: ...
+    def splineFit(self, splineType: PyDb.Poly3dType, splineSegs: int, /) -> None:
+        """
+        This function removes any existing spline or curve-fit vertices, converts all remaining
+        vertices to spline-control vertices, and generates a new set of spline-fit vertices. The
+        resultant polyline is spline fit through the new set of vertices. This operation performs
+        the same modification as the PEDIT command "Spline fit" option except that it uses
+        splineType and splineSegs as control parameters for the splineFit operation rather than the
+        SPLINETYPE and SPLINESEGS database/system variables. Returns Acad::eOk if successful.
+        """
     @overload
     def splineFit(self, *args) -> None:
         """
@@ -20874,15 +23273,30 @@ class Polyline3d(PyDb.Curve):
 
 class Polyline3dVertex(PyDb.Vertex):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDb3dPolylineVertex class represents the vertices within 3D polylines in AutoCAD.
+        """
     @overload
-    def __init__(self, pos: PyGe.Point3d, /) -> None: ...
+    def __init__(self, pos: PyGe.Point3d, /) -> None:
+        """
+        The AcDb3dPolylineVertex class represents the vertices within 3D polylines in AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDb3dPolylineVertex class represents the vertices within 3D polylines in AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDb3dPolylineVertex class represents the vertices within 3D polylines in AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDb3dPolylineVertex class represents the vertices within 3D polylines in AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -20932,9 +23346,21 @@ class Polyline3dVertex(PyDb.Vertex):
 
 class Profile3d(PyRx.RxObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class is used to represent a 3d profile that can be used as input to functions such as
+        createExtrudedSurface(), createRevolvedSurface(), and createSweptSurface(). An object of
+        this class can represent an entity such as a curve or a region, or it can represent an edge
+        or a set of edges that form a connected chain.
+        """
     @overload
-    def __init__(self, val: PyDb.Entity, /) -> None: ...
+    def __init__(self, val: PyDb.Entity, /) -> None:
+        """
+        This class is used to represent a 3d profile that can be used as input to functions such as
+        createExtrudedSurface(), createRevolvedSurface(), and createSweptSurface(). An object of
+        this class can represent an entity such as a curve or a region, or it can represent an edge
+        or a set of edges that form a connected chain.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -20969,15 +23395,37 @@ class Profile3d(PyRx.RxObject):
 
 class RadialDimension(PyDb.Dimension):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbRadialDimension class represents the radius dimension type in AutoCAD. This
+        dimension type requires a center point and a point on the curve being dimensioned in order
+        to be able to draw the dimension line from the center point through the point on the curve.
+        In addition, it utilizes a "leader length" value to determine how far the dimension line
+        extends out past the curve before doing a horizontal dogleg (if necessary) to the
+        annotation text.
+        """
     @overload
-    def __init__(
-        self, center: PyGe.Point3d, chordPoint: PyGe.Point3d, length: float, /
-    ) -> None: ...
+    def __init__(self, center: PyGe.Point3d, chordPoint: PyGe.Point3d, length: float, /) -> None:
+        """
+        The AcDbRadialDimension class represents the radius dimension type in AutoCAD. This
+        dimension type requires a center point and a point on the curve being dimensioned in order
+        to be able to draw the dimension line from the center point through the point on the curve.
+        In addition, it utilizes a "leader length" value to determine how far the dimension line
+        extends out past the curve before doing a horizontal dogleg (if necessary) to the
+        annotation text.
+        """
     @overload
     def __init__(
         self, center: PyGe.Point3d, chordPoint: PyGe.Point3d, length: float, dimText: str, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbRadialDimension class represents the radius dimension type in AutoCAD. This
+        dimension type requires a center point and a point on the curve being dimensioned in order
+        to be able to draw the dimension line from the center point through the point on the curve.
+        In addition, it utilizes a "leader length" value to determine how far the dimension line
+        extends out past the curve before doing a horizontal dogleg (if necessary) to the
+        annotation text.
+        """
     @overload
     def __init__(
         self,
@@ -20987,13 +23435,45 @@ class RadialDimension(PyDb.Dimension):
         dimText: str,
         id: PyDb.ObjectId,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbRadialDimension class represents the radius dimension type in AutoCAD. This
+        dimension type requires a center point and a point on the curve being dimensioned in order
+        to be able to draw the dimension line from the center point through the point on the curve.
+        In addition, it utilizes a "leader length" value to determine how far the dimension line
+        extends out past the curve before doing a horizontal dogleg (if necessary) to the
+        annotation text.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbRadialDimension class represents the radius dimension type in AutoCAD. This
+        dimension type requires a center point and a point on the curve being dimensioned in order
+        to be able to draw the dimension line from the center point through the point on the curve.
+        In addition, it utilizes a "leader length" value to determine how far the dimension line
+        extends out past the curve before doing a horizontal dogleg (if necessary) to the
+        annotation text.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbRadialDimension class represents the radius dimension type in AutoCAD. This
+        dimension type requires a center point and a point on the curve being dimensioned in order
+        to be able to draw the dimension line from the center point through the point on the curve.
+        In addition, it utilizes a "leader length" value to determine how far the dimension line
+        extends out past the curve before doing a horizontal dogleg (if necessary) to the
+        annotation text.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbRadialDimension class represents the radius dimension type in AutoCAD. This
+        dimension type requires a center point and a point on the curve being dimensioned in order
+        to be able to draw the dimension line from the center point through the point on the curve.
+        In addition, it utilizes a "leader length" value to determine how far the dimension line
+        extends out past the curve before doing a horizontal dogleg (if necessary) to the
+        annotation text.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -21078,7 +23558,10 @@ class RadialDimension(PyDb.Dimension):
 
 class RadialDimensionLarge(PyDb.Dimension):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class represents a large radial dimension, also known as a jogged radius dimension.
+        """
     @overload
     def __init__(
         self,
@@ -21088,7 +23571,10 @@ class RadialDimensionLarge(PyDb.Dimension):
         jogPoint: PyGe.Point3d,
         jogAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class represents a large radial dimension, also known as a jogged radius dimension.
+        """
     @overload
     def __init__(
         self,
@@ -21099,7 +23585,10 @@ class RadialDimensionLarge(PyDb.Dimension):
         jogAngle: float,
         dimText: str,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class represents a large radial dimension, also known as a jogged radius dimension.
+        """
     @overload
     def __init__(
         self,
@@ -21111,13 +23600,25 @@ class RadialDimensionLarge(PyDb.Dimension):
         dimText: str,
         id: PyDb.ObjectId,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class represents a large radial dimension, also known as a jogged radius dimension.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This class represents a large radial dimension, also known as a jogged radius dimension.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        This class represents a large radial dimension, also known as a jogged radius dimension.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        This class represents a large radial dimension, also known as a jogged radius dimension.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -21289,13 +23790,89 @@ class RasterImage(PyDb.Image):
 
 class RasterImageDef(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbRasterImageDef object (or "image definition object") works with the AcDbRasterImage
+        entity (or "image entity") to implement raster images inside AutoCAD. The relationship
+        between these two classes is much like the relationship between an AutoCAD block definition
+        object and a block insert entity. The image definition object plays a behind-the-scenes
+        role like the block definition, maintaining links to the source image file and managing
+        low-level image processing operations required to display and plot images. Image definition
+        objects are stored in a special AcDbDictionary named ISM_RASTER_IMAGE_DICT. These objects
+        are not AutoCAD entities, so they can't be displayed or selected directly by the end user.
+        They handle only 2D pixel coordinates, so all image processing requests must be expressed
+        as 2D operations. Image processing operations like scaling and rotating the image for
+        display are executed by the Autodesk Image Engine. The Image Engine has its own extensive
+        developer API on which sophisticated image editing applications can be built. (Information
+        on the Autodesk Image Engine is available through the Autodesk Developer Program.) Refer to
+        the description of class AcDbRasterImage for more information.Linking to
+        acISMobj25.libClass AcDbRasterImageDef is implemented in an ObjectARX application called
+        acISMui.arx. Your application must link to the ObjectARX API library acISMobj25.lib to use
+        any of the methods specific to this class.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbRasterImageDef object (or "image definition object") works with the AcDbRasterImage
+        entity (or "image entity") to implement raster images inside AutoCAD. The relationship
+        between these two classes is much like the relationship between an AutoCAD block definition
+        object and a block insert entity. The image definition object plays a behind-the-scenes
+        role like the block definition, maintaining links to the source image file and managing
+        low-level image processing operations required to display and plot images. Image definition
+        objects are stored in a special AcDbDictionary named ISM_RASTER_IMAGE_DICT. These objects
+        are not AutoCAD entities, so they can't be displayed or selected directly by the end user.
+        They handle only 2D pixel coordinates, so all image processing requests must be expressed
+        as 2D operations. Image processing operations like scaling and rotating the image for
+        display are executed by the Autodesk Image Engine. The Image Engine has its own extensive
+        developer API on which sophisticated image editing applications can be built. (Information
+        on the Autodesk Image Engine is available through the Autodesk Developer Program.) Refer to
+        the description of class AcDbRasterImage for more information.Linking to
+        acISMobj25.libClass AcDbRasterImageDef is implemented in an ObjectARX application called
+        acISMui.arx. Your application must link to the ObjectARX API library acISMobj25.lib to use
+        any of the methods specific to this class.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbRasterImageDef object (or "image definition object") works with the AcDbRasterImage
+        entity (or "image entity") to implement raster images inside AutoCAD. The relationship
+        between these two classes is much like the relationship between an AutoCAD block definition
+        object and a block insert entity. The image definition object plays a behind-the-scenes
+        role like the block definition, maintaining links to the source image file and managing
+        low-level image processing operations required to display and plot images. Image definition
+        objects are stored in a special AcDbDictionary named ISM_RASTER_IMAGE_DICT. These objects
+        are not AutoCAD entities, so they can't be displayed or selected directly by the end user.
+        They handle only 2D pixel coordinates, so all image processing requests must be expressed
+        as 2D operations. Image processing operations like scaling and rotating the image for
+        display are executed by the Autodesk Image Engine. The Image Engine has its own extensive
+        developer API on which sophisticated image editing applications can be built. (Information
+        on the Autodesk Image Engine is available through the Autodesk Developer Program.) Refer to
+        the description of class AcDbRasterImage for more information.Linking to
+        acISMobj25.libClass AcDbRasterImageDef is implemented in an ObjectARX application called
+        acISMui.arx. Your application must link to the ObjectARX API library acISMobj25.lib to use
+        any of the methods specific to this class.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbRasterImageDef object (or "image definition object") works with the AcDbRasterImage
+        entity (or "image entity") to implement raster images inside AutoCAD. The relationship
+        between these two classes is much like the relationship between an AutoCAD block definition
+        object and a block insert entity. The image definition object plays a behind-the-scenes
+        role like the block definition, maintaining links to the source image file and managing
+        low-level image processing operations required to display and plot images. Image definition
+        objects are stored in a special AcDbDictionary named ISM_RASTER_IMAGE_DICT. These objects
+        are not AutoCAD entities, so they can't be displayed or selected directly by the end user.
+        They handle only 2D pixel coordinates, so all image processing requests must be expressed
+        as 2D operations. Image processing operations like scaling and rotating the image for
+        display are executed by the Autodesk Image Engine. The Image Engine has its own extensive
+        developer API on which sophisticated image editing applications can be built. (Information
+        on the Autodesk Image Engine is available through the Autodesk Developer Program.) Refer to
+        the description of class AcDbRasterImage for more information.Linking to
+        acISMobj25.libClass AcDbRasterImageDef is implemented in an ObjectARX application called
+        acISMui.arx. Your application must link to the ObjectARX API library acISMobj25.lib to use
+        any of the methods specific to this class.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -21365,11 +23942,41 @@ class RasterImageDef(PyDb.DbObject):
 
 class RasterImageDefReactor(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbRasterImageDefReactor object is used to notify AcDbRasterImage entities of relevant
+        modifications to their associated AcDbRasterImageDef object. Specifically, modification of
+        the AcDbRasterImageDef object triggers the redraw of each of its dependent AcDbRasterImage
+        entities. Erasing the AcDbRasterImageDef object triggers the erasing of each of its
+        dependent AcDbRasterImage entities. Linking to acISMobj17.lib Class
+        AcDbRasterImageDefReactor is implemented in an ObjectARX application called acISMui.arx.
+        Your application must link to the ObjectARX API library acISMobj17.lib to use any of the
+        methods specific to this class.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbRasterImageDefReactor object is used to notify AcDbRasterImage entities of relevant
+        modifications to their associated AcDbRasterImageDef object. Specifically, modification of
+        the AcDbRasterImageDef object triggers the redraw of each of its dependent AcDbRasterImage
+        entities. Erasing the AcDbRasterImageDef object triggers the erasing of each of its
+        dependent AcDbRasterImage entities. Linking to acISMobj17.lib Class
+        AcDbRasterImageDefReactor is implemented in an ObjectARX application called acISMui.arx.
+        Your application must link to the ObjectARX API library acISMobj17.lib to use any of the
+        methods specific to this class.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbRasterImageDefReactor object is used to notify AcDbRasterImage entities of relevant
+        modifications to their associated AcDbRasterImageDef object. Specifically, modification of
+        the AcDbRasterImageDef object triggers the redraw of each of its dependent AcDbRasterImage
+        entities. Erasing the AcDbRasterImageDef object triggers the erasing of each of its
+        dependent AcDbRasterImage entities. Linking to acISMobj17.lib Class
+        AcDbRasterImageDefReactor is implemented in an ObjectARX application called acISMui.arx.
+        Your application must link to the ObjectARX API library acISMobj17.lib to use any of the
+        methods specific to this class.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -21445,13 +24052,33 @@ class RegAppTable(PyDb.SymbolTable):
 
 class RegAppTableRecord(PyDb.SymbolTableRecord):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent records in the AcDbRegAppTable (known as the APPID symbol
+        table in AutoCAD and DXF). Each of these records represents an application ID used to
+        identify a group of Extended Entity Data attached to objects in the drawing database.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent records in the AcDbRegAppTable (known as the APPID symbol
+        table in AutoCAD and DXF). Each of these records represents an application ID used to
+        identify a group of Extended Entity Data attached to objects in the drawing database.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent records in the AcDbRegAppTable (known as the APPID symbol
+        table in AutoCAD and DXF). Each of these records represents an application ID used to
+        identify a group of Extended Entity Data attached to objects in the drawing database.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of this class represent records in the AcDbRegAppTable (known as the APPID symbol
+        table in AutoCAD and DXF). Each of these records represents an application ID used to
+        identify a group of Extended Entity Data attached to objects in the drawing database.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -21483,11 +24110,32 @@ class RegAppTableRecord(PyDb.SymbolTableRecord):
 
 class Region(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent region entities in AutoCAD. An AcDbRegion entity is a
+        container and interface for a ShapeManager object that is the actual geometrical
+        representation of the region. This class provides no provisions for directly manipulating
+        the edges, vertices, or faces of the ShapeManager object that is the actual region
+        representation.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent region entities in AutoCAD. An AcDbRegion entity is a
+        container and interface for a ShapeManager object that is the actual geometrical
+        representation of the region. This class provides no provisions for directly manipulating
+        the edges, vertices, or faces of the ShapeManager object that is the actual region
+        representation.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent region entities in AutoCAD. An AcDbRegion entity is a
+        container and interface for a ShapeManager object that is the actual geometrical
+        representation of the region. This class provides no provisions for directly manipulating
+        the edges, vertices, or faces of the ShapeManager object that is the actual region
+        representation.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -21617,11 +24265,29 @@ class RotatedDimType(_BoostPythonEnum):
 
 class RotatedDimension(PyDb.Dimension):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbRotatedDimension class represents the dimension type that dimensions the distance
+        between two points in space when they are projected onto a line at a specific angle (the
+        rotation angle) within the dimension's plane. A "horizontal" dimension is a rotated
+        dimension with an angle equal to the angle between the dimension's OCS X axis and the X
+        axis of the UCS used to define "horizontal." A "vertical" dimension is a rotated dimension
+        with an angle equal to pi / 2 radians (90 degrees) greater than the angle for a
+        "horizontal" dimension.
+        """
     @overload
     def __init__(
         self, rotation: float, xl1: PyGe.Point3d, xl2: PyGe.Point3d, dimLinePoint: PyGe.Point3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbRotatedDimension class represents the dimension type that dimensions the distance
+        between two points in space when they are projected onto a line at a specific angle (the
+        rotation angle) within the dimension's plane. A "horizontal" dimension is a rotated
+        dimension with an angle equal to the angle between the dimension's OCS X axis and the X
+        axis of the UCS used to define "horizontal." A "vertical" dimension is a rotated dimension
+        with an angle equal to pi / 2 radians (90 degrees) greater than the angle for a
+        "horizontal" dimension.
+        """
     @overload
     def __init__(
         self,
@@ -21631,7 +24297,16 @@ class RotatedDimension(PyDb.Dimension):
         dimLinePoint: PyGe.Point3d,
         dimText: str,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbRotatedDimension class represents the dimension type that dimensions the distance
+        between two points in space when they are projected onto a line at a specific angle (the
+        rotation angle) within the dimension's plane. A "horizontal" dimension is a rotated
+        dimension with an angle equal to the angle between the dimension's OCS X axis and the X
+        axis of the UCS used to define "horizontal." A "vertical" dimension is a rotated dimension
+        with an angle equal to pi / 2 radians (90 degrees) greater than the angle for a
+        "horizontal" dimension.
+        """
     @overload
     def __init__(
         self,
@@ -21642,13 +24317,49 @@ class RotatedDimension(PyDb.Dimension):
         dimText: str,
         id: PyDb.ObjectId,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbRotatedDimension class represents the dimension type that dimensions the distance
+        between two points in space when they are projected onto a line at a specific angle (the
+        rotation angle) within the dimension's plane. A "horizontal" dimension is a rotated
+        dimension with an angle equal to the angle between the dimension's OCS X axis and the X
+        axis of the UCS used to define "horizontal." A "vertical" dimension is a rotated dimension
+        with an angle equal to pi / 2 radians (90 degrees) greater than the angle for a
+        "horizontal" dimension.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbRotatedDimension class represents the dimension type that dimensions the distance
+        between two points in space when they are projected onto a line at a specific angle (the
+        rotation angle) within the dimension's plane. A "horizontal" dimension is a rotated
+        dimension with an angle equal to the angle between the dimension's OCS X axis and the X
+        axis of the UCS used to define "horizontal." A "vertical" dimension is a rotated dimension
+        with an angle equal to pi / 2 radians (90 degrees) greater than the angle for a
+        "horizontal" dimension.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbRotatedDimension class represents the dimension type that dimensions the distance
+        between two points in space when they are projected onto a line at a specific angle (the
+        rotation angle) within the dimension's plane. A "horizontal" dimension is a rotated
+        dimension with an angle equal to the angle between the dimension's OCS X axis and the X
+        axis of the UCS used to define "horizontal." A "vertical" dimension is a rotated dimension
+        with an angle equal to pi / 2 radians (90 degrees) greater than the angle for a
+        "horizontal" dimension.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbRotatedDimension class represents the dimension type that dimensions the distance
+        between two points in space when they are projected onto a line at a specific angle (the
+        rotation angle) within the dimension's plane. A "horizontal" dimension is a rotated
+        dimension with an angle equal to the angle between the dimension's OCS X axis and the X
+        axis of the UCS used to define "horizontal." A "vertical" dimension is a rotated dimension
+        with an angle equal to pi / 2 radians (90 degrees) greater than the angle for a
+        "horizontal" dimension.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -21806,19 +24517,37 @@ class RowType(_BoostPythonEnum):
 
 class Section(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Constructs a section plane using the specified points, normal, and viewing direction.
+        """
     @overload
-    def __init__(self, pts: list[PyGe.Point3d], verticalDir: PyGe.Vector3d, /) -> None: ...
+    def __init__(self, pts: list[PyGe.Point3d], verticalDir: PyGe.Vector3d, /) -> None:
+        """
+        Constructs a section plane using the specified points, normal, and viewing direction.
+        """
     @overload
     def __init__(
         self, pts: list[PyGe.Point3d], verticalDir: PyGe.Vector3d, vecViewingDir: PyGe.Vector3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        Constructs a section plane using the specified points, normal, and viewing direction.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Constructs a section plane using the specified points, normal, and viewing direction.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Constructs a section plane using the specified points, normal, and viewing direction.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Constructs a section plane using the specified points, normal, and viewing direction.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -22186,17 +24915,32 @@ class ShadePlotType(_BoostPythonEnum):
 
 class Shape(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbShape class represents the SHAPE entity within AutoCAD.
+        """
     @overload
     def __init__(
         self, pnt: PyGe.Point3d, size: float, rotation: float, widthFactor: float, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbShape class represents the SHAPE entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbShape class represents the SHAPE entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbShape class represents the SHAPE entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbShape class represents the SHAPE entity within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -22386,19 +25130,49 @@ class SoftPointerId(PyDb.ObjectId):
 
 class Solid(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbSolid class is the representation for the SOLID entity within AutoCAD. The SOLID
+        entity is a 2D entity, not the 3D solids that are represented by the AcDb3dSolid and
+        AcDbBody classes.
+        """
     @overload
-    def __init__(self, pnt0: PyGe.Point3d, pnt1: PyGe.Point3d, pnt2: PyGe.Point3d, /) -> None: ...
+    def __init__(self, pnt0: PyGe.Point3d, pnt1: PyGe.Point3d, pnt2: PyGe.Point3d, /) -> None:
+        """
+        The AcDbSolid class is the representation for the SOLID entity within AutoCAD. The SOLID
+        entity is a 2D entity, not the 3D solids that are represented by the AcDb3dSolid and
+        AcDbBody classes.
+        """
     @overload
     def __init__(
         self, pnt0: PyGe.Point3d, pnt1: PyGe.Point3d, pnt2: PyGe.Point3d, pnt3: PyGe.Point3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbSolid class is the representation for the SOLID entity within AutoCAD. The SOLID
+        entity is a 2D entity, not the 3D solids that are represented by the AcDb3dSolid and
+        AcDbBody classes.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbSolid class is the representation for the SOLID entity within AutoCAD. The SOLID
+        entity is a 2D entity, not the 3D solids that are represented by the AcDb3dSolid and
+        AcDbBody classes.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbSolid class is the representation for the SOLID entity within AutoCAD. The SOLID
+        entity is a 2D entity, not the 3D solids that are represented by the AcDb3dSolid and
+        AcDbBody classes.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbSolid class is the representation for the SOLID entity within AutoCAD. The SOLID
+        entity is a 2D entity, not the 3D solids that are represented by the AcDb3dSolid and
+        AcDbBody classes.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -22475,13 +25249,49 @@ class Solid(PyDb.Entity):
 
 class Solid3d(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent 3D solids in AutoCAD. An AcDb3dSolid entity is a container
+        and interface for a ShapeManager object that is the actual geometrical representation of
+        the solid. This class provides various methods that are used to create solid primitives and
+        to combine them to form a new single solid, much the same way solid objects are created
+        using the AutoCAD command set. This class provides no provisions for directly manipulating
+        the edges, vertices, or faces of the ShapeManager object that is the actual solid
+        representation.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent 3D solids in AutoCAD. An AcDb3dSolid entity is a container
+        and interface for a ShapeManager object that is the actual geometrical representation of
+        the solid. This class provides various methods that are used to create solid primitives and
+        to combine them to form a new single solid, much the same way solid objects are created
+        using the AutoCAD command set. This class provides no provisions for directly manipulating
+        the edges, vertices, or faces of the ShapeManager object that is the actual solid
+        representation.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent 3D solids in AutoCAD. An AcDb3dSolid entity is a container
+        and interface for a ShapeManager object that is the actual geometrical representation of
+        the solid. This class provides various methods that are used to create solid primitives and
+        to combine them to form a new single solid, much the same way solid objects are created
+        using the AutoCAD command set. This class provides no provisions for directly manipulating
+        the edges, vertices, or faces of the ShapeManager object that is the actual solid
+        representation.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of this class represent 3D solids in AutoCAD. An AcDb3dSolid entity is a container
+        and interface for a ShapeManager object that is the actual geometrical representation of
+        the solid. This class provides various methods that are used to create solid primitives and
+        to combine them to form a new single solid, much the same way solid objects are created
+        using the AutoCAD command set. This class provides no provisions for directly manipulating
+        the edges, vertices, or faces of the ShapeManager object that is the actual solid
+        representation.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -22672,13 +25482,137 @@ class Solid3d(PyDb.Entity):
 
 class SortentsTable(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        AcDbSortentsTable is the persistent container for draw order information. It resides in the
+        extension dictionary of an associated AcDbBlockTableRecord under the key ACAD_SORTENTS.
+        AcDbSortentsTable contains a set of object ID/handle pairs. The object ID is that of the
+        entity to be drawn, and the handle is that of an entity in the block table record (usually
+        but not always different from the associated object ID), which represents the position in
+        the draw order. Entities are appended to a block table record in order of ascending handle
+        value; in other words, the higher the handle value, the later it appears in a block table
+        record. When it's time to draw entities in a block table record, an iterator goes through
+        the block table record in append order. At each entity, the handle value is obtained and
+        used to query into the sortents table. If there is a match, the object ID associated with
+        the handle value in the sortents table is drawn. If there is no match in the sortents
+        table, then the entity at the iterator position is drawn in its "natural" order. When the
+        draw order of entities is modified, many of the entries in the sortents table may be
+        modified. For example, a block table record has five entities with the following handles
+        (usually represented as strings representing hexadecimal numbers): 4A, 4B, 4C, 4D, 4E.
+        These handles appear in ascending order. When an application iterates over the entities in
+        a block table record in the default direction, the handle value always increases from one
+        entity to the next. To draw the last entity in the space first (or "behind" the others),
+        five entries in the sortents table must be made, as follows:  Entity ID Draw Order Handle
+        4E 4A 4A 4B 4B 4C 4C 4D 4D 4E The order of the entries (represented as a row in the
+        preceding table) is irrelevant; draw order processing ends up sorting the entries by the
+        draw order handle when performing the draw. In other words, in a DXF file, the table
+        entries might appear in the following order, but the resultant draw order is identical:
+        Entity ID Draw Order Handle 4C 4D 4B 4C 4E 4A 4D 4E 4A 4B As another example, the last
+        entity in the space is moved "under" the next-to-last entity in the space, but the rest of
+        the entities are drawn in "natural" order. In that case, the sortents table would only need
+        two entries, as follows:  Entity ID Draw Order Handle 4E 4D 4D 4E Adding new entities to
+        the block table record with an implicit draw order of "last" requires no new entry in the
+        sortents table.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        AcDbSortentsTable is the persistent container for draw order information. It resides in the
+        extension dictionary of an associated AcDbBlockTableRecord under the key ACAD_SORTENTS.
+        AcDbSortentsTable contains a set of object ID/handle pairs. The object ID is that of the
+        entity to be drawn, and the handle is that of an entity in the block table record (usually
+        but not always different from the associated object ID), which represents the position in
+        the draw order. Entities are appended to a block table record in order of ascending handle
+        value; in other words, the higher the handle value, the later it appears in a block table
+        record. When it's time to draw entities in a block table record, an iterator goes through
+        the block table record in append order. At each entity, the handle value is obtained and
+        used to query into the sortents table. If there is a match, the object ID associated with
+        the handle value in the sortents table is drawn. If there is no match in the sortents
+        table, then the entity at the iterator position is drawn in its "natural" order. When the
+        draw order of entities is modified, many of the entries in the sortents table may be
+        modified. For example, a block table record has five entities with the following handles
+        (usually represented as strings representing hexadecimal numbers): 4A, 4B, 4C, 4D, 4E.
+        These handles appear in ascending order. When an application iterates over the entities in
+        a block table record in the default direction, the handle value always increases from one
+        entity to the next. To draw the last entity in the space first (or "behind" the others),
+        five entries in the sortents table must be made, as follows:  Entity ID Draw Order Handle
+        4E 4A 4A 4B 4B 4C 4C 4D 4D 4E The order of the entries (represented as a row in the
+        preceding table) is irrelevant; draw order processing ends up sorting the entries by the
+        draw order handle when performing the draw. In other words, in a DXF file, the table
+        entries might appear in the following order, but the resultant draw order is identical:
+        Entity ID Draw Order Handle 4C 4D 4B 4C 4E 4A 4D 4E 4A 4B As another example, the last
+        entity in the space is moved "under" the next-to-last entity in the space, but the rest of
+        the entities are drawn in "natural" order. In that case, the sortents table would only need
+        two entries, as follows:  Entity ID Draw Order Handle 4E 4D 4D 4E Adding new entities to
+        the block table record with an implicit draw order of "last" requires no new entry in the
+        sortents table.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        AcDbSortentsTable is the persistent container for draw order information. It resides in the
+        extension dictionary of an associated AcDbBlockTableRecord under the key ACAD_SORTENTS.
+        AcDbSortentsTable contains a set of object ID/handle pairs. The object ID is that of the
+        entity to be drawn, and the handle is that of an entity in the block table record (usually
+        but not always different from the associated object ID), which represents the position in
+        the draw order. Entities are appended to a block table record in order of ascending handle
+        value; in other words, the higher the handle value, the later it appears in a block table
+        record. When it's time to draw entities in a block table record, an iterator goes through
+        the block table record in append order. At each entity, the handle value is obtained and
+        used to query into the sortents table. If there is a match, the object ID associated with
+        the handle value in the sortents table is drawn. If there is no match in the sortents
+        table, then the entity at the iterator position is drawn in its "natural" order. When the
+        draw order of entities is modified, many of the entries in the sortents table may be
+        modified. For example, a block table record has five entities with the following handles
+        (usually represented as strings representing hexadecimal numbers): 4A, 4B, 4C, 4D, 4E.
+        These handles appear in ascending order. When an application iterates over the entities in
+        a block table record in the default direction, the handle value always increases from one
+        entity to the next. To draw the last entity in the space first (or "behind" the others),
+        five entries in the sortents table must be made, as follows:  Entity ID Draw Order Handle
+        4E 4A 4A 4B 4B 4C 4C 4D 4D 4E The order of the entries (represented as a row in the
+        preceding table) is irrelevant; draw order processing ends up sorting the entries by the
+        draw order handle when performing the draw. In other words, in a DXF file, the table
+        entries might appear in the following order, but the resultant draw order is identical:
+        Entity ID Draw Order Handle 4C 4D 4B 4C 4E 4A 4D 4E 4A 4B As another example, the last
+        entity in the space is moved "under" the next-to-last entity in the space, but the rest of
+        the entities are drawn in "natural" order. In that case, the sortents table would only need
+        two entries, as follows:  Entity ID Draw Order Handle 4E 4D 4D 4E Adding new entities to
+        the block table record with an implicit draw order of "last" requires no new entry in the
+        sortents table.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        AcDbSortentsTable is the persistent container for draw order information. It resides in the
+        extension dictionary of an associated AcDbBlockTableRecord under the key ACAD_SORTENTS.
+        AcDbSortentsTable contains a set of object ID/handle pairs. The object ID is that of the
+        entity to be drawn, and the handle is that of an entity in the block table record (usually
+        but not always different from the associated object ID), which represents the position in
+        the draw order. Entities are appended to a block table record in order of ascending handle
+        value; in other words, the higher the handle value, the later it appears in a block table
+        record. When it's time to draw entities in a block table record, an iterator goes through
+        the block table record in append order. At each entity, the handle value is obtained and
+        used to query into the sortents table. If there is a match, the object ID associated with
+        the handle value in the sortents table is drawn. If there is no match in the sortents
+        table, then the entity at the iterator position is drawn in its "natural" order. When the
+        draw order of entities is modified, many of the entries in the sortents table may be
+        modified. For example, a block table record has five entities with the following handles
+        (usually represented as strings representing hexadecimal numbers): 4A, 4B, 4C, 4D, 4E.
+        These handles appear in ascending order. When an application iterates over the entities in
+        a block table record in the default direction, the handle value always increases from one
+        entity to the next. To draw the last entity in the space first (or "behind" the others),
+        five entries in the sortents table must be made, as follows:  Entity ID Draw Order Handle
+        4E 4A 4A 4B 4B 4C 4C 4D 4D 4E The order of the entries (represented as a row in the
+        preceding table) is irrelevant; draw order processing ends up sorting the entries by the
+        draw order handle when performing the draw. In other words, in a DXF file, the table
+        entries might appear in the following order, but the resultant draw order is identical:
+        Entity ID Draw Order Handle 4C 4D 4B 4C 4E 4A 4D 4E 4A 4B As another example, the last
+        entity in the space is moved "under" the next-to-last entity in the space, but the rest of
+        the entities are drawn in "natural" order. In that case, the sortents table would only need
+        two entries, as follows:  Entity ID Draw Order Handle 4E 4D 4D 4E Adding new entities to
+        the block table record with an implicit draw order of "last" requires no new entry in the
+        sortents table.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -22830,13 +25764,29 @@ class SortentsTable(PyDb.DbObject):
 
 class SpatialFilter(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class defines an extruded volume based on a 2D boundary definition, local coordinate
+        system, and the front and back clipping planes.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This class defines an extruded volume based on a 2D boundary definition, local coordinate
+        system, and the front and back clipping planes.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        This class defines an extruded volume based on a 2D boundary definition, local coordinate
+        system, and the front and back clipping planes.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        This class defines an extruded volume based on a 2D boundary definition, local coordinate
+        system, and the front and back clipping planes.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -22948,19 +25898,91 @@ class SpatialFilter(PyDb.DbObject):
 
 class Spline(PyDb.Curve):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
-    def __init__(self, idfitPoints: list[PyGe.Point3d], /) -> None: ...
+    def __init__(self, idfitPoints: list[PyGe.Point3d], /) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self, idfitPoints: list[PyGe.Point3d], order: int, fitTolerance: float, /
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self,
@@ -22968,7 +25990,19 @@ class Spline(PyDb.Curve):
         startTangent: PyGe.Vector3d,
         endTangent: PyGe.Vector3d,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self,
@@ -22978,9 +26012,33 @@ class Spline(PyDb.Curve):
         order: int,
         fitTolerance: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
-    def __init__(self, idfitPoints: list[PyGe.Point3d], periodic: bool, /) -> None: ...
+    def __init__(self, idfitPoints: list[PyGe.Point3d], periodic: bool, /) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self,
@@ -22990,7 +26048,19 @@ class Spline(PyDb.Curve):
         order: int,
         fitTolerance: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self,
@@ -22999,7 +26069,19 @@ class Spline(PyDb.Curve):
         endTangent: PyGe.Vector3d,
         knotParam: PyGe.KnotParameterization,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self,
@@ -23010,7 +26092,19 @@ class Spline(PyDb.Curve):
         order: int,
         fitTolerance: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self,
@@ -23022,7 +26116,19 @@ class Spline(PyDb.Curve):
         knots: list[float],
         weights: list[float],
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self,
@@ -23036,7 +26142,19 @@ class Spline(PyDb.Curve):
         controlPtTol: float,
         knotTol: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self,
@@ -23045,7 +26163,19 @@ class Spline(PyDb.Curve):
         majorAxis: PyGe.Vector3d,
         radiusRatioL: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(
         self,
@@ -23056,7 +26186,19 @@ class Spline(PyDb.Curve):
         startAngle: float,
         endAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This class implements the AutoCAD SPLINE entity. Objects of the AcDbSpline class use an
+        embedded gelib object to maintain the actual spline information. The spline itself may
+        either be a simple curve fit (within a specified tolerance which may be 0) through a set of
+        "fit points," or it may be a NURBS spline (that is, a set of control points, knots, and
+        weights used to define the spline path). Internally, a curve-fit spline still has NURBS
+        data; however the reverse is not true. The following books are a good place to start to get
+        a basic understanding of spline curves: Curves and Surfaces for CAGD by Gerald
+        FarinMathematical Elements for Computer Graphics by David Rogers and Alan AdamsAn
+        Introduction To Splines For Use In Computer Graphics & Geometric Modeling by Richard H.
+        Bartels, John C. Beatty, and Brian A Barsky
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -23177,11 +26319,17 @@ class Spline(PyDb.Curve):
         it.
         """
     @overload
-    def insertControlPointAt(self, knotParam: int, ctrlPt: PyGe.Point3d, /) -> None: ...
+    def insertControlPointAt(self, knotParam: int, ctrlPt: PyGe.Point3d, /) -> None:
+        """
+        Add a control point on the spline at the given knot parameter. If the spline is
+        non-rational, the weight value will be ingored.
+        """
     @overload
-    def insertControlPointAt(
-        self, knotParam: int, ctrlPt: PyGe.Point3d, weight: float, /
-    ) -> None: ...
+    def insertControlPointAt(self, knotParam: int, ctrlPt: PyGe.Point3d, weight: float, /) -> None:
+        """
+        Add a control point on the spline at the given knot parameter. If the spline is
+        non-rational, the weight value will be ingored.
+        """
     @overload
     def insertControlPointAt(self, *args) -> None:
         """
@@ -23336,7 +26484,30 @@ class Spline(PyDb.Curve):
         knots: list[float],
         weights: list[float],
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This function replaces any existing spline data with the data passed in via degree,
+        rational, closed, periodic, controlPoints, knots, weights, controlPtTol and knotTol. If the
+        spline is to be rational, then rational should be Adesk::kTrue. If the spline is to be
+        closed (that is, a closed loop), then closed should be Adesk::kTrue. If the spline is to be
+        periodic, then periodic should be Adesk::kTrue. This parameter should only be set to
+        Adesk::kTrue if the spline is closed. A periodic spline is a spline with period T such that
+        the point at parameter value t + T is the same as the point at parameter value t for any
+        value of t. The weights array is only used when rational == Adesk::kTrue. If used, it must
+        have the same number of entries as the controlPoints array. All weight values must be
+        greater than 0.0. If isPeriodic = Adesk::kFalse then length of knot vector must be greater
+        than length of the control array by degree+1. If isPeriodic = Adesk::kTrue then: the length
+        of knot vector must be greater than length of the control array by 1. The first and the
+        last control points must NOT be identical. The knotTol value is used to determine which
+        knot values are to be treated as the same. If the difference between two knot values is
+        less than knotTol, then the two values are treated as the same (and the first of the two
+        values will be used). The controlPtTol value is used to determine if two control points are
+        to be treated as the same point. If the distance between two control points is less than
+        controlPtTol, then those two control points are treated as the same point. If the first and
+        last control points are within controlPtTol of each other, the spline is closed regardless
+        of the closed value. Returns Acad::eOk if successful. If gelib is unable to create a
+        spline, then Acad::eGeneralModelingFailure is returned.
+        """
     @overload
     def setNurbsData(
         self,
@@ -23350,7 +26521,30 @@ class Spline(PyDb.Curve):
         controlPtTol: float,
         knotTol: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        This function replaces any existing spline data with the data passed in via degree,
+        rational, closed, periodic, controlPoints, knots, weights, controlPtTol and knotTol. If the
+        spline is to be rational, then rational should be Adesk::kTrue. If the spline is to be
+        closed (that is, a closed loop), then closed should be Adesk::kTrue. If the spline is to be
+        periodic, then periodic should be Adesk::kTrue. This parameter should only be set to
+        Adesk::kTrue if the spline is closed. A periodic spline is a spline with period T such that
+        the point at parameter value t + T is the same as the point at parameter value t for any
+        value of t. The weights array is only used when rational == Adesk::kTrue. If used, it must
+        have the same number of entries as the controlPoints array. All weight values must be
+        greater than 0.0. If isPeriodic = Adesk::kFalse then length of knot vector must be greater
+        than length of the control array by degree+1. If isPeriodic = Adesk::kTrue then: the length
+        of knot vector must be greater than length of the control array by 1. The first and the
+        last control points must NOT be identical. The knotTol value is used to determine which
+        knot values are to be treated as the same. If the difference between two knot values is
+        less than knotTol, then the two values are treated as the same (and the first of the two
+        values will be used). The controlPtTol value is used to determine if two control points are
+        to be treated as the same point. If the distance between two control points is less than
+        controlPtTol, then those two control points are treated as the same point. If the first and
+        last control points are within controlPtTol of each other, the spline is closed regardless
+        of the closed value. Returns Acad::eOk if successful. If gelib is unable to create a
+        spline, then Acad::eGeneralModelingFailure is returned.
+        """
     @overload
     def setNurbsData(self, *args) -> None:
         """
@@ -23483,13 +26677,25 @@ class StdScaleType(_BoostPythonEnum):
 
 class SubDMesh(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbSubDMesh class represents the SubDivision surface entity type within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbSubDMesh class represents the SubDivision surface entity type within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbSubDMesh class represents the SubDivision surface entity type within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbSubDMesh class represents the SubDivision surface entity type within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -23525,9 +26731,17 @@ class SubDMesh(PyDb.Entity):
         encloses a volume without self-intersecting.
         """
     @overload
-    def convertToSurface(self, bConvertAsSmooth: bool, id: PyDb.SubentId, /) -> PyDb.Surface: ...
+    def convertToSurface(self, bConvertAsSmooth: bool, id: PyDb.SubentId, /) -> PyDb.Surface:
+        """
+        Creates an AcDbSurface entity from the mesh data using the bConvertAsSmooth flag to control
+        whether the ASM surface is smoothed with NURBS faces or polygonal faces.
+        """
     @overload
-    def convertToSurface(self, bConvertAsSmooth: bool, optimize: bool, /) -> PyDb.Surface: ...
+    def convertToSurface(self, bConvertAsSmooth: bool, optimize: bool, /) -> PyDb.Surface:
+        """
+        Creates an AcDbSurface entity from the mesh data using the bConvertAsSmooth flag to control
+        whether the ASM surface is smoothed with NURBS faces or polygonal faces.
+        """
     @overload
     def convertToSurface(self, *args) -> PyDb.Surface:
         """
@@ -23556,7 +26770,10 @@ class SubDMesh(PyDb.Entity):
         dir: PyGe.Vector3d,
         taper: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Connects and extrudes faces along given direction and taper angle
+        """
     @overload
     def extrudeConnectedFaces(
         self,
@@ -23564,7 +26781,10 @@ class SubDMesh(PyDb.Entity):
         alongPath: list[PyGe.Point3d],
         taper: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Connects and extrudes faces along given direction and taper angle
+        """
     @overload
     def extrudeConnectedFaces(self, *args) -> None:
         """
@@ -23578,7 +26798,10 @@ class SubDMesh(PyDb.Entity):
         dir: PyGe.Vector3d,
         taper: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Extrudes faces in the given direction and taper angle.
+        """
     @overload
     def extrudeFaces(
         self,
@@ -23586,7 +26809,10 @@ class SubDMesh(PyDb.Entity):
         alongPath: list[PyGe.Point3d],
         taper: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Extrudes faces in the given direction and taper angle.
+        """
     @overload
     def extrudeFaces(self, *args) -> None:
         """
@@ -23599,9 +26825,15 @@ class SubDMesh(PyDb.Entity):
         Returns adjacent subentities for a specified mesh sub-entity.
         """
     @overload
-    def getCrease(self, id: int | PyDb.SubentId, /) -> list[float] | float: ...
+    def getCrease(self, id: int | PyDb.SubentId, /) -> list[float] | float:
+        """
+        Gets the crease value for a mesh subentity.
+        """
     @overload
-    def getCrease(self, subentPaths: list[PyDb.FullSubentPath], /) -> list[float] | float: ...
+    def getCrease(self, subentPaths: list[PyDb.FullSubentPath], /) -> list[float] | float:
+        """
+        Gets the crease value for a mesh subentity.
+        """
     @overload
     def getCrease(self, *args) -> list[float] | float:
         """
@@ -23725,9 +26957,15 @@ class SubDMesh(PyDb.Entity):
         Creates a cone mesh primitive.
         """
     @overload
-    def setCrease(self, creaseVal: float, /) -> None: ...
+    def setCrease(self, creaseVal: float, /) -> None:
+        """
+        Makes all edges of the MESH object "sharp."
+        """
     @overload
-    def setCrease(self, subentPaths: list[PyDb.FullSubentPath], creaseVal: float, /) -> None: ...
+    def setCrease(self, subentPaths: list[PyDb.FullSubentPath], creaseVal: float, /) -> None:
+        """
+        Makes all edges of the MESH object "sharp."
+        """
     @overload
     def setCrease(self, *args) -> None:
         """
@@ -23901,13 +27139,33 @@ class SubentType(_BoostPythonEnum):
 
 class Surface(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Surface entity with methods to create and manipulate ASM surfaces. The following classes
+        derive from AcDbSurface:
+        AcDbExtrudedSurfaceAcDbLoftedSurfaceAcDbPlaneSurfaceAcDbRevolvedSurfaceAcDbSweptSurface
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Surface entity with methods to create and manipulate ASM surfaces. The following classes
+        derive from AcDbSurface:
+        AcDbExtrudedSurfaceAcDbLoftedSurfaceAcDbPlaneSurfaceAcDbRevolvedSurfaceAcDbSweptSurface
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Surface entity with methods to create and manipulate ASM surfaces. The following classes
+        derive from AcDbSurface:
+        AcDbExtrudedSurfaceAcDbLoftedSurfaceAcDbPlaneSurfaceAcDbRevolvedSurfaceAcDbSweptSurface
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Surface entity with methods to create and manipulate ASM surfaces. The following classes
+        derive from AcDbSurface:
+        AcDbExtrudedSurfaceAcDbLoftedSurfaceAcDbPlaneSurfaceAcDbRevolvedSurfaceAcDbSweptSurface
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -24871,13 +28129,53 @@ class TableIteratorOption(_BoostPythonEnum):
 
 class TableStyle(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        AcDbTableStyle class objects are used to store the table formatting properties (for
+        example, grid visibility, lineweight, line color, and cell font, height, color, and
+        background fill) used by AcDbTable entities.  AcDbTableStyle objects are stored in the
+        ACAD_TABLESTYLE dictionary within the named object dictionary of AcDbDatabase. Because
+        tables appear in a variety of forms, table objects will be based on a table style similar
+        to the way text objects and dimension objects are based on styles in AutoCAD. The table
+        style controls the initial formatting of a newly created table object and whether the table
+        includes a title and header row.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        AcDbTableStyle class objects are used to store the table formatting properties (for
+        example, grid visibility, lineweight, line color, and cell font, height, color, and
+        background fill) used by AcDbTable entities.  AcDbTableStyle objects are stored in the
+        ACAD_TABLESTYLE dictionary within the named object dictionary of AcDbDatabase. Because
+        tables appear in a variety of forms, table objects will be based on a table style similar
+        to the way text objects and dimension objects are based on styles in AutoCAD. The table
+        style controls the initial formatting of a newly created table object and whether the table
+        includes a title and header row.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        AcDbTableStyle class objects are used to store the table formatting properties (for
+        example, grid visibility, lineweight, line color, and cell font, height, color, and
+        background fill) used by AcDbTable entities.  AcDbTableStyle objects are stored in the
+        ACAD_TABLESTYLE dictionary within the named object dictionary of AcDbDatabase. Because
+        tables appear in a variety of forms, table objects will be based on a table style similar
+        to the way text objects and dimension objects are based on styles in AutoCAD. The table
+        style controls the initial formatting of a newly created table object and whether the table
+        includes a title and header row.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        AcDbTableStyle class objects are used to store the table formatting properties (for
+        example, grid visibility, lineweight, line color, and cell font, height, color, and
+        background fill) used by AcDbTable entities.  AcDbTableStyle objects are stored in the
+        ACAD_TABLESTYLE dictionary within the named object dictionary of AcDbDatabase. Because
+        tables appear in a variety of forms, table objects will be based on a table style similar
+        to the way text objects and dimension objects are based on styles in AutoCAD. The table
+        style controls the initial formatting of a newly created table object and whether the table
+        includes a title and header row.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -25531,13 +28829,33 @@ class TextStyleTable(PyDb.SymbolTable):
 
 class TextStyleTableRecord(PyDb.SymbolTableRecord):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent the records that are found in the AcDbTextStyleTable (known
+        as the "Style" table in DXF). Each of these records represents a specific set of text
+        parameters such as font, default size, relative x scaling, vertical or horizontal, etc.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent the records that are found in the AcDbTextStyleTable (known
+        as the "Style" table in DXF). Each of these records represents a specific set of text
+        parameters such as font, default size, relative x scaling, vertical or horizontal, etc.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent the records that are found in the AcDbTextStyleTable (known
+        as the "Style" table in DXF). Each of these records represents a specific set of text
+        parameters such as font, default size, relative x scaling, vertical or horizontal, etc.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of this class represent the records that are found in the AcDbTextStyleTable (known
+        as the "Style" table in DXF). Each of these records represents a specific set of text
+        parameters such as font, default size, relative x scaling, vertical or horizontal, etc.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -25818,17 +29136,32 @@ class TimeZone(_BoostPythonEnum):
 
 class Trace(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbTrace class is the representation for the TRACE entity within AutoCAD.
+        """
     @overload
     def __init__(
         self, pnt0: PyGe.Point3d, pnt1: PyGe.Point3d, pnt2: PyGe.Point3d, pnt3: PyGe.Point3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDbTrace class is the representation for the TRACE entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbTrace class is the representation for the TRACE entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbTrace class is the representation for the TRACE entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbTrace class is the representation for the TRACE entity within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -26026,13 +29359,33 @@ class UCSTable(PyDb.SymbolTable):
 
 class UCSTableRecord(PyDb.SymbolTableRecord):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent records in the AcDbUCSTable. Each of these records contains
+        the information about a user coordinate system (UCS) that has been saved in the drawing
+        database.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent records in the AcDbUCSTable. Each of these records contains
+        the information about a user coordinate system (UCS) that has been saved in the drawing
+        database.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent records in the AcDbUCSTable. Each of these records contains
+        the information about a user coordinate system (UCS) that has been saved in the drawing
+        database.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of this class represent records in the AcDbUCSTable. Each of these records contains
+        the information about a user coordinate system (UCS) that has been saved in the drawing
+        database.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -26226,13 +29579,53 @@ class UnderlayLayer:
 
 class UnderlayReference(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Abstract class that represents underlays in the drawing. Underlays are similar to raster
+        images, but their content is snappable. An AcDbUnderlayReference object must reference a
+        compatible AcDbUnderlayDefinition object. The AcDbUnderlayReference object is responsible
+        for the placement of the content within the drawing, while the AcDbUnderlayDefinition
+        object handles the linkage to the underlay content. Instances of
+        AcDbUnderlayReference-derived concrete classes are inserted into a block table record.
+        Instances of AcDbUnderlayDefinition-derived concrete classes are inserted into a dictionary
+        under the named object dictionary.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Abstract class that represents underlays in the drawing. Underlays are similar to raster
+        images, but their content is snappable. An AcDbUnderlayReference object must reference a
+        compatible AcDbUnderlayDefinition object. The AcDbUnderlayReference object is responsible
+        for the placement of the content within the drawing, while the AcDbUnderlayDefinition
+        object handles the linkage to the underlay content. Instances of
+        AcDbUnderlayReference-derived concrete classes are inserted into a block table record.
+        Instances of AcDbUnderlayDefinition-derived concrete classes are inserted into a dictionary
+        under the named object dictionary.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Abstract class that represents underlays in the drawing. Underlays are similar to raster
+        images, but their content is snappable. An AcDbUnderlayReference object must reference a
+        compatible AcDbUnderlayDefinition object. The AcDbUnderlayReference object is responsible
+        for the placement of the content within the drawing, while the AcDbUnderlayDefinition
+        object handles the linkage to the underlay content. Instances of
+        AcDbUnderlayReference-derived concrete classes are inserted into a block table record.
+        Instances of AcDbUnderlayDefinition-derived concrete classes are inserted into a dictionary
+        under the named object dictionary.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Abstract class that represents underlays in the drawing. Underlays are similar to raster
+        images, but their content is snappable. An AcDbUnderlayReference object must reference a
+        compatible AcDbUnderlayDefinition object. The AcDbUnderlayReference object is responsible
+        for the placement of the content within the drawing, while the AcDbUnderlayDefinition
+        object handles the linkage to the underlay content. Instances of
+        AcDbUnderlayReference-derived concrete classes are inserted into a block table record.
+        Instances of AcDbUnderlayDefinition-derived concrete classes are inserted into a dictionary
+        under the named object dictionary.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -26552,13 +29945,41 @@ class ValueUnitType(_BoostPythonEnum):
 
 class Vertex(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbVertex class is the base class for all the vertex types used by the AcDb2dPolyline,
+        AcDb3dPolyline, AcDbPolyFaceMesh, and AcDbPolygonMesh classes within AutoCAD. This class
+        provides no methods other than a default constructor and destructor. It is not intended
+        that objects of this class need ever be instantiated by ObjectARX applications, or that
+        this class ever be derived from.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbVertex class is the base class for all the vertex types used by the AcDb2dPolyline,
+        AcDb3dPolyline, AcDbPolyFaceMesh, and AcDbPolygonMesh classes within AutoCAD. This class
+        provides no methods other than a default constructor and destructor. It is not intended
+        that objects of this class need ever be instantiated by ObjectARX applications, or that
+        this class ever be derived from.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbVertex class is the base class for all the vertex types used by the AcDb2dPolyline,
+        AcDb3dPolyline, AcDbPolyFaceMesh, and AcDbPolygonMesh classes within AutoCAD. This class
+        provides no methods other than a default constructor and destructor. It is not intended
+        that objects of this class need ever be instantiated by ObjectARX applications, or that
+        this class ever be derived from.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbVertex class is the base class for all the vertex types used by the AcDb2dPolyline,
+        AcDb3dPolyline, AcDbPolyFaceMesh, and AcDbPolygonMesh classes within AutoCAD. This class
+        provides no methods other than a default constructor and destructor. It is not intended
+        that objects of this class need ever be instantiated by ObjectARX applications, or that
+        this class ever be derived from.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -26592,7 +30013,13 @@ class Vertex(PyDb.Entity):
 
 class Vertex2d(PyDb.Vertex):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDb2dVertex class represents the vertices in 2D polylines. AcDb2dVertex is the only
+        ObjectARX API entity that still passes its position in OCS. This is because the Z
+        coordinate is kept in its owning AcDb2dPolyline for historical purposes. If you are not
+        working in two dimensions, it may be better to use an AcDb3dPolyline, or an AcDbSpline.
+        """
     @overload
     def __init__(
         self,
@@ -26603,13 +30030,37 @@ class Vertex2d(PyDb.Vertex):
         tangent: float,
         vertexId: int,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        The AcDb2dVertex class represents the vertices in 2D polylines. AcDb2dVertex is the only
+        ObjectARX API entity that still passes its position in OCS. This is because the Z
+        coordinate is kept in its owning AcDb2dPolyline for historical purposes. If you are not
+        working in two dimensions, it may be better to use an AcDb3dPolyline, or an AcDbSpline.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDb2dVertex class represents the vertices in 2D polylines. AcDb2dVertex is the only
+        ObjectARX API entity that still passes its position in OCS. This is because the Z
+        coordinate is kept in its owning AcDb2dPolyline for historical purposes. If you are not
+        working in two dimensions, it may be better to use an AcDb3dPolyline, or an AcDbSpline.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDb2dVertex class represents the vertices in 2D polylines. AcDb2dVertex is the only
+        ObjectARX API entity that still passes its position in OCS. This is because the Z
+        coordinate is kept in its owning AcDb2dPolyline for historical purposes. If you are not
+        working in two dimensions, it may be better to use an AcDb3dPolyline, or an AcDbSpline.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDb2dVertex class represents the vertices in 2D polylines. AcDb2dVertex is the only
+        ObjectARX API entity that still passes its position in OCS. This is because the Z
+        coordinate is kept in its owning AcDb2dPolyline for historical purposes. If you are not
+        working in two dimensions, it may be better to use an AcDb3dPolyline, or an AcDbSpline.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -26792,13 +30243,45 @@ class ViewTable(PyDb.AbstractViewTable):
 
 class ViewTableRecord(PyDb.AbstractViewTableRecord):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent stored views within AutoCAD. The AcDbViewTable object
+        (referred to in the AutoCAD and DXF documentation as the VIEW table) within each database
+        is the container or owner of objects of this class. Most of the data and functionality of
+        this class is inherited from its AcDbAbstractViewTableRecord parent class. Within AutoCAD,
+        objects of this class are created whenever the VIEW command's "save" option is used to save
+        a view with a name that does not already exist.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent stored views within AutoCAD. The AcDbViewTable object
+        (referred to in the AutoCAD and DXF documentation as the VIEW table) within each database
+        is the container or owner of objects of this class. Most of the data and functionality of
+        this class is inherited from its AcDbAbstractViewTableRecord parent class. Within AutoCAD,
+        objects of this class are created whenever the VIEW command's "save" option is used to save
+        a view with a name that does not already exist.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent stored views within AutoCAD. The AcDbViewTable object
+        (referred to in the AutoCAD and DXF documentation as the VIEW table) within each database
+        is the container or owner of objects of this class. Most of the data and functionality of
+        this class is inherited from its AcDbAbstractViewTableRecord parent class. Within AutoCAD,
+        objects of this class are created whenever the VIEW command's "save" option is used to save
+        a view with a name that does not already exist.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of this class represent stored views within AutoCAD. The AcDbViewTable object
+        (referred to in the AutoCAD and DXF documentation as the VIEW table) within each database
+        is the container or owner of objects of this class. Most of the data and functionality of
+        this class is inherited from its AcDbAbstractViewTableRecord parent class. Within AutoCAD,
+        objects of this class are created whenever the VIEW command's "save" option is used to save
+        a view with a name that does not already exist.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -26965,13 +30448,25 @@ class ViewTableRecord(PyDb.AbstractViewTableRecord):
 
 class Viewport(PyDb.Entity):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbViewport class represents the VIEWPORT entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbViewport class represents the VIEWPORT entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbViewport class represents the VIEWPORT entity within AutoCAD.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbViewport class represents the VIEWPORT entity within AutoCAD.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -27801,13 +31296,23 @@ class Viewport(PyDb.Entity):
         appId xdata attached to the viewport.
         """
     @overload
-    def setUcs(
-        self, origin: PyGe.Point3d, xAxis: PyGe.Vector3d, yAxis: PyGe.Vector3d, /
-    ) -> None: ...
+    def setUcs(self, origin: PyGe.Point3d, xAxis: PyGe.Vector3d, yAxis: PyGe.Vector3d, /) -> None:
+        """
+        This function sets the UCS for this viewport as defined by origin, xAxis, and yAxis. The
+        resulting UCS will be unnamed.
+        """
     @overload
-    def setUcs(self, view: PyDb.OrthographicView, /) -> None: ...
+    def setUcs(self, view: PyDb.OrthographicView, /) -> None:
+        """
+        This function sets the UCS for this viewport as defined by origin, xAxis, and yAxis. The
+        resulting UCS will be unnamed.
+        """
     @overload
-    def setUcs(self, ucsId: PyDb.ObjectId, /) -> None: ...
+    def setUcs(self, ucsId: PyDb.ObjectId, /) -> None:
+        """
+        This function sets the UCS for this viewport as defined by origin, xAxis, and yAxis. The
+        resulting UCS will be unnamed.
+        """
     @overload
     def setUcs(self, *args) -> None:
         """
@@ -27881,9 +31386,31 @@ class Viewport(PyDb.Entity):
         if successful.
         """
     @overload
-    def setViewDirection(self, view: PyDb.OrthographicView, /) -> None: ...
+    def setViewDirection(self, view: PyDb.OrthographicView, /) -> None:
+        """
+        This function sets the viewport to use vec (in Model Space WCS coordinates) as the vector
+        from the view's target to the view's camera (the camera is moved to reflect the new
+        setting). This also represents the point coordinate set by the AutoCAD VPOINT command. See
+        VPOINT in the AutoCAD Command Reference for more information on view direction. Returns
+        Acad::eOk if successful. The view direction X value is used for the second DXF group code
+        1010 in the "ACAD" appId xdata attached to the viewport. The view direction Y value is used
+        for the second DXF group code 1020 in the "ACAD" appId xdata attached to the viewport. The
+        view direction Z value is used for the second DXF group code 1030 in the "ACAD" appId xdata
+        attached to the viewport.
+        """
     @overload
-    def setViewDirection(self, dir: PyGe.Vector3d, /) -> None: ...
+    def setViewDirection(self, dir: PyGe.Vector3d, /) -> None:
+        """
+        This function sets the viewport to use vec (in Model Space WCS coordinates) as the vector
+        from the view's target to the view's camera (the camera is moved to reflect the new
+        setting). This also represents the point coordinate set by the AutoCAD VPOINT command. See
+        VPOINT in the AutoCAD Command Reference for more information on view direction. Returns
+        Acad::eOk if successful. The view direction X value is used for the second DXF group code
+        1010 in the "ACAD" appId xdata attached to the viewport. The view direction Y value is used
+        for the second DXF group code 1020 in the "ACAD" appId xdata attached to the viewport. The
+        view direction Z value is used for the second DXF group code 1030 in the "ACAD" appId xdata
+        attached to the viewport.
+        """
     @overload
     def setViewDirection(self, *args) -> None:
         """
@@ -28125,13 +31652,53 @@ class ViewportTable(PyDb.AbstractViewTable):
 
 class ViewportTableRecord(PyDb.AbstractViewTableRecord):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of this class represent viewport arrangements when TILEMODE == 1 within AutoCAD
+        (the ViewportTable and its records are not used when TILEMODE == 0). The AcDbViewportTable
+        (referred to in AutoCAD and DXF documentation as the VPORT table) is the container or owner
+        of objects of this class. The AcDbViewportTable is unique in that it can contain multiple
+        AcDbViewportTableRecords with the same name. This is necessary because when a multiple
+        viewport configuration is saved, all viewports in the configuration must share the name,
+        but each viewport has its own AcDbViewportTableRecord created to save the data for that
+        viewport.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of this class represent viewport arrangements when TILEMODE == 1 within AutoCAD
+        (the ViewportTable and its records are not used when TILEMODE == 0). The AcDbViewportTable
+        (referred to in AutoCAD and DXF documentation as the VPORT table) is the container or owner
+        of objects of this class. The AcDbViewportTable is unique in that it can contain multiple
+        AcDbViewportTableRecords with the same name. This is necessary because when a multiple
+        viewport configuration is saved, all viewports in the configuration must share the name,
+        but each viewport has its own AcDbViewportTableRecord created to save the data for that
+        viewport.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of this class represent viewport arrangements when TILEMODE == 1 within AutoCAD
+        (the ViewportTable and its records are not used when TILEMODE == 0). The AcDbViewportTable
+        (referred to in AutoCAD and DXF documentation as the VPORT table) is the container or owner
+        of objects of this class. The AcDbViewportTable is unique in that it can contain multiple
+        AcDbViewportTableRecords with the same name. This is necessary because when a multiple
+        viewport configuration is saved, all viewports in the configuration must share the name,
+        but each viewport has its own AcDbViewportTableRecord created to save the data for that
+        viewport.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of this class represent viewport arrangements when TILEMODE == 1 within AutoCAD
+        (the ViewportTable and its records are not used when TILEMODE == 0). The AcDbViewportTable
+        (referred to in AutoCAD and DXF documentation as the VPORT table) is the container or owner
+        of objects of this class. The AcDbViewportTable is unique in that it can contain multiple
+        AcDbViewportTableRecords with the same name. This is necessary because when a multiple
+        viewport configuration is saved, all viewports in the configuration must share the name,
+        but each viewport has its own AcDbViewportTableRecord created to save the data for that
+        viewport.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -28377,11 +31944,19 @@ class ViewportTableRecord(PyDb.AbstractViewTableRecord):
         used for DXF group code 10.
         """
     @overload
-    def setPreviousBackground(self, id: PyDb.ObjectId, /) -> None: ...
+    def setPreviousBackground(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Sets the the previous background for the viewport. Returns Acad::eOk if a valid object ID
+        is passed in.
+        """
     @overload
     def setPreviousBackground(
         self, id: PyDb.ObjectId, stype: PyGi.DrawableType, bForcedSwitch: bool, /
-    ) -> None: ...
+    ) -> None:
+        """
+        Sets the the previous background for the viewport. Returns Acad::eOk if a valid object ID
+        is passed in.
+        """
     @overload
     def setPreviousBackground(self, *args) -> None:
         """
@@ -28523,15 +32098,45 @@ class VpShadePlotType(_BoostPythonEnum):
 
 class Wipeout(PyDb.RasterImage):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Objects of the AcDbWipeout class are polygonally clipped raster entities that are used as
+        masks to cover parts of other entities in the drawing. The most common use is as a
+        background mask for text entities. To use this class, acismobj20.dbx must be loaded so that
+        the AcDbWipeout class implementation code is available.
+        """
     @overload
-    def __init__(self, points: list[PyGe.Point2d], normal: PyGe.Vector3d, /) -> None: ...
+    def __init__(self, points: list[PyGe.Point2d], normal: PyGe.Vector3d, /) -> None:
+        """
+        Objects of the AcDbWipeout class are polygonally clipped raster entities that are used as
+        masks to cover parts of other entities in the drawing. The most common use is as a
+        background mask for text entities. To use this class, acismobj20.dbx must be loaded so that
+        the AcDbWipeout class implementation code is available.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        Objects of the AcDbWipeout class are polygonally clipped raster entities that are used as
+        masks to cover parts of other entities in the drawing. The most common use is as a
+        background mask for text entities. To use this class, acismobj20.dbx must be loaded so that
+        the AcDbWipeout class implementation code is available.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        Objects of the AcDbWipeout class are polygonally clipped raster entities that are used as
+        masks to cover parts of other entities in the drawing. The most common use is as a
+        background mask for text entities. To use this class, acismobj20.dbx must be loaded so that
+        the AcDbWipeout class implementation code is available.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        Objects of the AcDbWipeout class are polygonally clipped raster entities that are used as
+        masks to cover parts of other entities in the drawing. The most common use is as a
+        background mask for text entities. To use this class, acismobj20.dbx must be loaded so that
+        the AcDbWipeout class implementation code is available.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -28566,13 +32171,65 @@ class Wipeout(PyDb.RasterImage):
 
 class Xrecord(PyDb.DbObject):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        The AcDbXrecord class is a data storage class that was implemented primarily to allow ADSRX
+        and AutoLISP programs a means to store data in pieces larger than the xdata's
+        16KB-per-object limit. Each AcDbXrecord object is capable of storing up to 2GB. By
+        establishing an object's extension dictionary as the xrecord's owner, it's possible to
+        associate large amounts of data with that object. The input or output mechanism for the
+        data is via a linked list of resbuf structures very similar to the way xdata is accessed on
+        objects. Unlike xdata, however, xrecords work with the standard AutoCAD group codes, which
+        are all below 1000 in value. All the standard AutoCAD group codes are supported. This means
+        that, in addition to all the normally used data types, an xrecord is capable of storing
+        object IDs in any of the four types (hard owner, soft owner, hard pointer, soft pointer)
+        which allows xrecords to own other objects, including other xrecords.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbXrecord class is a data storage class that was implemented primarily to allow ADSRX
+        and AutoLISP programs a means to store data in pieces larger than the xdata's
+        16KB-per-object limit. Each AcDbXrecord object is capable of storing up to 2GB. By
+        establishing an object's extension dictionary as the xrecord's owner, it's possible to
+        associate large amounts of data with that object. The input or output mechanism for the
+        data is via a linked list of resbuf structures very similar to the way xdata is accessed on
+        objects. Unlike xdata, however, xrecords work with the standard AutoCAD group codes, which
+        are all below 1000 in value. All the standard AutoCAD group codes are supported. This means
+        that, in addition to all the normally used data types, an xrecord is capable of storing
+        object IDs in any of the four types (hard owner, soft owner, hard pointer, soft pointer)
+        which allows xrecords to own other objects, including other xrecords.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbXrecord class is a data storage class that was implemented primarily to allow ADSRX
+        and AutoLISP programs a means to store data in pieces larger than the xdata's
+        16KB-per-object limit. Each AcDbXrecord object is capable of storing up to 2GB. By
+        establishing an object's extension dictionary as the xrecord's owner, it's possible to
+        associate large amounts of data with that object. The input or output mechanism for the
+        data is via a linked list of resbuf structures very similar to the way xdata is accessed on
+        objects. Unlike xdata, however, xrecords work with the standard AutoCAD group codes, which
+        are all below 1000 in value. All the standard AutoCAD group codes are supported. This means
+        that, in addition to all the normally used data types, an xrecord is capable of storing
+        object IDs in any of the four types (hard owner, soft owner, hard pointer, soft pointer)
+        which allows xrecords to own other objects, including other xrecords.
+        """
     @overload
-    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None: ...
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, erased: bool, /) -> None:
+        """
+        The AcDbXrecord class is a data storage class that was implemented primarily to allow ADSRX
+        and AutoLISP programs a means to store data in pieces larger than the xdata's
+        16KB-per-object limit. Each AcDbXrecord object is capable of storing up to 2GB. By
+        establishing an object's extension dictionary as the xrecord's owner, it's possible to
+        associate large amounts of data with that object. The input or output mechanism for the
+        data is via a linked list of resbuf structures very similar to the way xdata is accessed on
+        objects. Unlike xdata, however, xrecords work with the standard AutoCAD group codes, which
+        are all below 1000 in value. All the standard AutoCAD group codes are supported. This means
+        that, in addition to all the normally used data types, an xrecord is capable of storing
+        object IDs in any of the four types (hard owner, soft owner, hard pointer, soft pointer)
+        which allows xrecords to own other objects, including other xrecords.
+        """
     @overload
     def __init__(self, *args) -> None:
         """

@@ -196,10 +196,20 @@ class Core:
         """
     @overload
     @staticmethod
-    def cmdS(commandName: str, /) -> bool: ...
+    def cmdS(commandName: str, /) -> bool:
+        """
+        This function does the same thing with the same restructions as acedCommandS, with a resbuf
+        chain rather than a veriable arguments list. Two more supplied parameters are intended for
+        future use.
+        """
     @overload
     @staticmethod
-    def cmdS(resultBuffer: list[tuple[int, Any]], /) -> bool: ...
+    def cmdS(resultBuffer: list[tuple[int, Any]], /) -> bool:
+        """
+        This function does the same thing with the same restructions as acedCommandS, with a resbuf
+        chain rather than a veriable arguments list. Two more supplied parameters are intended for
+        future use.
+        """
     @overload
     @staticmethod
     def cmdS(*args) -> bool:
@@ -232,10 +242,18 @@ class Core:
         """
     @overload
     @staticmethod
-    def coordFromPixelToWorld(pt: tuple[int, int], /) -> PyGe.Point3d: ...
+    def coordFromPixelToWorld(pt: tuple[int, int], /) -> PyGe.Point3d:
+        """
+        Converts coordinates from AutoCAD drawing window to current active viewport's coordinates.
+        Returns TRUE if it successfully converts the coordinates; otherwise, it returns FALSE.
+        """
     @overload
     @staticmethod
-    def coordFromPixelToWorld(winnum: int, pt: tuple[int, int], /) -> PyGe.Point3d: ...
+    def coordFromPixelToWorld(winnum: int, pt: tuple[int, int], /) -> PyGe.Point3d:
+        """
+        Converts coordinates from AutoCAD drawing window to current active viewport's coordinates.
+        Returns TRUE if it successfully converts the coordinates; otherwise, it returns FALSE.
+        """
     @overload
     @staticmethod
     def coordFromPixelToWorld(*args) -> PyGe.Point3d:
@@ -1498,17 +1516,65 @@ class Editor:
         """
     @overload
     @staticmethod
-    def entSel(prompt: str, /) -> tuple[PyEd.PromptStatus, PyDb.ObjectId, PyGe.Point3d]: ...
+    def entSel(prompt: str, /) -> tuple[PyEd.PromptStatus, PyDb.ObjectId, PyGe.Point3d]:
+        """
+        Prompts the user to select an entity by specifying a point. Pauses for user input and
+        returns both an entity name and the point that is used to select the entity. The
+        acedEntSel() function does not return the names of nongraphical objects. Some entity
+        operations require knowledge of the point by which the entity was selected. Examples are
+        the AutoCAD BREAK, TRIM, and EXTEND commands, as well as OSNAP; acedEntSel() provides the
+        same capability to ARX applications. The acedEntSel() function ignores the current OSNAP
+        setting (no object snap) unless the user specifically requests it. When the user responds
+        to acedEntSel() by specifying a complex entity, it returns the polyline or block header.
+        This differs from the function acedNEntSelP(), which returns the nearest block attribute or
+        polyline vertex. The acedEntSel() function returns RTNORM if it succeeds, RTERROR if it
+        fails, or RTCAN if the user cancels the request (by pressing [Esc]). A prior call to
+        acedInitGet() can also enable a return value of RTKWORD (see the description of
+        acedInitGet()). When acedEntSel() fails, it sets the system variable ERRNO to a value that
+        indicates the reason for the failure.
+        """
     @overload
     @staticmethod
     def entSel(
         prompt: str, eType: PyRx.RxClass, /
-    ) -> tuple[PyEd.PromptStatus, PyDb.ObjectId, PyGe.Point3d]: ...
+    ) -> tuple[PyEd.PromptStatus, PyDb.ObjectId, PyGe.Point3d]:
+        """
+        Prompts the user to select an entity by specifying a point. Pauses for user input and
+        returns both an entity name and the point that is used to select the entity. The
+        acedEntSel() function does not return the names of nongraphical objects. Some entity
+        operations require knowledge of the point by which the entity was selected. Examples are
+        the AutoCAD BREAK, TRIM, and EXTEND commands, as well as OSNAP; acedEntSel() provides the
+        same capability to ARX applications. The acedEntSel() function ignores the current OSNAP
+        setting (no object snap) unless the user specifically requests it. When the user responds
+        to acedEntSel() by specifying a complex entity, it returns the polyline or block header.
+        This differs from the function acedNEntSelP(), which returns the nearest block attribute or
+        polyline vertex. The acedEntSel() function returns RTNORM if it succeeds, RTERROR if it
+        fails, or RTCAN if the user cancels the request (by pressing [Esc]). A prior call to
+        acedInitGet() can also enable a return value of RTKWORD (see the description of
+        acedInitGet()). When acedEntSel() fails, it sets the system variable ERRNO to a value that
+        indicates the reason for the failure.
+        """
     @overload
     @staticmethod
     def entSel(
         prompt: str, eTypes: list[PyRx.RxClass], /
-    ) -> tuple[PyEd.PromptStatus, PyDb.ObjectId, PyGe.Point3d]: ...
+    ) -> tuple[PyEd.PromptStatus, PyDb.ObjectId, PyGe.Point3d]:
+        """
+        Prompts the user to select an entity by specifying a point. Pauses for user input and
+        returns both an entity name and the point that is used to select the entity. The
+        acedEntSel() function does not return the names of nongraphical objects. Some entity
+        operations require knowledge of the point by which the entity was selected. Examples are
+        the AutoCAD BREAK, TRIM, and EXTEND commands, as well as OSNAP; acedEntSel() provides the
+        same capability to ARX applications. The acedEntSel() function ignores the current OSNAP
+        setting (no object snap) unless the user specifically requests it. When the user responds
+        to acedEntSel() by specifying a complex entity, it returns the polyline or block header.
+        This differs from the function acedNEntSelP(), which returns the nearest block attribute or
+        polyline vertex. The acedEntSel() function returns RTNORM if it succeeds, RTERROR if it
+        fails, or RTCAN if the user cancels the request (by pressing [Esc]). A prior call to
+        acedInitGet() can also enable a return value of RTKWORD (see the description of
+        acedInitGet()). When acedEntSel() fails, it sets the system variable ERRNO to a value that
+        indicates the reason for the failure.
+        """
     @overload
     @staticmethod
     def entSel(*args) -> tuple[PyEd.PromptStatus, PyDb.ObjectId, PyGe.Point3d]:
@@ -1612,10 +1678,48 @@ class Editor:
         """
     @overload
     @staticmethod
-    def getDist(prompt: str, /) -> tuple[PyEd.PromptStatus, float]: ...
+    def getDist(prompt: str, /) -> tuple[PyEd.PromptStatus, float]:
+        """
+        Gets user input for a linear distance. The AutoCAD user can specify the distance by
+        entering a number in the current units format. The user can set the distance also by
+        specifying two locations on the graphics screen. AutoCAD draws a rubber-band line from the
+        first point to the current crosshair position to help the user visualize the distance. If
+        the pt argument is not null, AutoCAD uses this value as the first of the two points. By
+        default, acedGetDist() treats pt and result as three-dimensional points. A prior call to
+        acedInitGet() can force pt to be two dimensional, ensuring that acedGetDist() returns
+        result as a planar distance. Regardless of the method used to specify the distance, or the
+        current linear units (for example, feet and inches), acedGetDist() always sets result to a
+        double-precision floating-point value. The user cannot respond to acedGetDist() by entering
+        an AutoLISP expression. The acedGetDist() function returns one of the following: RTNORM if
+        it succeeds, RTERROR if it fails, or RTCAN if the user cancels the request (by pressing
+        [Esc]). It returns RTMODELESS, if the active command was registered using the
+        ACRX_CMD_INTERRUPTIBLE flag and the document has received a modeless interrupt signal from
+        a call to  AcApDocManager::sendModelessInterrupt(). A prior call to acedInitGet() can also
+        enable return values of RTNONE or RTKWORD. If pt or prompt is not used, pass a null pointer
+        for these arguments.
+        """
     @overload
     @staticmethod
-    def getDist(basePt: PyGe.Point3d, prompt: str, /) -> tuple[PyEd.PromptStatus, float]: ...
+    def getDist(basePt: PyGe.Point3d, prompt: str, /) -> tuple[PyEd.PromptStatus, float]:
+        """
+        Gets user input for a linear distance. The AutoCAD user can specify the distance by
+        entering a number in the current units format. The user can set the distance also by
+        specifying two locations on the graphics screen. AutoCAD draws a rubber-band line from the
+        first point to the current crosshair position to help the user visualize the distance. If
+        the pt argument is not null, AutoCAD uses this value as the first of the two points. By
+        default, acedGetDist() treats pt and result as three-dimensional points. A prior call to
+        acedInitGet() can force pt to be two dimensional, ensuring that acedGetDist() returns
+        result as a planar distance. Regardless of the method used to specify the distance, or the
+        current linear units (for example, feet and inches), acedGetDist() always sets result to a
+        double-precision floating-point value. The user cannot respond to acedGetDist() by entering
+        an AutoLISP expression. The acedGetDist() function returns one of the following: RTNORM if
+        it succeeds, RTERROR if it fails, or RTCAN if the user cancels the request (by pressing
+        [Esc]). It returns RTMODELESS, if the active command was registered using the
+        ACRX_CMD_INTERRUPTIBLE flag and the document has received a modeless interrupt signal from
+        a call to  AcApDocManager::sendModelessInterrupt(). A prior call to acedInitGet() can also
+        enable return values of RTNONE or RTKWORD. If pt or prompt is not used, pass a null pointer
+        for these arguments.
+        """
     @overload
     @staticmethod
     def getDist(*args) -> tuple[PyEd.PromptStatus, float]:
@@ -1701,12 +1805,38 @@ class Editor:
         """
     @overload
     @staticmethod
-    def getPoint(prompt: str, /) -> tuple[PyEd.PromptStatus, PyGe.Point3d]: ...
+    def getPoint(prompt: str, /) -> tuple[PyEd.PromptStatus, PyGe.Point3d]:
+        """
+        Gets user input for a point. The AutoCAD user can specify the point by entering a
+        coordinate in the current units format; acedGetPoint() treats pt and result as
+        three-dimensional points. The user can specify the point also by specifying a location on
+        the graphics screen. If the pt argument is not null, AutoCAD draws a rubber-band line from
+        pt to the current crosshair position. The coordinates of the point stored in result are
+        expressed in terms of the current UCS. The user cannot respond to acedGetPoint() by
+        entering an AutoLISP expression. The acedGetPoint() function returns one of the following:
+        RTNORM if it succeeds, RTERROR if it fails, or RTCAN if the user cancels the request (by
+        pressing [Esc]). It returns RTMODELESS, if the active command was registered using the
+        ACRX_CMD_INTERRUPTIBLE flag and the document has received a modeless interrupt signal from
+        a call to  AcApDocManager::sendModelessInterrupt(). A prior call to acedInitGet() can also
+        enable return values of RTNONE or RTKWORD.
+        """
     @overload
     @staticmethod
-    def getPoint(
-        basePt: PyGe.Point3d, prompt: str, /
-    ) -> tuple[PyEd.PromptStatus, PyGe.Point3d]: ...
+    def getPoint(basePt: PyGe.Point3d, prompt: str, /) -> tuple[PyEd.PromptStatus, PyGe.Point3d]:
+        """
+        Gets user input for a point. The AutoCAD user can specify the point by entering a
+        coordinate in the current units format; acedGetPoint() treats pt and result as
+        three-dimensional points. The user can specify the point also by specifying a location on
+        the graphics screen. If the pt argument is not null, AutoCAD draws a rubber-band line from
+        pt to the current crosshair position. The coordinates of the point stored in result are
+        expressed in terms of the current UCS. The user cannot respond to acedGetPoint() by
+        entering an AutoLISP expression. The acedGetPoint() function returns one of the following:
+        RTNORM if it succeeds, RTERROR if it fails, or RTCAN if the user cancels the request (by
+        pressing [Esc]). It returns RTMODELESS, if the active command was registered using the
+        ACRX_CMD_INTERRUPTIBLE flag and the document has received a modeless interrupt signal from
+        a call to  AcApDocManager::sendModelessInterrupt(). A prior call to acedInitGet() can also
+        enable return values of RTNONE or RTKWORD.
+        """
     @overload
     @staticmethod
     def getPoint(*args) -> tuple[PyEd.PromptStatus, PyGe.Point3d]:
@@ -1739,20 +1869,40 @@ class Editor:
         """
     @overload
     @staticmethod
-    def getString(prompt: str, /) -> tuple[PyEd.PromptStatus, str]: ...
+    def getString(prompt: str, /) -> tuple[PyEd.PromptStatus, str]:
+        """
+        Gets user input for a string, cronly If nonzero, the string can contain blanks and the user
+        must terminate it by entering [Return]; if zero, entering either a blank or [Return]
+        terminates the string
+        """
     @overload
     @staticmethod
     def getString(
         prompt: str, condition: PyEd.PromptCondition, /
-    ) -> tuple[PyEd.PromptStatus, str]: ...
+    ) -> tuple[PyEd.PromptStatus, str]:
+        """
+        Gets user input for a string, cronly If nonzero, the string can contain blanks and the user
+        must terminate it by entering [Return]; if zero, entering either a blank or [Return]
+        terminates the string
+        """
     @overload
     @staticmethod
-    def getString(cronly: int, prompt: str, /) -> tuple[PyEd.PromptStatus, str]: ...
+    def getString(cronly: int, prompt: str, /) -> tuple[PyEd.PromptStatus, str]:
+        """
+        Gets user input for a string, cronly If nonzero, the string can contain blanks and the user
+        must terminate it by entering [Return]; if zero, entering either a blank or [Return]
+        terminates the string
+        """
     @overload
     @staticmethod
     def getString(
         cronly: int, prompt: str, condition: PyEd.PromptCondition, /
-    ) -> tuple[PyEd.PromptStatus, str]: ...
+    ) -> tuple[PyEd.PromptStatus, str]:
+        """
+        Gets user input for a string, cronly If nonzero, the string can contain blanks and the user
+        must terminate it by entering [Return]; if zero, entering either a blank or [Return]
+        terminates the string
+        """
     @overload
     @staticmethod
     def getString(*args) -> tuple[PyEd.PromptStatus, str]:

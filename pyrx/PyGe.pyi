@@ -202,13 +202,23 @@ class AutoTol:
 
 class BoundBlock2d(PyGe.Entity2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class provides a two-dimensional bounding volume implementation. Bounding blocks may
+        exist in two forms: as an ordinary coordinate-aligned bounding box and as a parallelogram.
+        """
     @overload
-    def __init__(self, pt1: PyGe.Point2d, pt2: PyGe.Point2d, /) -> None: ...
+    def __init__(self, pt1: PyGe.Point2d, pt2: PyGe.Point2d, /) -> None:
+        """
+        This class provides a two-dimensional bounding volume implementation. Bounding blocks may
+        exist in two forms: as an ordinary coordinate-aligned bounding box and as a parallelogram.
+        """
     @overload
-    def __init__(
-        self, base: PyGe.Point2d, dir1: PyGe.Vector2d, dir2: PyGe.Vector2d, /
-    ) -> None: ...
+    def __init__(self, base: PyGe.Point2d, dir1: PyGe.Vector2d, dir2: PyGe.Vector2d, /) -> None:
+        """
+        This class provides a two-dimensional bounding volume implementation. Bounding blocks may
+        exist in two forms: as an ordinary coordinate-aligned bounding box and as a parallelogram.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -242,11 +252,19 @@ class BoundBlock2d(PyGe.Entity2d):
 
 class BoundBlock3d(PyGe.Entity3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class provides spatial dimensional bounding volume implementation. Bounding blocks may
+        exist in two forms: as an ordinary coordinate-aligned bounding box and as a parallelepiped.
+        """
     @overload
     def __init__(
         self, base: PyGe.Point3d, dir1: PyGe.Vector3d, dir2: PyGe.Vector3d, dir3: PyGe.Vector3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        This class provides spatial dimensional bounding volume implementation. Bounding blocks may
+        exist in two forms: as an ordinary coordinate-aligned bounding box and as a parallelepiped.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -282,13 +300,20 @@ class BoundBlock3d(PyGe.Entity3d):
 
 class BoundedPlane(PyGe.PlanarEnt):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a bounded planar parametric surface.
+        """
     @overload
-    def __init__(
-        self, origin: PyGe.Point3d, uVec: PyGe.Vector3d, vVec: PyGe.Vector3d, /
-    ) -> None: ...
+    def __init__(self, origin: PyGe.Point3d, uVec: PyGe.Vector3d, vVec: PyGe.Vector3d, /) -> None:
+        """
+        Represents a bounded planar parametric surface.
+        """
     @overload
-    def __init__(self, p1: PyGe.Point3d, origin: PyGe.Point3d, p2: PyGe.Point3d, /) -> None: ...
+    def __init__(self, p1: PyGe.Point3d, origin: PyGe.Point3d, p2: PyGe.Point3d, /) -> None:
+        """
+        Represents a bounded planar parametric surface.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -313,13 +338,22 @@ class BoundedPlane(PyGe.PlanarEnt):
 
 class CircArc2d(PyGe.Curve2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents both full circles and circular arcs in 2D space.
+        """
     @overload
-    def __init__(self, cent: PyGe.Point2d, radius: float, /) -> None: ...
+    def __init__(self, cent: PyGe.Point2d, radius: float, /) -> None:
+        """
+        Represents both full circles and circular arcs in 2D space.
+        """
     @overload
     def __init__(
         self, cent: PyGe.Point2d, radius: float, startAngle: float, endAngle: float, /
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full circles and circular arcs in 2D space.
+        """
     @overload
     def __init__(
         self,
@@ -330,15 +364,24 @@ class CircArc2d(PyGe.Curve2d):
         refVec: PyGe.Vector2d,
         isClockWise: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full circles and circular arcs in 2D space.
+        """
     @overload
     def __init__(
         self, startPoint: PyGe.Point2d, pnt: PyGe.Point2d, endPoint: PyGe.Point2d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full circles and circular arcs in 2D space.
+        """
     @overload
     def __init__(
         self, startPoint: PyGe.Point2d, endPoint: PyGe.Point2d, bulge: float, bulgeFlag: bool, /
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full circles and circular arcs in 2D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -401,9 +444,15 @@ class CircArc2d(PyGe.Curve2d):
 
 class CircArc3d(PyGe.Curve3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents both full circles and circular arcs in 3D space.
+        """
     @overload
-    def __init__(self, cent: PyGe.Point3d, nrm: PyGe.Vector3d, radius: float, /) -> None: ...
+    def __init__(self, cent: PyGe.Point3d, nrm: PyGe.Vector3d, radius: float, /) -> None:
+        """
+        Represents both full circles and circular arcs in 3D space.
+        """
     @overload
     def __init__(
         self,
@@ -414,11 +463,17 @@ class CircArc3d(PyGe.Curve3d):
         startAngle: float,
         endAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full circles and circular arcs in 3D space.
+        """
     @overload
     def __init__(
         self, startPoint: PyGe.Point3d, pnt: PyGe.Point3d, endPoint: PyGe.Point3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full circles and circular arcs in 3D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -481,11 +536,41 @@ class CircArc3d(PyGe.Curve3d):
 
 class ClipBoundary2d(PyGe.Entity2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class defines a planar clipping object for clipping arbitrary 2D polygons or polylines
+        to 2D convex open or closed polyline curves or rectangles. The implementation is similar to
+        the Sutherland-Hodgman pipeline clipping algorithm. Detailed edge information can
+        optionally be generated to track the source of each clipped output segment. This
+        information can be used to control edge display or to efficiently stitch together output
+        from multiple clip boundaries (possibly from decomposing a non-convex clip boundary into
+        multiple convex boundaries). Information about the spatial relationship between the clipped
+        polygon or polyline and the clip region is also generated.
+        """
     @overload
-    def __init__(self, cornerA: PyGe.Point2d, cornerB: PyGe.Point2d, /) -> None: ...
+    def __init__(self, cornerA: PyGe.Point2d, cornerB: PyGe.Point2d, /) -> None:
+        """
+        This class defines a planar clipping object for clipping arbitrary 2D polygons or polylines
+        to 2D convex open or closed polyline curves or rectangles. The implementation is similar to
+        the Sutherland-Hodgman pipeline clipping algorithm. Detailed edge information can
+        optionally be generated to track the source of each clipped output segment. This
+        information can be used to control edge display or to efficiently stitch together output
+        from multiple clip boundaries (possibly from decomposing a non-convex clip boundary into
+        multiple convex boundaries). Information about the spatial relationship between the clipped
+        polygon or polyline and the clip region is also generated.
+        """
     @overload
-    def __init__(self, clipBoundary: list[PyGe.Point2d], /) -> None: ...
+    def __init__(self, clipBoundary: list[PyGe.Point2d], /) -> None:
+        """
+        This class defines a planar clipping object for clipping arbitrary 2D polygons or polylines
+        to 2D convex open or closed polyline curves or rectangles. The implementation is similar to
+        the Sutherland-Hodgman pipeline clipping algorithm. Detailed edge information can
+        optionally be generated to track the source of each clipped output segment. This
+        information can be used to control edge display or to efficiently stitch together output
+        from multiple clip boundaries (possibly from decomposing a non-convex clip boundary into
+        multiple convex boundaries). Information about the spatial relationship between the clipped
+        polygon or polyline and the clip region is also generated.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -508,11 +593,44 @@ class ClipBoundary2d(PyGe.Entity2d):
 
 class CompositeCurve2d(PyGe.Curve2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a composite curve, which is a single curve that consists of any number of
+        component curves that are connected end-to-end. For instance, a composite curve could
+        consist of four straight line segments that form a square. Each of the component curves
+        must be bounded curves, which means that infinite lines and rays may not be used as
+        component curves of a composite. A composite curve object stores a list of pointers to the
+        component curves. The start parameter of a composite is 0.0. The parameter value at the
+        endpoint of the first component curve is the approximate length of the first curve (call
+        this value l1). The parameter value at the endpoint of the second curve is l1 plus the
+        approximate length of the second curve, and so forth.
+        """
     @overload
-    def __init__(self, curveList: list[PyGe.Curve2d], /) -> None: ...
+    def __init__(self, curveList: list[PyGe.Curve2d], /) -> None:
+        """
+        Represents a composite curve, which is a single curve that consists of any number of
+        component curves that are connected end-to-end. For instance, a composite curve could
+        consist of four straight line segments that form a square. Each of the component curves
+        must be bounded curves, which means that infinite lines and rays may not be used as
+        component curves of a composite. A composite curve object stores a list of pointers to the
+        component curves. The start parameter of a composite is 0.0. The parameter value at the
+        endpoint of the first component curve is the approximate length of the first curve (call
+        this value l1). The parameter value at the endpoint of the second curve is l1 plus the
+        approximate length of the second curve, and so forth.
+        """
     @overload
-    def __init__(self, curveList: list[PyGe.Curve2d], isOwnerOfCurves: list[int], /) -> None: ...
+    def __init__(self, curveList: list[PyGe.Curve2d], isOwnerOfCurves: list[int], /) -> None:
+        """
+        Represents a composite curve, which is a single curve that consists of any number of
+        component curves that are connected end-to-end. For instance, a composite curve could
+        consist of four straight line segments that form a square. Each of the component curves
+        must be bounded curves, which means that infinite lines and rays may not be used as
+        component curves of a composite. A composite curve object stores a list of pointers to the
+        component curves. The start parameter of a composite is 0.0. The parameter value at the
+        endpoint of the first component curve is the approximate length of the first curve (call
+        this value l1). The parameter value at the endpoint of the second curve is l1 plus the
+        approximate length of the second curve, and so forth.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -547,11 +665,47 @@ class CompositeCurve2d(PyGe.Curve2d):
 
 class CompositeCurve3d(PyGe.Curve3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a composite curve, which is a single curve that consists of any number of
+        component curves that are connected end-to-end. For instance, a composite curve could
+        consist of four straight line segments that form a square. Each of the component curves
+        must be bounded curves, which means that infinite lines and rays may not be used as
+        component curves of a composite. The component curves are not required to all lie in the
+        same plane. A composite curve object stores a list of pointers to the component curves. The
+        start parameter of a composite is 0.0. The parameter value at the endpoint of the first
+        component curve is the approximate length of the first curve (call this value l1). The
+        parameter value at the endpoint of the second curve is l1 plus the approximate length of
+        the second curve, etc.
+        """
     @overload
-    def __init__(self, curveList: list[PyGe.Curve3d], /) -> None: ...
+    def __init__(self, curveList: list[PyGe.Curve3d], /) -> None:
+        """
+        Represents a composite curve, which is a single curve that consists of any number of
+        component curves that are connected end-to-end. For instance, a composite curve could
+        consist of four straight line segments that form a square. Each of the component curves
+        must be bounded curves, which means that infinite lines and rays may not be used as
+        component curves of a composite. The component curves are not required to all lie in the
+        same plane. A composite curve object stores a list of pointers to the component curves. The
+        start parameter of a composite is 0.0. The parameter value at the endpoint of the first
+        component curve is the approximate length of the first curve (call this value l1). The
+        parameter value at the endpoint of the second curve is l1 plus the approximate length of
+        the second curve, etc.
+        """
     @overload
-    def __init__(self, curveList: list[PyGe.Curve3d], isOwnerOfCurves: list[int], /) -> None: ...
+    def __init__(self, curveList: list[PyGe.Curve3d], isOwnerOfCurves: list[int], /) -> None:
+        """
+        Represents a composite curve, which is a single curve that consists of any number of
+        component curves that are connected end-to-end. For instance, a composite curve could
+        consist of four straight line segments that form a square. Each of the component curves
+        must be bounded curves, which means that infinite lines and rays may not be used as
+        component curves of a composite. The component curves are not required to all lie in the
+        same plane. A composite curve object stores a list of pointers to the component curves. The
+        start parameter of a composite is 0.0. The parameter value at the endpoint of the first
+        component curve is the approximate length of the first curve (call this value l1). The
+        parameter value at the endpoint of the second curve is l1 plus the approximate length of
+        the second curve, etc.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -587,7 +741,10 @@ class CompositeCurve3d(PyGe.Curve3d):
 
 class Cone(PyGe.Surface):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a bounded right circular cone.
+        """
     @overload
     def __init__(
         self,
@@ -597,7 +754,10 @@ class Cone(PyGe.Surface):
         baseRadius: float,
         axisOfSymmetry: PyGe.Vector3d,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents a bounded right circular cone.
+        """
     @overload
     def __init__(
         self,
@@ -611,7 +771,10 @@ class Cone(PyGe.Surface):
         startAngle: float,
         endAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents a bounded right circular cone.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -671,11 +834,20 @@ class Cone(PyGe.Surface):
 
 class CubicSplineCurve2d(PyGe.SplineEnt2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represent an interpolation cubic spline in 2D space.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve2d, epsilon: float, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve2d, epsilon: float, /) -> None:
+        """
+        Represent an interpolation cubic spline in 2D space.
+        """
     @overload
-    def __init__(self, fitPnts: list[PyGe.Point2d], tol: PyGe.Tol, /) -> None: ...
+    def __init__(self, fitPnts: list[PyGe.Point2d], tol: PyGe.Tol, /) -> None:
+        """
+        Represent an interpolation cubic spline in 2D space.
+        """
     @overload
     def __init__(
         self,
@@ -684,7 +856,10 @@ class CubicSplineCurve2d(PyGe.SplineEnt2d):
         endDeriv: PyGe.Vector2d,
         tol: PyGe.Tol,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represent an interpolation cubic spline in 2D space.
+        """
     @overload
     def __init__(
         self,
@@ -693,7 +868,10 @@ class CubicSplineCurve2d(PyGe.SplineEnt2d):
         firstDerivs: list[PyGe.Point2d],
         isPeriodic: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represent an interpolation cubic spline in 2D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -714,11 +892,20 @@ class CubicSplineCurve2d(PyGe.SplineEnt2d):
 
 class CubicSplineCurve3d(PyGe.SplineEnt3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents an interpolation cubic spline in 3D space.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve3d, epsilon: float, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve3d, epsilon: float, /) -> None:
+        """
+        Represents an interpolation cubic spline in 3D space.
+        """
     @overload
-    def __init__(self, fitPnts: list[PyGe.Point3d], tol: PyGe.Tol, /) -> None: ...
+    def __init__(self, fitPnts: list[PyGe.Point3d], tol: PyGe.Tol, /) -> None:
+        """
+        Represents an interpolation cubic spline in 3D space.
+        """
     @overload
     def __init__(
         self,
@@ -727,7 +914,10 @@ class CubicSplineCurve3d(PyGe.SplineEnt3d):
         endDeriv: PyGe.Vector3d,
         tol: PyGe.Tol,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents an interpolation cubic spline in 3D space.
+        """
     @overload
     def __init__(
         self,
@@ -736,7 +926,10 @@ class CubicSplineCurve3d(PyGe.SplineEnt3d):
         firstDerivs: list[PyGe.Vector3d],
         isPeriodic: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents an interpolation cubic spline in 3D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -938,11 +1131,21 @@ class Curve3d(PyGe.Entity3d):
         AcGePointOnCurve3d object instead of a AcGePoint3d object.
         """
     @overload
-    def getSamplePoints(self, numSample: int, /) -> tuple[list[PyGe.Point3d], list[float]]: ...
+    def getSamplePoints(self, numSample: int, /) -> tuple[list[PyGe.Point3d], list[float]]:
+        """
+        Returns the specified number of points on the curve. The points are equally spaced by
+        parameter value. So if the interval of the curve [0,1] and numSample is 5, the parameter
+        values of the returned points are 0, 0.25, 0.5, 0.75, and 1.
+        """
     @overload
     def getSamplePoints(
         self, fromParam: float, toParam: float, approxEps: float, /
-    ) -> tuple[list[PyGe.Point3d], list[float]]: ...
+    ) -> tuple[list[PyGe.Point3d], list[float]]:
+        """
+        Returns the specified number of points on the curve. The points are equally spaced by
+        parameter value. So if the interval of the curve [0,1] and numSample is 5, the parameter
+        values of the returned points are 0, 0.25, 0.5, 0.75, and 1.
+        """
     @overload
     def getSamplePoints(self, *args) -> tuple[list[PyGe.Point3d], list[float]]:
         """
@@ -1122,11 +1325,56 @@ class Curve3d(PyGe.Entity3d):
 
 class CurveCurveInt2d(PyGe.Entity2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt2d, AcGeCircArc2d, and AcGeEllipArc2d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
-    def __init__(self, curve1: PyGe.Curve2d, curve2: PyGe.Curve2d, /) -> None: ...
+    def __init__(self, curve1: PyGe.Curve2d, curve2: PyGe.Curve2d, /) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt2d, AcGeCircArc2d, and AcGeEllipArc2d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
-    def __init__(self, curve1: PyGe.Curve2d, curve2: PyGe.Curve2d, tol: PyGe.Tol, /) -> None: ...
+    def __init__(self, curve1: PyGe.Curve2d, curve2: PyGe.Curve2d, tol: PyGe.Tol, /) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt2d, AcGeCircArc2d, and AcGeEllipArc2d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
     def __init__(
         self,
@@ -1135,7 +1383,22 @@ class CurveCurveInt2d(PyGe.Entity2d):
         range1: PyGe.Interval,
         range2: PyGe.Interval,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt2d, AcGeCircArc2d, and AcGeEllipArc2d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
     def __init__(
         self,
@@ -1145,7 +1408,22 @@ class CurveCurveInt2d(PyGe.Entity2d):
         range2: PyGe.Interval,
         tol: PyGe.Tol,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt2d, AcGeCircArc2d, and AcGeEllipArc2d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1192,9 +1470,39 @@ class CurveCurveInt2d(PyGe.Entity2d):
 
 class CurveCurveInt3d(PyGe.Entity3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt3d, AcGeCircArc3d, and AcGeEllipArc3d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
-    def __init__(self, curve1: PyGe.Curve3d, curve2: PyGe.Curve3d, /) -> None: ...
+    def __init__(self, curve1: PyGe.Curve3d, curve2: PyGe.Curve3d, /) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt3d, AcGeCircArc3d, and AcGeEllipArc3d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
     def __init__(
         self,
@@ -1203,7 +1511,22 @@ class CurveCurveInt3d(PyGe.Entity3d):
         planeNormal: PyGe.Vector3d,
         tol: PyGe.Tol,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt3d, AcGeCircArc3d, and AcGeEllipArc3d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
     def __init__(
         self,
@@ -1212,7 +1535,22 @@ class CurveCurveInt3d(PyGe.Entity3d):
         range1: PyGe.Interval,
         range2: PyGe.Interval,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt3d, AcGeCircArc3d, and AcGeEllipArc3d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
     def __init__(
         self,
@@ -1222,7 +1560,22 @@ class CurveCurveInt3d(PyGe.Entity3d):
         range2: PyGe.Interval,
         tol: PyGe.Tol,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents the intersection set of two curves. There are special case intersectWith()
+        functions in the AcGeLinearEnt3d, AcGeCircArc3d, and AcGeEllipArc3d classes to find the
+        points of intersection between two lines, a line and an arc, an arc and an arc, or a line
+        and an ellipse. However, there is no general intersectWith() function to find the points of
+        intersection between two general curves. This can only be done by constructing an object of
+        this class. Objects of this class are constructed by specifying the two curves that are to
+        be intersected. It is also possible to specify a specific interval of each curve that is to
+        be intersected. Pointers to these curves are then stored as data members of this class.
+        This class contains query methods that return the intersection points and intervals of
+        overlap between the two curves. There are also methods that return information about each
+        intersection point, such as whether the intersection is a tangential or transversal
+        intersection. Points of self-intersection of a curve can be found by passing the same curve
+        in both parameters of the constructor.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1270,11 +1623,20 @@ class CurveCurveInt3d(PyGe.Entity3d):
 
 class CurveSurfInt(PyGe.Entity3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class holds data for intersections of a 3D curve and a surface.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve3d, surf: PyGe.Surface, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve3d, surf: PyGe.Surface, /) -> None:
+        """
+        This class holds data for intersections of a 3D curve and a surface.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve3d, surf: PyGe.Surface, tol: PyGe.Tol, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve3d, surf: PyGe.Surface, tol: PyGe.Tol, /) -> None:
+        """
+        This class holds data for intersections of a 3D curve and a surface.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1305,11 +1667,17 @@ class CurveSurfInt(PyGe.Entity3d):
 
 class Cylinder(PyGe.Surface):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a bounded cylinder surface.
+        """
     @overload
     def __init__(
         self, radius: float, origin: PyGe.Point3d, axisOfSymmetry: PyGe.Vector3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents a bounded cylinder surface.
+        """
     @overload
     def __init__(
         self,
@@ -1321,7 +1689,10 @@ class Cylinder(PyGe.Surface):
         startAngle: float,
         endAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents a bounded cylinder surface.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1370,9 +1741,15 @@ class Cylinder(PyGe.Surface):
 
 class EllipArc2d(PyGe.Curve2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents both full ellipses and elliptical arcs in 2D space.
+        """
     @overload
-    def __init__(self, carc: PyGe.CircArc2d, /) -> None: ...
+    def __init__(self, carc: PyGe.CircArc2d, /) -> None:
+        """
+        Represents both full ellipses and elliptical arcs in 2D space.
+        """
     @overload
     def __init__(
         self,
@@ -1382,7 +1759,10 @@ class EllipArc2d(PyGe.Curve2d):
         majorRadius: float,
         minorRadius: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full ellipses and elliptical arcs in 2D space.
+        """
     @overload
     def __init__(
         self,
@@ -1394,7 +1774,10 @@ class EllipArc2d(PyGe.Curve2d):
         startAngle: float,
         endAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full ellipses and elliptical arcs in 2D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1456,9 +1839,15 @@ class EllipArc2d(PyGe.Curve2d):
 
 class EllipArc3d(PyGe.Curve3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents both full ellipses and elliptical arcs in 3D space.
+        """
     @overload
-    def __init__(self, carc: PyGe.CircArc3d, /) -> None: ...
+    def __init__(self, carc: PyGe.CircArc3d, /) -> None:
+        """
+        Represents both full ellipses and elliptical arcs in 3D space.
+        """
     @overload
     def __init__(
         self,
@@ -1468,7 +1857,10 @@ class EllipArc3d(PyGe.Curve3d):
         majorRadius: float,
         minorRadius: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full ellipses and elliptical arcs in 3D space.
+        """
     @overload
     def __init__(
         self,
@@ -1480,7 +1872,10 @@ class EllipArc3d(PyGe.Curve3d):
         startAngle: float,
         endAngle: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents both full ellipses and elliptical arcs in 3D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1814,11 +2209,23 @@ class Interval:
     def __ge__(self, val: PyGe.Interval | float, /) -> bool: ...
     def __gt__(self, val: PyGe.Interval | float, /) -> bool: ...
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a finite or semi-infinite interval as the real axis whose bounds are defined
+        with some given tolerance.
+        """
     @overload
-    def __init__(self, lower: float, upper: float, /) -> None: ...
+    def __init__(self, lower: float, upper: float, /) -> None:
+        """
+        Represents a finite or semi-infinite interval as the real axis whose bounds are defined
+        with some given tolerance.
+        """
     @overload
-    def __init__(self, bounded: bool, upper: float, /) -> None: ...
+    def __init__(self, bounded: bool, upper: float, /) -> None:
+        """
+        Represents a finite or semi-infinite interval as the real axis whose bounds are defined
+        with some given tolerance.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1877,13 +2284,25 @@ class KnotParameterization(_BoostPythonEnum):
 
 class KnotVector:
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents an ordered non-decreasing sequence of numbers used in several spline entities.
+        """
     @overload
-    def __init__(self, size: int, growSize: int, /) -> None: ...
+    def __init__(self, size: int, growSize: int, /) -> None:
+        """
+        Represents an ordered non-decreasing sequence of numbers used in several spline entities.
+        """
     @overload
-    def __init__(self, data: list[float], /) -> None: ...
+    def __init__(self, data: list[float], /) -> None:
+        """
+        Represents an ordered non-decreasing sequence of numbers used in several spline entities.
+        """
     @overload
-    def __init__(self, plusMult: int, other: PyGe.KnotVector, /) -> None: ...
+    def __init__(self, plusMult: int, other: PyGe.KnotVector, /) -> None:
+        """
+        Represents an ordered non-decreasing sequence of numbers used in several spline entities.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1932,11 +2351,20 @@ class KnotVector:
 
 class Line2d(PyGe.LinearEnt2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents an unbounded line in 2D space.
+        """
     @overload
-    def __init__(self, start: PyGe.Point3d, direction: PyGe.Vector2d, /) -> None: ...
+    def __init__(self, start: PyGe.Point3d, direction: PyGe.Vector2d, /) -> None:
+        """
+        Represents an unbounded line in 2D space.
+        """
     @overload
-    def __init__(self, start: PyGe.Point3d, end: PyGe.Point3d, /) -> None: ...
+    def __init__(self, start: PyGe.Point3d, end: PyGe.Point3d, /) -> None:
+        """
+        Represents an unbounded line in 2D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1960,11 +2388,20 @@ class Line2d(PyGe.LinearEnt2d):
 
 class Line3d(PyGe.LinearEnt3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents an unbounded line in 3D space.
+        """
     @overload
-    def __init__(self, startPoint: PyGe.Point3d, endPoint: PyGe.Point3d, /) -> None: ...
+    def __init__(self, startPoint: PyGe.Point3d, endPoint: PyGe.Point3d, /) -> None:
+        """
+        Represents an unbounded line in 3D space.
+        """
     @overload
-    def __init__(self, startPoint: PyGe.Point3d, direction: PyGe.Vector3d, /) -> None: ...
+    def __init__(self, startPoint: PyGe.Point3d, direction: PyGe.Vector3d, /) -> None:
+        """
+        Represents an unbounded line in 3D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -1989,11 +2426,20 @@ class Line3d(PyGe.LinearEnt3d):
 
 class LineSeg2d(PyGe.LinearEnt2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a bounded line segment in 2D space.
+        """
     @overload
-    def __init__(self, start: PyGe.Point3d, direction: PyGe.Vector2d, /) -> None: ...
+    def __init__(self, start: PyGe.Point3d, direction: PyGe.Vector2d, /) -> None:
+        """
+        Represents a bounded line segment in 2D space.
+        """
     @overload
-    def __init__(self, start: PyGe.Point3d, end: PyGe.Point3d, /) -> None: ...
+    def __init__(self, start: PyGe.Point3d, end: PyGe.Point3d, /) -> None:
+        """
+        Represents a bounded line segment in 2D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -2032,11 +2478,20 @@ class LineSeg2d(PyGe.LinearEnt2d):
 
 class LineSeg3d(PyGe.LinearEnt3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a bounded line segment in 3D space.
+        """
     @overload
-    def __init__(self, startPoint: PyGe.Point3d, endPoint: PyGe.Point3d, /) -> None: ...
+    def __init__(self, startPoint: PyGe.Point3d, endPoint: PyGe.Point3d, /) -> None:
+        """
+        Represents a bounded line segment in 3D space.
+        """
     @overload
-    def __init__(self, startPoint: PyGe.Point3d, direction: PyGe.Vector3d, /) -> None: ...
+    def __init__(self, startPoint: PyGe.Point3d, direction: PyGe.Vector3d, /) -> None:
+        """
+        Represents a bounded line segment in 3D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -2328,19 +2783,40 @@ class Matrix3d:
 
 class NurbCurve2d(PyGe.SplineEnt2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
-    def __init__(self, src: PyGe.Curve2d, /) -> None: ...
+    def __init__(self, src: PyGe.Curve2d, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
-    def __init__(self, src: PyGe.LineSeg2d, /) -> None: ...
+    def __init__(self, src: PyGe.LineSeg2d, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
-    def __init__(self, src: PyGe.EllipArc2d, /) -> None: ...
+    def __init__(self, src: PyGe.EllipArc2d, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve2d, epsilon: float, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve2d, epsilon: float, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
-    def __init__(self, fitPnts: list[PyGe.Point2d], tol: PyGe.Tol, /) -> None: ...
+    def __init__(self, fitPnts: list[PyGe.Point2d], tol: PyGe.Tol, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
-    def __init__(self, degree: int, fitPolyline: PyGe.Polyline2d, isPeriodic: bool, /) -> None: ...
+    def __init__(self, degree: int, fitPolyline: PyGe.Polyline2d, isPeriodic: bool, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
     def __init__(
         self,
@@ -2349,7 +2825,10 @@ class NurbCurve2d(PyGe.SplineEnt2d):
         cntrlPnts: list[PyGe.Point2d],
         isPeriodic: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
     def __init__(
         self,
@@ -2358,7 +2837,10 @@ class NurbCurve2d(PyGe.SplineEnt2d):
         fitTolerance: PyGe.Tol,
         isPeriodic: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
     def __init__(
         self,
@@ -2369,7 +2851,10 @@ class NurbCurve2d(PyGe.SplineEnt2d):
         endTangentDefined: bool,
         fitTolerance: PyGe.Tol,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
     def __init__(
         self,
@@ -2381,7 +2866,10 @@ class NurbCurve2d(PyGe.SplineEnt2d):
         knotParam: PyGe.KnotParameterization,
         fitTolerance: PyGe.Tol,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents non-uniform rational B-spline in 2D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -2468,19 +2956,40 @@ class NurbCurve2d(PyGe.SplineEnt2d):
 
 class NurbCurve3d(PyGe.SplineEnt3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
-    def __init__(self, src: PyGe.Curve3d, /) -> None: ...
+    def __init__(self, src: PyGe.Curve3d, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
-    def __init__(self, src: PyGe.LineSeg3d, /) -> None: ...
+    def __init__(self, src: PyGe.LineSeg3d, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
-    def __init__(self, src: PyGe.EllipArc3d, /) -> None: ...
+    def __init__(self, src: PyGe.EllipArc3d, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve3d, epsilon: float, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve3d, epsilon: float, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
-    def __init__(self, fitPnts: list[PyGe.Point3d], tol: PyGe.Tol, /) -> None: ...
+    def __init__(self, fitPnts: list[PyGe.Point3d], tol: PyGe.Tol, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
-    def __init__(self, degree: int, fitPolyline: PyGe.Polyline3d, isPeriodic: bool, /) -> None: ...
+    def __init__(self, degree: int, fitPolyline: PyGe.Polyline3d, isPeriodic: bool, /) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
     def __init__(
         self,
@@ -2489,7 +2998,10 @@ class NurbCurve3d(PyGe.SplineEnt3d):
         cntrlPnts: list[PyGe.Point3d],
         isPeriodic: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
     def __init__(
         self,
@@ -2498,7 +3010,10 @@ class NurbCurve3d(PyGe.SplineEnt3d):
         fitTolerance: PyGe.Tol,
         isPeriodic: bool,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
     def __init__(
         self,
@@ -2509,7 +3024,10 @@ class NurbCurve3d(PyGe.SplineEnt3d):
         endTangentDefined: bool,
         fitTolerance: PyGe.Tol,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
     def __init__(
         self,
@@ -2521,7 +3039,10 @@ class NurbCurve3d(PyGe.SplineEnt3d):
         knotParam: PyGe.KnotParameterization,
         fitTolerance: PyGe.Tol,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents non-uniform rational B-spline in 3D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -2715,19 +3236,32 @@ class PlanarEnt(PyGe.Surface):
 
 class Plane(PyGe.PlanarEnt):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Class AcGePlane represents a parameterized infinite plane in 3D space.
+        """
     @overload
-    def __init__(self, origin: PyGe.Point3d, normal: PyGe.Vector3d, /) -> None: ...
+    def __init__(self, origin: PyGe.Point3d, normal: PyGe.Vector3d, /) -> None:
+        """
+        Class AcGePlane represents a parameterized infinite plane in 3D space.
+        """
     @overload
     def __init__(
         self, origin: PyGe.Point3d, uAxis: PyGe.Vector3d, vAxis: PyGe.Vector3d, /
-    ) -> None: ...
+    ) -> None:
+        """
+        Class AcGePlane represents a parameterized infinite plane in 3D space.
+        """
     @overload
-    def __init__(
-        self, pntU: PyGe.Point3d, origin: PyGe.Point3d, pntV: PyGe.Point3d, /
-    ) -> None: ...
+    def __init__(self, pntU: PyGe.Point3d, origin: PyGe.Point3d, pntV: PyGe.Point3d, /) -> None:
+        """
+        Class AcGePlane represents a parameterized infinite plane in 3D space.
+        """
     @overload
-    def __init__(self, a: float, b: float, c: float, d: float, /) -> None: ...
+    def __init__(self, a: float, b: float, c: float, d: float, /) -> None:
+        """
+        Class AcGePlane represents a parameterized infinite plane in 3D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -2940,11 +3474,26 @@ class PointEnt3d(PyGe.Entity3d):
 
 class PointOnCurve2d(PyGe.PointEnt2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a point on a 2D parametric curve. This class encapsulates all of the geometric
+        information of a point on a 2D curve, including its parameter value, 2D coordinates, and
+        derivatives.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve2d, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve2d, /) -> None:
+        """
+        Represents a point on a 2D parametric curve. This class encapsulates all of the geometric
+        information of a point on a 2D curve, including its parameter value, 2D coordinates, and
+        derivatives.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve2d, param: float, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve2d, param: float, /) -> None:
+        """
+        Represents a point on a 2D parametric curve. This class encapsulates all of the geometric
+        information of a point on a 2D curve, including its parameter value, 2D coordinates, and
+        derivatives.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -2982,11 +3531,26 @@ class PointOnCurve2d(PyGe.PointEnt2d):
 
 class PointOnCurve3d(PyGe.PointEnt3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a point on a 3D parametric curve. This class encapsulates all of the geometric
+        information of a point on a 3D curve including its parameter value, 3D coordinates, and
+        derivatives.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve3d, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve3d, /) -> None:
+        """
+        Represents a point on a 3D parametric curve. This class encapsulates all of the geometric
+        information of a point on a 3D curve including its parameter value, 3D coordinates, and
+        derivatives.
+        """
     @overload
-    def __init__(self, curve: PyGe.Curve3d, param: float, /) -> None: ...
+    def __init__(self, curve: PyGe.Curve3d, param: float, /) -> None:
+        """
+        Represents a point on a 3D parametric curve. This class encapsulates all of the geometric
+        information of a point on a 3D curve including its parameter value, 3D coordinates, and
+        derivatives.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3026,11 +3590,26 @@ class PointOnCurve3d(PyGe.PointEnt3d):
 
 class PointOnSurface(PyGe.PointEnt3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a point on a surface. This class encapsulates all of the geometric information
+        of a point on a surface, including its parameter value, 3D coordinates, derivatives, and
+        normal vector.
+        """
     @overload
-    def __init__(self, surface: PyGe.Surface, /) -> None: ...
+    def __init__(self, surface: PyGe.Surface, /) -> None:
+        """
+        Represents a point on a surface. This class encapsulates all of the geometric information
+        of a point on a surface, including its parameter value, 3D coordinates, derivatives, and
+        normal vector.
+        """
     @overload
-    def __init__(self, surface: PyGe.Surface, pnt: PyGe.Point2d, /) -> None: ...
+    def __init__(self, surface: PyGe.Surface, pnt: PyGe.Point2d, /) -> None:
+        """
+        Represents a point on a surface. This class encapsulates all of the geometric information
+        of a point on a surface, including its parameter value, 3D coordinates, derivatives, and
+        normal vector.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3112,13 +3691,25 @@ class PointOnSurface(PyGe.PointEnt3d):
 
 class Polyline2d(PyGe.SplineEnt2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a piecewise linear spline entity in 2D space.
+        """
     @overload
-    def __init__(self, points: list[PyGe.Point2d], /) -> None: ...
+    def __init__(self, points: list[PyGe.Point2d], /) -> None:
+        """
+        Represents a piecewise linear spline entity in 2D space.
+        """
     @overload
-    def __init__(self, knots: PyGe.KnotVector, points: list[PyGe.Point2d], /) -> None: ...
+    def __init__(self, knots: PyGe.KnotVector, points: list[PyGe.Point2d], /) -> None:
+        """
+        Represents a piecewise linear spline entity in 2D space.
+        """
     @overload
-    def __init__(self, crv: PyGe.Curve2d, apprEps: float, /) -> None: ...
+    def __init__(self, crv: PyGe.Curve2d, apprEps: float, /) -> None:
+        """
+        Represents a piecewise linear spline entity in 2D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3137,13 +3728,25 @@ class Polyline2d(PyGe.SplineEnt2d):
 
 class Polyline3d(PyGe.SplineEnt3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a piecewise linear spline entity in 3D space.
+        """
     @overload
-    def __init__(self, points: list[PyGe.Point3d], /) -> None: ...
+    def __init__(self, points: list[PyGe.Point3d], /) -> None:
+        """
+        Represents a piecewise linear spline entity in 3D space.
+        """
     @overload
-    def __init__(self, knots: PyGe.KnotVector, points: list[PyGe.Point3d], /) -> None: ...
+    def __init__(self, knots: PyGe.KnotVector, points: list[PyGe.Point3d], /) -> None:
+        """
+        Represents a piecewise linear spline entity in 3D space.
+        """
     @overload
-    def __init__(self, crv: PyGe.Curve3d, apprEps: float, /) -> None: ...
+    def __init__(self, crv: PyGe.Curve3d, apprEps: float, /) -> None:
+        """
+        Represents a piecewise linear spline entity in 3D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3162,11 +3765,20 @@ class Polyline3d(PyGe.SplineEnt3d):
 
 class Position2d(PyGe.PointEnt2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a point in 2D space.
+        """
     @overload
-    def __init__(self, pnt: PyGe.Point2d, /) -> None: ...
+    def __init__(self, pnt: PyGe.Point2d, /) -> None:
+        """
+        Represents a point in 2D space.
+        """
     @overload
-    def __init__(self, x: float, y: float, /) -> None: ...
+    def __init__(self, x: float, y: float, /) -> None:
+        """
+        Represents a point in 2D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3188,11 +3800,20 @@ class Position2d(PyGe.PointEnt2d):
 
 class Position3d(PyGe.PointEnt3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a point in 3D space.
+        """
     @overload
-    def __init__(self, pnt: PyGe.Point3d, /) -> None: ...
+    def __init__(self, pnt: PyGe.Point3d, /) -> None:
+        """
+        Represents a point in 3D space.
+        """
     @overload
-    def __init__(self, x: float, y: float, z: float, /) -> None: ...
+    def __init__(self, x: float, y: float, z: float, /) -> None:
+        """
+        Represents a point in 3D space.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3214,11 +3835,23 @@ class Position3d(PyGe.PointEnt3d):
 
 class Ray2d(PyGe.LinearEnt2d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a half-bounded line in 2D space. An AcGeRay2d object either has a start point
+        but no endpoint, or has an endpoint but no start point.
+        """
     @overload
-    def __init__(self, start: PyGe.Point3d, direction: PyGe.Vector2d, /) -> None: ...
+    def __init__(self, start: PyGe.Point3d, direction: PyGe.Vector2d, /) -> None:
+        """
+        Represents a half-bounded line in 2D space. An AcGeRay2d object either has a start point
+        but no endpoint, or has an endpoint but no start point.
+        """
     @overload
-    def __init__(self, start: PyGe.Point3d, end: PyGe.Point3d, /) -> None: ...
+    def __init__(self, start: PyGe.Point3d, end: PyGe.Point3d, /) -> None:
+        """
+        Represents a half-bounded line in 2D space. An AcGeRay2d object either has a start point
+        but no endpoint, or has an endpoint but no start point.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3241,11 +3874,23 @@ class Ray2d(PyGe.LinearEnt2d):
 
 class Ray3d(PyGe.LinearEnt3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a half-bounded line in 3D space. An AcGeRay3 object either has a start point but
+        no endpoint, or has an endpoint but no start point.
+        """
     @overload
-    def __init__(self, startPoint: PyGe.Point3d, endPoint: PyGe.Point3d, /) -> None: ...
+    def __init__(self, startPoint: PyGe.Point3d, endPoint: PyGe.Point3d, /) -> None:
+        """
+        Represents a half-bounded line in 3D space. An AcGeRay3 object either has a start point but
+        no endpoint, or has an endpoint but no start point.
+        """
     @overload
-    def __init__(self, startPoint: PyGe.Point3d, direction: PyGe.Vector3d, /) -> None: ...
+    def __init__(self, startPoint: PyGe.Point3d, direction: PyGe.Vector3d, /) -> None:
+        """
+        Represents a half-bounded line in 3D space. An AcGeRay3 object either has a start point but
+        no endpoint, or has an endpoint but no start point.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3328,9 +3973,15 @@ class Scale3d:
 
 class Sphere(PyGe.Surface):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        Represents a spherical surface.
+        """
     @overload
-    def __init__(self, radius: float, center: PyGe.Point3d, /) -> None: ...
+    def __init__(self, radius: float, center: PyGe.Point3d, /) -> None:
+        """
+        Represents a spherical surface.
+        """
     @overload
     def __init__(
         self,
@@ -3343,7 +3994,10 @@ class Sphere(PyGe.Surface):
         startAngleV: float,
         endAngleV: float,
         /,
-    ) -> None: ...
+    ) -> None:
+        """
+        Represents a spherical surface.
+        """
     @overload
     def __init__(self, *args) -> None:
         """
@@ -3452,11 +4106,20 @@ class SplineEnt3d(PyGe.Curve3d):
 
 class SurfSurfInt(PyGe.Entity3d):
     @overload
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        This class holds data for intersections of two surfaces.
+        """
     @overload
-    def __init__(self, srf1: PyGe.Surface, srf2: PyGe.Surface, /) -> None: ...
+    def __init__(self, srf1: PyGe.Surface, srf2: PyGe.Surface, /) -> None:
+        """
+        This class holds data for intersections of two surfaces.
+        """
     @overload
-    def __init__(self, srf1: PyGe.Surface, srf2: PyGe.Surface, tol: PyGe.Tol, /) -> None: ...
+    def __init__(self, srf1: PyGe.Surface, srf2: PyGe.Surface, tol: PyGe.Tol, /) -> None:
+        """
+        This class holds data for intersections of two surfaces.
+        """
     @overload
     def __init__(self, *args) -> None:
         """

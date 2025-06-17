@@ -337,9 +337,23 @@ class Geometry(PyRx.RxObject):
         """
     def __reduce__(self, /) -> Any: ...
     @overload
-    def circle(self, center: PyGe.Point3d, radius: float, normal: PyGe.Vector3d, /) -> bool: ...
+    def circle(self, center: PyGe.Point3d, radius: float, normal: PyGe.Vector3d, /) -> bool:
+        """
+        Displays a circle primitive with center at center and a radius of radius. The circle is on
+        the plane defined by the normal vector normal and the point center. A return value of
+        Adesk::kFalse (that is, 0) indicates that the primitive has been successfully stored in the
+        graphics database. A return value of Adesk::kTrue indicates that the operation has been
+        terminated and the application wants to get control back as soon as possible.
+        """
     @overload
-    def circle(self, p1: PyGe.Point3d, p2: PyGe.Point3d, p3: PyGe.Point3d, /) -> bool: ...
+    def circle(self, p1: PyGe.Point3d, p2: PyGe.Point3d, p3: PyGe.Point3d, /) -> bool:
+        """
+        Displays a circle primitive with center at center and a radius of radius. The circle is on
+        the plane defined by the normal vector normal and the point center. A return value of
+        Adesk::kFalse (that is, 0) indicates that the primitive has been successfully stored in the
+        graphics database. A return value of Adesk::kTrue indicates that the operation has been
+        terminated and the application wants to get control back as soon as possible.
+        """
     @overload
     def circle(self, *args) -> bool:
         """
@@ -358,7 +372,16 @@ class Geometry(PyRx.RxObject):
         startVector: PyGe.Vector3d,
         sweepAngle: float,
         /,
-    ) -> bool: ...
+    ) -> bool:
+        """
+        Displays an arc primitive defined by the arc's center of curvature center, the radius of
+        curvature radius, the containment plane's normal vector normal, the vector from the center
+        of curvature to the arc start point startVector, the angle that the arc spans sweepAngle,
+        and the arc type arcType. A return value of Adesk::kFalse (that is, 0) indicates that the
+        primitive has been successfully stored in the graphics database. A return value of
+        Adesk::kTrue indicates that the operation has been terminated and the application wants to
+        get control back as soon as possible.
+        """
     @overload
     def circularArc(
         self,
@@ -369,13 +392,40 @@ class Geometry(PyRx.RxObject):
         sweepAngle: float,
         arcType: PyGi.ArcType,
         /,
-    ) -> bool: ...
+    ) -> bool:
+        """
+        Displays an arc primitive defined by the arc's center of curvature center, the radius of
+        curvature radius, the containment plane's normal vector normal, the vector from the center
+        of curvature to the arc start point startVector, the angle that the arc spans sweepAngle,
+        and the arc type arcType. A return value of Adesk::kFalse (that is, 0) indicates that the
+        primitive has been successfully stored in the graphics database. A return value of
+        Adesk::kTrue indicates that the operation has been terminated and the application wants to
+        get control back as soon as possible.
+        """
     @overload
-    def circularArc(self, p1: PyGe.Point3d, p2: PyGe.Point3d, p3: PyGe.Point3d, /) -> bool: ...
+    def circularArc(self, p1: PyGe.Point3d, p2: PyGe.Point3d, p3: PyGe.Point3d, /) -> bool:
+        """
+        Displays an arc primitive defined by the arc's center of curvature center, the radius of
+        curvature radius, the containment plane's normal vector normal, the vector from the center
+        of curvature to the arc start point startVector, the angle that the arc spans sweepAngle,
+        and the arc type arcType. A return value of Adesk::kFalse (that is, 0) indicates that the
+        primitive has been successfully stored in the graphics database. A return value of
+        Adesk::kTrue indicates that the operation has been terminated and the application wants to
+        get control back as soon as possible.
+        """
     @overload
     def circularArc(
         self, p1: PyGe.Point3d, p2: PyGe.Point3d, p3: PyGe.Point3d, arcType: PyGe.ArcType, /
-    ) -> bool: ...
+    ) -> bool:
+        """
+        Displays an arc primitive defined by the arc's center of curvature center, the radius of
+        curvature radius, the containment plane's normal vector normal, the vector from the center
+        of curvature to the arc start point startVector, the angle that the arc spans sweepAngle,
+        and the arc type arcType. A return value of Adesk::kFalse (that is, 0) indicates that the
+        primitive has been successfully stored in the graphics database. A return value of
+        Adesk::kTrue indicates that the operation has been terminated and the application wants to
+        get control back as soon as possible.
+        """
     @overload
     def circularArc(self, *args) -> bool:
         """
