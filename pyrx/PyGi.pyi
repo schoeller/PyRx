@@ -124,17 +124,17 @@ class CommonDraw(PyRx.RxObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
     def isDragging(self, /) -> bool:
         """
         Returns Adesk::kTrue if the entity is currently being dragged; otherwise, returns
-        Adesk::kFalse. Graphically complex entities might find that using a simpler graphical
+        Adesk::kFalse.Graphically complex entities might find that using a simpler graphical
         representation during dragging enhances performance with little or no loss of
         functionality.
         """
@@ -148,19 +148,19 @@ class CommonDraw(PyRx.RxObject):
     def regenType(self, /) -> RegenType:
         """
         Returns the current elaboration mode. The current elaboration modes of type AcGiRegenType
-        are:  kAcGiStandardDisplay The display you normally see is being generated (REGEN).
-        kAcGiHideOrShadeCommand The HIDE or SHADE command is being executed. kAcGRenderCommand The
-        RENDER command is being executed. kAcGiSaveWorldDrawForProxy The graphics will be going
-        into the entity's graphics metafile in case the entity is a proxy when next loaded, so
-        provide graphics for proxy representation. This information allows the user to take special
-        action for the four different situations. Normally, you may not need to consider which mode
-        is in effect. However, if RENDER is running, then only geometry with filled area is
-        accepted (filled polygon, etc.); other geometry (polyline, unfilled polygon, etc.) is
-        ignored.
+        are:kAcGiStandardDisplayThe display you normally see is being generated
+        (REGEN).kAcGiHideOrShadeCommandThe HIDE or SHADE command is being
+        executed.kAcGRenderCommandThe RENDER command is being
+        executed.kAcGiSaveWorldDrawForProxyThe graphics will be going into the entity's graphics
+        metafile in case the entity is a proxy when next loaded, so provide graphics for proxy
+        representation.This information allows the user to take special action for the four
+        different situations. Normally, you may not need to consider which mode is in effect.
+        However, if RENDER is running, then only geometry with filled area is accepted (filled
+        polygon, etc.); other geometry (polyline, unfilled polygon, etc.) is ignored.
         """
     def subEntityTraits(self, /) -> SubEntityTraits:
         """
-        Returns a reference to the AcGiSubEntityTraits object. The subEntityTraits object gives the
+        Returns a reference to the AcGiSubEntityTraits object.The subEntityTraits object gives the
         user control of, and access to, the attribute (color, layer, linetype, etc.) settings of
         the current geometry. For a description of this object, see class AcGiSubEntityTraits.
         """
@@ -198,9 +198,9 @@ class Drawable(PyRx.RxObject):
         This method returns reasonable, but not necessarily precise, bounds for the drawable. In
         the case of nested drawables, the bounds of any child drawables are included as well. In
         the case of view-dependent geometries, or other drawables with potentially varying bounds,
-        the union of all possible representations is returned. In the case of uncertain extents or
+        the union of all possible representations is returned.In the case of uncertain extents or
         infinite extents (such as an infinite line or ray), the method returns False to indicate
-        the bounds are not available. The behavior of the drawable is undefined if the geometry
+        the bounds are not available.The behavior of the drawable is undefined if the geometry
         created by the drawable in its viewportDraw() and/or worldDraw() implementation extends
         outside the bounds returned by AcGiDrawable::bounds().
         """
@@ -213,10 +213,10 @@ class Drawable(PyRx.RxObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -232,7 +232,7 @@ class Drawable(PyRx.RxObject):
     def isPersistent(self, /) -> bool:
         """
         This function will determine if the calling AcGiDrawable object is persistent (stored in a
-        database). Returns Adesk::kTrue if the AcGiDrawable object is database resident (belongs to
+        database).Returns Adesk::kTrue if the AcGiDrawable object is database resident (belongs to
         an AcGsModel that requires the use of open and close functions). Returns Adesk::kFalse if
         the AcGiDrawable object is non-persistent (pointer-based); these drawables are accessed
         directly through their AcGiDrawable pointer.
@@ -244,8 +244,8 @@ class Drawable(PyRx.RxObject):
     def setAttributes(self, traits: PyGi.DrawableTraits, /) -> int:
         """
         This function will take the input AcGiDrawableTraits object and set the values for the
-        current object's subentity traits. The setAttributes() method is called by the GS to setup
-        a drawable's default attributes. The current rendering state will employ these ambient
+        current object's subentity traits.The setAttributes() method is called by the GS to setup a
+        drawable's default attributes. The current rendering state will employ these ambient
         attributes before worldDraw() and viewportDraw() are executed (and for the 3D GS before
         their cached geometry is drawn).
         """
@@ -269,10 +269,10 @@ class Drawable(PyRx.RxObject):
     def worldDraw(self, wdraw: PyGi.WorldDraw, /) -> bool:
         """
         In response to worldDraw(), a drawable uses the passed-in AcGiWorldDraw interface to
-        describe its geometry that is sharable across viewports. The 3D GS guarantees that this
+        describe its geometry that is sharable across viewports.The 3D GS guarantees that this
         function will be called at least once, but subsequent display updates may be cached. Use
         AcGsModel::onModified() to invalidate any cache that the GS has associated with a drawable
-        so that worldDraw() will again be called upon the next display update. A return value of
+        so that worldDraw() will again be called upon the next display update.A return value of
         Adesk::kFalse indicates that the 3D GS must call viewportDraw() in order to obtain the
         complete geometry and attribute set for this drawable.
         """
@@ -309,10 +309,10 @@ class DrawableTraits(PyGi.SubEntityTraits):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -320,7 +320,7 @@ class DrawableTraits(PyGi.SubEntityTraits):
         """
         This call initializes the entire AcGiSubEntityTraits and AcGiDrawableTraits from the
         entity. This is more efficient than setting each property individually. The default
-        implemetation of AcDbEntity::setAttributes() uses this method. If you are implementing AcGi
+        implemetation of AcDbEntity::setAttributes() uses this method.If you are implementing AcGi
         you need not implement this method since and implementation is supplied which delegates to
         the setXXX methods in AcGiSubEntityTraits.
         """
@@ -340,7 +340,7 @@ class Geometry(PyRx.RxObject):
     def circle(self, center: PyGe.Point3d, radius: float, normal: PyGe.Vector3d, /) -> bool:
         """
         Displays a circle primitive with center at center and a radius of radius. The circle is on
-        the plane defined by the normal vector normal and the point center. A return value of
+        the plane defined by the normal vector normal and the point center.A return value of
         Adesk::kFalse (that is, 0) indicates that the primitive has been successfully stored in the
         graphics database. A return value of Adesk::kTrue indicates that the operation has been
         terminated and the application wants to get control back as soon as possible.
@@ -349,7 +349,7 @@ class Geometry(PyRx.RxObject):
     def circle(self, p1: PyGe.Point3d, p2: PyGe.Point3d, p3: PyGe.Point3d, /) -> bool:
         """
         Displays a circle primitive with center at center and a radius of radius. The circle is on
-        the plane defined by the normal vector normal and the point center. A return value of
+        the plane defined by the normal vector normal and the point center.A return value of
         Adesk::kFalse (that is, 0) indicates that the primitive has been successfully stored in the
         graphics database. A return value of Adesk::kTrue indicates that the operation has been
         terminated and the application wants to get control back as soon as possible.
@@ -358,7 +358,7 @@ class Geometry(PyRx.RxObject):
     def circle(self, *args) -> bool:
         """
         Displays a circle primitive with center at center and a radius of radius. The circle is on
-        the plane defined by the normal vector normal and the point center. A return value of
+        the plane defined by the normal vector normal and the point center.A return value of
         Adesk::kFalse (that is, 0) indicates that the primitive has been successfully stored in the
         graphics database. A return value of Adesk::kTrue indicates that the operation has been
         terminated and the application wants to get control back as soon as possible.
@@ -377,7 +377,7 @@ class Geometry(PyRx.RxObject):
         Displays an arc primitive defined by the arc's center of curvature center, the radius of
         curvature radius, the containment plane's normal vector normal, the vector from the center
         of curvature to the arc start point startVector, the angle that the arc spans sweepAngle,
-        and the arc type arcType. A return value of Adesk::kFalse (that is, 0) indicates that the
+        and the arc type arcType.A return value of Adesk::kFalse (that is, 0) indicates that the
         primitive has been successfully stored in the graphics database. A return value of
         Adesk::kTrue indicates that the operation has been terminated and the application wants to
         get control back as soon as possible.
@@ -397,7 +397,7 @@ class Geometry(PyRx.RxObject):
         Displays an arc primitive defined by the arc's center of curvature center, the radius of
         curvature radius, the containment plane's normal vector normal, the vector from the center
         of curvature to the arc start point startVector, the angle that the arc spans sweepAngle,
-        and the arc type arcType. A return value of Adesk::kFalse (that is, 0) indicates that the
+        and the arc type arcType.A return value of Adesk::kFalse (that is, 0) indicates that the
         primitive has been successfully stored in the graphics database. A return value of
         Adesk::kTrue indicates that the operation has been terminated and the application wants to
         get control back as soon as possible.
@@ -408,7 +408,7 @@ class Geometry(PyRx.RxObject):
         Displays an arc primitive defined by the arc's center of curvature center, the radius of
         curvature radius, the containment plane's normal vector normal, the vector from the center
         of curvature to the arc start point startVector, the angle that the arc spans sweepAngle,
-        and the arc type arcType. A return value of Adesk::kFalse (that is, 0) indicates that the
+        and the arc type arcType.A return value of Adesk::kFalse (that is, 0) indicates that the
         primitive has been successfully stored in the graphics database. A return value of
         Adesk::kTrue indicates that the operation has been terminated and the application wants to
         get control back as soon as possible.
@@ -421,7 +421,7 @@ class Geometry(PyRx.RxObject):
         Displays an arc primitive defined by the arc's center of curvature center, the radius of
         curvature radius, the containment plane's normal vector normal, the vector from the center
         of curvature to the arc start point startVector, the angle that the arc spans sweepAngle,
-        and the arc type arcType. A return value of Adesk::kFalse (that is, 0) indicates that the
+        and the arc type arcType.A return value of Adesk::kFalse (that is, 0) indicates that the
         primitive has been successfully stored in the graphics database. A return value of
         Adesk::kTrue indicates that the operation has been terminated and the application wants to
         get control back as soon as possible.
@@ -432,7 +432,7 @@ class Geometry(PyRx.RxObject):
         Displays an arc primitive defined by the arc's center of curvature center, the radius of
         curvature radius, the containment plane's normal vector normal, the vector from the center
         of curvature to the arc start point startVector, the angle that the arc spans sweepAngle,
-        and the arc type arcType. A return value of Adesk::kFalse (that is, 0) indicates that the
+        and the arc type arcType.A return value of Adesk::kFalse (that is, 0) indicates that the
         primitive has been successfully stored in the graphics database. A return value of
         Adesk::kTrue indicates that the operation has been terminated and the application wants to
         get control back as soon as possible.
@@ -443,15 +443,15 @@ class Geometry(PyRx.RxObject):
     def desc() -> PyRx.RxClass: ...
     def draw(self, drawable: PyGi.Drawable, /) -> bool:
         """
-        Instructs the graphics system to regenerate pDrawable as a component of this object. For
+        Instructs the graphics system to regenerate pDrawable as a component of this object.For
         example, a Block Definition (AcDbBlockTableRecord) uses it to draw its contained objects.
         Any object that owns another AcDb object should use this method to have that subentity draw
-        itself (as opposed to directly calling its worldDraw() method). This allows a graphics
+        itself (as opposed to directly calling its worldDraw() method).This allows a graphics
         system to cache the graphics of the object. Calling worldDraw directly would prevent this
-        type of caching. To implement this method: Set up linetype, layer, color, and fill type for
+        type of caching.To implement this method:Set up linetype, layer, color, and fill type for
         the AcGiDrawable using a call to setAttributes(), passing in your implementation of
-        AcGiSubEntityTraits. Call worldDraw() on the drawable and record the return value. If false
-        is returned, call viewportDraw() once for each viewport. Returning false to the caller
+        AcGiSubEntityTraits.Call worldDraw() on the drawable and record the return value.If false
+        is returned, call viewportDraw() once for each viewport.Returning false to the caller
         indicates that you did not process the request.
         """
     def edge(self, edgeList: list[PyGe.Curve2d], /) -> bool:
@@ -477,7 +477,7 @@ class Geometry(PyRx.RxObject):
         """
         This gets the net block insert transform; that is, the model-to-world coordinate transform.
         The main purpose of the BLOCK entity is to transform an entity--whether to stretch, rotate,
-        or move it.  It is possible that during the current worldDraw(), the entity is in one or
+        or move it. It is possible that during the current worldDraw(), the entity is in one or
         more BLOCKs. In this case, to determine the end result of the entity being transformed by
         one or more BLOCKs, use the net block insert transform (model-to-world coordinate
         transform) on your entity's model coordinate geometry. This will determine the location in
@@ -497,7 +497,7 @@ class Geometry(PyRx.RxObject):
         """
         Draws a filled or unfilled polygon, depending on AcGiSubEntityTraits::fillType(). An edge
         between the last vertex and the first vertex is automatically created in order to generate
-        a closed polygon. The caller is responsible for the memory used by the pVertexList array.
+        a closed polygon.The caller is responsible for the memory used by the pVertexList array.
         """
     def polyline(
         self,
@@ -509,23 +509,23 @@ class Geometry(PyRx.RxObject):
         """
         Walks down the list of vertex points pVertexList drawing line segments from point to point
         (hence the requirement for a minimum of two points). If a thickness is currently specified
-        it will be applied to the segments of this polyline.  The caller is responsible for the
-        memory used by the pVertexList array. The lBaseSubEntMarker argument has been added to
-        allow the caller to specify sequential sub-entity markers for the segments of the polyline.
-        If lBaseSubEntMarker'n' is greater than zero then the segments of the polyline will be
+        it will be applied to the segments of this polyline. The caller is responsible for the
+        memory used by the pVertexList array.The lBaseSubEntMarker argument has been added to allow
+        the caller to specify sequential sub-entity markers for the segments of the polyline. If
+        lBaseSubEntMarker'n' is greater than zero then the segments of the polyline will be
         assigned markers beginning with 'n' incrementing by 1 for each segment.
         """
     def popModelTransform(self, /) -> bool:
         """
         The method must be called to restore the model transform after a call to
-        pushModelTransform(). Returns Adesk::kTrue if successful; otherwise, returns Adesk::kFalse.
+        pushModelTransform().Returns Adesk::kTrue if successful; otherwise, returns Adesk::kFalse.
         """
     def pushModelTransform(self, val: PyGe.Vector3d | PyGe.Matrix3d, /) -> bool:
         """
         This function pushes a new transform onto the transform stack. It generates the input
-        matrix using the arbitrary axis algorithm and the supplied vector. When you have finished
+        matrix using the arbitrary axis algorithm and the supplied vector.When you have finished
         with the transform, you must call popModelTransform() to leave the pipe in the same state
-        as before. Returns Adesk::kTrue if successful; otherwise, returns Adesk::kFalse.
+        as before.Returns Adesk::kTrue if successful; otherwise, returns Adesk::kFalse.
         """
     def pushOrientationTransform(
         self, behavior: PyGi.AcGiOrientationTransformBehavior, /
@@ -553,7 +553,7 @@ class Geometry(PyRx.RxObject):
     def ray(self, p1: PyGe.Point3d, p2: PyGe.Point3d, /) -> bool:
         """
         This function displays a ray that starts at raysStartingPoint and passes through
-        aDifferentRayPoint. A return value of Adesk::kFalse (that is, 0) indicates that the
+        aDifferentRayPoint.A return value of Adesk::kFalse (that is, 0) indicates that the
         primitive has been successfully stored in the graphics database. A return value of
         Adesk::kTrue indicates that the operation has been terminated and the application wants to
         get control back as soon as possible.
@@ -576,18 +576,18 @@ class Geometry(PyRx.RxObject):
         """
         This method uses the current AcGiTextStyle when generating the text graphics primitive.
         When worldDraw() is first entered, the AcGiTextStyle is set to the STANDARD text style
-        that's built into the acad.exe file (not the STANDARD text style in the drawing). The
+        that's built into the acad.exe file (not the STANDARD text style in the drawing).The
         position, normal, and direction can be thought of as the foundation for a coordinate system
         that orients the text in 3D world space, where the position is the origin, the direction is
-        the X axis, and the normal is the Z axis. The obliquing angle for oblique is the angular
-        slant from vertical of each character, much the way italic text is angled. A copy of the
+        the X axis, and the normal is the Z axis.The obliquing angle for oblique is the angular
+        slant from vertical of each character, much the way italic text is angled.A copy of the
         text string is used in pMsg, so the calling application is responsible for the memory of
-        the string passed in.  WarningThe direction and normal vectors must be mutually
-        perpendicular or the results will be unpredictable. Here is an example of some text drawing
-        code:  Adesk::Boolean someEntity::worldDraw(AcGiWorldDraw *pWd){    // Position this text
-        to start at 'origin', draw parallel    // to the XY-plane at an upward slant of 45 degrees.
+        the string passed in.WarningThe direction and normal vectors must be mutually perpendicular
+        or the results will be unpredictable.Here is an example of some text drawing
+        code:Adesk::Boolean someEntity::worldDraw(AcGiWorldDraw *pWd){    // Position this text to
+        start at 'origin', draw parallel    // to the XY-plane at an upward slant of 45 degrees.
         //    AcGePoint3d origin(2.0, 2.0, 3.0);    AcGeVector3d direction(1.0, 1.0, 0.0);
-        AcGeVector3d normal(0.0, 0.0, 1.0);    pWd->geometry().text(origin, normal, direction, 1.0,
+        AcGeVector3d normal(0.0, 0.0, 1.0);    pWd.geometry().text(origin, normal, direction, 1.0,
         1.0, 0.0, "some text");    return Adesk:kTrue;}A return value of Adesk::kFalse (that is, 0)
         indicates that the primitive has been successfully stored in the graphics database. A
         return value of Adesk::kTrue indicates that the operation has been terminated and the
@@ -596,14 +596,14 @@ class Geometry(PyRx.RxObject):
     def worldLine(self, p1: PyGe.Point3d, p2: PyGe.Point3d, /) -> bool:
         """
         This function draws a line between the two points in the pnts array. The points must be in
-        world coordinates. A return value of Adesk::kFalse (that is, 0) indicates that the
-        primitive has been successfully stored in the graphics database. A return value of
-        Adesk::kTrue indicates that the operation has been terminated, and the application wants to
-        get control back as soon as possible.
+        world coordinates.A return value of Adesk::kFalse (that is, 0) indicates that the primitive
+        has been successfully stored in the graphics database. A return value of Adesk::kTrue
+        indicates that the operation has been terminated, and the application wants to get control
+        back as soon as possible.
         """
     def xline(self, p1: PyGe.Point3d, p2: PyGe.Point3d, /) -> bool:
         """
-        An xline passing oneXlinePoint and a DifferentXlinePoint is displayed. A return value of
+        An xline passing oneXlinePoint and a DifferentXlinePoint is displayed.A return value of
         Adesk::kFalse (that is, 0) indicates that the primitive has been successfully stored in the
         graphics database. A return value of Adesk::kTrue indicates that the operation has been
         terminated and the application wants to get control back as soon as possible.
@@ -734,10 +734,10 @@ class SubEntityTraits(PyRx.RxObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -791,7 +791,7 @@ class TransientManager:
     def addChildTransient(self, drawable: PyGi.Drawable, parentDrawable: PyGi.Drawable, /) -> bool:
         """
         This function adds a child transient to specified parent transient. This allows for partial
-        updates of the parent drawable. Returns true if successful. This function doesn't need to
+        updates of the parent drawable.Returns true if successful. This function doesn't need to
         specify a drawing mode, subDrawingMode or viewportNumber; these properties of the child
         transient will be the same as parent transient
         """
@@ -804,7 +804,7 @@ class TransientManager:
         /,
     ) -> bool:
         """
-        This function adds a transient to a list of viewports. Returns true if successful.
+        This function adds a transient to a list of viewports.Returns true if successful.
         """
     @staticmethod
     def current() -> TransientManager: ...
@@ -812,12 +812,12 @@ class TransientManager:
         self, drawable: PyGi.Drawable, parentDrawable: PyGi.Drawable, /
     ) -> bool:
         """
-        This function erases a child transient from specified parent transient. Returns true if
+        This function erases a child transient from specified parent transient.Returns true if
         successful.
         """
     def eraseTransient(self, drawable: PyGi.Drawable, viewportNumbers: list[int], /) -> bool:
         """
-        This function erases a transient from a list of viewports. Returns true if successful. This
+        This function erases a transient from a list of viewports.Returns true if successful. This
         function erases a specified drawable which has been added by addTransient().
         """
     def eraseTransients(
@@ -825,16 +825,16 @@ class TransientManager:
     ) -> bool:
         """
         This function erases all transients in the specified subDrawingMode from a list of
-        viewports. Returns true if successful.
+        viewports.Returns true if successful.
         """
     def getFreeSubDrawingMode(
         self, mode: PyGi.TransientDrawingMode, subDrawingMode: int, viewportNumbers: list[int], /
     ) -> tuple[int, int]:
         """
-        Get the free draw order in a certain transient drawing mode. Returns 0 if the input draw
-        order is not free and transient manager also could not get a free draw order. Returns 1 if
-        the inputting draw order is available. Returns 2 if the inputting draw order is
-        unavailable, but transient manager could return a free draw order.
+        Get the free draw order in a certain transient drawing mode.Returns 0 if the input draw
+        order is not free and transient manager also could not get a free draw order.Returns 1 if
+        the inputting draw order is available.Returns 2 if the inputting draw order is unavailable,
+        but transient manager could return a free draw order.
         """
     def updateChildTransient(
         self, drawable: PyGi.Drawable, parentDrawable: PyGi.Drawable, /
@@ -869,10 +869,10 @@ class ViewportDraw(PyGi.CommonDraw):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -899,10 +899,10 @@ class ViewportGeometry(PyGi.Geometry):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -928,10 +928,10 @@ class WorldDraw(PyGi.CommonDraw):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -958,10 +958,10 @@ class WorldGeometry(PyGi.Geometry):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """

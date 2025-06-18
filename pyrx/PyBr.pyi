@@ -64,10 +64,10 @@ class Brep(PyBr.Entity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -87,10 +87,10 @@ class Complex(PyBr.Entity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -107,10 +107,10 @@ class ComplexShellTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -133,10 +133,10 @@ class ComplexTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -159,10 +159,10 @@ class Edge(PyBr.Entity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -184,10 +184,10 @@ class EdgeLoopTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -210,10 +210,10 @@ class EdgeTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -240,10 +240,10 @@ class Element(PyBr.MeshEntity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -260,10 +260,10 @@ class Element2d(PyBr.Element):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -281,10 +281,10 @@ class Element2dNodeTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -320,10 +320,10 @@ class Entity(PyRx.RxObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -381,10 +381,10 @@ class Face(PyBr.Entity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -407,10 +407,10 @@ class FaceLoopTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -433,10 +433,10 @@ class FaceTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -460,10 +460,10 @@ class Hit(PyRx.RxObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -488,10 +488,10 @@ class Loop(PyBr.Entity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -510,10 +510,10 @@ class LoopEdgeTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -547,10 +547,10 @@ class LoopVertexTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -590,10 +590,10 @@ class Mesh(PyBr.MeshEntity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -610,10 +610,10 @@ class Mesh2d(PyBr.Mesh):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -630,10 +630,10 @@ class Mesh2dElement2dTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -660,10 +660,10 @@ class MeshEntity(PyRx.RxObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -685,10 +685,10 @@ class Node(PyBr.MeshEntity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -715,10 +715,10 @@ class Shell(PyBr.Entity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -737,10 +737,10 @@ class ShellFaceTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -763,10 +763,10 @@ class ShellTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -799,10 +799,10 @@ class Traverser(PyRx.RxObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -830,10 +830,10 @@ class Vertex(PyBr.Entity):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -851,10 +851,10 @@ class VertexEdgeTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -875,10 +875,10 @@ class VertexLoopTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -900,10 +900,10 @@ class VertexTraverser(PyBr.Traverser):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """

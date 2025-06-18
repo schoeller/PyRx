@@ -141,7 +141,7 @@ class AutoDocLock:
         those databases, and all AcDbDatabase resident system variables. It also includes all
         document based system variables, and the Transaction Manager associated with a document.
         The document does not need to be locked to open an AcDbObject in AcDb::kForRead, nor to get
-        system variables. Applications should normally never have to lock or unlock the current
+        system variables.Applications should normally never have to lock or unlock the current
         document. Commands registered with addCommand() or aceddefun() will have the current
         document locked before starting, and unlocked after ending. This can be controlled using
         the addCommand() function tags.
@@ -202,7 +202,7 @@ class DocManager(PyRx.RxObject):
         """
     def appContextCloseDocument(self, doc: PyAp.Document, /) -> None:
         """
-        Immediately destroys the active document and a lot of related data. Caution: Since the
+        Immediately destroys the active document and a lot of related data.Caution: Since the
         document is destroyed, beware of what you reference after the call.
         """
     def appContextNewDocument(self, templateName: str, /) -> None:
@@ -213,13 +213,13 @@ class DocManager(PyRx.RxObject):
     def appContextOpenDocument(self, dwgName: str, /) -> None:
         """
         This function allows synchronous access to the OPEN drawing operation. It can only be
-        called from the application context. Based pParams, you can switch to a layout or view
-        after the opening of the drawing.
+        called from the application context.Based pParams, you can switch to a layout or view after
+        the opening of the drawing.
         """
     def appContextPromptOpenDocument(self, /) -> None:
         """
         This function allows synchronous access to the OPEN drawing operation. It can only be
-        called from the application context. Similar to appContextOpenDocument(), expect it prompts
+        called from the application context.Similar to appContextOpenDocument(), expect it prompts
         for a drawing name.
         """
     def appContextRecoverDocument(self, dwgName: str, /) -> None:
@@ -236,7 +236,7 @@ class DocManager(PyRx.RxObject):
         those databases, and all AcDbDatabase resident system variables. It also includes all
         document based system variables, and the Transaction Manager associated with a document.
         The document does not need to be locked to open an AcDbObject in AcDb::kForRead, nor to get
-        system variables. Applications should normally never have to lock or unlock the current
+        system variables.Applications should normally never have to lock or unlock the current
         document. Commands registered with addCommand() or aceddefun() will have the current
         document locked before starting, and unlocked after ending. This can be controlled using
         the addCommand() function tags.
@@ -274,7 +274,7 @@ class DocManager(PyRx.RxObject):
         mdiActiveDocument(), returns the MDI active document. curDocument() and mdiActiveDocument()
         can be different. You can call curDocument() to make a document "current" without actually
         activating it. After finish your AcDbDatabase operation under the temporary current
-        document, call setCurDocument(acDocManager->mdiActiveDocument()) to reset the MDI active
+        document, call setCurDocument(acDocManager.mdiActiveDocument()) to reset the MDI active
         document as the current document.
         """
     def defaultFormatForSave(self, /) -> SaveFormat:
@@ -286,8 +286,8 @@ class DocManager(PyRx.RxObject):
         This function will disable the ability for the user to switch to another document.
         Applications must be sure to restore activation (using
         AcApDocManager::enableDocumentActivation) when complete. An example use might be when an
-        application command is processing for long periods of time. Returns an error when already
-        in a disabled mode; otherwise, returns Acad::eOk.
+        application command is processing for long periods of time.Returns an error when already in
+        a disabled mode; otherwise, returns Acad::eOk.
         """
     def document(self, db: PyDb.Database, /) -> Document:
         """
@@ -307,8 +307,8 @@ class DocManager(PyRx.RxObject):
         """
         This function will enable the ability for the user to switch to another document. This
         function is used to re-enable activation after a call to
-        AcApDocManager::disableDocumentActivation. Returns an error when already in an enabled
-        mode; otherwise, returns Acad::eOk.
+        AcApDocManager::disableDocumentActivation.Returns an error when already in an enabled mode;
+        otherwise, returns Acad::eOk.
         """
     def executeInApplicationContext(self, func: Any, data: Any, /) -> None:
         """
@@ -317,7 +317,7 @@ class DocManager(PyRx.RxObject):
     def inputPending(self, doc: PyAp.Document, /) -> int:
         """
         This function will determine the state of the document's input buffer. Used only in
-        conjunction with the AcApDocManager::sendStringToExecute function. Returns the number of
+        conjunction with the AcApDocManager::sendStringToExecute function.Returns the number of
         characters waiting to be processed. A value of 0 indicates no pending input. A return value
         of -1 indicates an error.
         """
@@ -328,7 +328,7 @@ class DocManager(PyRx.RxObject):
         """
     def isDocumentActivationEnabled(self, /) -> bool:
         """
-        This function indicates whether document activation is enabled. Returns true if enabled or
+        This function indicates whether document activation is enabled.Returns true if enabled or
         false otherwise.
         """
     def lockDocument(
@@ -346,7 +346,7 @@ class DocManager(PyRx.RxObject):
         those databases, and all AcDbDatabase resident system variables. It also includes all
         document based system variables, and the Transaction Manager associated with a document.
         The document does not need to be locked to open an AcDbObject in AcDb::kForRead, nor to get
-        system variables. Applications should normally never have to lock or unlock the current
+        system variables.Applications should normally never have to lock or unlock the current
         document. Commands registered with addCommand() or aceddefun() will have the current
         document locked before starting, and unlocked after ending. This can be controlled using
         the addCommand() function tags.
@@ -357,7 +357,7 @@ class DocManager(PyRx.RxObject):
         returns the document having current context. curDocument() and mdiActiveDocument() can be
         different. You can call curDocument() to make a document "current" without actually
         activating it. After finish your AcDbDatabase operation under the temporary current
-        document, call setCurDocument(acDocManager->mdiActiveDocument()) to reset the MDI active
+        document, call setCurDocument(acDocManager.mdiActiveDocument()) to reset the MDI active
         document as the current document.
         """
     def newDocument(self, /) -> None:
@@ -382,7 +382,7 @@ class DocManager(PyRx.RxObject):
         """
         This function causes the current command in the specified document to be interrupted if it
         is prompting for input using one of the acedGetxxx functions and was registered with the
-        ACRX_CMD_INTERRUPTIBLE flag. Returns Acad::eOk if successful and Acad:eNoDocument if the
+        ACRX_CMD_INTERRUPTIBLE flag.Returns Acad::eOk if successful and Acad:eNoDocument if the
         target document is not accessible.
         """
     def sendStringToExecute(
@@ -397,7 +397,7 @@ class DocManager(PyRx.RxObject):
         """
         Send string to target document to execute. By default, the string is executed in the
         activate document. The string is executed as soon as possible when bActivate is false and
-        bWrapUpInactiveDoc is true. bEchoString determines whether the sent string is echoed on the
+        bWrapUpInactiveDoc is true.bEchoString determines whether the sent string is echoed on the
         command line.
         """
     def setCurDocument(
@@ -410,24 +410,24 @@ class DocManager(PyRx.RxObject):
         document's data without the document actually being the top most or active document. The
         default parameters lockMode and activate allow document locking and activation to occur.
         These are shortcuts to allow several steps to be accomplished with a single API and can
-        also be accomplished with the individual API calls. If you call
-        acDocManager->setCurDocument(pDoc, AcAp::kWrite), you effectively set the current document
+        also be accomplished with the individual API calls.If you call
+        acDocManager.setCurDocument(pDoc, AcAp::kWrite), you effectively set the current document
         and lock it. You will need to unlock this document once you are done with it. You can do
-        this by calling acDocManager->unlockDocument(pDoc).
+        this by calling acDocManager.unlockDocument(pDoc).
         """
     def setDefaultFormatForSave(self, fmt: PyAp.SaveFormat, /) -> None:
         """
         This method uses one of the SaveFormat values to set the file format to use when saving a
         drawing with the SAVEAS, SAVE, and QSAVE commands. This sets the session-wide default,
-        which the user may choose to override temporarily for an individual document. This method
+        which the user may choose to override temporarily for an individual document.This method
         directly sets the file format for interactive commands entered by the user. If you want
         your application to use the current save format, every time you wish to save the database,
         you will first need to call AcApDocument::formatForSave(), and then use the returned
         SaveFormat value to determine which function to call. For example, if formatForSave()
         returned kR12_dxf, you would call acdbDxfOutAsR12() to write the database as a Release 12
-        DXF file. In summary:  Either you or your user may set a persistent session-wide default
-        format for save that will be honored by all save commands except AUTOSAVE. Only the user
-        can temporarily (not persistently between sessions) override this setting for a particular
+        DXF file.In summary:Either you or your user may set a persistent session-wide default
+        format for save that will be honored by all save commands except AUTOSAVE.Only the user can
+        temporarily (not persistently between sessions) override this setting for a particular
         document.The formatForSave() method returns the format in which the user wishes an
         individual document to be saved, which will be either the session-wide default or the
         temporary override, as appropriate.
@@ -551,7 +551,7 @@ class Document(PyRx.RxObject):
         those databases, and all AcDbDatabase resident system variables. It also includes all
         document based system variables, and the Transaction Manager associated with a document.
         The document does not need to be locked to open an AcDbObject in AcDb::kForRead, nor to get
-        system variables. Applications should normally never have to lock or unlock the current
+        system variables.Applications should normally never have to lock or unlock the current
         document. Commands registered with addCommand() or aceddefun() will have the current
         document locked before starting, and unlocked after ending. This can be controlled using
         the addCommand() function tags.
@@ -570,7 +570,7 @@ class Document(PyRx.RxObject):
     def docWnd() -> int: ...
     def downgradeDocOpen(self, promptForSave: bool, /) -> None:
         """
-        Converts the document status from writeable to read only. If bPromptForSave is true and the
+        Converts the document status from writeable to read only.If bPromptForSave is true and the
         drawing is modified (based on dbmod), the user is prompted to save the drawing. If
         bPromptForSave is false and the drawing has been modified, an error is returned.
         """
@@ -584,17 +584,17 @@ class Document(PyRx.RxObject):
         This method returns the current save format that is being used by the SAVEAS, SAVE, and
         QSAVE commands. The value returned may be either the session-wide default setting, or a
         different setting that the user has selected for this document. If it is an override for
-        this document, it will not persist across sessions. This method directly returns the file
+        this document, it will not persist across sessions.This method directly returns the file
         format for interactive commands entered by the user. If you want your application to use
         the current save format, every time you wish to save the database, you will first need to
         call formatForSave(), and then use the returned SaveFormat value to determine which
         function to call. For example, if formatForSave() returned kR12_dxf, you would call
-        acdbDxfOutAsR12() to write the database as a Release 12 DXF file. In summary:  Either you
-        or your user may set a persistent session-wide default format for save that will be honored
-        by all save commands except AUTOSAVE. Only the user can temporarily (not persistently
-        between sessions) override this setting for a particular document.The formatForSave()
-        method returns the format in which the user wishes an individual document to be saved,
-        which will be either the session-wide default or the temporary override, as appropriate.
+        acdbDxfOutAsR12() to write the database as a Release 12 DXF file.In summary:Either you or
+        your user may set a persistent session-wide default format for save that will be honored by
+        all save commands except AUTOSAVE.Only the user can temporarily (not persistently between
+        sessions) override this setting for a particular document.The formatForSave() method
+        returns the format in which the user wishes an individual document to be saved, which will
+        be either the session-wide default or the temporary override, as appropriate.
         """
     def getCountOfLispList(self, /) -> int:
         """
@@ -618,7 +618,7 @@ class Document(PyRx.RxObject):
         """
     def isQuiescent(self, /) -> bool:
         """
-        This function determines if there is a command, LISP script, or ARX command active. Returns
+        This function determines if there is a command, LISP script, or ARX command active.Returns
         true if there is no command, LISP script, or ARX command active; otherwise, it returns
         false.
         """
@@ -627,7 +627,7 @@ class Document(PyRx.RxObject):
         This function provides a way for an application to determine if it could have permission to
         set a lock on a document. One rule about locking is that an execution context can override
         any of its own locks. If this application's context has an Exclusive Write lock, it can
-        still apply another lock to the document.  Returns the highest level lock set by other
+        still apply another lock to the document. Returns the highest level lock set by other
         execution contexts if bIncludeMyLocks = false. If bIncludeMyLocks = true, then the function
         will return the highest level lock set by any execution context, include this application.
         """
@@ -649,7 +649,7 @@ class Document(PyRx.RxObject):
         """
         This method copies the current value of the DBMOD system variable onto a stack. This allows
         you to save the current value of the DBMOD read-only system variable for subsequent
-        restoration through the popDbmod() method. pushDbmod() and its counterpart popDbmod() allow
+        restoration through the popDbmod() method.pushDbmod() and its counterpart popDbmod() allow
         your application to modify a database without having it marked as modified, as is commonly
         done by applications during edit session initialization. This includes modification of
         database header variables or adding to and modifying objects in the database being edited,
@@ -682,12 +682,12 @@ class LayerFilter(PyRx.RxObject):
     def __init__(self, /) -> None:
         """
         This is the main layer filter class. It allows the client to specify and retrieve the
-        filter expression and to nest filters. The following rules apply when deriving custom
-        filters from AcLyLayerFilter: Define the class using the ACRX_CONS_DEFINE_MEMBERS macro,
-        not ACRX_DXF_DEFINE_MEMBERS.Don't forget to call rxInit().When implementing readFrom() and
+        filter expression and to nest filters.The following rules apply when deriving custom
+        filters from AcLyLayerFilter:Define the class using the ACRX_CONS_DEFINE_MEMBERS macro, not
+        ACRX_DXF_DEFINE_MEMBERS.Don't forget to call rxInit().When implementing readFrom() and
         writeTo(), don't use any of the DXF subclass marker functionality of the filer, as this
         will make DXF files invalid.DXF subclass functionality includes
-        pFiler->writeItem(AcDb::kDxfSubclass, ...) and pFiler->atSubclassData(...).For custom
+        pFiler.writeItem(AcDb::kDxfSubclass, ...) and pFiler.atSubclassData(...).For custom
         (AcLyLayerFilter-derived) filter classes, the readLegacyFrom() and writeLegacyTo() methods
         are never called because custom filters cannot be represented in AutoCAD 2004 and previous
         releases.
@@ -695,7 +695,7 @@ class LayerFilter(PyRx.RxObject):
     def __reduce__(self, /) -> Any: ...
     def addNested(self, val: PyAp.LayerFilter, /) -> None:
         """
-        Adds the filter to this filter as a nested filter. Returns Acad::eNotApplicable when
+        Adds the filter to this filter as a nested filter.Returns Acad::eNotApplicable when
         allowNested() is false. Returns Acad::eInvalidInput when filter is null. Returns Acad::eOk
         when successful.
         """
@@ -724,10 +724,10 @@ class LayerFilter(PyRx.RxObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -742,8 +742,8 @@ class LayerFilter(PyRx.RxObject):
         """
     def filterExpression(self, /) -> str:
         """
-        Returns a filter expression of this form:      /*    BNF for the valid boolean expression
-        we evaluate    <bool_expr>::= <bool_expr> or <and_expr> | <and_expr>
+        Returns a filter expression of this form:    /*    BNF for the valid boolean expression we
+        evaluate    <bool_expr>::= <bool_expr> or <and_expr> | <and_expr>
         <and_expr>::=<and_expr> and <rel_expr> | <rel_expr>
         <rel_expr>::=<variable><rel_op><constant>     <rel_op>::= == | !=
         <constant>::=A-Z0-9*?~@.,-    <variable>::=#A-Z0-9    */This function may return null if
@@ -752,7 +752,7 @@ class LayerFilter(PyRx.RxObject):
     def generateNested(self, /) -> None:
         """
         Called by the ObjectDBX framework after a filter is loaded from persistent storage. This is
-        an opportunity for the filter to generate nested filters.  Should return Acad::eOk if
+        an opportunity for the filter to generate nested filters. Should return Acad::eOk if
         successful. Any other return value will abort the loading of this filter and the filter
         will not be added to the filter tree.
         """
@@ -768,7 +768,7 @@ class LayerFilter(PyRx.RxObject):
         """
     def isProxy(self, /) -> bool:
         """
-        Returns true if this is a proxy filter.  A filter becomes a proxy when ObjectDBX does not
+        Returns true if this is a proxy filter. A filter becomes a proxy when ObjectDBX does not
         find the code (ObjectARX or ObjectDBX application) behind the filter. Proxy filters are not
         shown to the user by AutoCAD, but their persistent data is round tripped.
         """
@@ -785,26 +785,26 @@ class LayerFilter(PyRx.RxObject):
         """
     def removeNested(self, val: PyAp.LayerFilter, /) -> None:
         """
-        Removes the given filter from the list of nested filters for this filter.  Returns
-        Acad::eOk when successful. Returns Acad::eNotApplicable when filter->allowDelete() is
-        false. Returns Acad::eInvalidInput when filter is null.
+        Removes the given filter from the list of nested filters for this filter. Returns Acad::eOk
+        when successful. Returns Acad::eNotApplicable when filter.allowDelete() is false. Returns
+        Acad::eInvalidInput when filter is null.
         """
     def setFilterExpression(self, val: str, /) -> None:
         """
-        Sets a new filter expression. See filterExpression() for valid filter expressions.  Returns
+        Sets a new filter expression. See filterExpression() for valid filter expressions. Returns
         eNotApplicable if the filter is not expression-based. Returns eInvalidInput if the
         expression is invalid. Returns eOk otherwise.
         """
     def setName(self, val: str, /) -> None:
         """
-        Sets the name of the filter. If renaming is not allowed, this function returns
+        Sets the name of the filter.If renaming is not allowed, this function returns
         Acad::eNotApplicable. If the name is null, then it returns Acad::eInvalidInput. Returns
         Acad::eOk when successful.
         """
     def showEditor(self, /) -> int:
         """
         Called by the host application to show an editor window for the filter. The editor is
-        displayed as a child of the active popup window. Return kUseDefault if you want to instruct
+        displayed as a child of the active popup window.Return kUseDefault if you want to instruct
         the host application to display the default filter dialog.
         """
 
@@ -832,10 +832,10 @@ class LayerGroup(PyAp.LayerFilter):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -875,10 +875,10 @@ class LayoutManager(PyDb.LayoutManager):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -906,7 +906,7 @@ class LayoutManager(PyDb.LayoutManager):
         By default, this function launches the Page Setup dialog with the current AcDbLayout
         object. Optionally, this function takes arguments to initialize it with a different
         AcDbLayout object, a pointer to a different parent window, and whether to bring up the
-        shared Plot dialog instead of the Page Setup dialog. The function returns O if the Page
+        shared Plot dialog instead of the Page Setup dialog.The function returns O if the Page
         Setup dialog has been canceled; 1 if the the Page Setup dialog has succeeded; and -1 for
         any error conditions.
         """
@@ -914,12 +914,12 @@ class LayoutManager(PyDb.LayoutManager):
         """
         This function takes a Paperspace pick point, and passes back a list, in the form of an
         AcDbObjectIdArray, of the AcDbObjectId entities of every AcDbViewport that overlays the
-        pick point, including non-rectangular viewports. If viewports overlap each other at the
-        pick point, all of them will be returned, but the first AcDbViewport Id in the array will
-        be the viewport that would be selected if the user double-clicked at the point. The
-        PaperSpace viewport will never be included in the array. If no viewports are at the pick
-        point, ePointNotOnEntity will be returned, and the AcDbObjectIdArray will not be created.
-        If at least one viewport is in the array, eOk will be returned. The caller must delete the
+        pick point, including non-rectangular viewports.If viewports overlap each other at the pick
+        point, all of them will be returned, but the first AcDbViewport Id in the array will be the
+        viewport that would be selected if the user double-clicked at the point. The PaperSpace
+        viewport will never be included in the array. If no viewports are at the pick point,
+        ePointNotOnEntity will be returned, and the AcDbObjectIdArray will not be created. If at
+        least one viewport is in the array, eOk will be returned. The caller must delete the
         returned AcDbObjectIdArray when finished with it. This routine allows an application to
         easily determine if a given point lies within a non-rectangular (clipped) viewport.
         """
@@ -1065,7 +1065,7 @@ class PaletteSet:
         """
     def getOpacity(self, /) -> int:
         """
-        Returns the current opacity for the palette set. Valid values are in the range 0 to 100,
+        Returns the current opacity for the palette set.Valid values are in the range 0 to 100,
         where 0 is completely transparent and 100 is completely opaque.
         """
     def getPaletteCount(self, /) -> int:
@@ -1109,7 +1109,7 @@ class PaletteSet:
     def rollOut(self, delay: bool = False, /) -> None:
         """
         Triggers a roll out of the palette set if auto-rollup is on and the palette set is not
-        docked. If bDelay is true, the palette set will use an extended rollup delay time. When the
+        docked.If bDelay is true, the palette set will use an extended rollup delay time. When the
         parameter is false, the palette set will use the normal delay time for rolling up.
         """
     def rollUp(self, /) -> None:
@@ -1127,7 +1127,7 @@ class PaletteSet:
         """
     def setAutoRollup(self, val: bool, /) -> bool:
         """
-        Enables and disables auto rollup for the palette set. Setting the auto-rollup state also
+        Enables and disables auto rollup for the palette set.Setting the auto-rollup state also
         causes the palette set to react as necessary. For example, it will roll out if auto rollup
         is disabled and may roll up, depending on the cursor position, if auto rollup is enabled.
         """
@@ -1135,7 +1135,7 @@ class PaletteSet:
     def setLocation(self, x: int, y: int, /) -> None: ...
     def setName(self, name: str, /) -> bool:
         """
-        Sets the name of the palette set. Returns true if the palette set name is successfully set
+        Sets the name of the palette set.Returns true if the palette set name is successfully set
         to pszName; otherwise, returns false.
         """
     def setOpacity(self, val: int, /) -> bool:
@@ -1149,7 +1149,7 @@ class PaletteSet:
         """
     def setRolloverOpacity(self, val: int, /) -> bool:
         """
-        Sets the value of the rollover opacity.  Returns true if successful.
+        Sets the value of the rollover opacity.Returns true if successful.
         """
     def setSize(self, x: int, y: int, /) -> None: ...
     def setTitleBarLocation(self, val: PyAp.PaletteTitleBarLocation, /) -> None:
@@ -1160,7 +1160,7 @@ class PaletteSet:
         """
         Sets the identifier associated with a control bar. Since a control identifier needs to be
         unique, class IDs are used for that purpose. You can generate a class ID using the system
-        utility GUIDGEN. A good place to call this method is right after you called the Create()
+        utility GUIDGEN.A good place to call this method is right after you called the Create()
         method. It must be called before RestoreControlBar() because the persistency system relies
         on the control bar IDs.
         """
@@ -1190,7 +1190,7 @@ class PaletteSet:
         """
     def updateTabs(self, /) -> None:
         """
-        Updates the palette set's tab display. The base palette implementation calls this function
+        Updates the palette set's tab display.The base palette implementation calls this function
         when a palette name changes.
         """
     def useSinglePaletteTabNameStyle(self, /) -> bool:
@@ -1218,10 +1218,10 @@ class ResourceOverride:
         """
         Use an instance of this class to switch between default and module's resources. When the
         object is constructed, a new resource provider will be switched in. Upon destruction the
-        original resource provider will be restored. For example:  void MyFunc()    {
+        original resource provider will be restored. For example:void MyFunc()    {
         CAcModuleResourceOverride myResources;        .        .    }Upon entry to this function,
         the module's resources will be selected. When the function returns, the default resources
-        will be restored. A resource override can be used in any of three ways: Use the default
+        will be restored. A resource override can be used in any of three ways:Use the default
         constructor (no arguments) to switch to the module's resources. The default resources will
         be restored by the destructor. The module/default resources are those maintained by the
         DLL's CAcExtensionModule.Pass NULL (or 0) to the constructor. The DLL's resources will be
@@ -1275,9 +1275,9 @@ class TransactionManager(PyDb.TransactionManager):
         There is a single object of class AcTransactionManager created by the ObjectARX system when
         AutoCAD first starts up. This AcTransactionManager object is globally available to all
         ObjectARX applications. The macro actrTransactionManager returns a pointer to the system
-        AcTransactionManager object to allow access to its member functions. The system
+        AcTransactionManager object to allow access to its member functions.The system
         AcTransactionManager object is used to start, end, or terminate transactions. In addition,
-        it provides functionality to manage transactions and the objects within them. For more
+        it provides functionality to manage transactions and the objects within them.For more
         information on the transaction mechanism, see the transaction section in the ObjectARX
         Developer's Guide.
         """
@@ -1291,10 +1291,10 @@ class TransactionManager(PyDb.TransactionManager):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.) When working with a pointer to an object and
-        the proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.)When working with a pointer to an object and the
+        proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent. Caching the value of the pointer returned by this
+        therefore not pointer type dependent.Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """

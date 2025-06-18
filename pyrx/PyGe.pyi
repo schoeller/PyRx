@@ -540,48 +540,48 @@ class ClipBoundary2d(PyGe.Entity2d):
         """
         This class defines a planar clipping object for clipping arbitrary 2D polygons or polylines
         to 2D convex open or closed polyline curves or rectangles. The implementation is similar to
-        the Sutherland-Hodgman pipeline clipping algorithm. Detailed edge information can
-        optionally be generated to track the source of each clipped output segment. This
-        information can be used to control edge display or to efficiently stitch together output
-        from multiple clip boundaries (possibly from decomposing a non-convex clip boundary into
-        multiple convex boundaries). Information about the spatial relationship between the clipped
-        polygon or polyline and the clip region is also generated.
+        the Sutherland-Hodgman pipeline clipping algorithm.Detailed edge information can optionally
+        be generated to track the source of each clipped output segment. This information can be
+        used to control edge display or to efficiently stitch together output from multiple clip
+        boundaries (possibly from decomposing a non-convex clip boundary into multiple convex
+        boundaries).Information about the spatial relationship between the clipped polygon or
+        polyline and the clip region is also generated.
         """
     @overload
     def __init__(self, cornerA: PyGe.Point2d, cornerB: PyGe.Point2d, /) -> None:
         """
         This class defines a planar clipping object for clipping arbitrary 2D polygons or polylines
         to 2D convex open or closed polyline curves or rectangles. The implementation is similar to
-        the Sutherland-Hodgman pipeline clipping algorithm. Detailed edge information can
-        optionally be generated to track the source of each clipped output segment. This
-        information can be used to control edge display or to efficiently stitch together output
-        from multiple clip boundaries (possibly from decomposing a non-convex clip boundary into
-        multiple convex boundaries). Information about the spatial relationship between the clipped
-        polygon or polyline and the clip region is also generated.
+        the Sutherland-Hodgman pipeline clipping algorithm.Detailed edge information can optionally
+        be generated to track the source of each clipped output segment. This information can be
+        used to control edge display or to efficiently stitch together output from multiple clip
+        boundaries (possibly from decomposing a non-convex clip boundary into multiple convex
+        boundaries).Information about the spatial relationship between the clipped polygon or
+        polyline and the clip region is also generated.
         """
     @overload
     def __init__(self, clipBoundary: list[PyGe.Point2d], /) -> None:
         """
         This class defines a planar clipping object for clipping arbitrary 2D polygons or polylines
         to 2D convex open or closed polyline curves or rectangles. The implementation is similar to
-        the Sutherland-Hodgman pipeline clipping algorithm. Detailed edge information can
-        optionally be generated to track the source of each clipped output segment. This
-        information can be used to control edge display or to efficiently stitch together output
-        from multiple clip boundaries (possibly from decomposing a non-convex clip boundary into
-        multiple convex boundaries). Information about the spatial relationship between the clipped
-        polygon or polyline and the clip region is also generated.
+        the Sutherland-Hodgman pipeline clipping algorithm.Detailed edge information can optionally
+        be generated to track the source of each clipped output segment. This information can be
+        used to control edge display or to efficiently stitch together output from multiple clip
+        boundaries (possibly from decomposing a non-convex clip boundary into multiple convex
+        boundaries).Information about the spatial relationship between the clipped polygon or
+        polyline and the clip region is also generated.
         """
     @overload
     def __init__(self, *args) -> None:
         """
         This class defines a planar clipping object for clipping arbitrary 2D polygons or polylines
         to 2D convex open or closed polyline curves or rectangles. The implementation is similar to
-        the Sutherland-Hodgman pipeline clipping algorithm. Detailed edge information can
-        optionally be generated to track the source of each clipped output segment. This
-        information can be used to control edge display or to efficiently stitch together output
-        from multiple clip boundaries (possibly from decomposing a non-convex clip boundary into
-        multiple convex boundaries). Information about the spatial relationship between the clipped
-        polygon or polyline and the clip region is also generated.
+        the Sutherland-Hodgman pipeline clipping algorithm.Detailed edge information can optionally
+        be generated to track the source of each clipped output segment. This information can be
+        used to control edge display or to efficiently stitch together output from multiple clip
+        boundaries (possibly from decomposing a non-convex clip boundary into multiple convex
+        boundaries).Information about the spatial relationship between the clipped polygon or
+        polyline and the clip region is also generated.
         """
     def __reduce__(self, /) -> Any: ...
     @staticmethod
@@ -600,7 +600,7 @@ class CompositeCurve2d(PyGe.Curve2d):
         consist of four straight line segments that form a square. Each of the component curves
         must be bounded curves, which means that infinite lines and rays may not be used as
         component curves of a composite. A composite curve object stores a list of pointers to the
-        component curves. The start parameter of a composite is 0.0. The parameter value at the
+        component curves.The start parameter of a composite is 0.0. The parameter value at the
         endpoint of the first component curve is the approximate length of the first curve (call
         this value l1). The parameter value at the endpoint of the second curve is l1 plus the
         approximate length of the second curve, and so forth.
@@ -613,7 +613,7 @@ class CompositeCurve2d(PyGe.Curve2d):
         consist of four straight line segments that form a square. Each of the component curves
         must be bounded curves, which means that infinite lines and rays may not be used as
         component curves of a composite. A composite curve object stores a list of pointers to the
-        component curves. The start parameter of a composite is 0.0. The parameter value at the
+        component curves.The start parameter of a composite is 0.0. The parameter value at the
         endpoint of the first component curve is the approximate length of the first curve (call
         this value l1). The parameter value at the endpoint of the second curve is l1 plus the
         approximate length of the second curve, and so forth.
@@ -626,7 +626,7 @@ class CompositeCurve2d(PyGe.Curve2d):
         consist of four straight line segments that form a square. Each of the component curves
         must be bounded curves, which means that infinite lines and rays may not be used as
         component curves of a composite. A composite curve object stores a list of pointers to the
-        component curves. The start parameter of a composite is 0.0. The parameter value at the
+        component curves.The start parameter of a composite is 0.0. The parameter value at the
         endpoint of the first component curve is the approximate length of the first curve (call
         this value l1). The parameter value at the endpoint of the second curve is l1 plus the
         approximate length of the second curve, and so forth.
@@ -639,7 +639,7 @@ class CompositeCurve2d(PyGe.Curve2d):
         consist of four straight line segments that form a square. Each of the component curves
         must be bounded curves, which means that infinite lines and rays may not be used as
         component curves of a composite. A composite curve object stores a list of pointers to the
-        component curves. The start parameter of a composite is 0.0. The parameter value at the
+        component curves.The start parameter of a composite is 0.0. The parameter value at the
         endpoint of the first component curve is the approximate length of the first curve (call
         this value l1). The parameter value at the endpoint of the second curve is l1 plus the
         approximate length of the second curve, and so forth.
@@ -672,7 +672,7 @@ class CompositeCurve3d(PyGe.Curve3d):
         consist of four straight line segments that form a square. Each of the component curves
         must be bounded curves, which means that infinite lines and rays may not be used as
         component curves of a composite. The component curves are not required to all lie in the
-        same plane. A composite curve object stores a list of pointers to the component curves. The
+        same plane. A composite curve object stores a list of pointers to the component curves.The
         start parameter of a composite is 0.0. The parameter value at the endpoint of the first
         component curve is the approximate length of the first curve (call this value l1). The
         parameter value at the endpoint of the second curve is l1 plus the approximate length of
@@ -686,7 +686,7 @@ class CompositeCurve3d(PyGe.Curve3d):
         consist of four straight line segments that form a square. Each of the component curves
         must be bounded curves, which means that infinite lines and rays may not be used as
         component curves of a composite. The component curves are not required to all lie in the
-        same plane. A composite curve object stores a list of pointers to the component curves. The
+        same plane. A composite curve object stores a list of pointers to the component curves.The
         start parameter of a composite is 0.0. The parameter value at the endpoint of the first
         component curve is the approximate length of the first curve (call this value l1). The
         parameter value at the endpoint of the second curve is l1 plus the approximate length of
@@ -700,7 +700,7 @@ class CompositeCurve3d(PyGe.Curve3d):
         consist of four straight line segments that form a square. Each of the component curves
         must be bounded curves, which means that infinite lines and rays may not be used as
         component curves of a composite. The component curves are not required to all lie in the
-        same plane. A composite curve object stores a list of pointers to the component curves. The
+        same plane. A composite curve object stores a list of pointers to the component curves.The
         start parameter of a composite is 0.0. The parameter value at the endpoint of the first
         component curve is the approximate length of the first curve (call this value l1). The
         parameter value at the endpoint of the second curve is l1 plus the approximate length of
@@ -714,7 +714,7 @@ class CompositeCurve3d(PyGe.Curve3d):
         consist of four straight line segments that form a square. Each of the component curves
         must be bounded curves, which means that infinite lines and rays may not be used as
         component curves of a composite. The component curves are not required to all lie in the
-        same plane. A composite curve object stores a list of pointers to the component curves. The
+        same plane. A composite curve object stores a list of pointers to the component curves.The
         start parameter of a composite is 0.0. The parameter value at the endpoint of the first
         component curve is the approximate length of the first curve (call this value l1). The
         parameter value at the endpoint of the second curve is l1 plus the approximate length of
@@ -1017,16 +1017,16 @@ class Curve3d(PyGe.Entity3d):
         Returns the area of the interval of the curve defined by startParam and endParam. Returns
         Adesk::kTrue if area was successfully computed to within the specified tolerance. If the
         curve is not planar, then the area cannot be calculated and a value of Adesk::kFalse is
-        returned.  If the points at startParam and endParam are the same, then this function
-        returns the area of the closed curve. If the points are different, then this function
-        connects the two points with a line segment and return the signed area between the curve
-        and the line segment.  If the line segment does not intersect the curve at any points
-        between startParam and endParam, then the returned area is positive. If the line segment
-        intersects the curves at any points between startParam and endParam, then the returned area
-        is the sum of the sub-areas created by the intersection of the line segment with the curve.
-        Each sub-area has a positive or negative area, depending on whether the curve lies above or
-        below the line segment. The total area returned by this function can therefore be positive,
-        negative, or 0.
+        returned. If the points at startParam and endParam are the same, then this function returns
+        the area of the closed curve. If the points are different, then this function connects the
+        two points with a line segment and return the signed area between the curve and the line
+        segment. If the line segment does not intersect the curve at any points between startParam
+        and endParam, then the returned area is positive. If the line segment intersects the curves
+        at any points between startParam and endParam, then the returned area is the sum of the
+        sub-areas created by the intersection of the line segment with the curve. Each sub-area has
+        a positive or negative area, depending on whether the curve lies above or below the line
+        segment. The total area returned by this function can therefore be positive, negative, or
+        0.
         """
     def boundBlock(self, range: PyGe.Interval = ..., /) -> BoundBlock3d:
         """
@@ -1062,13 +1062,13 @@ class Curve3d(PyGe.Entity3d):
         Explodes the curve into its individual components. If the curve is a composite curve, then
         explodedCurves contains the list of component curves of the composite. If the curve is a
         spline, then it is exploded at the points of C1 discontinuity and explodedCurves contains a
-        copy of each continuous sub-curve.  This function returns Adesk::kTrue if the curve was
+        copy of each continuous sub-curve. This function returns Adesk::kTrue if the curve was
         exploded (that is, the curve was a composite or a discontinuous spline) and Adesk::kFalse
-        otherwise.  The number of entries returned in newExplodedCurves is always the same as the
-        number of entries in explodedCurves.  Each flag in newExplodedCurves indicates whether the
+        otherwise. The number of entries returned in newExplodedCurves is always the same as the
+        number of entries in explodedCurves. Each flag in newExplodedCurves indicates whether the
         corresponding curve in explodedCurves was created with the new operator. If the flag is 1,
         then it is the responsibility of the caller to delete the curve. If the flag is 0, the
-        curve is deleted by gelib and the caller should not attempt to delete it.  If no intrvl
+        curve is deleted by gelib and the caller should not attempt to delete it. If no intrvl
         parameter is supplied, then the interval is taken to be the entire curve.
         """
     def getClosestPointTo(self, other: PyGe.Point3d, tol: PyGe.Tol = ..., /) -> PointOnCurve3d:
@@ -1100,8 +1100,8 @@ class Curve3d(PyGe.Entity3d):
         Finds the point on the input curve whose normal passes through the input point. The
         returned point lies on a plane that also contains the input point and is perpendicular to
         the curve tangent at that point. The returned point is therefore at a local minimum or a
-        local maximum from the input point.  The curve does not need to be planar. If the curve is
-        planar, the input point does not need to lie in the plane of the curve.  On input, the
+        local maximum from the input point. The curve does not need to be planar. If the curve is
+        planar, the input point does not need to lie in the plane of the curve. On input, the
         second parameter is assumed to contain the parameter value of an initial guess. If there is
         more than one normal point on the curve, the returned point will be the one whose parameter
         value is closest to the input parameter value.
@@ -1156,9 +1156,9 @@ class Curve3d(PyGe.Entity3d):
     def getSplitCurves(self, param: float, /) -> tuple[PyGe.Curve3d, PyGe.Curve3d]:
         """
         Returns two segments which are obtained by splitting the curve at the input parameter
-        value.  If the specified parameter value does not lie within the parametric interval of the
+        value. If the specified parameter value does not lie within the parametric interval of the
         curve or if it corresponds to the start point or endpoint of the curve, then piece1 and
-        piece2 are set to null.  This function uses the new to create the curve segments whose
+        piece2 are set to null. This function uses the new to create the curve segments whose
         addresses are returned in piece1 and piece2. It is the responsibility of the caller to
         delete these objects.
         """
@@ -1180,7 +1180,7 @@ class Curve3d(PyGe.Entity3d):
         which direction is the positive direction of offset. The returned offset curves are trimmed
         so that they do not contain any points of self-intersection. Each curve that is returned in
         offsetCurveList is created with the new and it is the responsibility of the caller to
-        delete these curves.  Each curve that is returned in offsetCurveList is a connected curve
+        delete these curves. Each curve that is returned in offsetCurveList is a connected curve
         and may be a composite curve if the offset curve had to be trimmed to remove
         self-intersecting loops. offsetCurveList only contains more than one curve if the offset
         operation produces multiple curves which are not connected. If the original curve contains
@@ -1266,8 +1266,8 @@ class Curve3d(PyGe.Entity3d):
     ) -> float:
         """
         Returns the parameter value of the point whose arc length distance (from the point with
-        parameter value datumParam) is the input length. In other words, if t = paramAtLength
-        (datumParam, len, posParamDir, tol)  then length (t, datumParam, tol) is (approximately)
+        parameter value datumParam) is the input length. In other words, ift = paramAtLength
+        (datumParam, len, posParamDir, tol) then length (t, datumParam, tol) is (approximately)
         equal to len. If posParamDir is set to Adesk::kTrue, then the returned parameter value is
         greater than datumParam. Otherwise it will be less than datumParam.
         """
@@ -1332,7 +1332,7 @@ class CurveCurveInt2d(PyGe.Entity2d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1349,7 +1349,7 @@ class CurveCurveInt2d(PyGe.Entity2d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1366,7 +1366,7 @@ class CurveCurveInt2d(PyGe.Entity2d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1390,7 +1390,7 @@ class CurveCurveInt2d(PyGe.Entity2d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1415,7 +1415,7 @@ class CurveCurveInt2d(PyGe.Entity2d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1432,7 +1432,7 @@ class CurveCurveInt2d(PyGe.Entity2d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1477,7 +1477,7 @@ class CurveCurveInt3d(PyGe.Entity3d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1494,7 +1494,7 @@ class CurveCurveInt3d(PyGe.Entity3d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1518,7 +1518,7 @@ class CurveCurveInt3d(PyGe.Entity3d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1542,7 +1542,7 @@ class CurveCurveInt3d(PyGe.Entity3d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1567,7 +1567,7 @@ class CurveCurveInt3d(PyGe.Entity3d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1584,7 +1584,7 @@ class CurveCurveInt3d(PyGe.Entity3d):
         points of intersection between two lines, a line and an arc, an arc and an arc, or a line
         and an ellipse. However, there is no general intersectWith() function to find the points of
         intersection between two general curves. This can only be done by constructing an object of
-        this class. Objects of this class are constructed by specifying the two curves that are to
+        this class.Objects of this class are constructed by specifying the two curves that are to
         be intersected. It is also possible to specify a specific interval of each curve that is to
         be intersected. Pointers to these curves are then stored as data members of this class.
         This class contains query methods that return the intersection points and intervals of
@@ -1987,13 +1987,13 @@ class Entity3d:
     def copycast(otherObject: PyGe.Entity3d, /) -> Entity3d: ...
     def isEqualTo(self, val: PyGe.Entity3d, tol: PyGe.Tol = ..., /) -> bool:
         """
-        Determines if two entities are equal to each other.  Two entities are considered to be
-        equal only if they are of the same type and they represent the same 3D point set. For
-        instance, if the two entities are of types AcGeCircArc3d and AcGeEllipArc3d then they are
-        not considered equal even if the ellipse is completely coincident with the circle.  Also,
-        two curves are not considered equal unless they have the same parameterization. For
-        instance, two infinite coincident lines are not considered equal if they have different
-        scaling in their parameterization.
+        Determines if two entities are equal to each other. Two entities are considered to be equal
+        only if they are of the same type and they represent the same 3D point set. For instance,
+        if the two entities are of types AcGeCircArc3d and AcGeEllipArc3d then they are not
+        considered equal even if the ellipse is completely coincident with the circle. Also, two
+        curves are not considered equal unless they have the same parameterization. For instance,
+        two infinite coincident lines are not considered equal if they have different scaling in
+        their parameterization.
         """
     def isKindOf(self, val: PyGe.EntityId, /) -> bool: ...
     def isNull(self, /) -> bool: ...
@@ -2117,11 +2117,11 @@ class ExternalBoundedSurface(PyGe.Surface):
         of the geometry library. A logical view of this class is as follows: An instance of
         AcGeExternalBoundedSurface consists of an instance of AcGeExternalSurface representing the
         unbounded surface geometry, together with a collection of instances of AcGeCurveBoundary,
-        each representing a boundary on the unbounded surface. It is important to realize that the
+        each representing a boundary on the unbounded surface.It is important to realize that the
         representation is geometric. No topological information is represented in this class. This
         assertion is made explicit by deriving this class from AcGeSurface. A typical use of
         AcGeExternalBoundedSurface would be to represent an ACIS FACE (that is, faces on Designer
-        and Autosurf models) as a bounded surface. Clearly, an instance of
+        and Autosurf models) as a bounded surface.Clearly, an instance of
         AcGeExternalBoundedSurface can be used as any other AcGeSurface. Operations that are well
         defined on bounded surfaces can accommodate the boundaries within the algorithms (an
         example is closest point). Alternatively, a knowledge of the precise definition of the
@@ -2191,7 +2191,7 @@ class ExternalSurface(PyGe.Surface):
         representations. However, the surface definitions of native GeLib surfaces differ from the
         definition of external entities. An example of such a difference is differing surface
         parameterizations. A typical use of AcGeExternalSurface is to represent a ShapeManager
-        surface. Clearly, an instance of AcGeExternalSurface can be used as any other AcGeSurface.
+        surface.Clearly, an instance of AcGeExternalSurface can be used as any other AcGeSurface.
         Alternatively, a knowledge of the precise definition of the external entity allows direct
         access to the external entity in its native form. This access is more efficient since it
         avoids the level of indirection that is incurred when accessing the external entity through
@@ -3358,14 +3358,14 @@ class Point3d:
     def __truediv__(self, val: float, /) -> Point3d: ...
     def asVector(self, /) -> Vector3d:
         """
-        Converts 3D point into 3D vector with the same set of coordinates ( see AcGeVector3d ).
-        Return value is a class AcGeVector3d.
+        Converts 3D point into 3D vector with the same set of coordinates ( see AcGeVector3d
+        ).Return value is a class AcGeVector3d.
         """
     def convert2d(self, pln: PyGe.PlanarEnt, /) -> Point2d:
         """
         Returns 2D point with the coordinates corresponding to the decomposition of the vector
         *this - p in the basis uAxis, vAxis in the planar entity, where p, uAxis, and vAxis can
-        found by function call pln.get(p, uAxis, vAxis). Contract: This 3D point assumed to be on
+        found by function call pln.get(p, uAxis, vAxis).Contract: This 3D point assumed to be on
         the planar entity pln.
         """
     def distanceTo(self, pnt: PyGe.Point3d, /) -> float:
@@ -3375,7 +3375,7 @@ class Point3d:
     def isEqualTo(self, pnt: PyGe.Point3d, tol: PyGe.Tol = ..., /) -> bool:
         """
         Checks if this point is within the distance tol.equalPoint() from the point pnt. The
-        default value of the tolerance class tol is AcGeContext::gTol. Returns Adesk::kTrue if this
+        default value of the tolerance class tol is AcGeContext::gTol.Returns Adesk::kTrue if this
         condition is met and Adesk::kFalse otherwise.
         """
     kOrigin: PyGe.Point3d
@@ -3416,7 +3416,7 @@ class Point3d:
     def setToProduct(self, mat: PyGe.Matrix3d, pnt: PyGe.Point3d, /) -> Point3d:
         """
         Sets this point to the product of matrix mat and point pnt. The order of multiplication is
-        mat*pnt, where points are considered as columns.  Returns the reference to this point.
+        mat*pnt, where points are considered as columns. Returns the reference to this point.
         """
     def setToSum(self, pnt: PyGe.Point3d, vec: PyGe.Vector3d, /) -> Point3d:
         """
@@ -3427,8 +3427,8 @@ class Point3d:
     def toTuple(self, /) -> tuple[float, float, float]: ...
     def transformBy(self, mat: PyGe.Matrix3d, /) -> Point3d:
         """
-        Transform this pre-multiplying it the matrix leftSide.  Returns the reference to this
-        point.  Result is the same as setToProduct(leftSide, *this).
+        Transform this pre-multiplying it the matrix leftSide. Returns the reference to this point.
+        Result is the same as setToProduct(leftSide, *this).
         """
     @property
     def x(self, /) -> float: ...
@@ -4323,7 +4323,7 @@ class Vector3d:
         """
         Returns 2D vector with the coordinates corresponding to the decomposition of this vector in
         the basis uAxis, vAxis in the planar entity pln, where uAxis and vAxis can be found by
-        function call pln.get(p, uAxis, vAxis). Contract: This 3D vector is assumed to be parallel
+        function call pln.get(p, uAxis, vAxis).Contract: This 3D vector is assumed to be parallel
         to the planar entity pln.
         """
     def crossProduct(self, vec: PyGe.Vector3d, /) -> Vector3d:
@@ -4338,28 +4338,28 @@ class Vector3d:
         """
         Checks if this vector is codirectional to the vector vec. Namely, it checks if after
         normalization this vector is within the distance tol.equalVector() from the normalization
-        of the vector vec. Returns Adesk::kTrue if this condition is met and Adesk::kFalse
+        of the vector vec.Returns Adesk::kTrue if this condition is met and Adesk::kFalse
         otherwise.
         """
     def isEqualTo(self, vec: PyGe.Vector3d, tol: PyGe.Tol = ..., /) -> bool:
         """
-        Checks if this vector is within the distance tol.equalVector() from the vector vec. The
-        default value of the tolerance class tol is AcGeContext::gTol. Returns Adesk::kTrue if this
+        Checks if this vector is within the distance tol.equalVector() from the vector vec.The
+        default value of the tolerance class tol is AcGeContext::gTol.Returns Adesk::kTrue if this
         condition is met and Adesk::kFalse otherwise.
         """
     def isParallelTo(self, vec: PyGe.Vector3d, tol: PyGe.Tol = ..., /) -> bool:
         """
         Checks if this vector is parallel to the vector vec. Namely, it checks if after
         normalization (and negation, in the case of negative dot product with the vector vec), this
-        vector is within the distance tol.equalVector() from the normalization of the vector vec.
-        Returns Adesk::kTrue if this condition is met and Adesk::kFalse otherwise.
+        vector is within the distance tol.equalVector() from the normalization of the vector
+        vec.Returns Adesk::kTrue if this condition is met and Adesk::kFalse otherwise.
         """
     def isPerpendicularTo(self, vec: PyGe.Vector3d, tol: PyGe.Tol = ..., /) -> bool:
         """
         Checks if this vector is perpendicular to the vector vec. Namely, it checks if after
         normalization the dot product of this vector with the normalization of the vector vec is
-        less than tol.equalVector() in absolute value. Returns Adesk::kTrue if this condition is
-        met and Adesk::kFalse otherwise.
+        less than tol.equalVector() in absolute value.Returns Adesk::kTrue if this condition is met
+        and Adesk::kFalse otherwise.
         """
     def isUnitLength(self, tol: PyGe.Tol = ..., /) -> bool:
         """
@@ -4393,12 +4393,12 @@ class Vector3d:
         """
     def negate(self, /) -> Vector3d:
         """
-        Negates this vector, namely sets it to be equal to the vector (-x,-y).  Returns the
+        Negates this vector, namely sets it to be equal to the vector (-x,-y). Returns the
         reference to this vector.
         """
     def normal(self, tol: PyGe.Tol = ..., /) -> Vector3d:
         """
-        Returns the unit vector codirectional to this vector.  The vector is not normalized if its
+        Returns the unit vector codirectional to this vector. The vector is not normalized if its
         length is less than tol.equalVector(), in which case the returned vector is the same as
         this vector.
         """
@@ -4435,12 +4435,12 @@ class Vector3d:
         self, vec: PyGe.Vector3d, axis: PyGe.Vector3d = PyGe.Vector3d.kIdentity, /
     ) -> Matrix3d:
         """
-        Returns a matrix mat such that matX this vector yields the argument vector vec.  There is
-        no unique matrix to represent a rotation from this vector to vec when they are parallel and
-        in opposite directions. In this case, the argument axis is used (if it is perpendicular to
+        Returns a matrix mat such that matX this vector yields the argument vector vec. There is no
+        unique matrix to represent a rotation from this vector to vec when they are parallel and in
+        opposite directions. In this case, the argument axis is used (if it is perpendicular to
         this vector) to uniquely determine the resultant matrix. axis defaults to the zero-length
         vector, in which case an arbitrary (but correct) matrix will be returned that rotates this
-        vector to vec. Contract: This vector and vec must be non-zero length.
+        vector to vec.Contract: This vector and vec must be non-zero length.
         """
     @overload
     def set(self, x: float, y: float, z: float, /) -> Vector3d: ...
@@ -4456,7 +4456,7 @@ class Vector3d:
     def setToProduct(self, *args) -> Vector3d: ...
     def setToSum(self, v1: PyGe.Vector3d, v2: PyGe.Vector3d, /) -> Vector3d:
         """
-        Sets this vector to the sum of the vector v1 and vector v2.  Returns the reference to this
+        Sets this vector to the sum of the vector v1 and vector v2. Returns the reference to this
         vector.
         """
     def toList(self, /) -> list[float]: ...
@@ -4464,8 +4464,8 @@ class Vector3d:
     def toTuple(self, /) -> tuple[float, float, float]: ...
     def transformBy(self, xform: PyGe.Matrix3d, /) -> Vector3d:
         """
-        Transform this vector by pre-multiplying it by the matrix leftSide.  Returns the reference
-        to this vector.  Result is the same as setToProduct(leftSide, *this).
+        Transform this vector by pre-multiplying it by the matrix leftSide. Returns the reference
+        to this vector. Result is the same as setToProduct(leftSide, *this).
         """
     @property
     def x(self, /) -> float: ...
