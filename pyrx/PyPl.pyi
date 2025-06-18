@@ -144,10 +144,10 @@ class DSDData(PyPl.PlObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.)When working with a pointer to an object and the
-        proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.) When working with a pointer to an object and
+        the proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent.Caching the value of the pointer returned by this
+        therefore not pointer type dependent. Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -223,10 +223,10 @@ class DSDEntry(PyPl.PlObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.)When working with a pointer to an object and the
-        proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.) When working with a pointer to an object and
+        the proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent.Caching the value of the pointer returned by this
+        therefore not pointer type dependent. Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -290,10 +290,10 @@ class PlotConfig(PyPl.PlObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.)When working with a pointer to an object and the
-        proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.) When working with a pointer to an object and
+        the proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent.Caching the value of the pointer returned by this
+        therefore not pointer type dependent. Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -324,10 +324,10 @@ class PlotConfigInfo(PyPl.PlObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.)When working with a pointer to an object and the
-        proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.) When working with a pointer to an object and
+        the proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent.Caching the value of the pointer returned by this
+        therefore not pointer type dependent. Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -404,7 +404,7 @@ class PlotInfo(PyPl.PlObject):
         layout in place of the settings on the layout itself. Applications can also override the
         output device by providing an AcPlPlotConfig object designating the device to plot to. If a
         device override is applied, it supercedes the device in the layout and the device in the
-        AcDbPlotSettings overrides object.AcPlPlotInfo objects must be validated using an
+        AcDbPlotSettings overrides object. AcPlPlotInfo objects must be validated using an
         AcDbPlotInfoValidator before they can be processed by an AcPlPlotEngine. Validated
         AcPlPlotInfo objects have non-null validated settings data and non-null validated
         configurations, which will be used by the AcPlPlotEngine to plot the layout when it is
@@ -421,10 +421,10 @@ class PlotInfo(PyPl.PlObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.)When working with a pointer to an object and the
-        proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.) When working with a pointer to an object and
+        the proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent.Caching the value of the pointer returned by this
+        therefore not pointer type dependent. Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -448,7 +448,7 @@ class PlotInfoValidator(PyPl.PlObject):
         The AcPlPlotInfoValidator class merges plot settings from a layout object, an
         AcDbPlotSettings object (settings overrides), and an output device override into a new plot
         settings object. The validator returns a set of codes indicating any problems found during
-        the merge operation.The validator supports paper-matching policies in its validation
+        the merge operation. The validator supports paper-matching policies in its validation
         algorithmn. Depending on the setting of the policy, the validator may try to find a
         matching paper size if the canonical paper name provided in the layout or overrides does
         not exist on the device. The validator also has policies to create a custom paper size, if
@@ -464,10 +464,10 @@ class PlotInfoValidator(PyPl.PlObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.)When working with a pointer to an object and the
-        proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.) When working with a pointer to an object and
+        the proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent.Caching the value of the pointer returned by this
+        therefore not pointer type dependent. Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -528,10 +528,10 @@ class PlotPageInfo(PyPl.PlObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.)When working with a pointer to an object and the
-        proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.) When working with a pointer to an object and
+        the proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent.Caching the value of the pointer returned by this
+        therefore not pointer type dependent. Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
@@ -606,10 +606,10 @@ class PrecisionEntry(PyPl.PlObject):
         parent class explicitly registered with ObjectARX of either the pointer type used to invoke
         it or the class qualifier used with it. (Remember that when a static member function is
         invoked via a pointer, the pointer type, not the object type, determines which
-        implementation of the function is invoked.)When working with a pointer to an object and the
-        proper AcRxClass object for the class of the object pointed to is desired, the
+        implementation of the function is invoked.) When working with a pointer to an object and
+        the proper AcRxClass object for the class of the object pointed to is desired, the
         AcRxObject::isA() function should be used, since it is a virtual non-static method and is
-        therefore not pointer type dependent.Caching the value of the pointer returned by this
+        therefore not pointer type dependent. Caching the value of the pointer returned by this
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
