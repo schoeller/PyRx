@@ -7183,7 +7183,7 @@ class Database(PyRx.RxObject):
         silently. If wszPassword is NULL, the user is prompted for a password if one is required
         and if no applicable password exists in the password cache. Returns Acad::eOk if
         successful. WarningThis function should only be used on a newly created AcDbDatabase that
-        was created with its constructor’s buildDefaultDrawing argument set to Adesk::kFalse. If
+        was created with its constructorďż˝s buildDefaultDrawing argument set to Adesk::kFalse. If
         this method is used on an AcDbDatabase that was created with buildDefaultDrawing set to
         Adesk::kTrue, or an AcDbDatabase that already has information in it (for any reason
         including a previous call to this function), then memory leaks (or worse) will result.
