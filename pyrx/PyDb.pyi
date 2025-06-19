@@ -3422,9 +3422,46 @@ class AutoWorkingDatabase:
     def wdb(self, /) -> Database: ...
 
 class BlockBegin(PyDb.Entity):
-    def __init__(
-        self, id: PyDb.ObjectId, mode: PyDb.OpenMode = PyDb.OpenMode.kForRead, /
-    ) -> None: ...
+    @overload
+    def __init__(self, /) -> None:
+        """
+        The AcDbBlockBegin class represents the block header portion of a block definition within
+        AutoCAD (that is, group codes 2, 3, 10, 20, 30, and 70). Objects of this class are created
+        and handled automatically by AutoCAD for each AcDbBlockTableRecord. Applications do not
+        need to create objects of this class nor can they add or remove them from databases.
+        Applications are free to add or manipulate xdata on objects of this class as well as work
+        with extension dictionaries for objects of this class.
+        """
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbBlockBegin class represents the block header portion of a block definition within
+        AutoCAD (that is, group codes 2, 3, 10, 20, 30, and 70). Objects of this class are created
+        and handled automatically by AutoCAD for each AcDbBlockTableRecord. Applications do not
+        need to create objects of this class nor can they add or remove them from databases.
+        Applications are free to add or manipulate xdata on objects of this class as well as work
+        with extension dictionaries for objects of this class.
+        """
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbBlockBegin class represents the block header portion of a block definition within
+        AutoCAD (that is, group codes 2, 3, 10, 20, 30, and 70). Objects of this class are created
+        and handled automatically by AutoCAD for each AcDbBlockTableRecord. Applications do not
+        need to create objects of this class nor can they add or remove them from databases.
+        Applications are free to add or manipulate xdata on objects of this class as well as work
+        with extension dictionaries for objects of this class.
+        """
+    @overload
+    def __init__(self, *args) -> None:
+        """
+        The AcDbBlockBegin class represents the block header portion of a block definition within
+        AutoCAD (that is, group codes 2, 3, 10, 20, 30, and 70). Objects of this class are created
+        and handled automatically by AutoCAD for each AcDbBlockTableRecord. Applications do not
+        need to create objects of this class nor can they add or remove them from databases.
+        Applications are free to add or manipulate xdata on objects of this class as well as work
+        with extension dictionaries for objects of this class.
+        """
     def __reduce__(self, /) -> Any: ...
     @staticmethod
     def cast(otherObject: PyRx.RxObject, /) -> BlockBegin: ...
@@ -3448,9 +3485,42 @@ class BlockBegin(PyDb.Entity):
         """
 
 class BlockEnd(PyDb.Entity):
-    def __init__(
-        self, id: PyDb.ObjectId, mode: PyDb.OpenMode = PyDb.OpenMode.kForRead, /
-    ) -> None: ...
+    @overload
+    def __init__(self, /) -> None:
+        """
+        The AcDbBlockEnd class represents the ENDBLK object within AutoCAD. Objects of this class
+        are created and handled automatically by AutoCAD for each AcDbBlockTableRecord.
+        Applications do not need to create objects of this class nor can they add or remove them
+        from databases. Applications are free to add or manipulate xdata on objects of this class,
+        as well as work with extension dictionaries for objects of this class.
+        """
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbBlockEnd class represents the ENDBLK object within AutoCAD. Objects of this class
+        are created and handled automatically by AutoCAD for each AcDbBlockTableRecord.
+        Applications do not need to create objects of this class nor can they add or remove them
+        from databases. Applications are free to add or manipulate xdata on objects of this class,
+        as well as work with extension dictionaries for objects of this class.
+        """
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbBlockEnd class represents the ENDBLK object within AutoCAD. Objects of this class
+        are created and handled automatically by AutoCAD for each AcDbBlockTableRecord.
+        Applications do not need to create objects of this class nor can they add or remove them
+        from databases. Applications are free to add or manipulate xdata on objects of this class,
+        as well as work with extension dictionaries for objects of this class.
+        """
+    @overload
+    def __init__(self, *args) -> None:
+        """
+        The AcDbBlockEnd class represents the ENDBLK object within AutoCAD. Objects of this class
+        are created and handled automatically by AutoCAD for each AcDbBlockTableRecord.
+        Applications do not need to create objects of this class nor can they add or remove them
+        from databases. Applications are free to add or manipulate xdata on objects of this class,
+        as well as work with extension dictionaries for objects of this class.
+        """
     def __reduce__(self, /) -> Any: ...
     @staticmethod
     def cast(otherObject: PyRx.RxObject, /) -> BlockEnd: ...
@@ -24878,9 +24948,46 @@ class SegType(_BoostPythonEnum):
     kEmpty: ClassVar[Self]  # 4
 
 class SequenceEnd(PyDb.Entity):
-    def __init__(
-        self, id: PyDb.ObjectId, mode: PyDb.OpenMode = PyDb.OpenMode.kForRead, /
-    ) -> None: ...
+    @overload
+    def __init__(self, /) -> None:
+        """
+        The AcDbSequenceEnd class represents the SEQEND entity within AutoCAD. Objects of this
+        class are created and handled automatically by AutoCAD for each complex entity that
+        requires them, such as AcDbBlockReference, AcDb2dPolyline, AcDb3dPolyline, etc.
+        Applications do not need to create objects of this class, nor do they need to add or remove
+        them from databases. Applications are free to add or manipulate xdata on objects of this
+        class, as well as work with extension dictionaries for objects of this class.
+        """
+    @overload
+    def __init__(self, id: PyDb.ObjectId, /) -> None:
+        """
+        The AcDbSequenceEnd class represents the SEQEND entity within AutoCAD. Objects of this
+        class are created and handled automatically by AutoCAD for each complex entity that
+        requires them, such as AcDbBlockReference, AcDb2dPolyline, AcDb3dPolyline, etc.
+        Applications do not need to create objects of this class, nor do they need to add or remove
+        them from databases. Applications are free to add or manipulate xdata on objects of this
+        class, as well as work with extension dictionaries for objects of this class.
+        """
+    @overload
+    def __init__(self, id: PyDb.ObjectId, mode: PyDb.OpenMode, /) -> None:
+        """
+        The AcDbSequenceEnd class represents the SEQEND entity within AutoCAD. Objects of this
+        class are created and handled automatically by AutoCAD for each complex entity that
+        requires them, such as AcDbBlockReference, AcDb2dPolyline, AcDb3dPolyline, etc.
+        Applications do not need to create objects of this class, nor do they need to add or remove
+        them from databases. Applications are free to add or manipulate xdata on objects of this
+        class, as well as work with extension dictionaries for objects of this class.
+        """
+    @overload
+    def __init__(self, *args) -> None:
+        """
+        The AcDbSequenceEnd class represents the SEQEND entity within AutoCAD. Objects of this
+        class are created and handled automatically by AutoCAD for each complex entity that
+        requires them, such as AcDbBlockReference, AcDb2dPolyline, AcDb3dPolyline, etc.
+        Applications do not need to create objects of this class, nor do they need to add or remove
+        them from databases. Applications are free to add or manipulate xdata on objects of this
+        class, as well as work with extension dictionaries for objects of this class.
+        """
     def __reduce__(self, /) -> Any: ...
     @staticmethod
     def cast(otherObject: PyRx.RxObject, /) -> SequenceEnd: ...
