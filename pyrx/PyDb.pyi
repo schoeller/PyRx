@@ -21026,11 +21026,39 @@ class OsnapPointRef(PyDb.PointRef):
         method is acceptable, provided the application knows that the AcRxClass object pointed to
         by the returned pointer was created by an ObjectARX application that will not be unloaded.
         """
-    def osnapType(self, /) -> OsnapType: ...
-    def point(self, /) -> PyGe.Point3d: ...
-    def setIdPath(self, id: PyDb.ObjectId, sub: PyDb.SubentType, gsMarker: int, /) -> None: ...
-    def setOsnapType(self, val: PyDb.OsnapType, /) -> None: ...
-    def setPoint(self, pt: PyGe.Point3d, /) -> None: ...
+    def nearPointParam(self, /) -> float:
+        """
+        This function returns the nearest point parameter. For internal use.
+        """
+    def osnapType(self, /) -> OsnapType:
+        """
+        This function returns the Osnap type of the associative geometry.
+        """
+    def point(self, /) -> PyGe.Point3d:
+        """
+        This function returns the single point geometry.
+        """
+    def setIdPath(self, id: PyDb.ObjectId, sub: PyDb.SubentType, gsMarker: int, /) -> None:
+        """
+        This function sets the object ID path of the main associative geometry. Returns Acad::eOk
+        if successful.
+        """
+    def setIntIdPath(self, id: PyDb.ObjectId, sub: PyDb.SubentType, gsMarker: int, /) -> None:
+        """
+        This function sets the object ID path of the main associative geometry. Returns Acad::eOk
+        if successful.
+        """
+    def setNearPointParam(self, val: float, /) -> None: ...
+    def setOsnapType(self, val: PyDb.OsnapType, /) -> None:
+        """
+        This function sets the osnap type of the associative geometry. Returns Acad::eOk if
+        successful.
+        """
+    def setPoint(self, pt: PyGe.Point3d, /) -> None:
+        """
+        This function set a single point for a non-associative geometry. Returns Acad::eOk if
+        successful.
+        """
 
 class OsnapType(_BoostPythonEnum):
     kOsnapNone: ClassVar[Self]  # 0
