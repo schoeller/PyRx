@@ -17561,6 +17561,31 @@ class ImageUnits(_BoostPythonEnum):
     kLightYears: ClassVar[Self]  # 19
     kParsecs: ClassVar[Self]  # 20
 
+class IndexFilterManager:
+    def __init__(self, /) -> None: ...
+    def __reduce__(self, /) -> Any: ...
+    @staticmethod
+    def addFilter(blkRef: PyDb.BlockReference, filter: PyDb.SpatialFilter, /) -> None: ...
+    @staticmethod
+    def className() -> str: ...
+    @overload
+    @staticmethod
+    def getFilter(
+        ref: PyDb.BlockReference, key: PyRx.Class, mode: PyDb.OpenMode, /
+    ) -> SpatialFilter: ...
+    @overload
+    @staticmethod
+    def getFilter(
+        ref: PyDb.BlockReference, index: int, mode: PyDb.OpenMode, erased: bool, /
+    ) -> SpatialFilter: ...
+    @overload
+    @staticmethod
+    def getFilter(*args) -> SpatialFilter: ...
+    @staticmethod
+    def numIndexes(blkRef: PyDb.BlockTableRecord, /) -> int: ...
+    @staticmethod
+    def removeFilter(blkRef: PyDb.BlockReference, key: PyRx.Class, /) -> None: ...
+
 class Intersect(_BoostPythonEnum):
     kOnBothOperands: ClassVar[Self]  # 0
     kExtendThis: ClassVar[Self]  # 1
