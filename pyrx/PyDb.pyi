@@ -17562,29 +17562,63 @@ class ImageUnits(_BoostPythonEnum):
     kParsecs: ClassVar[Self]  # 20
 
 class IndexFilterManager:
-    def __init__(self, /) -> None: ...
+    def __init__(self, /) -> None:
+        """
+        AcDbIndexFilterManager is a namespace that provides a collection of functions for index and
+        filter access and maintenance functionality.
+        """
     def __reduce__(self, /) -> Any: ...
     @staticmethod
-    def addFilter(blkRef: PyDb.BlockReference, filter: PyDb.SpatialFilter, /) -> None: ...
+    def addFilter(blkRef: PyDb.BlockReference, filter: PyDb.SpatialFilter, /) -> None:
+        """
+        This function adds a filter to the provided block reference. It replaces the AcDbFilter of
+        the same AcRxClass if such a filter exists. Returns Acad::eOk if successful.
+        """
     @staticmethod
     def className() -> str: ...
     @overload
     @staticmethod
     def getFilter(
         ref: PyDb.BlockReference, key: PyRx.Class, mode: PyDb.OpenMode, /
-    ) -> SpatialFilter: ...
+    ) -> SpatialFilter:
+        """
+        This function is used to get at an AcDbFilter in a block reference. This function is
+        usually called in conjunction with the numFilters function that gives the total number of
+        filter objects in a block reference. Returns Acad::eOk if successful or Acad::eKeyNotFound
+        if the index does not exist.
+        """
     @overload
     @staticmethod
     def getFilter(
         ref: PyDb.BlockReference, index: int, mode: PyDb.OpenMode, erased: bool, /
-    ) -> SpatialFilter: ...
+    ) -> SpatialFilter:
+        """
+        This function is used to get at an AcDbFilter in a block reference. This function is
+        usually called in conjunction with the numFilters function that gives the total number of
+        filter objects in a block reference. Returns Acad::eOk if successful or Acad::eKeyNotFound
+        if the index does not exist.
+        """
     @overload
     @staticmethod
-    def getFilter(*args) -> SpatialFilter: ...
+    def getFilter(*args) -> SpatialFilter:
+        """
+        This function is used to get at an AcDbFilter in a block reference. This function is
+        usually called in conjunction with the numFilters function that gives the total number of
+        filter objects in a block reference. Returns Acad::eOk if successful or Acad::eKeyNotFound
+        if the index does not exist.
+        """
     @staticmethod
-    def numIndexes(blkRef: PyDb.BlockTableRecord, /) -> int: ...
+    def numIndexes(blkRef: PyDb.BlockTableRecord, /) -> int:
+        """
+        This function returns the number of indexes within the provided block table record. It
+        returns 0 if no indexes exist within the block table record.
+        """
     @staticmethod
-    def removeFilter(blkRef: PyDb.BlockReference, key: PyRx.Class, /) -> None: ...
+    def removeFilter(blkRef: PyDb.BlockReference, key: PyRx.Class, /) -> None:
+        """
+        This function removes a filter from the provided block. Returns Acad::eOk if successful or
+        Acad::eKeyNotFound if the index does not exist.
+        """
 
 class Intersect(_BoostPythonEnum):
     kOnBothOperands: ClassVar[Self]  # 0
