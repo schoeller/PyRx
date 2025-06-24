@@ -6004,10 +6004,146 @@ class Curve(PyDb.Entity):
         returned if an error occurs in the ShapeManager modeler. Other ErrorStatus return values
         are implementation-dependent. The default implementation returns Acad::eNotImplemented.
         """
-    def getSplitCurvesAtParam(self, param: float, /) -> list[PyDb.Curve]: ...
-    def getSplitCurvesAtParams(self, params: list[float], /) -> list[PyDb.Curve]: ...
-    def getSplitCurvesAtPoint(self, point: PyGe.Point3d, /) -> list[PyDb.Curve]: ...
-    def getSplitCurvesAtPoints(self, points: list[PyGe.Point3d], /) -> list[PyDb.Curve]: ...
+    def getSplitCurvesAtParam(self, param: float, /) -> list[PyDb.Curve]:
+        """
+        This function creates one or more entities that are all subcurves of the original. The
+        points array must contain the points on the curve that are used as the start or end points
+        of the newly created subcurves. The first subcurve starts at the original curve's start
+        point and ends at the first point in the points array. The second subcurve starts at the
+        first point in the points array and ends at the second point in the points array. The third
+        subcurve starts at the second point and ends at the third, and so on. The last subcurve
+        starts at the last point in the points array and ends at the original curve's endpoint. If
+        successive points are coincident (including the original curve's start to the first array
+        point and the last array point to the original curve's end), then no subcurve is created
+        for that pair. Pointers to all new curves are appended to the curveSegments array. The
+        entities that are returned in the curveSegments array are dynamically allocated, but are
+        not yet added to an AcDbDatabase. So, the application that calls this function is
+        responsible for their memory. If they are subsequently appended to a database, then the
+        database takes over responsibility for their memory. Otherwise, the application is
+        responsible for deleting them when they are no longer needed. Depending on how this
+        function is implemented, it is possible that the function might return an ErrorStatus other
+        than Acad::eOk and still have appended some pointers to subcurves to the curveSegments
+        array (AcDbArc does this). Typically, this would be the result of an invalid point
+        somewhere in the middle of the points array. So, it is very important to check the size of
+        the curveSegments array upon return to be sure that any subcurves that are created are
+        properly dealt with. To use the pointer(s) in the curveSegments array, the calling
+        application will need to cast the pointer(s) to the appropriate object type(s). For this
+        function, the objects pointed to by the pointers in the curveSegments array are usually
+        going to be of the same class as the original curve. However, this is not a requirement. To
+        be safe, the pointers should be cast using the appropriate class's cast method. Returns
+        Acad::eOk if successful. If points is empty or any of the points in points are not on the
+        curve, then Acad::eInvalidInput is returned. As mentioned above, it is possible for this
+        ErrorStatus to be returned and still have some subcurve pointers appended to the
+        curveSegments array. For the AutoCAD built-in classes that use ShapeManager (AcDbEllipse,
+        AcDbSpline, AcDbBody, AcDbRegion, and AcDb3dSolid), Acad::eGeneralModelingFailure is
+        returned if an error occurs in the ShapeManager modeler. Other ErrorStatus return values
+        are implementation-dependent. The default implementation returns Acad::eNotImplemented.
+        """
+    def getSplitCurvesAtParams(self, params: list[float], /) -> list[PyDb.Curve]:
+        """
+        This function creates one or more entities that are all subcurves of the original. The
+        points array must contain the points on the curve that are used as the start or end points
+        of the newly created subcurves. The first subcurve starts at the original curve's start
+        point and ends at the first point in the points array. The second subcurve starts at the
+        first point in the points array and ends at the second point in the points array. The third
+        subcurve starts at the second point and ends at the third, and so on. The last subcurve
+        starts at the last point in the points array and ends at the original curve's endpoint. If
+        successive points are coincident (including the original curve's start to the first array
+        point and the last array point to the original curve's end), then no subcurve is created
+        for that pair. Pointers to all new curves are appended to the curveSegments array. The
+        entities that are returned in the curveSegments array are dynamically allocated, but are
+        not yet added to an AcDbDatabase. So, the application that calls this function is
+        responsible for their memory. If they are subsequently appended to a database, then the
+        database takes over responsibility for their memory. Otherwise, the application is
+        responsible for deleting them when they are no longer needed. Depending on how this
+        function is implemented, it is possible that the function might return an ErrorStatus other
+        than Acad::eOk and still have appended some pointers to subcurves to the curveSegments
+        array (AcDbArc does this). Typically, this would be the result of an invalid point
+        somewhere in the middle of the points array. So, it is very important to check the size of
+        the curveSegments array upon return to be sure that any subcurves that are created are
+        properly dealt with. To use the pointer(s) in the curveSegments array, the calling
+        application will need to cast the pointer(s) to the appropriate object type(s). For this
+        function, the objects pointed to by the pointers in the curveSegments array are usually
+        going to be of the same class as the original curve. However, this is not a requirement. To
+        be safe, the pointers should be cast using the appropriate class's cast method. Returns
+        Acad::eOk if successful. If points is empty or any of the points in points are not on the
+        curve, then Acad::eInvalidInput is returned. As mentioned above, it is possible for this
+        ErrorStatus to be returned and still have some subcurve pointers appended to the
+        curveSegments array. For the AutoCAD built-in classes that use ShapeManager (AcDbEllipse,
+        AcDbSpline, AcDbBody, AcDbRegion, and AcDb3dSolid), Acad::eGeneralModelingFailure is
+        returned if an error occurs in the ShapeManager modeler. Other ErrorStatus return values
+        are implementation-dependent. The default implementation returns Acad::eNotImplemented.
+        """
+    def getSplitCurvesAtPoint(self, point: PyGe.Point3d, /) -> list[PyDb.Curve]:
+        """
+        This function creates one or more entities that are all subcurves of the original. The
+        points array must contain the points on the curve that are used as the start or end points
+        of the newly created subcurves. The first subcurve starts at the original curve's start
+        point and ends at the first point in the points array. The second subcurve starts at the
+        first point in the points array and ends at the second point in the points array. The third
+        subcurve starts at the second point and ends at the third, and so on. The last subcurve
+        starts at the last point in the points array and ends at the original curve's endpoint. If
+        successive points are coincident (including the original curve's start to the first array
+        point and the last array point to the original curve's end), then no subcurve is created
+        for that pair. Pointers to all new curves are appended to the curveSegments array. The
+        entities that are returned in the curveSegments array are dynamically allocated, but are
+        not yet added to an AcDbDatabase. So, the application that calls this function is
+        responsible for their memory. If they are subsequently appended to a database, then the
+        database takes over responsibility for their memory. Otherwise, the application is
+        responsible for deleting them when they are no longer needed. Depending on how this
+        function is implemented, it is possible that the function might return an ErrorStatus other
+        than Acad::eOk and still have appended some pointers to subcurves to the curveSegments
+        array (AcDbArc does this). Typically, this would be the result of an invalid point
+        somewhere in the middle of the points array. So, it is very important to check the size of
+        the curveSegments array upon return to be sure that any subcurves that are created are
+        properly dealt with. To use the pointer(s) in the curveSegments array, the calling
+        application will need to cast the pointer(s) to the appropriate object type(s). For this
+        function, the objects pointed to by the pointers in the curveSegments array are usually
+        going to be of the same class as the original curve. However, this is not a requirement. To
+        be safe, the pointers should be cast using the appropriate class's cast method. Returns
+        Acad::eOk if successful. If points is empty or any of the points in points are not on the
+        curve, then Acad::eInvalidInput is returned. As mentioned above, it is possible for this
+        ErrorStatus to be returned and still have some subcurve pointers appended to the
+        curveSegments array. For the AutoCAD built-in classes that use ShapeManager (AcDbEllipse,
+        AcDbSpline, AcDbBody, AcDbRegion, and AcDb3dSolid), Acad::eGeneralModelingFailure is
+        returned if an error occurs in the ShapeManager modeler. Other ErrorStatus return values
+        are implementation-dependent. The default implementation returns Acad::eNotImplemented.
+        """
+    def getSplitCurvesAtPoints(self, points: list[PyGe.Point3d], /) -> list[PyDb.Curve]:
+        """
+        This function creates one or more entities that are all subcurves of the original. The
+        points array must contain the points on the curve that are used as the start or end points
+        of the newly created subcurves. The first subcurve starts at the original curve's start
+        point and ends at the first point in the points array. The second subcurve starts at the
+        first point in the points array and ends at the second point in the points array. The third
+        subcurve starts at the second point and ends at the third, and so on. The last subcurve
+        starts at the last point in the points array and ends at the original curve's endpoint. If
+        successive points are coincident (including the original curve's start to the first array
+        point and the last array point to the original curve's end), then no subcurve is created
+        for that pair. Pointers to all new curves are appended to the curveSegments array. The
+        entities that are returned in the curveSegments array are dynamically allocated, but are
+        not yet added to an AcDbDatabase. So, the application that calls this function is
+        responsible for their memory. If they are subsequently appended to a database, then the
+        database takes over responsibility for their memory. Otherwise, the application is
+        responsible for deleting them when they are no longer needed. Depending on how this
+        function is implemented, it is possible that the function might return an ErrorStatus other
+        than Acad::eOk and still have appended some pointers to subcurves to the curveSegments
+        array (AcDbArc does this). Typically, this would be the result of an invalid point
+        somewhere in the middle of the points array. So, it is very important to check the size of
+        the curveSegments array upon return to be sure that any subcurves that are created are
+        properly dealt with. To use the pointer(s) in the curveSegments array, the calling
+        application will need to cast the pointer(s) to the appropriate object type(s). For this
+        function, the objects pointed to by the pointers in the curveSegments array are usually
+        going to be of the same class as the original curve. However, this is not a requirement. To
+        be safe, the pointers should be cast using the appropriate class's cast method. Returns
+        Acad::eOk if successful. If points is empty or any of the points in points are not on the
+        curve, then Acad::eInvalidInput is returned. As mentioned above, it is possible for this
+        ErrorStatus to be returned and still have some subcurve pointers appended to the
+        curveSegments array. For the AutoCAD built-in classes that use ShapeManager (AcDbEllipse,
+        AcDbSpline, AcDbBody, AcDbRegion, and AcDb3dSolid), Acad::eGeneralModelingFailure is
+        returned if an error occurs in the ShapeManager modeler. Other ErrorStatus return values
+        are implementation-dependent. The default implementation returns Acad::eNotImplemented.
+        """
     def getStartParam(self, /) -> float:
         """
         This function returns with startParam set to the start parameter on the curve. Returns
