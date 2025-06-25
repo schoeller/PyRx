@@ -516,6 +516,8 @@ class Core:
         WBLOCK WMFOUT XCLIP
         """
     @staticmethod
+    def getCurrentView() -> PyDb.ViewTableRecord: ...
+    @staticmethod
     def getDpiScalingValue() -> float:
         """
         Returns DPI scaling value for Windows system. Returns 1.0 on Mac platform.
